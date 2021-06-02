@@ -14,7 +14,7 @@ This is where you will store your credential information. *This is a secure stor
 
 At the top right corner of this page, you will find the "Create" button. Click here, and you'll be taken to the Credentials Creation form. This will give you some options, starting with the type of credential this is.
 
-<img src="/images/docs/creds2.png" alt="Screenshot of Saturn Cloud Create Credentials form" class="doc-image">
+<img src="/images/docs/creds2.jpg" alt="Screenshot of Saturn Cloud Create Credentials form" class="doc-image">
 
 There are 4 types of credentials:
 

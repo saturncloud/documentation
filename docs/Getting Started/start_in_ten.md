@@ -5,7 +5,7 @@ Welcome! Getting up and running on Saturn Cloud is really fast and easy.
 ## Sign Up
 1. **Sign up online** by visiting [saturncloud.io](https://www.saturncloud.io/s/), clicking "Start for Free", and following the instructions. If you have any struggles, we have [a full tutorial](<docs/Getting Started/signing_up.md>).
 
-![Screenshot of signup page indicating github, google, or email options](/images/docs/signup2.png "doc-image")
+![Screenshot of signup page indicating github, google, or email options](/images/docs/signup2.jpg "doc-image")
 
 
 ## Create a Project

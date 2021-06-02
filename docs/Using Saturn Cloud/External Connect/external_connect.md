@@ -29,7 +29,7 @@ If you don't have a Saturn Cloud account, go to [saturncloud.io](https://saturnc
 
 Once you have done so, you'll be brought to the Saturn Cloud projects page. Click "Create Custom Project"
 
-<img src="/images/docs/azure_external_connect_06.png" alt-text="Create custom project" class="doc-image">
+<img src="/images/docs/custom_project.jpg" alt-text="Create custom project" class="doc-image">
 
 Given the project a name (ex: "external-connect-demo"), but you can leave all other settings as their defaults. In the future you may want to set a specific image or instance size which you can do from the Project UI. Then click "Create"
 

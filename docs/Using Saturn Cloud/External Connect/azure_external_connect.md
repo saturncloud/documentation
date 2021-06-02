@@ -57,15 +57,15 @@ At this point you can create a new notebook by right clicking you username in th
 
 First, go to [saturncloud.io](https://saturncloud.io) and click "Start For Free" on the upper right corner. It'll ask you to create a login.
 
-<img src="/images/docs/azure_external_connect_05.png" alt-text="Saturn Cloud homepage" class="doc-image">
+<img src="/images/docs/homepage.jpg" alt-text="Saturn Cloud homepage" class="doc-image">
 
 Once you have done so, you'll be brought to the Saturn Cloud projects page. Click "Create Custom Project"
 
-<img src="/images/docs/azure_external_connect_06.png" alt-text="Create custom project" class="doc-image">
+<img src="/images/docs/custom_project.jpg" alt-text="Create custom project" class="doc-image">
 
 Given the project a name (ex: "azure-demo"), but you can leave all other settings as their defaults—we'll be editing the project settings later directly from Azure. Then click "Create"
 
-<img src="/images/docs/azure_external_connect_07.png" alt-text="Custom project choices" class="doc-image">
+<img src="/images/docs/azure_external_connect_07.jpg" alt-text="Custom project choices" class="doc-image">
 
 After the project is created you'll be brought to that project's page. At this point you'll need two id strings:
 

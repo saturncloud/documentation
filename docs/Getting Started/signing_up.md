@@ -7,11 +7,11 @@ If you are new to Saturn, we invite you to sign up for our hosted product and se
 ## Start the Process
 First, visit our website at [saturncloud.io](https://www.saturncloud.io/s/). You'll see a few buttons that let you sign up - click any of these!
 
-<img src="/images/docs/signup1.png" alt="Screenshot of Saturn Cloud homepage with arrows pointing to Start for Free buttons" class="doc-image">
+<img src="/images/docs/signup1.jpg" alt="Screenshot of Saturn Cloud homepage with arrows pointing to Start for Free buttons" class="doc-image">
 
 After you click, you'll be taken to our signup page. Here, you can either choose to sign up with your Google or Github accounts, or you can sign up with your email. 
 
-<img src="/images/docs/signup2.png" alt="Screenshot of Saturn Cloud signup form showing google, github, or email choices" class="doc-image">
+<img src="/images/docs/signup2.jpg" alt="Screenshot of Saturn Cloud signup form showing google, github, or email choices" class="doc-image">
 
 #### Google or Github
 If you choose Github or Google, you'll be directed to authorize Saturn Cloud's service, and you'll be logged in to your new account in moments! You're ready to start using Saturn Cloud, and we recommend you [create a project](<docs/Getting Started/start_project.md>)!

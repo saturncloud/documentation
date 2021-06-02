@@ -10,7 +10,7 @@ From here, you can choose to create a pre-built project, or create your own from
 
 Getting a quick-start project is as easy as clicking a card! As you see here, we have a number of project templates ready for you to try, and you don't need to set any of the custom parameters to begin.
 
-<img src="/images/docs/quickstart.png" alt="Screenshot of Saturn Cloud project page with quick-start cards visible" class="doc-image">
+<img src="/images/docs/quickstart-list.jpg" alt="Screenshot of Saturn Cloud project page with quick-start cards visible" class="doc-image">
 
 ### Select Project
 When you click one of these cards, you'll be asked to confirm that you want to create it, as shown.
@@ -19,7 +19,7 @@ When you click one of these cards, you'll be asked to confirm that you want to c
 
 Then, you'll be taken to your fully set up project!
 
-<img src="/images/docs/quickstart3.png" alt="Screenshot of a quick start project page after creation, called 'pytorch'" class="doc-image">
+<img src="/images/docs/quickstart3.jpg" alt="Screenshot of a quick start project page after creation, called 'pytorch'" class="doc-image">
 
 ### Start Resources
 To start your resources and begin working, click the green arrows as shown, on the Jupyter server and the Dask cluster.
@@ -35,11 +35,11 @@ Click that button, and you'll find yourself in a full featured Jupyter Lab works
 ## Create a Custom Project
 If you want to create your own project, and use your preferred specifications, that's also easy to do. Click the "Create Project" button in the left menu, or from the Project page, click "Create Custom Project" in the top right corner.
 
-<img src="/images/docs/create-custom-project.png" alt="Screenshot of Saturn Cloud project page" class="doc-image">
+<img src="/images/docs/create-custom-project.jpg" alt="Screenshot of Saturn Cloud project page" class="doc-image">
 
 From here, you'll see a form with the Create Project options.
 
-<img src="/images/docs/image5.png" alt="Screenshot of Saturn Cloud Create Project form" class="doc-image">
+<img src="/images/docs/image5-create-project.jpg" alt="Screenshot of Saturn Cloud Create Project form" class="doc-image">
 
 ### Set Custom Options
 #### Name
@@ -54,7 +54,7 @@ Choose what sort of hardware you will want for your Jupyter server. Unless you p
 #### Image
 An image will describe the libraries and packages you need to run your code.  Make sure that if you choose a GPU based machine, you also choose a GPU image. You can choose from the Saturn Cloud default image selection when you create a project. This is the same way you will select a custom image, if you choose to create one.
 
-<img src="/images/docs/image5.png" alt="Screenshot of Saturn Cloud Create Project form showing Image selection dropdown" class="doc-image">
+<img src="/images/docs/image5-create-project.jpg" alt="Screenshot of Saturn Cloud Create Project form showing Image selection dropdown" class="doc-image">
 
 However, if you don't know what sort of image you want, or need to set up a custom image, you can [visit our Images documentation to learn more](<docs/Using Saturn Cloud/images.md>).
 

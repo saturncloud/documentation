@@ -4,7 +4,7 @@
 
 If you have not yet created a Saturn Cloud account, go to [saturncloud.io](https://saturncloud.io) and click "Start For Free" on the upper right corner. It'll ask you to create a login.
 
-<img src="/images/docs/sagemaker-u00.png" alt="Saturn homepage" class="doc-image">
+<img src="/images/docs/homepage.jpg" alt="Saturn homepage" class="doc-image">
 
 Once you have done so, you'll be brought to the Saturn Cloud projects page. Click "Create Custom Project".
 

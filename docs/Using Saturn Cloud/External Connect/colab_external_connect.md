@@ -20,11 +20,11 @@ At this point we need to install a few packages. Ultimately, your goal is to get
 
 First, go to [saturncloud.io](https://saturncloud.io) and click "Start For Free" on the upper right corner. It'll ask you to create a login.
 
-<img src="/images/docs/colab_01.png" alt-text="Saturn Cloud homepage" class="doc-image">
+<img src="/images/docs/homepage.jpg" alt-text="Saturn Cloud homepage" class="doc-image">
 
 Once you have done so, you'll be brought to the Saturn Cloud projects page. Click "Create Custom Project"
 
-<img src="/images/docs/colab_02.png" alt-text="Create Saturn Cloud project" class="doc-image">
+<img src="/images/docs/custom_project.jpg" alt-text="Create Saturn Cloud project" class="doc-image">
 
 Given the project a name (ex: "dask"), but you can leave all other settings as their defaults—we'll be editing the project settings later directly from Azure. Then click "Create"
 

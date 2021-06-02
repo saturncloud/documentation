@@ -85,7 +85,7 @@ Review all values on the next page - step back and making corrections if needed.
 Once stack creation is complete, you need to provide the ARN for the created role to the installer in order to continue with the deployment. You may find this info on the "Outputs" tab in the AWS console. The ARN is the string that starts with "arn:aws:iam" in the "Value" column, as shown below.
 
  
-<img src="/images/docs/cf-stack6.png" alt="Screenshot of AWS Console showing list of Stacks, with SaturnCustomer/AdminRole highlighted in list" class="doc-image">
+<img src="/images/docs/cf-stack6.jpg" alt="Screenshot of AWS Console showing list of Stacks, with SaturnCustomer/AdminRole highlighted in list" class="doc-image">
  
 #### Configure and Install Saturn
 

@@ -44,7 +44,7 @@ In this form, you'll fill in your repository details.
 * Branch: You can choose to check out a non-main branch by default if you would like, and you'd make that selection here.
 * Expected Usage: select whether you will be only using this repo for reading from, and would like it to be refreshed to the remote state every time you start the project, or if you'd like it to be read/write, so your edits will be persisted and not overwritten.
 
-<img src="/images/docs/repos2.png" alt="Screenshot of Saturn Cloud Add Repository form" class="doc-image">
+<img src="/images/docs/repos2.jpg" alt="Screenshot of Saturn Cloud Add Repository form" class="doc-image">
 
 ## Attach Credentials
 After you've filled out this form, you'll be asked to specify the credential you want to use to access the repo, if it is not public. Use the dropdown to choose the SSH Private Key that you added above.
