@@ -2,7 +2,7 @@
 
 This article describes how to work with git repositories in Saturn Cloud. As of this writing, only GitHub repos have built-in support.
 
-If you need to work with a repo on another hosted source control management (SCM) service such as AWS CodeCommit, BitBucket, GitLab, or any other SCM service that supports cloning repos over SSH, skip to ["Using a Start Script"](<docs/Examples/LoadData/qs-snowflake-dask.md#using-a-start-script>).
+If you need to work with a repo on another hosted source control management (SCM) service such as AWS CodeCommit, BitBucket, GitLab, or any other SCM service that supports cloning repos over SSH, skip to ["Using a Start Script"](<docs/Reference/ip_allow.md#using-a-start-script>).
 
 ## Set up SSH Keys
 
@@ -63,7 +63,7 @@ Now, when you log in to your Jupyter Server, at the top level of your file syste
 
 For remote hosts that are not supported by Saturn's git repo integration, you can set up automatic repo cloning using a feature called the "start script". This is a small shell script which runs every time Saturn creates a Jupyter server, Deployment, Dask worker, or Prefect Cloud flow run.
 
-1. Create an SSH keypair. Put the public key on your source code management system, and add the private key as a Saturn credential with `location` set to `/home/jovyan/.ssh/id_rsa_example`. See ["Set up SSH Keys"](<docs/Examples/LoadData/qs-snowflake-dask.md#set-up-ssh-keys>) for instructions.
+1. Create an SSH keypair. Put the public key on your source code management system, and add the private key as a Saturn credential with `location` set to `/home/jovyan/.ssh/id_rsa_example`. See ["Set up SSH Keys"](<docs/Reference/ip_allow.md#set-up-ssh-keys>) for instructions.
 2. In your Saturn project, expand the "Advanced Settings" section.
 
     <img src="/images/docs/advsettings.png" alt="Screenshot of Saturn Cloud project creation page Advanced Settings section" class="doc-image">

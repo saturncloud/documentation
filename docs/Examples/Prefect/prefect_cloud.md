@@ -4,7 +4,7 @@
 
 This tutorial explains how to use Prefect Cloud and Saturn Cloud together.
 
-The tutorial ["Develop a Scheduled Data Pipeline"](<docs/Examples/Prefect/prefect_cloud_concepts.md>) introduces how to build data pipelines using `prefect`, and how to speed them up by executing them on a Saturn Dask Cluster. If you are not familiar with `prefect` yet, consider reading that article first and then coming back to this one.
+The tutorial ["Develop a Scheduled Data Pipeline"](<docs/Examples/Prefect/prefect_concepts.md>) introduces how to build data pipelines using `prefect`, and how to speed them up by executing them on a Saturn Dask Cluster. If you are not familiar with `prefect` yet, consider reading that article first and then coming back to this one.
 
 For this tutorial, we'll create a flow that mimics the process of getting a batch of records, using a machine learning model to score on them, and capturing metrics.
 
@@ -56,7 +56,7 @@ Now that you've created an account in Prefect Cloud and set up an agent in Satur
     - `Type`: Environment Variable
     - `Name`: `prefect-user-token`
     - `Variable Name`: `PREFECT_USER_TOKEN`
-    - `Value`: the User API Key you created during [setup](<docs/Examples/LoadData/qs-snowflake-dask.md#setup>)
+    - `Value`: the User API Key you created during [setup](<docs/Reference/ip_allow.md#setup>)
 1. Navigate to the "Projects" page and create a new Project with the following specs.
     * `Name`: test-prefect
     * `Image:` any of the available non-gpu `saturncloud/saturn` images you want
