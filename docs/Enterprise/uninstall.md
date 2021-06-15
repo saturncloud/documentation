@@ -16,4 +16,4 @@ Do not delete the `customer-admin` role we use to administer your installation. 
 
 ### What if I already deleted the role?
 
-You can either [re-create the role](<docs/Enterprise/self_installation.md>), or give us the [AWS IAM access keys that were used to create the role](/docs).
+You can either [re-create the role](<docs/Enterprise/installation.md>), or give us the [AWS IAM access keys that were used to create the role](/docs).

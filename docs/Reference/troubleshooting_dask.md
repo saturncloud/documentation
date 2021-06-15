@@ -58,7 +58,7 @@ Watch the Dask dashboard closely. If the worker memory gets close to 60%, that m
 
 ### Add More Workers
 
-If training is hitting memory issues (see ["Increase the Worker Size"](<docs/Reference/ip_allow.md#increase-the-worker-size>)) or you just want to try throwing more CPU at the problem, increase the number of workers in the cluster. All else equal, you should expect that for many distributed training algorithms, doubling the number of workers cuts the training time in slightly-less-than-half. This effect has limits, since adding more workers adds more communication overhead, but it's a good thing to try.
+If training is hitting memory issues (see ["Increase the Worker Size"](<docs/Enterprise/installation.md#increase-the-worker-size>)) or you just want to try throwing more CPU at the problem, increase the number of workers in the cluster. All else equal, you should expect that for many distributed training algorithms, doubling the number of workers cuts the training time in slightly-less-than-half. This effect has limits, since adding more workers adds more communication overhead, but it's a good thing to try.
 
 
 ### Increase the Scheduler Size
