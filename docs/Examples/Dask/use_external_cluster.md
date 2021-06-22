@@ -8,7 +8,7 @@ This assumes you're running code from your local laptop, in an IDE such as VSCod
 
 ## Connect to Cluster
 
-First, connect your IDE to the cluster. If you need help, [we have detailed instructions for this](<docs/Using Saturn Cloud/External Connect/azure_external_connect.md>). When done, you should have a `client` object in your local workspace that represents the connection to your Dask cluster. In the code below replace the `[PROJECT_ID]` and `[API_TOKEN]` from the values used to connect to your cluster.
+First, connect your IDE to the cluster. If you need help, [we have detailed instructions for this](<docs/Using Saturn Cloud/External Connect/colab_external_connect.md>). When done, you should have a `client` object in your local workspace that represents the connection to your Dask cluster. In the code below replace the `[PROJECT_ID]` and `[API_TOKEN]` from the values used to connect to your cluster.
 
 
 ```python
