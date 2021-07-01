@@ -13,7 +13,7 @@ Think about the work you have in front of you, and ask yourself a few questions.
 1. Is this work going to involve a very large dataset? (For example, multiple GB of data)
 2. Is this work going to require massive compute resources? (For example, might it take days or weeks on a laptop?)
 
-These questions, if answered *Yes*, might mean that you want more than one machine. Using Dask makes parallelizing code easy, so taking code that's run on one machine to a cluster is not difficult. Take a look at our documentation [about Dask](<docs/Reference/dask_concepts.md>) and [setting up a cluster](<docs/Using Saturn Cloud/Create Cluster/create_cluster.md>) if you want to go this route.
+These questions, if answered *Yes*, might mean that you want more than one machine. Using Dask makes parallelizing code easy, so taking code that's run on one machine to a cluster is not difficult. Take a look at our documentation [about Dask](<docs/Reference/dask_concepts.md>) and [setting up a cluster](<docs/Using Saturn Cloud/Create Cluster/create_cluster_ui.md>) if you want to go this route.
 
 If you choose multiple machines, your cluster setup will look something like this: 
 <img src="/images/docs/dask-cluster.png" alt="Diagram of a Dask Cluster including client, scheduler, and workers" class="doc-image">

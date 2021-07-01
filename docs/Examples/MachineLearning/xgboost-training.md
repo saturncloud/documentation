@@ -285,7 +285,7 @@ Before getting into the specifics of LightGBM, you might be able to speed up tra
 
 ### Make Your Model Smaller
 
-In ["How XGBoost Distributed Training Works"](<docs/Enterprise/installation.md#how-xgboost-distributed-training-works>), you learned how different parameters of characteristics of the input data impact training time. This section describes how to adjust those parameters to improve training time.
+In ["How XGBoost Distributed Training Works"](<docs/Examples/Dashboards/voila_dash.md#how-xgboost-distributed-training-works>), you learned how different parameters of characteristics of the input data impact training time. This section describes how to adjust those parameters to improve training time.
 
 Note that some of these changes might result in worse statistical performance.
 

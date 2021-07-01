@@ -81,4 +81,4 @@ client
 
 At this point, you are able to do load data and complete whatever analysis you want. You can monitor the performance of your cluster at the link described earlier, or you can log in to Saturn Cloud and see the Dask dashboard, logs for the cluster workers, and other useful information.
 
-You can also connect to Dask from [Google Colab](<docs/Using Saturn Cloud/External Connect/colab_external_connect.md>), [Azure](<docs/Using Saturn Cloud/External Connect/azure_external_connect.md>), or [anywhere else outside of Saturn Cloud](<docs/Using Saturn Cloud/External Connect/azure_external_connect.md>).
+You can also connect to Dask from [Google Colab](<docs/Using Saturn Cloud/External Connect/colab_external_connect.md>), [Azure](<docs/Using Saturn Cloud/External Connect/azure_external_connect.md>), or [anywhere else outside of Saturn Cloud](<docs/Using Saturn Cloud/External Connect/external_connect.md>).
