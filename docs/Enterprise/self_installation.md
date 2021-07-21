@@ -155,7 +155,7 @@ Set the `AWS_AUTH_VARS` variable according to how you intend to authenticate wit
 3. Run the installer.
 
     ```sh
-    docker run --rm -it -v ${DATA_DIR}/sdata ${AWS_AUTH_VARS} saturncloud/saturn-aws:${INSTALLER_TAG} python saturn_aws/scripts/main.py install
+    docker run --rm -it -v ${DATA_DIR}:/sdata ${AWS_AUTH_VARS} saturncloud/saturn-aws:${INSTALLER_TAG} python saturn_aws/scripts/main.py install
     ```
 
     This will take some time - typically 15-45 minutes. If you encounter errors, [contact us](/docs/reporting-problems/) and we will help debug. When installation completes successfully, you will receive an email instructing you to reset your password for the `admin` account on your new Saturn deployment.
