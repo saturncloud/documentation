@@ -208,4 +208,4 @@ _ = grid_search.fit(
 )
 ```
 
-These are a couple of ways to speed up grid search for machine learning with Dask. Check out our [other examples](<docs/Examples/MachineLearning/sklearn-gridsearch.md>) for more ways to make your machine learning faster on Saturn Cloud!
+These are a couple of ways to speed up grid search for machine learning with Dask. Check out our [other examples](<docs/Examples/MachineLearning/sklearn-training.md>) for more ways to make your machine learning faster on Saturn Cloud!
