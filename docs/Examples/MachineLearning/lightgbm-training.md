@@ -366,7 +366,7 @@ Before getting into the specifics of LightGBM, you might be able to speed up tra
 
 ### Make Your Model Smaller
 
-In ["How LightGBM Distributed Training Works"](<docs/Reference/resources_wont_start.md#how-lightgbm-distributed-training-works>), you learned how different parameters of characteristics of the input data impact training time. This section describes how to adjust those parameters to improve training time.
+In ["How LightGBM Distributed Training Works"](<docs/getting_help.md#how-lightgbm-distributed-training-works>), you learned how different parameters of characteristics of the input data impact training time. This section describes how to adjust those parameters to improve training time.
 
 Note that some of these changes might result in worse statistical performance.
 

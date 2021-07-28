@@ -21,7 +21,7 @@ The form will ask you to make some choices about the kind of cluster you want.
 * **Number of Workers**: how many instances to start with
 * **Number of Worker Processes**: the number of processes per machine (usually 1)
 * **Number of Worker Threads**: the number of threads per process (usually the number of cores)
-* **Spot Instance checkbox**: whether you wish to use EC2 Spot Instances, which may be less reliable but are cheaper than traditional EC2 Instances. [Learn more about Spot Instances here](<docs/Reference/resources_wont_start.md#spot-instances>)!
+* **Spot Instance checkbox**: whether you wish to use EC2 Spot Instances, which may be less reliable but are cheaper than traditional EC2 Instances. [Learn more about Spot Instances here](<docs/getting_help.md#spot-instances>)!
 
 ### Create Cluster
 After you have filled in the form, click "Create" to save your choices. You'll be returned to the project's page, which will now show a card for your Dask cluster.
