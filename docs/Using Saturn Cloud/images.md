@@ -16,7 +16,7 @@ To create a custom project, select "Create Project" from the "Projects" section 
 
 In this form, you will see a section called "Workspace Settings". One of the selectors in this section is "Images". Click that selector, and you'll be given a list of all the images available to you.
 
-<img src="/images/docs/images/docs/image5-create-project.jpg" alt="Screenshot of Saturn Cloud Create Project form" class="doc-image">
+<img src="/images/docs/image5-create-project.jpg" alt="Screenshot of Saturn Cloud Create Project form" class="doc-image">
 
 Choose your image, and continue creating the project as usual.
 
