@@ -28,7 +28,7 @@ The premium version of Saturn Cloud Hosted gives users some great additions over
 * The ability to use as many Dask workers as you want
 * Scheduled jobs
 
-Pricing is based on [hours of time your instances run](/docs). You can view your usage from within Saturn.
+Pricing is based on [hours of time your instances run](/docs). You can view your usage from within the Saturn Cloud UI. When you first sign up for Saturn Cloud Hosted Pro you will be charged $5 for the initial up front credits. These will show up as -$5.00 in the UI. Once you work through the initial $5 in credits, every time you use $10 worth of resources your credit card will be charged. If you need to change your credit card number please [contact us](mailto:sales@saturncloud.io).
 
 ## Saturn Cloud Enterprise
 
