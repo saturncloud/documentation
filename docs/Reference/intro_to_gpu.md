@@ -76,3 +76,40 @@ When you select this hardware, you will automatically be given a selection of im
 
 * [Random Forest with RAPIDS on GPU](<docs/Examples/RAPIDS/qs-01-rapids-gpu.md>) 
 * [PyTorch on GPU](<docs/Examples/PyTorch/qs-01-start-with-pytorch.md>) 
+
+## Troubleshooting machine learning on GPUs
+
+Sometimes you may have thought you had set up a GPU correctly for machine learning but you find that the code doesn't run, or it runs but uses the CPU instead of the GPU. For any GPU ML usage--not just on Saturn Cloud--There is a sequence of different reasons a GPU might fail to be used correctly by your code:
+
+* The machine may not have the right _system drivers_ to use the GPU for ML.
+* The machine may not be using the _Python libraries_ that utilize the GPU.
+* There may be issues in your Python code.
+
+Let's briefly go through these one by one.
+
+### The machine may not have the right _system drivers_ to use the GPU for ML
+
+The standard libraries for machine learning a GPU are the NVIDIA CUDA Toolkit and these are included in Saturn Cloud GPU images so you should have them already. That said, sometimes machine learning libraries require
+specific versions of CUDA (say, version 10 vs 11), so it is worth checking that the correct CUDA driver is installed for your needs. To check the version of CUDA installed, from the command line run:
+
+```
+/usr/local/cuda/bin/nvcc --version
+```
+
+### The machine may not be using the _Python libraries_ that utilize the GPU
+
+Even if you do have a GPU on the system and the correct drivers, you need to ensure that the Python libraries you are using supports GPU. For instance, with earlier versions of TensorFlow (version 1.15 or earlier) to
+utilize the gpu you would need to pip install a special `tensorflow-gpu` library. While modern versions of TensorFlow have GPU support built in, it's possible your code might be using an earlier version. Similarly, other
+machine learning libraries may require special installation for GPUs, so check to make sure that isn't the case.
+
+### There may be issues in your Python code
+
+Even if you have a GPU system with the right drivers and correct Python libraries, it's possible your code isn't utilizing it. For instance, with PyTorch if you want to use the GPU you have to transfer your model
+onto the GPU device:
+
+```python
+device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
+model.to(device)
+```
+
+Make sure that your code correctly accesses the GPU to do your machine learning.
