@@ -32,7 +32,7 @@ device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 ## Create and Connect Cluster
 
-This will create and start a cluster if you haven't already created one. If you need more information about working with clusters in Dask, [we have reference material to help](<docs/Using Saturn Cloud/Create Cluster/create_cluster_ui.md>).
+This will create and start a cluster if you haven't already created one. If you need more information about working with clusters in Dask, [we have reference material to help](<docs/Using Saturn Cloud/create_dask_cluster.md>).
 
 ```python
 cluster = SaturnCluster(

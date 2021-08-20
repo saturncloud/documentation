@@ -14,7 +14,7 @@ After you click, you'll be taken to our signup page. Here, you can either choose
 <img src="/images/docs/signup2.jpg" alt="Screenshot of Saturn Cloud signup form showing google, github, or email choices" class="doc-image">
 
 #### Google or Github
-If you choose Github or Google, you'll be directed to authorize Saturn Cloud's service, and you'll be logged in to your new account in moments! You're ready to start using Saturn Cloud, and we recommend you [create a project](<docs/Getting Started/start_project.md>)!
+If you choose Github or Google, you'll be directed to authorize Saturn Cloud's service, and you'll be logged in to your new account in moments! You're ready to start using Saturn Cloud, and we recommend you [create a resource](<docs/Getting Started/start_resource.md>)!
 
 #### Email
 
@@ -27,4 +27,4 @@ You'll get an email that instructs you how to set your password, and you'll be r
 <img src="/images/docs/signup4.png" alt="Screenshot of email received from Saturn Cloud for password reset, when email option signup is chosen" class="doc-image">
 
 After you fill in your password, you will be automatically logged in. Don't lose your password!
-Now, you're ready to start using Saturn Cloud. Next, we recommend you [create a project](<docs/Getting Started/start_project.md>)!
+Now, you're ready to start using Saturn Cloud. Next, we recommend you [create a resource](<docs/Getting Started/start_resource.md>)!

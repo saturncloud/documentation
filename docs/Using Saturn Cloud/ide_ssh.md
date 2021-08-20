@@ -1,6 +1,6 @@
-# Connect to Jupyter with your IDE
+# Connect to a Jupyter Server With Your IDE
 
-You might not want to use Jupyter Lab to interact with Saturn Cloud, so we make it easy for you to connect to your local computer IDE (such as VS Code, PyCharm, or others) as well.
+You might not want to use JupyterLab to interact with Saturn Cloud, so we make it easy for you to connect to your local computer IDE (such as VS Code, PyCharm, or others) as well.
 
 ## Set Up SSH Keys
 
@@ -14,10 +14,11 @@ If you need help setting up a Credential, please [visit our reference page about
 > * <a href="https://www.redhat.com/sysadmin/configure-ssh-keygen" target='_blank' rel='noopener'>https://www.redhat.com/sysadmin/configure-ssh-keygen</a>
 
 
-## Enable SSH for Jupyter Server
-If your Saturn Cloud project already exists, go to the project page and find the Jupyter server. Click the pencil/paper icon on the card to edit its details. (If it is running, you may want to stop it. The Instance will restart itself automatically if it is running when you make this change.)
+## Enable SSH for a Jupyter server resource
 
-<img src="/images/docs/ssh1.png" alt="Screenshot of Saturn Cloud Jupyter Server card inside project, with red arrow pointing to the edit button" class="doc-image">
+On the resource page, click the pencil/paper icon to edit the resource details. If it is running, you may want to stop it since the resource will restart itself automatically if it is running when you make this change.
+
+<img src="/images/docs/edit-resource-button.jpg" alt="Edit button within a resource" class="doc-image">
 
 You will be taken to a page that allows you to edit the settings of the server. Check the box that says “Enable SSH URL to connect to PyCharm, VSCode, or any other IDE” and click "Save" at the bottom of the page. *This change will be lost if you forget to hit "Save"!*
 
@@ -52,7 +53,7 @@ Host myjupyter
     IdentityFile <Private key filepath (See above)>
 ```
 
-Update the name above to match your server as you see fit. Then, from the command palette (Ctrl+Shift+P or Cmd+Shift+P, depending on OS), select `Remote-SSH: Connect to host…`, then select your config entry (created above) from the list. Once opened, select “Open Folder”, then choose `/home/jovyan/project` . The project’s files can be opened directly, and bash is available if you would like to open a terminal through VS Code.
+Update the name above to match your server as you see fit. Then, from the command palette (Ctrl+Shift+P or Cmd+Shift+P, depending on OS), select `Remote-SSH: Connect to host…`, then select your config entry (created above) from the list. Once opened, select “Open Folder”, then choose `/home/jovyan`, or whichever subfolder in the server you would like to view. 
 
 
 ### PyCharm
@@ -68,7 +69,7 @@ To set up PyCharm to connect to a running Jupyter server, follow JetBrains’ in
 * Private key file: <Private key filepath (See above)>
 * Passphrase: The passphrase to your key, if you set one
 
-Once the new server configuration has been added, navigate to Tools > Deployment > Remote Host. From the new panel this opens, select the new server configuration you just created. This will let you browse the contents of the server, and edit the files in place. Your project is located at `/home/jovyan/project`. From Tools > Start SSH Session… a terminal can be opened to run commands.
+Once the new server configuration has been added, navigate to Tools > Deployment > Remote Host. From the new panel this opens, select the new server configuration you just created. This will let you browse the contents of the server, and edit the files in place. Your work is located within `/home/jovyan`. From Tools > Start SSH Session… a terminal can be opened to run commands.
 
 ### Terminal
 

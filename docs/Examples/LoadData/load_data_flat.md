@@ -2,7 +2,7 @@
 
 Flat files are a very common data storage option, and lots of our customers will use them at some time. This tutorial will show you how to load a dataset from a file (for example, a CSV or JSON file) on disk or on a cloud storage space into Saturn Cloud using pandas or Dask.
 
-Before starting this, you should create a project and start a Jupyter server in it. See our [startup documentation](<docs/Getting Started/start_project.md>) if you don't know how to do this yet.
+Before starting this, you should create a Jupyter server resource and start it. See our [startup documentation](<docs/Getting Started/start_resource.md>) if you don't know how to do this yet.
 
 ## Upload Files
 If you want to place a flat file in the Saturn Cloud Jupyter server workspace, there's a simple UI option.

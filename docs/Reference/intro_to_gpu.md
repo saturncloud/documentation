@@ -68,11 +68,11 @@ All this given, some machine learning work is great for GPUs. Deep learning is a
 
 ## Get a GPU on Saturn Cloud!
 
-Saturn Cloud offers access to a wide range of GPU hardware for our customers - even on our free tier. To try one, [start a project](<docs/Getting Started/start_project.md>) and select a GPU as the Hardware. This will give you a choice of T4 or V100 class GPUs. A T4 is somewhat less powerful but also less expensive than a V100.
+Saturn Cloud offers access to a wide range of GPU hardware for our customers - even on our free tier. To try one, [start a Jupyter server resource](<docs/Getting Started/start_resource.md>) and select a GPU as the Hardware. This will give you a choice of T4 or V100 class GPUs. A T4 is somewhat less powerful but also less expensive than a V100.
 
-![Form to create a new project](/images/docs/create_project_gpu.png "doc-image")
+**[Create a jupyter server resource page]**
 
-When you select this hardware, you will automatically be given a selection of images with GPU enabled software to choose from. You can then start the Jupyter instance and try out the GPU for yourself! We recommend some of our quick start projects that use GPUs:
+When you select this hardware, you will automatically be given a selection of images with GPU enabled software to choose from. You can then start the Jupyter instance and try out the GPU for yourself! Instead of creating a new Jupyter server from scratch, you can also use one of the resource templates. These resources are prepopulated with the correct libraries and example notebooks:
 
 * [Random Forest with RAPIDS on GPU](<docs/Examples/RAPIDS/qs-01-rapids-gpu.md>) 
 * [PyTorch on GPU](<docs/Examples/PyTorch/qs-01-start-with-pytorch.md>) 

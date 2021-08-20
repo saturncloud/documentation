@@ -16,12 +16,11 @@ At the top right corner of this page, you will find the "Create" button. Click h
 
 <img src="/images/docs/creds2.jpg" alt="Screenshot of Saturn Cloud Create Credentials form" class="doc-image">
 
-There are 4 types of credentials:
+There are 3 types of credentials:
 
 * **Environment Variable**: This can cover many use cases. For example, AWS S3 credentials and Snowflake credentials will be environment variables. Specify the name of the credential, the name of the environment variable (how you will refer to it in your code), and the value.
 * **File**: This indicates you wish to upload a whole file as a secret credential. Specify the name of the credential, the path to the file, and contents of the file.
-* **SSH Public Key**: specify the name of the credential, and paste in the ssh public key for your private key, and it will be added to ~/.ssh/authorized_keys so that you can ssh into your Jupyter server.
-* **SSH Private Key**: specify the name of the credential, the path for the private key, and paste in the ssh private key for use with private repository authentication, for example.
+* **SSH Public Key**: This special type of credential is used for [connecting via SSH](<docs/Using Saturn Cloud/ide_ssh.md>) to a Jupyter server resource. Any SSH connection with a valid SSH key can connect to any resource in your account.
 
 Complete the form one time for each credential you wish to add. When completed, you should see the credentials now in the Credentials page, like this.
 

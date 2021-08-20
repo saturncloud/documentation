@@ -20,7 +20,7 @@ We'll illustrate the two Dask methods of scaling grid search using the famous [N
 
 ### Connect to Dask cluster
 
-First, let's connect to our Dask cluster. If you are not familiar with how to start a Dask cluster in Saturn Cloud, check out [this page](<docs/Using Saturn Cloud/Create Cluster/create_cluster.md>).
+First, let's connect to our Dask cluster. If you are not familiar with how to start a Dask cluster in Saturn Cloud, check out [this page](<docs/Using Saturn Cloud/create_dask_cluster.md>).
 
 ```python
 from dask_saturn import SaturnCluster

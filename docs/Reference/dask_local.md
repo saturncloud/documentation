@@ -1,13 +1,13 @@
 # Dask Dashboard with Local Clusters
 
-[Dask clusters](<docs/Using Saturn Cloud/Create Cluster/create_cluster_ui.md>) on Saturn Cloud enable you to scale your workloads across
+[Dask clusters](<docs/Using Saturn Cloud/create_dask_cluster.md>) on Saturn Cloud enable you to scale your workloads across
 a cluster of machines. There are scenarios when it is advantageous to run Dask on a single node, utilizing the CPUs as 
 workers for the "cluster". This is called a `LocalCluster`. If you have run Dask on your laptop and initialized
 a `Client()`, then you have run a `LocalCluster`!
 
 Saturn Cloud has Jupyter instances with up to 4TB of RAM, so if that is enough for your workload, you can consider choosing
 one of those machines and running a `LocalCluster`. Another common workload is using multiple
-GPUs on the same instance with a `LocalCUDACluster`. In these cases, the Dask section of the project page will not
+GPUs on the same instance with a `LocalCUDACluster`. In these cases, the Dask section of the resource page will not
 display your link to the Dask dashboard. This article explains how to access the Dask dashboard for local
 clusters.
 
@@ -21,7 +21,7 @@ client = Client()
 ```
 
 Dask is able to take advantage of multi-GPU acceleration using packages like [RAPIDS](https://rapids.ai) and [XGBoost](https://xgboost.readthedocs.io/en/latest/tutorials/dask.html). 
-When using multiple GPUs across multiple instances, you would initialize a [SaturnCluster](http://localhost:1313/docs/using-saturn-cloud/create-cluster/create_cluster_ui/). 
+When using multiple GPUs across multiple instances, you would initialize a [SaturnCluster](http://localhost:1313/docs/using-saturn-cloud/create-cluster/create_dask_cluster/). 
 If you are using a single Jupyter server with multiple GPU cards on the same instance (such as a V100-8XLarge), you would initialize a `LocalCUDACluster` 
 from [dask-cuda](https://docs.rapids.ai/api/dask-cuda/nightly/quickstart.html):
 
@@ -80,7 +80,7 @@ def local_dashboard_link():
         "https://{}/user/{}/{}/proxy/".format(
             os.environ['SATURN_JUPYTER_BASE_DOMAIN'],
             os.environ['SATURN_USERNAME'],
-            os.environ['SATURN_PROJECT_NAME'],
+            os.environ['SATURN_RESOURCE_NAME'],
         )
     )
 
@@ -92,4 +92,4 @@ local_dashboard_link()
 ```
 
 If you find that you need to scale your workloads up more, then you will want to consider a full 
-[Dask cluster](<docs/Using Saturn Cloud/Create Cluster/create_cluster_ui.md>)!
+[Dask cluster](<docs/Using Saturn Cloud/create_dask_cluster.md>)!

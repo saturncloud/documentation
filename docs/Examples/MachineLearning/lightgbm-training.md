@@ -180,8 +180,9 @@ print(f"Mean Absolute Error: {mae}")
 
 ### Set Up Environment
 
-In Saturn, go to the "Projects" page and create a new project called `lightgbm-tutorial`. Choose the following settings:
+In Saturn Cloud, go to the resources page and create a new Jupyter server. Choose the following settings:
 
+- **name**: `lightgbm-tutorial`
 - **image**: saturncloud/saturn:2020.10.23
 - **disk space**: 10 Gi
 - **size**: Medium - 2 cores - 4 GB RAM
@@ -190,7 +191,15 @@ In Saturn, go to the "Projects" page and create a new project called `lightgbm-t
       pip install 'lightgbm>=3.2.0'
       ```
 
-Start up that project's Jupyter, and go into Jupyter Lab.
+Next, set up your Dask cluster within the Saturn Cloud resource page. Use the following settings:
+
+- **number of workers**: 3
+- **scheduler size**: Medium
+- **worker size**: 4xLarge
+- **number of worker processes**: 1
+- **number of worker threads**: optimal (default)
+
+Start up the Jupyter server, and go into JupyterLab.
 
 <br>
 
@@ -203,32 +212,14 @@ import lightgbm as lgb
 from dask.distributed import Client, wait
 from dask_ml.metrics import mean_absolute_error
 from dask_saturn import SaturnCluster
-```
 
-### Set Up Dask Cluster
-
-Next, set up your Dask cluster. Saturn Cloud allows you to do this programmatically via <a href="https://github.com/saturncloud/dask-saturn" target="_blank" rel="noopener"><code>dask-saturn</code></a>.
-
-```python
-n_workers = 3
-cluster = SaturnCluster(
-    n_workers=n_workers,
-    scheduler_size='medium',
-    worker_size='4xlarge',
-    nprocs=1
-)
+cluster = SaturnCluster()
 client = Client(cluster)
-client.wait_for_workers(n_workers)
+client.wait_for_workers(3)
 cluster
 ```
 
-The code above creates a Dask cluster with 3 `4xlarge` workers. Each of these has 16 cores and 128 GB RAM.
 
-{{% alert title="Instance Sizes in Saturn" %}}
-To see a list of all available instance sizes in Saturn, run <code style="color: red;">dask_saturn.describe_sizes()</code>.
-{{% /alert %}}
-
-Notice that that code does not set `nthreads` in the cluster. That is important. When `nthreads` isn't set, Dask's default behavior is to use all available cores on each worker. This is the ideal setting for running workloads like machine learning training.
 
 ### Load Data
 

@@ -2,10 +2,10 @@
 
 Many data scientists use scikit-learn as the framework for running machine learning tasks. Conveniently, Dask is intentionally easy to integrate with scikit-learn and has strong API similarities in the `dask-ml` library. In this example, we'll show you how to create a machine learning pipeline that has all the convenience of scikit-learn but adds the speed and performance of Dask. For more information about dask-ml, visit <a href="https://ml.dask.org/" target='_blank' rel='noopener'>the official docs</a>.
 
-To follow along, [create a project](<docs/Getting Started/start_project.md>) and spin up a Jupyter server. Open the Jupyter server, and then follow the instructions below.
+To follow along, [create a Jupyter Server resource](<docs/Getting Started/start_resource.md>). Start the server and open JupyterLab, and then follow the instructions below.
 
 ### Set up cluster
-Creating a Dask machine cluster in Saturn Cloud takes only a few clicks. To learn how to create yours, [visit our cluster setup documentation](<docs/Using Saturn Cloud/Create Cluster/create_cluster_ui.md>). Once your cluster has been created, to initialize a Dask client pointing to your cluster, you can run the following code in your Jupyter Notebook.
+Creating a Dask machine cluster in Saturn Cloud takes only a few clicks. To learn how to create yours, [visit our cluster setup documentation](<docs/Using Saturn Cloud/create_dask_cluster.md>). Once your cluster has been created, to initialize a Dask client pointing to your cluster, you can run the following code in your Jupyter Notebook.
 
 ```python
 from dask_saturn import SaturnCluster

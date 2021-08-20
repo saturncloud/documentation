@@ -1,62 +1,42 @@
 # Managing Images
 
-When you start a project in Saturn Cloud, you may require special libraries or customizations for your work. The way to ensure that these all get installed when the machine is spun up is by using images. An image will contain the instructions that explain all the libraries and tools you want installed before you start work.
+When you start a resource in Saturn Cloud, you may require special libraries or customizations for your work. The way to ensure that these all get installed when the machine is spun up is by using images. An image will contain the instructions that explain all the libraries and tools you want installed before you start work.
 
 When starting out with Saturn Cloud, most people will use one of our standard images, which provide most data science packages you will need. However, if (for example) your company has a designated Docker image, you can use that instead!
 
-***
+## Using a Saturn Cloud image
 
-## Select a Default Image
+You can choose from a Saturn Cloud image when you create a resource. Saturn Cloud has a selection of images available depending on your use. There is a standard CPU image
+as well as GPU instances with different sets of libraries like RAPIDS or PyTorch.
 
-You can choose from the Saturn Cloud default image selection when you create a custom project. This is the same way you will select a custom image, if you choose to create one below.
-
-To create a custom project, select "Create Project" from the "Projects" section of the menu. 
-
-<img src = "/images/docs/create_proj.png" style="width:200px;" alt="Screenshot of side menu of Saturn Cloud product with Create Project selected" class="doc-image">
-
-In this form, you will see a section called "Workspace Settings". One of the selectors in this section is "Images". Click that selector, and you'll be given a list of all the images available to you.
-
-<img src="/images/docs/image5-create-project.jpg" alt="Screenshot of Saturn Cloud Create Project form" class="doc-image">
-
-Choose your image, and continue creating the project as usual.
-
-If you don't see the image you want, please let us know at hello@saturncloud.io and we'll help you!
-
-***
+![Image selector for new resource](/images/docs/new-resource-image-selector.jpg "doc-image")
 
 ## Build a Custom Image
 
-To build your own image, select "Images" from the "Tools" section of the menu. 
+To build your own image, select the **Images** tab in Saturn Cloud. From here, you'll see the blue **New Image** button at the top right of the screen. Click this, and you'll be taken to a form. 
 
-<img src = "/images/docs/docker1.png" style="width:200px;" alt="Screenshot of side menu of Saturn Cloud product with Images selected" class="doc-image">
-
-From here, you'll see the blue "New Image" button at the top right of the screen. Click this, and you'll be taken to a form. 
-
-<img src="/images/docs/docker2.png" alt="Screenshot of Saturn Cloud Add Image form" class="doc-image">
+![New image button on Images tab](/images/docs/new-image-button.jpg "doc-image")
 
 In the first half of the form, you will choose the source of your Docker image. If your image is hosted somewhere else, and you have a link to it, select "External" and the form's contents will change to look like this. Otherwise, leave this box as "Saturn", even if you are going to be filling in your own image specifications.
 
-### External: Add an Image Path
+![New image options](/images/docs/new-image-options.jpg "doc-image")
 
-If you're adding an image that already exists in your personal or business repository, just fill in the correct Image URI that leads to your image. If you don't know what this is, let us know or consult with your image hosting system.
+### Import an External Docker Image
 
-<img src="/images/docs/docker4.png" alt="Screenshot of Saturn Cloud Add Image form with 'External' toggle selected" class="doc-image">
+If you're adding a Docker image that already exists in your personal or business repository, fill in the correct Image URI that leads to your image. If you don't know what this is, [let us know](mailto:support@saturncloud.io) or consult with your image hosting system.
 
-### Internal: List Specifications
+### Create an Image within Saturn Cloud
 
-If your image is not externally created, you can just fill in the parameters you want for the image, including the names of the libraries and packages. 
+If your image is not externally created, you can create it yourself within Saturn Cloud by specifying which libraries and packages you want in it. You can also use a bash
+script if you want to manually specify the exact steps of image creation.
 
-<img src="/images/docs/image_internal.png" alt="Screenshot of Saturn Cloud Add Image form with 'Saturn' toggle selected, showing Conda Environment pane" class="doc-image">
+Here are the options when creating an image within Saturn Cloud.
 
-#### Options
-
-* **Source**: A “Saturn” image is one that Saturn builds for you via configuration files specified below. External is any existing image you want to add to the system. Saturn is configured to pull from the ECR (Elastic Container Registry) associated with your AWS account, and can also pull from any public repository. External images must conform to a certain specification to fully function in Saturn. 
 * **Share with**: Admin users can elect to share the image with any user in Saturn (including your whole company)
-* **Image URI**: the name of the image you wish to load (if External), or build.
-
-The below options are only available for Internal ("Saturn") image building.
-
-* **Copy configuration from**: If you’ve already built an image, this drop down lets you load that configuration, so that you can modify it, and do a new build.
+* **Copy configuration from (optional)**: If you’ve already built an image, this drop down lets you load that configuration, so that you can modify it, and do a new build.
+* **Image URI**: The name that will be given to the image after creation.
+* **Base Image**: The starting point for the image you are creating. If unsure, use the most recent Saturn Cloud image for GPU/CPU.
+* **Hardware Support** Whether the image will work on GPU or CPU instances. If you have not requested libraries specially designed for GPU computation, then CPU is usually the right choice.
 * **Build Data**: Saturn knows how to build images using a few configuration file types. More information is available from [repo2docker](https://repo2docker.readthedocs.io/en/latest/config_files.html).
   * **Conda environment**: Things you would add to an environment.yml file
   * **pip environment**: Things you would add to a requirements.txt
@@ -66,25 +46,11 @@ The below options are only available for Internal ("Saturn") image building.
 #### Replicate a Conda Environment
 One powerful configuration option is to use a custom conda environment. To do this, in the `Build Data` section, paste in the YAML describing an environment. If you have an existing conda environment you use locally, you can run `conda env export –no-builds` to generate this YAML file. 
 
-When you build an image from scratch like this, it generates a brand new python environment. These are not modifications of Saturn's default images, so you must include *all* the packages you’re going to want to use.
+When you build an image from scratch like this, it generates a brand new Python environment. These are not modifications of Saturn's default images, so you must include *all* the packages you’re going to want to use.
 
-<img src="/images/docs/image-build-conda-env.png" alt="Screenshot of Saturn Cloud Add Image form with some items included to create an image from a conda environment" class="doc-image">
+Click **Add** when you have entered all the information, and your image will be built. *Note: This may take some time, as all your packages and dependencies need to be built to ensure it will work!* 
 
-### Dask Distributed Library
-Then, select the version of the Dask `distributed` library you want your image to contain. If you're not sure, or just want the most current version, you can visit the [PyPi page](https://pypi.org/project/distributed/) or [the official changelog](https://distributed.dask.org/en/latest/changelog.html) to see what the current version is.  
-
-### CPU or GPU
-Finally, you need to indicate whether your image is customized for CPU or GPU. If you have not requested libraries specially designed for GPU computation, then CPU is usually the right choice.
-
-Click "Add" when you have entered all the information, and your image will be built. *Note: This may take some time, as all your packages and dependencies need to be built to ensure it will work!* 
-
-After the image build is complete, your image is ready to use in creating a new project.
-
-### See Your Image
-
-If you find that later you want to refer back to the specifications of an image you built in Saturn Cloud, you can visit the images page and click the names of each. Custom images don't currently show their full contents.
-
-<img src="/images/docs/images_ui.png" alt="Screenshot of Saturn Cloud Images list" class="doc-image">
+After the image build is complete, your image is ready to use in creating a new resource.
 
 ***
 

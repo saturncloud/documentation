@@ -102,7 +102,7 @@ class Model(nn.Module):
 
 ## Train the model with Dask and Saturn
 
-Next we train the model in parallel over multiple workers using Dask and Saturn. Before running the code, check that you've [started the Dask cluster](https://www.saturncloud.io/docs/getting-started/create_cluster_ui/) in your Saturn Cloud Project.
+Next we train the model in parallel over multiple workers using Dask and Saturn. Before running the code, check that you've [started the Dask cluster](https://saturncloud.io/docs/getting-started/create_cluster_ui/) in your Saturn Cloud Project.
 
 First, we need to import several modules for Dask and Saturn:
 
@@ -184,7 +184,8 @@ def train():
             rh.submit_result("model.pkl", pickle.dumps(model.state_dict()))
 ```
 
-To actually run the training job, first we start a Dask cluster and results handler object. If this code has trouble running you may need to [restart the Dask cluster](https://www.saturncloud.io/docs/getting-started/create_cluster_ui/) from the Saturn GUI:
+To actually run the training job, first we spin up a Dask cluster and results handler object. If this code has trouble running you may need to [restart the Dask cluster](https://saturncloud.io/docs/getting-started/create_cluster_ui/) from the Saturn GUI:
+
 
 ```python
 n_workers = 3
@@ -284,7 +285,7 @@ After running the code above you should see a list of names like:
 ['Moicu', 'Caspa', 'Penke', 'Lare', 'Otlnys', 'Zexto', 'Toba', 'Siralto',
 'Luny', 'Lit', 'Bonhe', 'Mashs', 'Riys Wargen', 'Roli', 'Sape', 'Anhyyhe',
 'Lorla', 'Boupir', 'Zicka', 'Muktse', 'Musko', 'Mosdin', 'Yapfe', 'Snevi',
-'Zedy', 'Cedi', 'Wivagok Rayten', 'Luzia', 'Teclyn', 'Pibty', 'Cheynet',
+'Zedy', 'Cedi', 'Wivagok Rayten', 'Luzia', 'Teclyn', 'Pibty', 'Cheynet', 
 'Lazyh', 'Ragopes', 'Bitt', 'Bemmen', 'Duuxy', 'Graggie', 'Rari', 'Kisi',
 'Lvanxoeber', 'Bonu','Masnen', 'Isphofke', 'Myai', 'Shur', 'Lani', 'Ructli',
 'Folsy', 'Icthobewlels', 'Kuet Roter']

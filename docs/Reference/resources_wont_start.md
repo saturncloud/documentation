@@ -2,7 +2,7 @@
 
 Follow this guide for tips on what to do when any of your resources (i.e. Jupyter server, Dask cluster workers, or Deployments) won't start up.
 
-There are several steps involved in starting a resource, as can be seen on the Project page when you start one. Understanding each step helps for troubleshooting or speeding up launch time.
+There are several steps involved in starting a resource, as can be seen on the Resource page. Understanding each step helps for troubleshooting or speeding up launch time.
 
 <img src="/images/docs/resource-starting.png" alt="Steps for launching resources" class="doc-image">
 
@@ -16,8 +16,7 @@ The "Pulling Image" step depends on how large the image is. The number of packag
 
 ### Start script fails
 
-If you have a [Start Script set up for your project](<docs/Getting Started/start_project.md#advanced-settings-optional>), this gets executed each time a resource starts. If this fails, you will see an "error" status for the resource. Click the "error" link to view the logs to see what went wrong.
-
+If you have a [Start Script set up for your resource](<docs/Getting Started/start_resource.md#advanced-settings-optional>), this gets executed each time a resource starts. If this fails, you will see an "error" status for the resource. Click the "error" link to view the logs to see what went wrong.
 
 ## Enterprise-specific troubleshooting
 

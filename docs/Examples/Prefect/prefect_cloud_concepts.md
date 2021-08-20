@@ -218,6 +218,6 @@ Startup times vary based on factors like:
 
 * how many workers you've selected and the size of those workers
 * the size of the container image used for workers, and whether or not that image is already cached on the node(s) workers get scheduled onto
-* time to complete any custom steps you've set up in the project's start script
+* time to complete any custom steps you've set up in the Saturn Cloud resource's start script
 
 You can avoid this added setup time by starting the flow's Dask cluster directly from the Saturn UI before any flow runs start. You should also find that by default, the cluster will be left up after a flow run completes. So if you trigger two runs of the same flow in quick succession, the second flow run should be faster and shouldn't have to wait for the Dask cluster to start.

@@ -96,7 +96,7 @@ class Model(nn.Module):
 
 ## Training multiple models in parallel
 
-Below is the code to train the model multiple times concurrently in a distributed way using Dask. Before running the code, check that you've [started the Dask cluster](https://www.saturncloud.io/docs/getting-started/create_cluster_ui/) in your Saturn Cloud Project.
+Below is the code to train the model multiple times concurrently in a distributed way using Dask. Before running the code, check that you've [started the Dask cluster](https://saturncloud.io/docs/getting-started/create_cluster_ui/) in your Saturn Cloud Project.
 
 First, we set up the Dask cluster and appropriate libraries.
 
@@ -118,7 +118,7 @@ The code to run the model multiple times in parallel starts with a training func
 
 * The function has a @dask.delayed indicator at the top so Dask knows to parallelize it
 * The training function now has an input parameter `experiment` which is a tuple containing the batch size and learning rate
-* Instead of printing the results, we now pass them to `logger.info()` so that they [show up in the Dask logs](https://www.saturncloud.io/docs/examples/dask/logging_in_dask/).
+* Instead of printing the results, we now pass them to `logger.info()` so that they [show up in the Dask logs](https://saturncloud.io/docs/examples/dask/logging_in_dask/).
 * Instead of saving the actual model, we create an array of results that the model returns
 
 
@@ -166,7 +166,7 @@ def train(experiment):
 
 ### Running the parallel code
 
-The code is executed across multiple machines by running the cell below. It takes the list of (batch size, learning rate) tuples and passes them to the Dask map function, that get combined into a single result with gather and compute. Since Dask is lazy, the computation doesn't actually begin until you run the last line of the cell and request the results. You won't see any messages show up as the model is being trained since all of the output is [captured in the Dask logs](https://www.saturncloud.io/docs/examples/dask/logging_in_dask/).
+The code is executed across multiple machines by running the cell below. It takes the list of (batch size, learning rate) tuples and passes them to the Dask map function, that get combined into a single result with gather and compute. Since Dask is lazy, the computation doesn't actually begin until you run the last line of the cell and request the results. You won't see any messages show up as the model is being trained since all of the output is [captured in the Dask logs](https://saturncloud.io/docs/examples/dask/logging_in_dask/).
 
 
 ```python

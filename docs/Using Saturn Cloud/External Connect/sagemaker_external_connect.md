@@ -1,81 +1,51 @@
 # Connect to Dask from SageMaker
 
-## Connect to a Saturn Cloud project
+## Creating a Saturn Cloud resource
 
-If you have not yet created a Saturn Cloud account, go to [saturncloud.io](https://saturncloud.io) and click "Start For Free" on the upper right corner. It'll ask you to create a login.
+If you don't have a Saturn Cloud account, go to [saturncloud.io](https://saturncloud.io) and click "Start For Free" on the upper right corner. It'll ask you to create a login. Otherwise, log into Saturn Cloud. Once you have done so, you'll be brought to the Saturn Cloud resources page. Click "New Jupyter Server"
 
-<img src="/images/docs/homepage.jpg" alt="Saturn homepage" class="doc-image">
+![New Jupyter server button](/images/docs/new-jupyter-server-button.jpg "doc-image")
 
-Once you have done so, you'll be brought to the Saturn Cloud projects page. Click "Create Custom Project".
+Given the resource a name (ex: "external-connect-demo"), but you can leave all other settings as their defaults. In the future you may want to set a specific image or instance size which you can do from the resource page. Then click "Create"
 
-<img src="/images/docs/sagemaker-u01.png" alt="Saturn creating a new project" class="doc-image">
+![New Jupyter server options](/images/docs/new-jupyter-server-options.jpg "doc-image")
 
-Give the project a name (ex: "sagemaker-demo"), but you can leave all other settings as their defaults. Then click "Create".
+After the resource is created you'll be brought the page for it. Next, we need to add a Dask cluster to this resource. Press the **New Dask Cluster** button, which will pop up a dialog for setting the Dask cluster. Choose the size each worker, the number of workers, and other options for the Dask cluster (see [Create a Dask Cluster](<docs/Using Saturn Cloud/create_dask_cluster.md>) for details on those), then click **Create**.
 
-After the project is created you'll be brought to that project's page. At this point you'll need to retrieve two ID values:
+![New Dask cluster options](/images/docs/new-dask-cluster-options.jpg "doc-image")
 
-- **`project_id`** - the id for this particular project. You can get this from the URL of the project page. For example: `https://app.community.saturnenterprise.io/dash/projects/a753517c0d4b40b598823cb759a83f50` has the project_id: `a753517c0d4b40b598823cb759a83f50`.
-- **`user_id`** - the ID that identifies you as a valid user in Saturn Cloud. Go to <a href="https://app.community.saturnenterprise.io/api/user/token" target='_blank' rel='noopener'>https://app.community.saturnenterprise.io/api/user/token</a> and save the page as `token.json`, then upload that file to the Sagemaker Studio workspace. Do not share this file with others.
+Once the Dask cluster is created you'll see it has a **Connect Externally** button, which provides instructions for making the external connection.
 
-> Protect your user token, as it allows access to your account!
+![Connect externally button](/images/docs/connect-externally-button.jpg "doc-image")
 
-You can now load the token inside Sagemaker Studio in a notebook, as shown.
+First, ensure that the client connecting to the Dask cluster has the appropriate libraries, in particular the version of `dask-saturn` shown by the UI. You'll also want to include `dask` and `distributed`, ideally with the same version as that in the cluster.
 
-```python
-# Load token
-import json
+Next, set the `SATURN_BASE_URL` and `SATURN_TOKEN` environmental variables in the client machine to the values show in the dialog. Those let saturn know which particular Dask cluster to connect to.
 
-with open('../config.json') as f:
-  data = json.load(f)
-```
-
-## Connect to your Project
-
-Now you are ready to connect your Sagemaker Studio workspace to your Saturn Cloud project, allowing you to interact with it from this notebook. Your `user_id` is required (here shown as `data['token']`), as well as the `project_id` discussed earlier.
+Finally, from within the client machine you can then connect to the Dask cluster from Python:
 
 ```python
-from dask_saturn.external import ExternalConnection
 from dask_saturn import SaturnCluster
-import dask_saturn
-from dask.distributed import Client, progress
+from dask.distributed import Client
 
-conn = ExternalConnection(
-    project_id=project_id,
-    base_url='https://app.community.saturnenterprise.io',
-    saturn_token=data['token']
-)
-conn
-
-#> dask_saturn.external.ExternalConnection at 0x7f04d067e0d0>
-```
-
-## Set Up Cluster
-
-Finally, you are ready to set up a cluster in this project! You'll see info messages logging here until the cluster is started and ready to use.
-
-If you have a cluster already created on the project, here you can just start it up without creating a new one, using this same code. You can also ask it to change size using `cluster.scale()`. For more details, we have [documentation about managing clusters](<docs/Using Saturn Cloud/Create Cluster/create_cluster.md>).
-
-```python
-cluster = SaturnCluster(
-    external_connection=conn,
-    n_workers=4,
-    worker_size='8xlarge',
-    scheduler_size='2xlarge',
-    nthreads=32,
-    worker_is_spot=False)
-```
-
-## Create Client Object
-
-This lets us connect from our Sagemaker environment to this new cluster, and when we call the object, it gives us a link to the Dask Dashboard for that cluster. We can watch at this link to see how the cluster is behaving.
-
-```python
+cluster = SaturnCluster()
 client = Client(cluster)
-client.wait_for_workers(4)
 client
 ```
 
-<img src="/images/docs/sagemaker-090556.png" alt="Created Dask client" class="doc-image">
+Run the chunk, and soon you'll see lines like this:
+
+```python
+#> INFO:dask-saturn:Starting cluster. Status: pending
+```
+
+This tells you that your cluster is starting up! Eventually you'll see something like:  
+
+```python
+#> INFO:dask-saturn:{'tcp://10.0.23.16:43141': {'status': 'OK'}}
+```
+
+Which is informing you that your cluster is up and ready to use. Now you can interact with it just the same way you would from a Saturn Cloud Jupyter server. If you need help with that, please check out some of our tutorials, such as [Training a Model with Scikit-learn and Dask](<docs/Examples/MachineLearning/sklearn-training.md>), or the <a href="https://github.com/saturncloud/dask-saturn" target='_blank' rel='noopener'>dask-saturn API</a>. 
 
 ## Analysis!
 

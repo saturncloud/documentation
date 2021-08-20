@@ -1,7 +1,7 @@
 # Getting Started with PyTorch on Saturn Cloud
 
 
-This example shows how you can use the power of a GPU to quickly train a neural network in Saturn Cloud. This code runs on a single GPU within the Jupyterlab of a Saturn Cloud project.
+This example shows how you can use the power of a GPU to quickly train a neural network in Saturn Cloud. This code runs on a single GPU of a Jupyter server resource.
 
 This is an example of a natural language processing neural network which is trained on Seattle pet license data to then generate new pet names. The model uses LSTM layers which are especially good at discovering patterns in sequences like text. The model takes a partially complete name and determines the probability of each possible next character in the name. Characters are randomly sampled from this distribution and added to the partial name until a stop character is generated and full name has been created.
 

@@ -11,7 +11,7 @@ In this article, we're going to show you the essentials of applying Dask paralle
 
 ## Connect to a Cluster
 
-This code imports the Dask libraries and connects to a preexisting Saturn Cloud Dask cluster. If you need help getting this set up, [visit our documentation about Clusters](<docs/Using Saturn Cloud/Create Cluster/create_cluster_ui.md>).
+This code imports the Dask libraries and connects to a preexisting Saturn Cloud Dask cluster. If you need help getting this set up, [visit our documentation about Clusters](<docs/Using Saturn Cloud/create_dask_cluster.md>).
 
 
 ```python

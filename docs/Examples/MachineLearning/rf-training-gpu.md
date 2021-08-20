@@ -21,7 +21,7 @@ RAPIDS uses Dask to handle parallelizing to machines with multiple GPUs, as well
 
 ## Workflow
 
-You should have a GPU Dask cluster running in order to proceed. If you need help creating a cluster, we have [step by step instructions to help](<docs/Using Saturn Cloud/Create Cluster/create_cluster_ui.md>).
+You should have a GPU Dask cluster running in order to proceed. If you need help creating a cluster, we have [step by step instructions to help](<docs/Using Saturn Cloud/create_dask_cluster.md>).
 
 
 Set up connection to your cluster, first. For this example, we recommend at least a 4 worker cluster of T4 4XLarge instances.

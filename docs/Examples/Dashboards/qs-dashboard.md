@@ -158,7 +158,7 @@ about_saturn = """
 This example uses [Panel](https://panel.holoviz.org) to create a deployable interactive dashboard.
 In Saturn it is equally easy to create a dashboard using any of the other popular dashboarding
 libraries such as: voila, dash, and bokeh. Learn more about how to deploy models and dashboards
-in our [documentation](https://www.saturncloud.io/docs/concepts/projects/deployments).
+in our [documentation](https://saturncloud.io/docs/concepts/projects/deployments).
 """
 
 with urllib.request.urlopen(

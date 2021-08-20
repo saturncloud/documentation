@@ -18,7 +18,7 @@ import pandas as pd
 
 > Don't worry if you see a warning about an incompatible version of pyarrow installed. This is because `snowflake.connector` relies on a older version of pyarrow for certain methods. We won't use those methods here so it's not a problem!
 
-Next, we connect to the Snowflake database using the Snowflake connector module. Here we are loading the credentials as environment variables using the Saturn Cloud credential manager, however you could [load them in other ways too](https://www.saturncloud.io/docs/getting-started/credentials/). Be sure not to save them as plaintext in unsafe places!
+Next, we connect to the Snowflake database using the Snowflake connector module. Here we are loading the credentials as environment variables using the Saturn Cloud credential manager, however you could [load them in other ways too](https://saturncloud.io/docs/getting-started/credentials/). Be sure not to save them as plaintext in unsafe places!
 
 ## Connection Setup
 
@@ -58,7 +58,7 @@ print(dates[0:5])
 
 When data sizes exceed what can fit into a single pandas DataFrame, we can read larger datasets into Dask DataFrames.
 
-To use Dask with Snowflake, first we import the required modules and connect to the Dask cluster on Saturn Cloud. For this code to run you need to [start the Dask cluster from the project page of Saturn Cloud](https://saturncloud.io/docs/examples/dask/create_cluster_ui/).
+To use Dask with Snowflake, first we import the required modules and connect to the Dask cluster on Saturn Cloud. For this code to run you need to [start the Dask cluster from the resource page of Saturn Cloud](https://saturncloud.io/docs/examples/dask/create_cluster_ui/).
 
 ### Start the Cluster
 
