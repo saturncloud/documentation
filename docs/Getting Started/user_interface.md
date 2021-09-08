@@ -41,4 +41,4 @@ To learn more about adding and using your own credentials, visit our [Setup docu
 
 We make it easy for you to set up a persistent connection to your git repositories, and you can find all the steps to do that on our [git repos documentation](<docs/Using Saturn Cloud/gitrepo.md>).
 
-**[UPDATE WITH IMAGE FROM OTHER BRANCH AFTER MERGE]**
+<img src="/images/docs/repos4.png" alt="Screenshot of Saturn Cloud Git Repositories page" class="doc-image">
