@@ -5,6 +5,15 @@ Saturn Cloud is a platform for data science--helping people quickly do work usin
 This guide is for first time users to
 get an environment set up in Saturn Cloud to do data science. In just a few steps, you will be able to run Python code in the cloud, and with that you can expand the environment however you need.
 
+<div class="text-center py-3 row">
+<div class="embed-responsive embed-responsive-16by9 col-md-10 offset-md-1 col-lg-8 offset-lg-2">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/qE0zhXouDSo" title="YouTube video player"
+frameborder="0"
+allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+allowfullscreen class="embed-responsive-item"></iframe>
+</div>
+</div>
+
 ## Sign Up for Saturn Cloud
 
 Sign up by visiting [saturncloud.io](https://www.saturncloud.io/s/), clicking "Start for Free", and following the instructions. If you have any struggles, we have [a full tutorial](<docs/Getting Started/signing_up.md>).
