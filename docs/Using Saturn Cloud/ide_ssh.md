@@ -1,4 +1,4 @@
-# Connect to a Jupyter Server With Your IDE
+# Connect to Saturn Cloud via SSH
 
 You might not want to use JupyterLab to interact with Saturn Cloud, so we make it easy for you to connect to your local computer IDE (such as VS Code, PyCharm, or others) as well.
 
