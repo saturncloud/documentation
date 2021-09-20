@@ -70,7 +70,7 @@ All this given, some machine learning work is great for GPUs. Deep learning is a
 
 Saturn Cloud offers access to a wide range of GPU hardware for our customers - even on our free tier. To try one, [start a Jupyter server resource](<docs/Getting Started/start_resource.md>) and select a GPU as the Hardware. This will give you a choice of T4 or V100 class GPUs. A T4 is somewhat less powerful but also less expensive than a V100.
 
-**[Create a jupyter server resource page]**
+![New Jupyter server](new-jupyter-server-options.jpg "doc-image")
 
 When you select this hardware, you will automatically be given a selection of images with GPU enabled software to choose from. You can then start the Jupyter instance and try out the GPU for yourself! Instead of creating a new Jupyter server from scratch, you can also use one of the resource templates. These resources are prepopulated with the correct libraries and example notebooks:
 
