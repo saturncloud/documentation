@@ -34,6 +34,7 @@ The `@dask.delayed` decorator indicates this will run lazily, and will apply par
 ```python
 @dask.delayed
 def lazy_exponent(args):
+    x, y = args
     return x ** y
 ```
 
