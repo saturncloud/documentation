@@ -1,33 +1,65 @@
 # Using Git Repositories in Saturn Cloud
 
-## Alternative: Using a Start Script
+This article describes how use existing git repositories with your Saturn Cloud resources. While you always can always clone repositories from within a Jupyter server using the command 
+line, by using the Saturn Cloud UI you can more easily see which repositories are connected to which resources, have repository settings shared when resources are cloned, and
+set the repositories to automatically pull the latest versions of branches.
 
-Most git repositories should be able to use the method above for adding to resources. For unusual setups that are not supported by Saturn's git repo integration, you can set up automatic repo cloning using a feature called the "start script". This is a small shell script which runs every time Saturn creates a Jupyter server, Deployment, Dask worker, or Prefect Cloud flow run.
 
-In your Saturn resource, expand the "Advanced Settings" section.
+This document first covers setting up SSH credentials then goes into adding git repositories to Saturn Cloud and finally adding those to resources. When the document refers to _git hosts_ it means services like GitHub, Bitbucket, and GitLab which host git repositories for you.
 
-![Advanced settings](/images/docs/advanced-settings.jpg "doc-image")
+## Set up SSH Keys
 
-Paste the following into the "Start Script" section, with the appropriate variables for your particular repo. This script tells Saturn to use the SSH private key credential you added, and includes code to make sure that the repository you cloned isn't overwritten if you restart a resource. If you set up multiple SSH keys, you can replace `default_git_ssh_key` with the name of the SSH key you want to use (otherwise leave it as it is). Replace `eigen` and `git@gitlab.com:libeigen/eigen.git` with the name of the repo you want to clone and the SSH URL of the repo, respectively.
+Saturn Cloud supports using SSH keys as a protocol to connect to git repositories, which requires a public key and private key pair shared with Saturn Cloud and your git host.
+So the first step is sharing the right keys. Thankfully, Saturn Cloud will automatically generate a public/private key pair for you by default, but you can change it as needed.
 
-```shell
-REPO_HOST=gitlab.com
-PRIVATE_KEY_LOCATION=/home/jovyan/.ssh/default_git_ssh_key
-REPO_NAME=eigen
-REPO_SSH_URL=git@gitlab.com:libeigen/eigen.git
+Go to the **Git Repositories** tab in Saturn Cloud, at the bottom you'll see an **SSH Keys** area, which will first request you create a key with a new Saturn Cloud account. You can generate a public/private key pair within Saturn Cloud or upload your own:
 
-# tell git where to look for an SSH private key
-if ! grep ${REPO_HOST} /home/jovan/.ssh/config; then
-    echo "Host ${REPO_HOST}" >> /home/jovyan/.ssh/config
-    echo " HostName ${REPO_HOST}" >> /home/jovyan/.ssh/config
-    echo " User git" >> /home/jovyan/.ssh/config
-    echo " IdentityFile ${PRIVATE_KEY_LOCATION}" >> /home/jovyan/.ssh/config
-    echo " StrictHostKeyChecking no" >> /home/jovyan/.ssh/config
-fi
+![Git SSH key generation](/images/docs/git-ssh-key-generating.jpg "doc-image")
 
-# only clone if the repo is not already there
-mkdir -p /home/jovyan/git-repos
-if [ ! -d /home/jovyan/git-repos/${REPO_NAME}/.git ]; then
-    git clone ${REPO_SSH_URL} /home/jovyan/git-repos/${REPO_NAME}
-fi
-```
+After you have a key pair, take the SSH public key and add it to your git Host to create the secure connection. Refer to your git host for how to do this (for example, [here are the directions for GitHub](https://docs.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account)).
+
+![Git SSH key UI](/images/docs/git-ssh-key.jpg "doc-image")
+
+There are several adjustments you can make for the SSH key:
+
+* If you'd like to change the key (either upload a new one or regenerate a key pair in Saturn Cloud), press the **Replace Key** button.
+* Normally Saturn Cloud will use a single private key for all your repositories. If you have different keys for different repositories, like if you're using multiple git hosts, you can
+Set the private keys on a per-repo basis by sliding the **Allow Multiple Keys** toggle.
+
+## Add a Git Repository to Saturn Cloud
+
+Once you've set up your SSH keys, in the same Git Repositories tab you can add a repository. Click the **Add repository** button to add a new repository to Saturn Cloud.
+A new dialog will pop up and you will need to fill in several options:
+
+* Host: Where the git repo is stored. Don't see your hosting location on this list? [Contact us](mailto:support@saturncloud.io).
+* Remote URL: The SSH URL for the repository in the git host (this is the link you'd use when running `git clone` at terminal). It must be the SSH link, not an HTTPS link.
+* Name: the name to use for the repo
+* Restart behavior: When a resource restarts, what should happen to the repository? Either have it stay in its current state (good for tasks like exploratory analysis), or have it reset to the default reference (good for systems like deployments where you want to use the latest version). __This can be set on a per-resource level.__
+* Default reference: The default state of the git repo. Can be a branch, commit, or tag.  __This can be set on a per-resource level.__
+
+![Git add repository UI](/images/docs/git-add-repo.jpg "doc-image")
+
+## Add Repository to a Resource
+
+
+Once a git repository is in Saturn Cloud you can then connect to a resource. From the particular resource page go to the **Git Repositories** section and click the **Add new repository** button. This will let you chose one of the repositories you've added to Saturn Cloud (or add a new one). You can also change the reference and restart behavior for the repo within the particular resource.
+
+![Git add repository to a resource](/images/docs/git-add-to-resource.jpg "doc-image")
+
+Now, when you log in to your Jupyter server, at the top level of your file system, you'll see the folder `git-repos` which contains all the repositories you have attached to this resource. If you're using a deployment or job resource, the git repo will be in the correct location when the resource is started.
+
+## Using git in within your Jupyter Server
+
+To do git commands within Jupyter Server like pushing, pulling, and committing, you can use one of two methods: either from the command line or by using the GUI provided by a JupyterLab plugin:
+
+You can open a terminal window from within the Jupyter server and use git from the command line. First open the launcher by pressing the "+" button:
+
+![JupyterLab launcher button](/images/docs/terminal-01.png "doc-image")
+
+Then select "terminal" to go to the command line of the resource:
+
+![New terminal button](/images/docs/terminal-02.png "doc-image")
+
+Alternatively, you can also use the git functionality built into JupyterLab with a GUI, using the plugin on the left of the screen:
+
+![Git plugin button](/images/docs/git-plugin.png "doc-image")
