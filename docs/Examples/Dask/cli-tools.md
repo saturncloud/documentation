@@ -8,9 +8,9 @@ To use Dask for executing CLI tools, first ensure the tool of your choice is ins
 
 Once your resource is created (and you've [created a Dask cluster](<docs/Using Saturn Cloud/create_dask_cluster.md>) for it), you can then use Python code to execute the CLI tool on the Dask cluster.
 
-The `subprocess.run` command in Python lets you execute command line tasks. To execute tasks in parallel you can wrap `subprocess.run()` within a function that you'll use on the Dask cluster. This will allow Dask to execute the command on a worker machine, allowing you to call it many times in parallel. You can do so using the [futures](https://docs.dask.org/en/latest/futures.html) capabilities of Dask, specifically the `Client.map()` function.
+The `subprocess.run` command in Python lets you execute command line tasks. To execute tasks in parallel you can wrap `subprocess.run()` within a function that you'll use on the Dask cluster. This will allow Dask to execute the command on a worker machine, allowing you to call it many times in parallel. You can do so using the [delayed](https://docs.dask.org/en/latest/delayed.html) capabilities of Dask.
 
-The example below uses the very basic `echo` CLI bash command to print a string showing some pairs of exponents. A list of inputs is executed in parallel on the Dask cluster using `Client.map()` and `Client.gather()`. The `echo` command prints the results to the output as a CLI command. In practice, you'll probably want to choose a more interesting CLI command besides `echo`.
+The example below uses the very basic `echo` CLI bash command to print a string showing some pairs of exponents. A list of inputs is executed in parallel on the Dask cluster using `dask.compute()`. The `echo` command prints the results to the output as a CLI command. In practice, you'll probably want to choose a more interesting CLI command besides `echo`.
 
 ```python
 # for running CLI tools
@@ -25,6 +25,7 @@ cluster = SaturnCluster()
 client = Client(cluster)
 
 # the function to run on the Dask cluster
+@dask.delayed
 def lazy_exponent(args):
     x, y = args
     result_string = f'"{x}**{y}={x ** y}"'
@@ -33,8 +34,7 @@ def lazy_exponent(args):
 # Executing the function across an input list
 inputs = [[1,2], [3,4], [5,6], [9, 10], [11, 12]]
 
-example_futures = client.map(lazy_exponent, inputs)
-futures_gathered = client.gather(example_futures)
+results = dask.compute([lazy_exponent(x) for x in inputs])
 ```
 
 To see the output, click on the **Logs** button of the resource. From there expand the Dask workers to see the output from code executed on the cluster. Or switch to the **aggregated logs** to see all of the Dask worker output combined together. In the event that one of the CLI calls returns an error, the `check=True` argument to `subprocess.run` will cause the function to have a `CalledProcessError` and thus the Dask task to fail, propagating the error back to you in a helpful way.
