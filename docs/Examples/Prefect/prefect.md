@@ -3,7 +3,7 @@
 Prefect is an open source workflow orchestration tool made for data-intensive workloads. In that project's language, you chain together a series of "tasks" into a "flow". If you're feeling confused, or would like an introduction to the concepts behind job scheduling with Prefect, you can start with our [Introduction to Prefect Concepts](<docs/Examples/Prefect/prefect_concepts.md>).
 
 
-> This tutorial does not cover use of the Prefect Cloud hosted service. If you'd like to use that, [visit our tutorial on that service.](<docs/Examples/Prefect/prefect_cloud_concepts.md>)
+> This tutorial does not cover use of the Prefect Cloud hosted service. If you'd like to use that, [visit our tutorial on that service.](<docs/Examples/Prefect/prefect_cloud.md>)
 
 ## Dependencies
 

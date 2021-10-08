@@ -4,7 +4,7 @@
 
 This tutorial explains how to use Prefect Cloud and Saturn Cloud together.
 
-The tutorial ["Develop a Scheduled Data Pipeline"](<docs/Examples/Prefect/prefect_cloud_concepts.md>) introduces how to build data pipelines using `prefect`, and how to speed them up by executing them on a Saturn Dask Cluster. If you are not familiar with `prefect` yet, consider reading that article first and then coming back to this one.
+The tutorial ["Develop a Scheduled Data Pipeline"](<docs/Examples/Prefect/prefect.md>) introduces how to build data pipelines using `prefect`, and how to speed them up by executing them on a Saturn Dask Cluster. If you are not familiar with `prefect` yet, consider reading that article first and then coming back to this one.
 
 For this tutorial, we'll create a flow that mimics the process of getting a batch of records, using a machine learning model to score on them, and capturing metrics.
 

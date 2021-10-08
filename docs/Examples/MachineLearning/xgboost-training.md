@@ -266,7 +266,7 @@ In the previous sections, you learned how to train and evaluate an XGBoost model
 
 ### Change Dask Settings
 
-Before getting into the specifics of LightGBM, you might be able to speed up training by taking one of the following actions that are generally useful in machine learning training on Dask.
+Before getting into the specifics of XGBoost, you might be able to speed up training by taking one of the following actions that are generally useful in machine learning training on Dask.
 
 * [restart the workers](<docs/Reference/troubleshooting_dask.md>)
 * [increase the worker size](<docs/Reference/troubleshooting_dask.md>)
