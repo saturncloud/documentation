@@ -33,7 +33,8 @@ exponent(4, 5)
 ```
 Function returns a delayed object, not computation
 ```python
-import dask@dask.delayed
+import dask
+@dask.delayed
 def lazy_exponent(x, y):
     '''Define a lazily evaluating function'''
     return x ** y

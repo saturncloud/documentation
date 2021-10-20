@@ -44,7 +44,7 @@ Be aware that Deployments are constantly running.  This means that they are alwa
 
 ### Jobs
 
-To create a deployment, go to the **Resources** tab of Saturn Cloud and press **New Job**
+To create a job, go to the **Resources** tab of Saturn Cloud and press **New Job**
 
 ![New job button](/images/docs/new-job-button.jpg "doc-image")
 
