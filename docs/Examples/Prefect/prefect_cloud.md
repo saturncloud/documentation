@@ -56,7 +56,7 @@ Now that you've created an account in Prefect Cloud and set up an agent in Satur
     - `Type`: Environment Variable
     - `Name`: `prefect-user-token`
     - `Variable Name`: `PREFECT_USER_TOKEN`
-    - `Value`: the User API Key you created during [setup](<docs/getting_help.md#setup>)
+    - `Value`: the User API Key you created during [setup](<docs/start_in_ten.md#setup>)
 1. Navigate to the "Resources" page and create a new Jupyter Server with the following specs.
     * `Name`: test-prefect-jupyter-server
     * `Image:` any of the available non-gpu `saturncloud/saturn` images you want

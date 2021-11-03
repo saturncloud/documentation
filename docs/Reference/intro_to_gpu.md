@@ -68,7 +68,7 @@ All this given, some machine learning work is great for GPUs. Deep learning is a
 
 ## Get a GPU on Saturn Cloud!
 
-Saturn Cloud offers access to a wide range of GPU hardware for our customers - even on our free tier. To try one, [start a Jupyter server resource](<docs/Getting Started/start_resource.md>) and select a GPU as the Hardware. This will give you a choice of T4 or V100 class GPUs. A T4 is somewhat less powerful but also less expensive than a V100.
+Saturn Cloud offers access to a wide range of GPU hardware for our customers - even on our free tier. To try one, [start a Jupyter server resource](<docs/start_in_ten.md>) and select a GPU as the Hardware. This will give you a choice of T4 or V100 class GPUs. A T4 is somewhat less powerful but also less expensive than a V100.
 
 ![New Jupyter server](/images/docs/new-jupyter-server-options.jpg "doc-image")
 

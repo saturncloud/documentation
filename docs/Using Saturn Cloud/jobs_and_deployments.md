@@ -1,4 +1,4 @@
-# Create and Use Deployments and Jobs
+# Deployments and Jobs in Saturn Cloud
 ## Overview
 
 Deployments and jobs are custom-defined applications that you can run in your Saturn Cloud account. A deployment can be a model, a dashboard, or another application, and it usually runs continuously. A job is similar, except that it runs only once or at a designated interval only. Deployments and jobs are both types of _resources_, which are distinct computing elements of Saturn Cloud.
@@ -11,7 +11,7 @@ A _job_ is a collection of code that completes a task and concludes. Jobs may ru
 
 ## How to Create Deployments and Jobs
 
-Deployments and jobs can be created in a very similar manner to [Jupyter server resources](<docs/Getting Started/start_resource.md>).
+Deployments and jobs can be created in a very similar manner to Jupyter server resources.
 
 ### Deployments
 

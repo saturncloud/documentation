@@ -276,7 +276,7 @@ Before getting into the specifics of XGBoost, you might be able to speed up trai
 
 ### Make Your Model Smaller
 
-In ["How XGBoost Distributed Training Works"](<docs/getting_help.md#how-xgboost-distributed-training-works>), you learned how different parameters of characteristics of the input data impact training time. This section describes how to adjust those parameters to improve training time.
+In ["How XGBoost Distributed Training Works"](<docs/start_in_ten.md#how-xgboost-distributed-training-works>), you learned how different parameters of characteristics of the input data impact training time. This section describes how to adjust those parameters to improve training time.
 
 Note that some of these changes might result in worse statistical performance.
 

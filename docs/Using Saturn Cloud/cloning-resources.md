@@ -1,4 +1,4 @@
-# Cloning Resources
+# Clone Resources in Saturn Cloud
 
 If you have a resource that you like using there may be situations where you want to copy it:
 

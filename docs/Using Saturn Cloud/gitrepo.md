@@ -1,4 +1,4 @@
-# Using Git Repositories in Saturn Cloud
+# Connect Git Repositories to Saturn Cloud
 
 This article describes how use existing git repositories with your Saturn Cloud resources. While you always can always clone repositories from within a Jupyter server using the command 
 line, by using the Saturn Cloud UI you can more easily see which repositories are connected to which resources, have repository settings shared when resources are cloned, and

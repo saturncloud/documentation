@@ -16,7 +16,7 @@ The "Pulling Image" step depends on how large the image is. The number of packag
 
 ### Start script fails
 
-If you have a [Start Script set up for your resource](<docs/Getting Started/start_resource.md#advanced-settings-optional>), this gets executed each time a resource starts. If this fails, you will see an "error" status for the resource. Click the "error" link to view the logs to see what went wrong.
+If you have a start script set up for your resource, this gets executed each time a resource starts. If this fails, you will see an "error" status for the resource. Click the "error" link to view the logs to see what went wrong.
 
 ## Enterprise-specific troubleshooting
 

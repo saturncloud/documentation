@@ -1,4 +1,4 @@
-# Managing Images
+# Manage Images in Saturn Cloud
 
 When you start a resource in Saturn Cloud, you may require special libraries or customizations for your work. The way to ensure that these all get installed when the machine is spun up is by using images. An image will contain the instructions that explain all the libraries and tools you want installed before you start work.
 
