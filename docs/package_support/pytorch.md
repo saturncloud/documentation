@@ -2,7 +2,7 @@
 
 ## PyTorch using GPUs
 
-Saturn Cloud has a built in GPU image for PyTorch that has all the required libraries to get started using PyTorch on a GPU. When creating a new resource, select the `saturn-pytorch` image. Once the resource starts, you PyTorch code should be ready to run. This will also work well with Dask, and is how the [Saturn Cloud PyTorch examples](<docs/Examples/PyTorch/qs-03-start-with-pytorch-dask-multiple-models.md>) run.
+Saturn Cloud has a built in GPU image for PyTorch that has all the required libraries to get started using PyTorch on a GPU. When creating a new resource, select the `saturn-pytorch` image. Once the resource starts, you PyTorch code should be ready to run. This will also work well with Dask, and is how the [Saturn Cloud PyTorch examples](<docs/Examples/PyTorch/qs-01-start-with-pytorch.md>) run.
 
 ## PyTorch using CPUs
 
