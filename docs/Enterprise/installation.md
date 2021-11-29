@@ -102,9 +102,10 @@ Set up a few environment variables in your bash shell.
 export INSTALLER_TAG=...
 export DATA_DIR=....
 export AWS_AUTH_VARS=...
+export AWS_DEFAULT_REGION=...
 ```
 
-We will provide you with the `INSTALLER_TAG`, which will point to the latest version of our Installer. `DATA_DIR` should point to a directory on disk where you've written the `config.yaml` from Step 2. `AWS_AUTH_VARS` is a set of docker cli args that will authenticate the docker container with IAM credentials.
+We will provide you with the `INSTALLER_TAG`, which will point to the latest version of our Installer. `DATA_DIR` should point to a directory on disk where you've written the `config.yaml` from Step 2. `AWS_AUTH_VARS` is a set of docker cli args that will authenticate the docker container with IAM credentials. `AWS_DEFAULT_REGION` should be the same as the region you want to see your resources on AWS UI (EX: us-east-2).
 
 **AWS_AUTH_VARS**
 
@@ -126,7 +127,7 @@ We will provide you with the `INSTALLER_TAG`, which will point to the latest ver
 ### 5. Run the installer
 
 ```sh
-docker run --rm -it -v ${DATA_DIR}:/sdata ${AWS_AUTH_VARS} saturncloud/saturn-aws:${INSTALLER_TAG} python saturn_aws/scripts/main.py install
+docker run -e AWS_DEFAULT_REGION=$AWS_DEFAULT_REGION --rm -it -v ${DATA_DIR}:/sdata ${AWS_AUTH_VARS} saturncloud/saturn-aws:${INSTALLER_TAG} python saturn_aws/scripts/main.py install
 ```
 
 This will take some time - typically 15-45 minutes. If you encounter errors, [contact us](/docs/reporting-problems/) and we will help debug. When installation completes successfully, you will receive an email instructing you to reset your password for the `admin` account on your new Saturn deployment.
@@ -134,7 +135,7 @@ This will take some time - typically 15-45 minutes. If you encounter errors, [co
 ### 6. Backup the configuration files to S3
 
 ```sh
-docker run --rm -it -v ${DATA_DIR}:/sdata ${AWS_AUTH_VARS} saturncloud/saturn-aws:${INSTALLER_TAG} python saturn_aws/scripts/main.py backup
+docker run -e AWS_DEFAULT_REGION=$AWS_DEFAULT_REGION --rm -it -v ${DATA_DIR}:/sdata ${AWS_AUTH_VARS} saturncloud/saturn-aws:${INSTALLER_TAG} python saturn_aws/scripts/main.py backup
 ```
 
 You'll receive an email shortly with instructions for how to log in to Saturn.
