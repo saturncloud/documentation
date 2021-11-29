@@ -37,7 +37,7 @@ You might create a Dask Dataframe by:
 
 * Converting an existing pandas Dataframe: `dask.dataframe.from_pandas()`
 * Loading data directly into a Dask Dataframe: for example, `dask.dataframe.read_csv()`
-For the latter, see our page about [loading data with flat files](<docs/Examples/LoadData/load_data_flat.md>).
+For the latter, see our page about [loading data with flat files](<docs/Examples/LoadData/qs-load-data-local-files.md>).
 
 ### Groupby
 Here we’ll group the data by a column, then extract the mean of another column. All that is different with Dask is that we run `.compute()` at the end so that computation is triggered and results returned.

@@ -15,7 +15,7 @@ For more reference about Dask Dataframes, see the <a href="https://docs.dask.org
 dask.dataframe.read_csv('filepath.csv')
 ```
 
-For more details, see our page about [loading data from flat files](<docs/Examples/LoadData/load_data_flat.md>).
+For more details, see our page about [loading data from flat files](<docs/Examples/LoadData/qs-load-data-local-files.md>).
 
 ## From pandas Dataframe
 ```python

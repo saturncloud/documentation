@@ -55,7 +55,7 @@ When the machine is ready, the card will show *running*, and the JupyterLab butt
 
 ## Use the Resource
 
-With a templated resource, you can run the example notebooks immediately. The RAPIDS quick start, for example, lets you run GPU-accelerated data science code to process data and train machine learning models. [In this tutorial](<docs/Examples/RAPIDS/qs-01-rapids-gpu.md>), you get all the instructions to train a [RAPIDS](https://rapids.ai/) model on Saturn Cloud from start to finish.
+With a templated resource, you can run the example notebooks immediately. The RAPIDS quick start, for example, lets you run GPU-accelerated data science code to process data and train machine learning models. [In this tutorial](<docs/Examples/RAPIDS/qs-01-rapids-single-gpu.md>), you get all the instructions to train a [RAPIDS](https://rapids.ai/) model on Saturn Cloud from start to finish.
 
 ![RAPIDS example Jupyter notebook open in JupyterLab](/images/docs/jupyterlab-01.jpg "doc-image")
 
