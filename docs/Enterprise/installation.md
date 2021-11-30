@@ -25,25 +25,25 @@ To begin the signup process, visit <a href="https://manager.aws.saturnenterprise
 
 The Manager will direct you to the AWS Marketplace, where you can subscribe to Saturn Cloud.
 
-<img src="/images/docs/aws-marketplace.png" alt="Screenshot of signup in AWS Marketplace for Saturn Cloud" class="doc-image">
+<img src="/images/docs/aws-marketplace.png" alt="Screenshot of signup in AWS Marketplace for Saturn Cloud" class="doc-image"/>
 
 ### 2. Grant Saturn Cloud access to an IAM user or role
-<span id="create-role">
-Our installer needs an IAM Role in order to provision resources into your AWS account, and provide customer support and product updates. The installer can create this role for you with credentials--or, if you'd like, you can [create the role yourself](<docs/Enterprise/advanced_enterprise.md>).
+<span id="create-role"></span>
+Our installer needs an IAM Role in order to provision resources into your AWS account, and provide customer support and product updates. The installer can create this role for you with credentials, or, if you'd like, you can [create the role yourself.](<docs/Enterprise/advanced_enterprise.md>)
 
 Sign in to the AWS Management Console. In the navigation bar on the upper right, choose your account name or number and then choose **My Security Credentials**. In general, it's better to use IAM users, but If you are signed in as the AWS root user,  expand the Access keys (access key ID and secret access key) section and click **Create New Access Key**.
 
-<img src="/images/docs/root-access-key.png" alt="Screenshot of AWS management console Access Keys page" class="doc-image">
+<img src="/images/docs/root-access-key.png" alt="Screenshot of AWS management console Access Keys page" class="doc-image"/>
 
 If you are signed in as an IAM user, select **AWS IAM credentials** and click **Create Access Key**.
 
-<img src="/images/docs/iam-access-key.png" alt="Screenshot of AWS management console IAM credentials tab" class="doc-image">
+<img src="/images/docs/iam-access-key.png" alt="Screenshot of AWS management console IAM credentials tab" class="doc-image"/>
 
 When prompted, download the CSV file. This is your only opportunity to save your secret access key. After the installation is complete, these credentials are no longer needed and can be safely deleted.
 
 Go back to the <a href="https://manager.aws.saturnenterprise.io/role/creator/saturn" target='_blank' rel='noopener'>Saturn Cloud installer</a>.
 
-<img src="/images/docs/give-us-keys.png" alt="Screenshot of Saturn Cloud installer page asking for IAM credentials" class="doc-image">
+<img src="/images/docs/give-us-keys.png" alt="Screenshot of Saturn Cloud installer page asking for IAM credentials" class="doc-image"/>
 
 Paste your **Access Key ID** and **Secret Access Key** into the form and click **Next**. We will use the keys to create a role.  For security reasons, we will **not** save the keys.
 
@@ -69,7 +69,7 @@ In order to follow these instructions, you will need the following:
 
 To begin the signup process, visit <a href="https://manager.aws.saturnenterprise.io/register" target='_blank' rel='noopener'>the Saturn Cloud Installation Manager</a>. The Manager will direct you to the AWS Marketplace, where you will need to subscribe to Saturn Cloud.
 
-<img src="/images/docs/aws-marketplace.png" alt="Screenshot of signup in AWS Marketplace for Saturn Cloud" class="doc-image">
+<img src="/images/docs/aws-marketplace.png" alt="Screenshot of signup in AWS Marketplace for Saturn Cloud" class="doc-image"/>
 
 ### 2. Create your installation configuration
 
