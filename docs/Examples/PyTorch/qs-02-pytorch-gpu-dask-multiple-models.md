@@ -1,24 +1,45 @@
-# Training many PyTorch models Concurrently with Dask
+# Training Many PyTorch Models Concurrently with Dask
 
 
-This example builds on the getting started with PyTorch example that trains a neural network to generate pet names, but instead of training the model once it trains it several times with different parameters and compares the results. Rather than having to wait for each of the different set of parameters to train sequentially, it uses the Dask cluster to train them all concurrently, dramatically speeding up the process.
 
-_all the set up code is the exact same as the original getting started with PyTorch example:_
+
+## Overview
+
+This example shows how to train multiple neural networks in parallel using Dask. This is valuable for situations such as when you want to compare different parameters for a model to see which performs better. By having a cluster of machines each training a model, you can train all of the models more quickly.
+
+This example builds on the [introduction to PyTorch with GPU on Saturn Cloud](<docs/Examples/PyTorch/qs-01-pytorch-gpu.md>) example that trains a neural network to generate pet names, but instead of training the model once it trains it several times with different parameters and compares the results. Rather than having to wait for each of the different set of parameters to train sequentially, it uses the Dask cluster to train them all concurrently, dramatically speeding up the process. The code to set up the data and model architecture is the same as the original getting started with PyTorch example.
+
+The model uses LSTM layers which are especially good at discovering patterns in sequences like text. The model takes a partially complete name and determines the probability of each possible next character in the name. Characters are randomly sampled from this distribution and added to the partial name until a stop character is generated and full name has been created. For more detail about the network design and use case, see our [Saturn Cloud blog post](https://saturncloud.io/blog/dask-with-gpus/) which uses the same network architecture.
+
+## Model training
+
+### Imports
+
+This code uses PyTorch and Dask together, and thus both libraries have to be imported. In addition, the `dask_saturn` package provides methods to work with a Saturn Cloud dask cluster, and `dask_pytorch_ddp` provides helpers when training a PyTorch model on Dask.
 
 
 ```python
-import uuid  # noqa
 import datetime
-import pickle  # noqa
 import json
 import torch
 import torch.nn as nn
 import torch.optim as optim
-import numpy as np  # noqa
 import urllib.request
 import pandas as pd
 from torch.utils.data import Dataset, DataLoader
+
+import seaborn as sns
+import dask
+from dask_saturn import SaturnCluster
+from dask.distributed import Client
+from distributed.worker import logger
 ```
+
+### Preparing data
+
+This code is used to get the data in the proper format in an easy to use class.
+
+First, download the data and create the character dictionary
 
 
 ```python
@@ -30,8 +51,12 @@ with urllib.request.urlopen(
 # Our list of characters, where * represents blank and + represents stop
 characters = list("*+abcdefghijklmnopqrstuvwxyz-. ")
 str_len = 8
+```
+
+Next, create a function that will take the pet names and turn them into the formatted tensors. The [Saturn Cloud blog post](https://saturncloud.io/blog/dask-with-gpus/) goes into more detail on the logic behind how to format the data.
 
 
+```python
 def format_training_data(pet_names, device=None):
     def get_substrings(in_str):
         # add the stop character to the end of the name, then generate all the partial names
@@ -57,8 +82,12 @@ def format_training_data(pet_names, device=None):
         x = torch.tensor([name[:-1] for name in pet_names_numeric], device=device)
     x = torch.nn.functional.one_hot(x, num_classes=len(characters)).float()
     return x, y
+```
+
+Finally, create a PyTorch data class to manage the dataset:
 
 
+```python
 class OurDataset(Dataset):
     def __init__(self, pet_names, device=None):
         self.x, self.y = format_training_data(pet_names, device)
@@ -73,8 +102,14 @@ class OurDataset(Dataset):
 
     def permute(self):
         self.permutation = torch.randperm(len(self.x))
+```
+
+### Define the model architecture
+
+This class defines the LSTM structure that the neural network will use;
 
 
+```python
 class Model(nn.Module):
     def __init__(self):
         super(Model, self).__init__()
@@ -94,27 +129,19 @@ class Model(nn.Module):
         return logits
 ```
 
-## Training multiple models in parallel
+### Training multiple models in parallel
 
-Below is the code to train the model multiple times concurrently in a distributed way using Dask. Before running the code, check that you've [started the Dask cluster](https://saturncloud.io/docs/getting-started/create_cluster_ui/) in your Saturn Cloud Project.
-
-First, we set up the Dask cluster and appropriate libraries.
+Below is the code to train the model multiple times concurrently in a distributed way using Dask. The code will start the Dask cluster connected to the Jupyter server Saturn Cloud resource, and wait for the right number of workers to be ready. You can make it take less time by starting the cluster via the UI.
 
 
 ```python
-import seaborn as sns
-import dask
-from dask_saturn import SaturnCluster
-from dask.distributed import Client
-from distributed.worker import logger
-
 n_workers = 3
 cluster = SaturnCluster(n_workers=n_workers)
 client = Client(cluster)
 client.wait_for_workers(n_workers)
 ```
 
-The code to run the model multiple times in parallel starts with a training function that is extremely similar to the original one. The changes are:
+The code to run the model multiple times in parallel starts with a training function that is extremely similar to the training function without Dask. The changes are:
 
 * The function has a @dask.delayed indicator at the top so Dask knows to parallelize it
 * The training function now has an input parameter `experiment` which is a tuple containing the batch size and learning rate
@@ -178,7 +205,9 @@ futures_computed = client.compute(futures_gathered)
 results = [x.result() for x in futures_computed]
 ```
 
-This last code generates several Seaborn plots of the results of the experiment. With this particular experiment the smallest batch size with highest learning rate quickly convered on a solution with fewer epochs than the other sets of parameters.
+### Viewing the results
+
+This last code chunk generates several Seaborn plots of the results of the experiment. With this particular experiment the smallest batch size with highest learning rate quickly convered on a solution with fewer epochs than the other sets of parameters.
 
 
 ```python
@@ -196,3 +225,7 @@ sns.relplot(data=results_df, x="elapsed_time_sec", y="loss", col="experiment", k
 ```
 
 <img src = "https://saturn-public-assets.s3.us-east-2.amazonaws.com/example-resources/pytorch-dask-experiment-output.png" width = 600px alt="Experimental results from PyTorch" class="doc-image">
+
+## Conclusion
+
+With this you can now train many PyTorch GPU neural networks at the same time using Dask on Saturn Cloud. If you want to use a Dask cluster to instead train a single neural network across all of the workers, see our [related example](<docs/Examples/PyTorch/qs-03-pytorch-gpu-dask-single-model.md>).

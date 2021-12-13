@@ -6,7 +6,7 @@ GPU technology has led to massive performance gains for machine learning tasks, 
 {{% alert title="GPU Tutorials" %}}
 If you already know how GPUs work, and you'd just like to try some examples of GPUs in Saturn Cloud, check out our tutorials:
 * [Random Forest with RAPIDS on GPU](<docs/Examples/RAPIDS/qs-01-rapids-single-gpu.md>) 
-* [PyTorch on GPU](<docs/Examples/PyTorch/qs-01-start-with-pytorch.md>) 
+* [PyTorch on GPU](<docs/Examples/PyTorch/qs-01-pytorch-gpu.md>) 
 {{% /alert %}}
 
 
@@ -75,7 +75,7 @@ Saturn Cloud offers access to a wide range of GPU hardware for our customers - e
 When you select this hardware, you will automatically be given a selection of images with GPU enabled software to choose from. You can then start the Jupyter instance and try out the GPU for yourself! Instead of creating a new Jupyter server from scratch, you can also use one of the resource templates. These resources are prepopulated with the correct libraries and example notebooks:
 
 * [Random Forest with RAPIDS on GPU](<docs/Examples/RAPIDS/qs-01-rapids-single-gpu.md>) 
-* [PyTorch on GPU](<docs/Examples/PyTorch/qs-01-start-with-pytorch.md>) 
+* [PyTorch on GPU](<docs/Examples/PyTorch/qs-01-pytorch-gpu.md>) 
 
 ## Troubleshooting machine learning on GPUs
 

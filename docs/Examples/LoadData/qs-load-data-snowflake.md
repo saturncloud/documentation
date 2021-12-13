@@ -1,7 +1,7 @@
 # Load Data From Snowflake|
-| Snowflake Account   | Environment Variable  | `snowflake-account` | `SNOWFLAKE_ACCOUNT` 
-| Snowflake Username | Environment Variable  |`snowflake-user`  | `SNOWFLAKE_USER`
-| Snowflake User Password  | Environment Variable  |`snowflake-password`  | `SNOWFLAKE_PASSWORD`
+| Snowflake account   | Environment Variable  | `snowflake-account` | `SNOWFLAKE_ACCOUNT` 
+| Snowflake username | Environment Variable  |`snowflake-user`  | `SNOWFLAKE_USER`
+| Snowflake user password  | Environment Variable  |`snowflake-password`  | `SNOWFLAKE_PASSWORD`
 
 Enter your values into the *Value* section of the credential creation form. The credential names are recommendations; feel free to change them as needed for your workflow.
 

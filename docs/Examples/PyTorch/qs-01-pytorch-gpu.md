@@ -1,32 +1,36 @@
-# Getting Started with PyTorch on Saturn Cloud
+# Train a PyTorch model with a GPU on Saturn Cloud
 
 
+
+
+## Overview
 This example shows how you can use the power of a GPU to quickly train a neural network in Saturn Cloud. This code runs on a single GPU of a Jupyter server resource.
 
-This is an example of a natural language processing neural network which is trained on Seattle pet license data to then generate new pet names. The model uses LSTM layers which are especially good at discovering patterns in sequences like text. The model takes a partially complete name and determines the probability of each possible next character in the name. Characters are randomly sampled from this distribution and added to the partial name until a stop character is generated and full name has been created.
+This is an example of a natural language processing neural network which is trained on Seattle pet license data to then generate new pet names. The model uses LSTM layers which are especially good at discovering patterns in sequences like text. The model takes a partially complete name and determines the probability of each possible next character in the name. Characters are randomly sampled from this distribution and added to the partial name until a stop character is generated and full name has been created. For more detail about the network design and use case, see our [Saturn Cloud blog post](https://saturncloud.io/blog/dask-with-gpus/) which uses the same network architecture.
 
-## Setting up model training
+## Model training
 
-This code downloads the already cleaned pet names data, creates functions to process it into a format to feed into an LSTM, and defines the model architecture.
+### Imports
 
-First, import the required modules:
+This code mainly relies on PyTorch for most of the work, however there are a number of other packages needed for manipulating data and other tasks.
 
 
 ```python
-import uuid  # noqa
 import datetime
-import pickle  # noqa
 import json
-import torch  # noqa
+import torch
 import torch.nn as nn
 import torch.optim as optim
 import numpy as np
 import urllib.request
-import pandas as pd  # noqa
 from torch.utils.data import Dataset, DataLoader
 ```
 
-This chunk downloads the pet names data, then defines functions and classes to help process and manage the data. It also defines the model architecture for the LSTM.
+### Preparing data
+
+This code is used to get the data in the proper format in an easy to use class.
+
+First, download the data and create the character dictionary
 
 
 ```python
@@ -38,8 +42,12 @@ with urllib.request.urlopen(
 # Our list of characters, where * represents blank and + represents stop
 characters = list("*+abcdefghijklmnopqrstuvwxyz-. ")
 str_len = 8
+```
+
+Next, create a function that will take the pet names and turn them into the formatted tensors. The [Saturn Cloud blog post](https://saturncloud.io/blog/dask-with-gpus/) goes into more detail on the logic behind how to format the data.
 
 
+```python
 def format_training_data(pet_names, device=None):
     def get_substrings(in_str):
         # add the stop character to the end of the name, then generate all the partial names
@@ -65,8 +73,12 @@ def format_training_data(pet_names, device=None):
         x = torch.tensor([name[:-1] for name in pet_names_numeric], device=device)
     x = torch.nn.functional.one_hot(x, num_classes=len(characters)).float()
     return x, y
+```
+
+Finally, create a PyTorch data class to manage the dataset:
 
 
+```python
 class OurDataset(Dataset):
     def __init__(self, pet_names, device=None):
         self.x, self.y = format_training_data(pet_names, device)
@@ -81,8 +93,14 @@ class OurDataset(Dataset):
 
     def permute(self):
         self.permutation = torch.randperm(len(self.x))
+```
+
+### Define the model architecture
+
+This class defines the LSTM structure that the neural network will use;
 
 
+```python
 class Model(nn.Module):
     def __init__(self):
         super(Model, self).__init__()
@@ -102,12 +120,15 @@ class Model(nn.Module):
         return logits
 ```
 
-## Train the model
+### Train the model
 We define a `train()` function that will do the work to train the neural network. This function should be called once and will return the trained model. It will use the `torch.device(0)` command to access the GPU.
 
 
 ```python
 def train():
+    num_epochs = 8
+    batch_size = 4096
+    lr = 0.001
     device = torch.device(0)
 
     dataset = OurDataset(pet_names, device=device)
@@ -117,7 +138,7 @@ def train():
     model = model.to(device)
 
     criterion = nn.CrossEntropyLoss()
-    optimizer = optim.Adam(model.parameters(), lr=0.001)
+    optimizer = optim.Adam(model.parameters(), lr=lr)
 
     for epoch in range(num_epochs):
         dataset.permute()
@@ -138,8 +159,6 @@ The next block of code actually runs the training function and creates the train
 
 
 ```python
-num_epochs = 8
-batch_size = 4096
 model = train()
 ```
 
@@ -147,7 +166,7 @@ After each epoch you should see a line of output like:
 
 `2021-02-23T22:00:36.394824 - epoch 0 complete - loss 1.745424509048462`
 
-## Generating Names
+### Generating Names
 
 To generate names, we have a function that takes the model and runs it over and over on a string, generating each new character until a stop character is met.
 
@@ -216,4 +235,6 @@ After running the code above you should see a list of names like:
 'Folsy', 'Icthobewlels', 'Kuet Roter']
 ```
 
-We have now trained a neural network using PyTorch on a GPU, and used it for inference! If we wanted to experiment with trying many different hyperparameters for the model we could concurrently train models with different hyperparameters using distributed computing. We could also train a single neural network over many GPUs at once with distributed computed. These scenarios are covered using Dask, a distributed computing framework, in the other PyTorch Saturn Cloud examples.
+## Conclusion
+
+We have now trained a neural network using PyTorch on a GPU, and used it for inference! If we wanted to experiment with trying many different hyperparameters for the model we could [concurrently train models](<docs/Examples/PyTorch/qs-02-pytorch-gpu-dask-multiple-models.md>) with different hyperparameters using distributed computing. We could also train a [single neural network over many GPUs at once](<docs/Examples/PyTorch/qs-03-pytorch-gpu-dask-single-model.md>) with distributed computing via Dask.

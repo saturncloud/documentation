@@ -1,15 +1,21 @@
-# Training a Single PyTorch model across a Distributed Cluster with Dask
+# Training a PyTorch Model across a Dask Cluster
 
 
-PyTorch can potentially be sped up dramatically by having the training computations done on multiple GPUs across multiple workers. This relies on PyTorches [DistributedDataParallel (DDP)](https://pytorch.org/tutorials/intermediate/ddp_tutorial.html) module to take computing the values for each batch and spread them across multiple machines/processors. So each worker computes a part of the batch, and then they are all combined to determine the loss then optimize the nodes. If you kept a network training setup the exact same except tripled the number of GPUs with DDP, you would in practice be using a batch size that is 3x bigger than our original one. Be aware, not all networks benefit from having larger batch sizes, and using PyTorch across multiple workers adds the time it takes to pass the new values between each worker.
 
-This example generates new pet names by training an LSTM neural network on pet names from Seattle pet license data. The model takes a partially complete name and determines the probability of each possible next character in the name. Then to generate names a character is randomly sampled from that distribution and it's added to the name, then the process is repeated until a stop character is generated.
 
-## Setting up model training
+## Overview
 
-Nothing in this section has anything to do with DDP, Dask, or Saturn. This merely downloads the already cleaned pet names data, creates functions to process it into a format to feed into an LSTM, and defines the model architecture.
+Training a PyTorch model can potentially be sped up dramatically by having the training computations done on multiple GPUs across multiple workers. This relies on PyTorches [DistributedDataParallel (DDP)](https://pytorch.org/tutorials/intermediate/ddp_tutorial.html) module to take computing the values for each batch and spread them across multiple machines/processors. So each worker computes a part of the batch, and then they are all combined to determine the loss then optimize the nodes. If you kept a network training setup the exact same except tripled the number of GPUs with DDP, you would in practice be using a batch size that is 3x bigger than our original one. Be aware, not all networks benefit from having larger batch sizes, and using PyTorch across multiple workers adds the time it takes to pass the new values between each worker.
 
-_All the set up code is the exact same as the original getting started with PyTorch example_
+This example builds on the [introduction to PyTorch with GPU on Saturn Cloud](<docs/Examples/PyTorch/qs-01-pytorch-gpu.md>) example that trains a neural network to generate pet names. The model uses LSTM layers which are especially good at discovering patterns in sequences like text. The model takes a partially complete name and determines the probability of each possible next character in the name. Characters are randomly sampled from this distribution and added to the partial name until a stop character is generated and full name has been created. For more detail about the network design and use case, see our [Saturn Cloud blog post](https://saturncloud.io/blog/dask-with-gpus/) which uses the same network architecture.
+
+_Alternatively, rather than having a Dask cluster be used to train a single PyTorch model very quickly you could have the Dask cluster train many models in parallel. We have a [separate example](<docs/Examples/PyTorch/qs-02-pytorch-gpu-dask-multiple-models.md>) for that situation._
+
+## Model Training
+
+### Imports
+
+This code uses PyTorch and Dask together, and thus both libraries have to be imported. In addition, the `dask_saturn` package provides methods to work with a Saturn Cloud dask cluster, and `dask_pytorch_ddp` provides helpers when training a PyTorch model on Dask.
 
 
 ```python
@@ -22,9 +28,22 @@ import torch.nn as nn
 import torch.optim as optim
 import numpy as np
 import urllib.request
-import pandas as pd  # noqa
 from torch.utils.data import Dataset, DataLoader
+
+from torch.nn.parallel import DistributedDataParallel as DDP
+import torch.distributed as dist
+from torch.utils.data.distributed import DistributedSampler
+from dask_pytorch_ddp import dispatch, results
+from dask_saturn import SaturnCluster
+from dask.distributed import Client
+from distributed.worker import logger
 ```
+
+### Preparing data
+
+This code is used to get the data in the proper format in an easy to use class.
+
+First, download the data and create the character dictionary
 
 
 ```python
@@ -36,8 +55,12 @@ with urllib.request.urlopen(
 # Our list of characters, where * represents blank and + represents stop
 characters = list("*+abcdefghijklmnopqrstuvwxyz-. ")
 str_len = 8
+```
+
+Next, create a function that will take the pet names and turn them into the formatted tensors. The [Saturn Cloud blog post](https://saturncloud.io/blog/dask-with-gpus/) goes into more detail on the logic behind how to format the data.
 
 
+```python
 def format_training_data(pet_names, device=None):
     def get_substrings(in_str):
         # add the stop character to the end of the name, then generate all the partial names
@@ -63,8 +86,12 @@ def format_training_data(pet_names, device=None):
         x = torch.tensor([name[:-1] for name in pet_names_numeric], device=device)
     x = torch.nn.functional.one_hot(x, num_classes=len(characters)).float()
     return x, y
+```
+
+Finally, create a PyTorch data class to manage the dataset:
 
 
+```python
 class OurDataset(Dataset):
     def __init__(self, pet_names, device=None):
         self.x, self.y = format_training_data(pet_names, device)
@@ -79,8 +106,14 @@ class OurDataset(Dataset):
 
     def permute(self):
         self.permutation = torch.randperm(len(self.x))
+```
+
+### Define the model architecture
+
+This class defines the LSTM structure that the neural network will use;
 
 
+```python
 class Model(nn.Module):
     def __init__(self):
         super(Model, self).__init__()
@@ -100,24 +133,9 @@ class Model(nn.Module):
         return logits
 ```
 
-## Train the model with Dask and Saturn
+### Train the model with Dask and Saturn Cloud
 
-Next we train the model in parallel over multiple workers using Dask and Saturn. Before running the code, check that you've [started the Dask cluster](https://saturncloud.io/docs/getting-started/create_cluster_ui/) in your Saturn Cloud Project.
-
-First, we need to import several modules for Dask and Saturn:
-
-
-```python
-from torch.nn.parallel import DistributedDataParallel as DDP
-import torch.distributed as dist
-from torch.utils.data.distributed import DistributedSampler
-from dask_pytorch_ddp import dispatch, results
-from dask_saturn import SaturnCluster
-from dask.distributed import Client
-from distributed.worker import logger
-```
-
-Then we define the `train()` function that will be run on each of the workers. This has much of the same training code you would see in any PyTorch training loop, with a few key differences. The data is distributed with the DistributedSampler--now each worker will only have a fraction of the data so that together all of the workers combined see each data point exactly once in an epoch. The model is also wrapped in a `DDP()` function call so that they can communicate with each other. The `logger` is used to show intermediate results in the Dask logs for each worker, and the results handler `rh` is used to write intermediate values back to the Jupyter server.
+Next we train the model in parallel over multiple workers using Dask and Saturn. We define the `train()` function that will be run on each of the workers. This has much of the same training code you would see in any PyTorch training loop, with a few key differences. The data is distributed with the DistributedSampler--now each worker will only have a fraction of the data so that together all of the workers combined see each data point exactly once in an epoch. The model is also wrapped in a `DDP()` function call so that they can communicate with each other. The `logger` is used to show intermediate results in the Dask logs for each worker, and the results handler `rh` is used to write intermediate values back to the Jupyter server.
 
 
 ```python
@@ -184,7 +202,7 @@ def train():
             rh.submit_result("model.pkl", pickle.dumps(model.state_dict()))
 ```
 
-To actually run the training job, first we spin up a Dask cluster and results handler object. If this code has trouble running you may need to [restart the Dask cluster](https://saturncloud.io/docs/getting-started/create_cluster_ui/) from the Saturn GUI:
+To actually run the training job, first we spin up a Dask cluster and create a results handler object to manage the PyTorch results.
 
 
 ```python
@@ -212,7 +230,7 @@ Lastly, we close the Dask workers
 client.close()
 ```
 
-## Generating Names
+### Generating Names
 
 To generate names, we have a function that takes the model and runs it over an over on a string generating each new character until a stop character is met.
 
@@ -291,5 +309,6 @@ After running the code above you should see a list of names like:
 'Folsy', 'Icthobewlels', 'Kuet Roter']
 ```
 
-We've now successfully trained a PyTorch neural network on a distributed set of computers with Dask, and then used it to do NLP inference! Note that depending on the size of your data, your network architecture, and other parameters particular to your situation, training over a distributed set of computers may or may not be faster than training on a single GPU.
+## Conclusion
 
+We've now successfully trained a PyTorch neural network on a distributed set of computers with Dask, and then used it to do NLP inference! Note that depending on the size of your data, your network architecture, and other parameters particular to your situation, training over a distributed set of machines may provide different amounts of a speed benefit. For an analysis of how much this can help, see our [blog post](https://saturncloud.io/blog/dask-with-gpus/) on training a neural network with multiple GPUs and Dask.
