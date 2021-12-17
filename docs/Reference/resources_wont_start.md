@@ -1,6 +1,6 @@
-# Resources Won't Start - Jupyter, Dask, or Deployments
+# Resources Won't Start
 
-Follow this guide for tips on what to do when any of your resources (i.e. Jupyter server, Dask cluster workers, or Deployments) won't start up.
+Follow this guide for tips on what to do when any of your resources won't start up.
 
 There are several steps involved in starting a resource, as can be seen on the Resource page. Understanding each step helps for troubleshooting or speeding up launch time.
 
@@ -64,7 +64,6 @@ To resolve this, navigate to the <a href="https://console.aws.amazon.com/service
 - For V100 GPUs it's **Running On-Demand P instances**.
 
 AWS generally takes 24 hours to respond to limit increases.
-
 
 ### Availability zone doesn't support specific instance types
 

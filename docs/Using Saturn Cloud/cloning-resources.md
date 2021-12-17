@@ -19,7 +19,7 @@ To clone a resource, click the **Clone Existing Resource** card from the resourc
 
 On that page you'll be asked:
 
-* **Resource Type** - the type of resource to create (either a Jupyter Server, Deployment, or Job). This type does not have to be the same as what you're cloning. You may want to, for example, take a Jupyter server and clone it into a job if you want to rerun the task on a schedule
+* **Resource Type** - the type of resource to create (Jupyter server, RStudio server, Deployment, or Job). This type does not have to be the same as what you're cloning. You may want to, for example, take a Jupyter server and clone it into a job if you want to rerun the task on a schedule
 * **Clone From** - The resource to clone. This list will show all your existing resources, and if you're using an Enterprise plan it will also include any resources shared with you.
 * **Name** - The name for the new resource.
 

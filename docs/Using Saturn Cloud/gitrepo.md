@@ -1,13 +1,12 @@
 # Connect Git Repositories to Saturn Cloud
 
-This article describes how use existing git repositories with your Saturn Cloud resources. While you always can always clone repositories from within a Jupyter server using the command 
-line, by using the Saturn Cloud UI you can more easily see which repositories are connected to which resources, have repository settings shared when resources are cloned, and
-set the repositories to automatically pull the latest versions of branches.
+This article describes how use existing git repositories with your Saturn Cloud resources. Saturn Cloud resources have the ability to connect to git repositories which can load the code at resource startup. This document first covers setting up SSH credentials then goes into adding git repositories to Saturn Cloud and finally adding those to resources. When the document refers to _git hosts_ it means services like GitHub, Bitbucket, and GitLab which host git repositories for you.
 
+{{% alert title="Manually configuring git" %}}
+This article discusses the Saturn Cloud built-in git functionality. If you so choose you could alternatively set up git yourself by having a [resource startup script](<{{ ref "install-packages.md"}}>) clone a git repo, or by manually using the terminal within an Jupyter or RStudio server to do so. The Saturn Cloud built-in functionality has a number of conveniences and no drawbacks compared to manually setting up git yourself, so we recommend you try it.
+{{% /alert %}}
 
-This document first covers setting up SSH credentials then goes into adding git repositories to Saturn Cloud and finally adding those to resources. When the document refers to _git hosts_ it means services like GitHub, Bitbucket, and GitLab which host git repositories for you.
-
-## Set up SSH Keys
+## Set up git SSH Keys
 
 Saturn Cloud supports using SSH keys as a protocol to connect to git repositories, which requires a public key and private key pair shared with Saturn Cloud and your git host.
 So the first step is sharing the right keys. Thankfully, Saturn Cloud will automatically generate a public/private key pair for you by default, but you can change it as needed.
@@ -28,25 +27,18 @@ Set the private keys on a per-repo basis by sliding the **Allow Multiple Keys** 
 
 ## Add a Git Repository to Saturn Cloud
 
-Once you've set up your SSH keys, in the same Git Repositories tab you can add a repository. Click the **Add repository** button to add a new repository to Saturn Cloud.
-A new dialog will pop up and you will need to fill in several options:
+Once you've set up your SSH keys you can add git repositories to your resources. On the resource page, school to the **git repositories** section and either add a new repository or choose an existing one. Once the repository is added, you can adjust several properties of it.
 
-* Host: Where the git repo is stored. Don't see your hosting location on this list? [Contact us](mailto:support@saturncloud.io).
-* Remote URL: The SSH URL for the repository in the git host (this is the link you'd use when running `git clone` at terminal). It must be the SSH link, not an HTTPS link.
-* Name: the name to use for the repo
-* Restart behavior: When a resource restarts, what should happen to the repository? Either have it stay in its current state (good for tasks like exploratory analysis), or have it reset to the default reference (good for systems like deployments where you want to use the latest version). __This can be set on a per-resource level.__
-* Default reference: The default state of the git repo. Can be a branch, commit, or tag.  __This can be set on a per-resource level.__
+![Resource git repositories](/images/docs/git-ui.png "doc-image")
 
-![Git add repository UI](/images/docs/git-add-repo.jpg "doc-image")
+* **Remote URL:** The URL for the repository in the git host (this is the link you'd use when running `git clone` at terminal)
+* **Location:** the folder that will store the git repository. This will be a sub folder of `/home/jovyan/git-repos/`
+* **Restart behavior:** When a resource restarts, what should happen to the repository? Either have it stay in its current state (good for tasks like exploratory analysis), or have it reset to the default reference (good for systems like deployments where you want to use the latest version). For job and deployment resources this must be recloned on restart.
+* **Reference:** What branch, commit, or tag to clone when the repository is recloned.
 
-## Add Repository to a Resource
+Now, when you log in to your Jupyter server, at the top level of your file system  the folder `git-repos` will contain all the repositories attached to this resource.
 
-
-Once a git repository is in Saturn Cloud you can then connect to a resource. From the particular resource page go to the **Git Repositories** section and click the **Add new repository** button. This will let you chose one of the repositories you've added to Saturn Cloud (or add a new one). You can also change the reference and restart behavior for the repo within the particular resource.
-
-![Git add repository to a resource](/images/docs/git-add-to-resource.jpg "doc-image")
-
-Now, when you log in to your Jupyter server, at the top level of your file system, you'll see the folder `git-repos` which contains all the repositories you have attached to this resource. If you're using a deployment or job resource, the git repo will be in the correct location when the resource is started.
+_If a git repository is removed from a resource via the UI then you will need to manually delete the folder within a Jupyter or RStudio server._
 
 ## Using git in within your Jupyter Server
 
@@ -63,3 +55,10 @@ Then select "terminal" to go to the command line of the resource:
 Alternatively, you can also use the git functionality built into JupyterLab with a GUI, using the plugin on the left of the screen:
 
 ![Git plugin button](/images/docs/git-plugin.png "doc-image")
+
+## Using git within RStudio server
+
+When using RStudio you can use the RStudio built in git functionality, which defaults to a tab in the upper
+right hand corner of the IDE. You can also use the terminal to directly run git commands, using the terminal tab in the lower left hand corder of the screen.
+
+![RStudio git](/images/docs/rstudio-git.png "doc-image")

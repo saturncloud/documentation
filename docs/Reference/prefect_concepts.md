@@ -49,4 +49,4 @@ with Flow("My first flow") as flow:
 ## Running a Flow
 Running a flow is as simple as running `flow.run()` after your flow is defined. 
 
-At this point, you have the basic concepts behind Prefect Core! Now, you might want to see some more complex examples, so go [visit our Prefect tutorials to learn more](<docs/Examples/Prefect/qs-01-prefect-singlenode.md>).
+At this point, you have the basic concepts behind Prefect Core! Now, you might want to see some more complex examples, so go [visit our Prefect tutorials to learn more](<docs/Examples/python/Prefect/qs-01-prefect-singlenode.md>).

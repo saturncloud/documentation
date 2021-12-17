@@ -6,7 +6,7 @@ Saturn Cloud has three separate plans available to use: Saturn Cloud Hosted Free
 
 This is our most basic plan, designed for people looking to get started with cloud notebooks, GPUs, and Dask. It uses the Saturn Cloud hosted environment, meaning the instances and data live securely in our AWS environment. Users get a set number of hours of resource each month, specifically:
 
-* 30 hours of a Jupyter server
+* 30 hours of a Jupyter or RStudio server
 * 3 hours of a Dask cluster (with up to 3 workers)
 
 These hours can be applied to CPU powered instances (up to 64GB of memory) or GPU powered instances (up to 16GB of memory). When your monthly hours end you'll get an error message in Saturn Cloud letting you know. You can keep track of your monthly hours by looking at the sidebar or clicking it for more details:
