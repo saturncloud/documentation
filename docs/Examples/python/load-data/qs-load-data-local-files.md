@@ -1,6 +1,4 @@
 # Load Data From Your Local File System
-
-
 ## Overview
 Flat files are a very common data storage option, and lots of our customers will use them at some time. This tutorial will show you how to load a dataset from a file (for example, a CSV or JSON file) on disk into Saturn Cloud.
 

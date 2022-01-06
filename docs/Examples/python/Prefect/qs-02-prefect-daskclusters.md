@@ -1,8 +1,6 @@
 # Run a Prefect Cloud Data Pipeline on a Dask Cluster
 
 
-
-
 ## Overview
 [Prefect Cloud](https://www.prefect.io/cloud/) is a hosted, high-availability, fault-tolerant service that handles all the orchestration responsibilities for running data pipelines. It gives you complete oversight of your workflows and makes it easy to manage them.
 
@@ -347,9 +345,9 @@ If you have not scheduled your flow or want to run the flow immediately, navigat
 
 Alternative way to run the flow immediately is to open a terminal and run the code below.
 ```shell
-prefect auth login --key \\({PREFECT\_USER\_TOKEN}
-prefect run flow \\
-    --name \\){SATURN_USERNAME}-test-flow1 \
+prefect auth login --key ${PREFECT_USER_TOKEN}
+prefect run flow \
+    --name ${SATURN_USERNAME}-test-flow1 \
     --project ${PREFECT_CLOUD_PROJECT_NAME}
 ```
 

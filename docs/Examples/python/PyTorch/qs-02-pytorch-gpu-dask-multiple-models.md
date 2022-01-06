@@ -1,8 +1,6 @@
 # Training Many PyTorch Models Concurrently with Dask
 
 
-
-
 ## Overview
 
 This example shows how to train multiple neural networks in parallel using Dask. This is valuable for situations such as when you want to compare different parameters for a model to see which performs better. By having a cluster of machines each training a model, you can train all of the models more quickly.

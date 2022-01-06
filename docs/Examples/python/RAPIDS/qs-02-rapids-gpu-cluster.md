@@ -1,8 +1,6 @@
 # Use RAPIDS on a GPU Cluster
 
 
-
-
 ## Overview
 This example is an extension of the example of using [RAPIDS on a single GPU](<docs/Examples/python/RAPIDS/qs-01-rapids-single-gpu.md>) to train a random forest model on NYC taxi data, only here we will be using multiple GPUs. We will be using Dask to orchestrate the model training over multiple worker machines, each with a GPU. GPU clusers can be valuable for training models quickly and can be necessary if your data is too large to fit into a single GPU's memory. 
 

@@ -1,7 +1,6 @@
 # Create a Dashboard with Panel
 
 
-
 This Jupyter notebook uses _Panel_ to create a dashboard with Python. While the dashboard can be viewed at the bottom of this notebook by running all the cells, it can also be continuously hosted on Saturn using a _deployment_, allowing people who don't have access to the notebook to be able to see the dashboard. See the [Saturn Cloud docs](https://saturncloud.io/docs/examples/dashboards/dashboard/) for instructions on how to deploy it.
 
 ## Dashboard code

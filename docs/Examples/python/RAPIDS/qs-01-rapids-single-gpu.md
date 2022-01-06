@@ -1,8 +1,6 @@
 # Use RAPIDS on a Single GPU
 
 
-
-
 ## Overview
 
 [RAPIDS](https://rapids.ai/) is a collection of libraries that enable you to take advantage of NVIDIA GPUs to accelerate machine learning workflows. Minimal changes are required to transition from familiar pandas and scikit-learn code! For more information on RAPIDS, see ["Getting Started"](https://rapids.ai/start.html) in the RAPIDS docs.

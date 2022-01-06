@@ -2,8 +2,6 @@
 
 
 
-
-
 ## Overview
 [Prefect Cloud](https://www.prefect.io/cloud/) is a hosted, high-availability, fault-tolerant service that handles all the orchestration responsibilities for running data pipelines. It gives you complete oversight of your workflows and makes it easy to manage them.
 
@@ -155,9 +153,9 @@ If you have scheduled your flow, it will be run once every 24 hours. You can con
 If you have not scheduled your flow or want to run the flow immediately, navigate to the flow in the Prefect Cloud UI and click "Quick Run".
 
 ```shell
-prefect auth login --key \\({PREFECT\_USER\_TOKEN}
-prefect run flow \\
-    --name \\){SATURN_USERNAME}-ticket-model-evaluation \
+prefect auth login --key ${PREFECT_USER_TOKEN}
+prefect run flow \
+    --name ${SATURN_USERNAME}-ticket-model-evaluation \
     --project ${PREFECT_CLOUD_PROJECT_NAME}
 ```
 

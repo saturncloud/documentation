@@ -2,7 +2,6 @@
 
 
 
-
 ## Overview
 This example shows how you can use the power of a GPU to quickly train a neural network in Saturn Cloud. This code runs on a single GPU of a Jupyter server resource.
 
