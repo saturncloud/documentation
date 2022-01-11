@@ -1,4 +1,4 @@
-# Create a job
+# Create a Job
 
 
 A Saturn Cloud job is a computing environment set up to run recurring tasks. You can start a job in 3 ways:
@@ -23,7 +23,7 @@ Save this in your git repository as example.py
 
 To create a job for above script or any of your own script or notebook, first press the **New Job** button on the upper right corner of the **Resources** page. 
 
-![New job button](/images/docs/new-job-button.jpg "doc-image")
+![New job button](https://saturn-public-assets.s3.us-east-2.amazonaws.com/example-resources/newjob.png "doc-image")
 
 Specify the following settings below. Note that the git settings need to be set after the resource is created.
 
@@ -55,6 +55,6 @@ r = requests.post(url, headers=headers)
 ## Running a Saturn Cloud job on a Schedule
 You can also run this job or any other job you created, on schedule. This will automate running a job on a fixed time.  Check the box for field `Run this job on a schedule` and populate `Scheduled Settings` using [cron syntax](https://en.wikipedia.org/wiki/Cron) to meet the requirements of your task. 
 
-![Schedule button](/images/docs/schedule.png "doc-image")
+![Schedule button](https://saturn-public-assets.s3.us-east-2.amazonaws.com/example-resources/schedule.png "doc-image")
 
 

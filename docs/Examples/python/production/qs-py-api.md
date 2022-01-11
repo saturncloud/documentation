@@ -52,7 +52,7 @@ async def predict(BedroomAbvGr: int = None, YearBuilt: int = None):
 
 Let's name the above file houseprice.py. Save this file in a Github repo that you can access. Now click **New Deployment**. It can be found on top right side of the resource page. 
 
-<img src="/images/docs/new-deployment.png" alt="Start button on resource page of deployment" class="doc-image">
+![deploy](https://saturn-public-assets.s3.us-east-2.amazonaws.com/example-resources/plumber_deployment.png "doc-image")
 
 To run, add following to command field. `Uvicorn` refers to the server that will use the API we have build to serve requests and `reload` makes the server restart after code changes. Since the host listens on 0.0.0.0, it will be reachable on an appropriate interface address to the connection. Port 8000 is a common HTTP port for web servers 
 
@@ -62,7 +62,7 @@ python3 -m uvicorn houseprice:app --reload --host 0.0.0.0 --port 8000
 Add path to file in working directory field as shown below. In the screenshot below, my file houseprice.py is inside repository Dashboard. If you aren't familiar with how to set up SSH credentials and add git repositories to Saturn Cloud check [here](https://saturncloud.io/docs/using-saturn-cloud/gitrepo/).
 Go to `pip install` and add `uvicorn` and `fastapi`.  Now you are ready to deploy your API by pressing the green start button on the resource page of the deployment. 
 
-<img src="/images/docs/api-deploy-command.png" alt="Deployment interface showing command and extra package fields" class="doc-image">
+![deploy command](https://saturn-public-assets.s3.us-east-2.amazonaws.com/example-resources/api-deploy-command.png "doc-image")
 
 Following is the setting for rest of the fields:
 **Name** - this is set to default as 'your username'-dashboard
@@ -74,7 +74,7 @@ Following is the setting for rest of the fields:
 
 Click the URL given in deployment detail page . Add '/docs' in the end of URL, you will see the automatic interactive API documentation. 
 
-<img src="/images/docs/fastapi_docs.png" alt="Interactive API documentation" class="doc-image">
+![fast-api](https://saturn-public-assets.s3.us-east-2.amazonaws.com/example-resources/fastapi_docs.png "doc-image")
 
 Enter the parameter values for `BedroomAbvGr` and `YearBuilt`. Click execute .
 
