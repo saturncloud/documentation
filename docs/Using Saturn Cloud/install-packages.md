@@ -22,6 +22,8 @@ To install software from within a running resource, in JupyterLab open up a term
 
 ![Open terminal](/images/docs/open-terminal.png "doc-image")
 
+<a resource-startup></a>
+
 ## 2. Use the resource settings to install software at resource startup
 
 Once you know exactly what packages and software you want to install, you can set it to be installed right at the moment when the resource is started. Compared to the first method, you'll only have to set this up once and from that point the packages will be there every time the resource is started. The downside is that the package and library installation process will run each time, so if your packages take a while to install then your resources will take a while to start.
@@ -42,7 +44,7 @@ If you are finding that having the packages and libraries installed at resource 
 
 ![Images sidebar](/images/docs/images-sidebar.png "doc-image")
 
-The [images docs page](<docs/Using Saturn Cloud/images.md>) has detailed instructions on creating and using an image. This can dramatically speed up the start time of a resource since it won't have to install the packages each time. The downside is that images often take half an hour or more to build, and if you need to debug the image build process, this can take hours to complete. So, try this method only after you've used the first two methods of software installation to determine exactly what you want to install.
+The [images creation docs page](<docs/Using Saturn Cloud/manage images/build-images/create-images.md>) has detailed instructions on creating and using an image. This can dramatically speed up the start time of a resource since it won't have to install the packages each time. The downside is that images often take half an hour or more to build, and if you need to debug the image build process, this can take hours to complete. So, try this method only after you've used the first two methods of software installation to determine exactly what you want to install.
 
 ## Additional notes when installing packages and software
 
