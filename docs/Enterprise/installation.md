@@ -304,7 +304,7 @@ Finally, we need to set up the Kubernetes cluster for Saturn Cloud. Run the foll
 the installation EC2 instance
 
 ```shell
-docker run -e AWS_DEFAULT_REGION=$AWS_DEFAULT_REGION --rm -it -v ${DATA_DIR}:/sdata saturncloud/saturn-aws:${INSTALLER_TAG} python saturn_aws/scripts/main.py update-k8s
+docker run -e AWS_DEFAULT_REGION=$AWS_DEFAULT_REGION --rm -it -v ${DATA_DIR}:/sdata saturncloud/saturn-aws:${INSTALLER_TAG} python saturn_aws/scripts/main.py install-k8s
 ```
 
 You may stop your installation EC2 instance, but do not terminate it. You can use this instance in the future for updates. You'll receive an email shortly with instructions for how to log in to Saturn. Please backup a copy of the `config.yaml`.
