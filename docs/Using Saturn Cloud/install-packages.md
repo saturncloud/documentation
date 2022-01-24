@@ -1,4 +1,4 @@
-# Installing Packages and Software
+# Install Packages and Software
 
 Saturn Cloud allows nearly all libraries and packages to be installed, provided they can run in a Linux environment. That includes the following:
 
@@ -44,7 +44,7 @@ If you are finding that having the packages and libraries installed at resource 
 
 ![Images sidebar](/images/docs/images-sidebar.png "doc-image")
 
-The [images creation docs page](<docs/Using Saturn Cloud/manage images/build-images/create-images.md>) has detailed instructions on creating and using an image. This can dramatically speed up the start time of a resource since it won't have to install the packages each time. The downside is that images often take half an hour or more to build, and if you need to debug the image build process, this can take hours to complete. So, try this method only after you've used the first two methods of software installation to determine exactly what you want to install.
+The [images creation docs page](<docs/Using Saturn Cloud/manage-images/build-images/create-images.md>) has detailed instructions on creating and using an image. This can dramatically speed up the start time of a resource since it won't have to install the packages each time. The downside is that images often take half an hour or more to build, and if you need to debug the image build process, this can take hours to complete. So, try this method only after you've used the first two methods of software installation to determine exactly what you want to install.
 
 ## Additional notes when installing packages and software
 

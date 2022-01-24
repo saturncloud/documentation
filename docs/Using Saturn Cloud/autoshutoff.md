@@ -1,4 +1,4 @@
-# Configure Auto-Shutoff in Saturn Cloud
+# Auto-Shutoff
 
 Auto-shutoff is a setting that sets a period of time of inactivity after which a Jupyter server will automatically shut down. This can prevent you from wasting money on expensive resources that are accidentally left on.
 

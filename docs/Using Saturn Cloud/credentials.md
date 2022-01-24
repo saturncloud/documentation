@@ -1,4 +1,4 @@
-# Add Credentials to Saturn Cloud
+# Credentials
 
 You may need to have secret credentials in your working environment in order to access tools or data.  Saturn Cloud provides a general method for setting up secret environment variables and files. For specific instructions on setting this up for Snowflake or S3 data storage, please see the [Connect Saturn Cloud to your Data](<docs/Using Saturn Cloud/connect_data.md>) page.
 

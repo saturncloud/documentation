@@ -1,4 +1,4 @@
-# Connect to Saturn Cloud via SSH
+# Connect via SSH
 
 The SSH feature in Saturn Cloud lets you connect to Jupyter server and RStudio server resources with other IDES besides the built in JupyterLab and RStudio. In these situations you can connect to your local computer via SSH and use IDEs such as VSCode, PyCharm, or directly interact from a terminal.
 
