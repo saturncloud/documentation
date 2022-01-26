@@ -19,7 +19,7 @@ Note that your workload likely involves multiple Dask libraries. So if you are d
 
 ### Logs
 
-When migrating a workload a single-machine to run on a Dask cluster, you might notice that logs you used to see printed out in the Jupyter notebook no longer appear. This probably means that the logs are now going to the Dask workers. For more information about logging with a Dask cluster, check out the ["Logging in Dask" page](<docs/Examples/python/Dask/special-topics/logging-in-dask.md>).
+When migrating a workload a single-machine to run on a Dask cluster, you might notice that logs you used to see printed out in the Jupyter notebook no longer appear. This probably means that the logs are now going to the Dask workers. For more information about logging with a Dask cluster, check out the ["Logging in Dask" page](<docs/Examples/python/Dask/special-topics/qs-special-topics-logging.md>).
 
 ### Restart the Workers
 

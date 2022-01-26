@@ -62,7 +62,7 @@ This tells you that your cluster is starting up! Eventually you'll see something
 #> INFO:dask-saturn:{'tcp://10.0.23.16:43141': {'status': 'OK'}}
 ```
 
-Which is informing you that your cluster is up and ready to use. Now you can interact with it just the same way you would from a Saturn Cloud Jupyter server. If you need help with that, please check out some of our tutorials, such as [Training a Model with Scikit-learn and Dask](<docs/Examples/python/Dask/machine-learning/sklearn-training.md>), or the <a href="https://github.com/saturncloud/dask-saturn" target='_blank' rel='noopener'>dask-saturn API</a>. 
+Which is informing you that your cluster is up and ready to use. Now you can interact with it just the same way you would from a Saturn Cloud Jupyter server.
 
 ## Places to connect to Saturn Cloud
 
