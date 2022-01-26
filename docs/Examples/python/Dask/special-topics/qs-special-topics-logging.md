@@ -44,10 +44,10 @@ def lazy_exponent(args):
 
 
 inputs = [[1, 2], [3, 4], [5, 6], [9, 10], [11, 12]]
-outputs = (lazy_exponent(i) for i in inputs)
-futures_computed = client.compute(outputs, sync=False)
+outputs = [lazy_exponent(i) for i in inputs]
+futures = client.compute(outputs, sync=False)
 
-results = [x.result() for x in futures_computed]
+results = [x.result() for x in futures]
 results
 ```
 
