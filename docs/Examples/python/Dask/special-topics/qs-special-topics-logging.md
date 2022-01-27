@@ -10,7 +10,7 @@ logging.warning("This is a warning")
 logging.info("This is non-essential info")
 ```
 
-_Unfortunately, if you try and use this style of logging from within a `@dask.delayed` function, you won't see any output at all_. You won't see it in the console if you're running a Python script nor will you see it after a cell within a Jupyter Notebook. This is also the case for `print` calls--they won't be captured if they are run within a `@dask.delayed` function. So an alternate approach is needed for logging within Dask.
+_Unfortunately, if you try and use this style of logging from within a Dask Delayed function, you won't see any output at all_. You won't see it in the console if you're running a Python script nor will you see it after a cell within a Jupyter Notebook. This is also the case for `print` calls--they won't be captured if they are run within a Dask Delayed function. So an alternate approach is needed for logging within Dask.
 
 Instead, to do logging we'll need to use the `distributed.worker` Python module, and import `logger`. This will give us a logging mechanism that does work in Dask. Here is an example of it in action. 
 
@@ -24,7 +24,7 @@ from dask.distributed import Client
 client = Client(SaturnCluster())
 ```
 
-After running the above command, it's recommend that you check on the Saturn Cloud resource page that the Dask cluster as fully online before continuing. Alternatively, you can use the command `client.wait_for_workers(3)` to halt the notebook execution until all three of the workers are ready.
+After running the above command, it's recommended that you check on the Saturn Cloud resource page that the Dask cluster as fully online before continuing. Alternatively, you can use the command `client.wait_for_workers(3)` to halt the notebook execution until all three of the workers are ready.
 
 Next is an example of a Dask command that logs the result in a way that can be saved. Notice the `logger.info` call using the special `logger` from `distributed.worker`:
 

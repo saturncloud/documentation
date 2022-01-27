@@ -1,7 +1,7 @@
 # Dask DataFrames
-If you come across problems where you find that data is too large to fit into pandas DataFrame or computations in pandas are slow, you can transition to Dask DataFrames. Dask DataFrames mimic pandas DataFrames allow you to distribute data across a Dask cluster.
+If you come across problems where you find that the data is too large to fit into a pandas DataFrame or situations where computations in pandas are slow, you can transition to Dask DataFrames. Dask DataFrames mimic pandas DataFrames but allow you to distribute data across a Dask cluster.
 
-Dask DataFrame can be thought of as multiple pandas DataFames spread over multiple Dask workers. In the diagram below you can see that we have one Dask DataFrame made up of 3 pandas DataFrames, which resides across multiple machines. Pandas being single threaded needs to fit all the data in a single machine, so if the size of the data is more than the size of your machine you may come across an 'out of memory' error. Dask DataFrames on the other hand distribut the data, hence you can use much more data and run commands on it concurrently.
+A single Dask DataFrame can be thought of as multiple pandas DataFrames spread over multiple Dask workers. In the diagram below you can see that we have one Dask DataFrame made up of 3 pandas DataFrames, which resides across multiple machines. A pandas DataFrame can only exist on a single machine, so if the size of the data is more than the size of your machine you may come across an 'out of memory' error. Dask DataFrames on the other hand distributes the data, hence you can use much more data and run commands on it concurrently.
 
 
 
@@ -19,7 +19,7 @@ from dask.distributed import Client
 client = Client(SaturnCluster())
 ```
 
-After running the above command, it's recommend that you check on the Saturn Cloud resource page that the Dask cluster as fully online before continuing. Alternatively, you can use the command `client.wait_for_workers(3)` to halt the notebook execution until all three of the workers are ready.
+After running the above command, it's recommended that you check on the Saturn Cloud resource page that the Dask cluster as fully online before continuing. Alternatively, you can use the command `client.wait_for_workers(3)` to halt the notebook execution until all three of the workers are ready.
 
 ## Create Dask Dataframe from File
 
@@ -40,14 +40,13 @@ You can create a Dask DataFrame from an existing pandas DataFrame using `from_pa
 
 
 ```python
-from dask.dataframe import from_pandas
 import pandas as pd
 
 data = [{"x": 1, "y": 2, "z": 3}, {"x": 4, "y": 5, "z": 6}]
 
 # Creates DataFrame.
 df = pd.DataFrame(data)
-df1 = from_pandas(df, npartitions=1)
+df1 = dd.from_pandas(df, npartitions=1)
 df1.compute()
 ```
 
@@ -65,12 +64,10 @@ df.compute()
 
 ## Example of using Dask DataFrames
 
-The code below shows how to do group and summary operations with Dask DataFrames. Here we have a formula one laptime dataset taken from [kaggle](https://www.kaggle.com/rohanrao/formula-1-world-championship-1950-2020?select=lap_times.csv). You can see in code below that we have used group by and mean function on a Dask DataFrame the same way as we do with pandas except in the end we have added `compute()`. This is because dask is lazy and won't compute the operation until told to do so. When you use `read_csv`, Dask DataFrame is not going to read the entire data set. It is just going to read the column names and data types. Only when you do call compute function will Dask read all the data and perform computation.  
+The code below shows how to do group and summary operations with Dask DataFrames. Here we have a formula one laptime dataset taken from [kaggle](https://www.kaggle.com/rohanrao/formula-1-world-championship-1950-2020?select=lap_times.csv). You can see in code below that we have used the `groupby` and `mean` functions on a Dask DataFrame the same way as we do with pandas except in the end we have added `compute()`. The `compute()` is necessary because Dask is lazy and won't compute the operation until told to do so. When you use `read_csv` Dask DataFrame it is only going to read the column names and data types and not the entire data set. Only when you do call compute function will Dask read all the data and perform computation.  
 
 
 ```python
-import dask.dataframe as dd
-
 f1 = dd.read_csv(
     "s3://saturn-public-data/examples/Dask/f1_laptime.csv", storage_options={"anon": True}
 )
@@ -81,6 +78,8 @@ f1.groupby("driverId").milliseconds.mean().compute()
 
 1. Be thoughtful about when you use the `compute` command--a powerful part of Dask is that it can be used to avoid unnecessary computations until they're needed.
 2. Go simple whenever possible. Use Dask dataset when your data is large, but once you have filtered your data and reached a point where the data can be handled by pandas, use pandas.
-3.Choose your partitions wisely. Your data in partition should be small enough to fit in memory but big enough to avoid large overheads during operations
+3. Choose your partitions wisely. Your data in partition should be small enough to fit in memory but big enough to avoid large overheads during operations
+
+For more details on using Dask DataFrames, see the official [Dask DataFrame Documentation](https://docs.dask.org/en/stable/dataframe.html).
 
 See the Saturn Cloud blog on [differences in Dask and pandas](https://saturncloud.io/blog/dask-is-not-pandas/) for more detailed tips on this subject.

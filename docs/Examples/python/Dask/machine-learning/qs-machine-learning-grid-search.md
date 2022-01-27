@@ -1,8 +1,9 @@
 # Grid Search
 
-Hyperparameter tuning is a crucial, and often painful, part of building machine learning models. Squeezing out each bit of performance from your model may mean the difference of millions of dollars in ad revenue or life-and-death for patients in healthcare models. Even if your model takes one minute to train, you can end up waiting hours for a grid search to complete (think a 10×10 grid, cross-validation, etc.). Each time you wait for a search to finish breaks an iteration cycle and increases the time it takes to produce value with your model.
+Hyperparameter tuning is a crucial, and often painful, part of building machine learning models. Squeezing out each bit of performance from your model may mean the difference of millions of dollars in ad revenue or life-and-death for patients in healthcare models. Even if your model takes one minute to train, you can end up waiting hours for a grid search to complete (think a 10×10 grid, cross-validation, etc.). Each time you wait for a search to finish breaks an iteration cycle and increases the time it takes to produce value with your model. When using pandas, NumPy, and scikit-learn for model training, you can often speed up the grid search with the help of Dask.
 
-This article assumes that you already have a working pipeline with single-node Python packages such as pandas, NumPy, and scikit-learn. This guide will help you take this code and speed it up! There are two different scenarios that can arise when doing hyperparameter searching:
+There are several different scenarios that can arise when doing hyperparameter searching:
+
 1. The training data is small, and the parameter space is small - You do not need Dask, use scikit-learn.
 2. The training data is small, and the parameter space is **large** - Train the data with pandas/NumPy/scikit-learn, and use [joblib and Dask](https://ml.dask.org/joblib.html) for distributed parameter testing.
 3. The training data is **large** - Use the [Dask-ML package](https://ml.dask.org/), with classes that look and feel like scikit-learn, to spread operations across your Dask cluster.
@@ -19,7 +20,7 @@ from dask.distributed import Client
 client = Client(SaturnCluster())
 ```
 
-After running the above command, it's recommend that you check on the Saturn Cloud resource page that the Dask cluster as fully online before continuing. Alternatively, you can use the command `client.wait_for_workers(3)` to halt the notebook execution until all three of the workers are ready.
+After running the above command, it's recommended that you check on the Saturn Cloud resource page that the Dask cluster as fully online before continuing. Alternatively, you can use the command `client.wait_for_workers(3)` to halt the notebook execution until all three of the workers are ready.
 
 ## Joblib for small data and large parameter spaces
 In this case, the training data and pipeline code remains in pandas/NumPy/scikit-learn. Scikit-learn has algorithms that support parallel execution via the `n_jobs` parameter, and `GridSearchCV` is one of them. By default, this parallelizes across all cores on a single machine using the [Joblib](https://joblib.readthedocs.io/en/latest/) library. Dask provides a Joblib backend that hooks into these scikit-learn algorithms to parallelize work across a Dask cluster. This enables us to pull in Dask just for the grid search.

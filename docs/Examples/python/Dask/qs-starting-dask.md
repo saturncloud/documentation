@@ -15,7 +15,7 @@ from dask.distributed import Client
 client = Client(SaturnCluster())
 ```
 
-After running the above command, it's recommend that you check on the Saturn Cloud resource page that the Dask cluster as fully online before continuing. Alternatively, you can use the command `client.wait_for_workers(3)` to halt the notebook execution until all three of the workers are ready.
+After running the above command, it's recommended that you check on the Saturn Cloud resource page that the Dask cluster as fully online before continuing. Alternatively, you can use the command `client.wait_for_workers(3)` to halt the notebook execution until all three of the workers are ready.
 
 You can also adjust the size of dask cluster by explicitly specifying parameters in the `SaturnCluster()` call. The additional parameters are:
 
@@ -46,4 +46,22 @@ results = [x.result() for x in futures]
 results
 ```
 
-Once you are done using Dask, you can shut down the cluster using the following command: `client.cluster.close()`
+Once you are done using Dask, you can shut down the cluster using the following command: `client.cluster.close()`.
+
+For more on the different capabilities of Dask you can use on Saturn Cloud, check out our other examples:
+
+* Dask Collections - use Dask to manipulate data across a distributed cluster
+  * [Dask DataFrames](<docs/Examples/python/Dask/collections/qs-dask-collections-dask-dataframe.md>)
+  * [Dask Arrays](<docs/Examples/python/Dask/collections/qs-dask-collections-dask-array.md>)
+  * [Dask Bags](<docs/Examples/python/Dask/collections/qs-dask-collections-dask-bag.md>)
+* Dask Concurrency - parallelize your code directly
+  * [Dask Delayed](<docs/Examples/python/Dask/concurrency/qs-dask-concurrency-dask-delayed.md>)
+  * [Dask Futures](<docs/Examples/python/Dask/concurrency/qs-dask-concurrency-dask-futures.md>)
+* Machine Learning - train machine learning models with multiple machines
+  * [Model training](<docs/Examples/python/Dask/machine-learning/qs-machine-learning-model-training.md>)
+  * [Grid search](<docs/Examples/python/Dask/machine-learning/qs-machine-learning-grid-search.md>)
+* Special topics - other ways to use Dask on Saturn Cloud
+  * [CLI calls](<docs/Examples/python/Dask/special-topics/qs-special-topics-cli-calls.md>)
+  * [Logging](<docs/Examples/python/Dask/special-topics/qs-special-topics-logging.md>)
+  * [Computing rolling averages](<docs/Examples/python/Dask/special-topics/qs-special-topics-rolling-average.md>)
+

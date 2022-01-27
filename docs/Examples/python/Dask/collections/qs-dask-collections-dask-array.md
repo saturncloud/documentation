@@ -14,11 +14,11 @@ from dask.distributed import Client
 client = Client(SaturnCluster())
 ```
 
-After running the above command, it's recommend that you check on the Saturn Cloud resource page that the Dask cluster as fully online before continuing. Alternatively, you can use the command `client.wait_for_workers(3)` to halt the notebook execution until all three of the workers are ready.
+After running the above command, it's recommended that you check on the Saturn Cloud resource page that the Dask cluster as fully online before continuing. Alternatively, you can use the command `client.wait_for_workers(3)` to halt the notebook execution until all three of the workers are ready.
 
 ## Create a Dask Array from a NumPy Array
 
-Function `from_array` allows us to create a Dask array from array like structures. In code below we are creating a Dask array out of NumPy array.
+Function `from_array` allows us to create a Dask array from array like structures. The code below creates a Dask array out of NumPy array.
 
 
 ```python
@@ -47,18 +47,18 @@ Dask Arrays can be converted to and from Dask DataFrames. Here we are using meth
 
 
 ```python
-from dask.dataframe import from_pandas
 import pandas as pd
+import dask.dataframe as dd
 
 df = pd.DataFrame([{"x": 1, "y": 2, "z": 3}, {"x": 4, "y": 5, "z": 6}])
-df1 = from_pandas(df, npartitions=1)
+df1 = dd.from_pandas(df, npartitions=1)
 x = df1.to_dask_array()
 x.compute()
 ```
 
 ## Example: Concatinating the array, slicing the array and finding mean of that sliced portion
 
-In code below we take two of the arrays created above and concatenate them. The result is slices and the mean is computed for that portion. Due to Dask’s lazy evaluation, these arrays will not be computed until we explicitly ask Dask to perform the computation. Hence in the end of all the functions we add `compute()`.
+In code below we take two of the arrays created above and concatenate them. The result is sliced and the mean is computed for that portion. Due to Dask's lazy evaluation, these arrays will not be computed until we explicitly ask Dask to perform the computation. Hence in the end of all the functions we add `compute()`.
 
 
 ```python
@@ -71,4 +71,6 @@ da.concatenate([y, z], axis=0)[1:].mean().compute()
 2. Choose the chunk dimensions which are small enough to fit in memory but are big enough to avoid large overheads during operations. 
 3. Choose the shape of chunk wisely--if you are creating a Dask array out of HDF file which has chunks of dimensions 64x32 then you should create Dask array chunks in multiples of those dimensions.
 
-For more tips and tricks of using Dask check the [Saturn Cloud Blog](https://saturncloud.io/blog/dask-for-beginners/).
+For more details on using Dask Arrays, see the official [Dask Array Documentation](https://docs.dask.org/en/stable/array.html).
+
+For more tips and tricks of using Dask check out the [Saturn Cloud Blog](https://saturncloud.io/blog/dask-for-beginners/).

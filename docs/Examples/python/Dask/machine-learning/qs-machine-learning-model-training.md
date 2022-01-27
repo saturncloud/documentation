@@ -1,5 +1,5 @@
 # Model Training
-Dask integrates very nicely with existing machine learning libraries like LightGBM, XGBoost. Distributing tasks across multiple cores and multiple machines, helps in scaling training. But before we look into training of machine learning models using the power of Dask, let us load and prepare our data.
+Dask integrates very nicely with existing machine learning libraries like LightGBM, XGBoost, and scikit-learn. Distributing tasks across multiple cores and multiple machines helps in scaling training. In this example we'll show how to use Dask when training models from those three libraries.
 
 First, start the Dask cluster associated with your Saturn Cloud resource.
 
@@ -11,7 +11,7 @@ from dask.distributed import Client
 client = Client(SaturnCluster())
 ```
 
-After running the above command, it's recommend that you check on the Saturn Cloud resource page that the Dask cluster as fully online before continuing. Alternatively, you can use the command `client.wait_for_workers(3)` to halt the notebook execution until all three of the workers are ready.
+After running the above command, it's recommended that you check on the Saturn Cloud resource page that the Dask cluster as fully online before continuing. Alternatively, you can use the command `client.wait_for_workers(3)` to halt the notebook execution until all three of the workers are ready.
 
 Now load your data into a Dask Dataframe. Here we are loading data for csv file located at s3 storage. Using read_csv from Dask takes the same form as using that function from pandas.
 
@@ -42,9 +42,7 @@ X_train, X_test, y_train, y_test = train_test_split(
 
 LightGBM is a popular algorithm for supervised learning with tabular data. It has been used in many winning solutions in data science competitions. In LightGBM, like in other gradient-boosted decision tree algorithms, trees are built one node at a time. When building a tree, a set of possible "split points" (tuples of (feature, threshold)) is generated, and then each split point is evaluated. The one that leads to the best reduction in loss is chosen and added to the tree. Nodes are added to the tree this way until tree-specific stopping conditions are met. 
 
-LightGBM's distributed training comes in two flavors: "data parallel" and "feature parallel". For full details, see ["Optimization in Parallel Learning" (LightGBM docs)](https://lightgbm.readthedocs.io/en/latest/Features.html#optimization-in-parallel-learning).
-
-The `DaskLGBMRegressor` class from `lightgbm` accepts any parameters that can be passed to `lightgbm.LGBRegressor`. Let's use the default parameters for this example. `lightgbm.dask` model objects also come with a `predict()` method that can be used to create predictions on a Dask Array or Dask DataFrame.
+The `DaskLGBMRegressor` class from `lightgbm` accepts any parameters that can be passed to `lightgbm.LGBRegressor`. Let's use the default parameters for this example. `lightgbm.dask` model objects also come with a `predict()` method that can be used to create predictions on a Dask Array or Dask DataFrames.
 
 Run the code below to create a validation set and test how well the model we trained in previous steps performs:
 
@@ -59,7 +57,7 @@ preds = dask_model.predict(X_test)
 
 ## XGBoost Training with Dask
 
-XGBoost is a popular algorithm for supervised learning with tabular data. It has been used in many winning solutions in data science competitions, and in [real-world solutions at large enterprises like Capital One.](https://www.capitalone.com/tech/machine-learning/how-to-control-your-xgboost-model/)
+XGBoost is another popular algorithm for supervised learning with tabular data. It's commonly used by data scientists in many situations, such as the work done at [Capital One](https://www.capitalone.com/tech/machine-learning/how-to-control-your-xgboost-model/).
 
 The XGBoost Python package allows for efficient single-machine training using multithreading. However, the amount of training data you can use is limited by the size of that one machine. To solve this problem, XGBoost supports distributed training using several different interfaces. Let us see how distributed training works for XGBoost using Dask.
 
@@ -89,7 +87,7 @@ y_pred = xgb.dask.predict(client, result, X_test)
 ## Train a Model with scikit-learn and Dask
 
 
-Many data scientists use scikit-learn as the framework for running machine learning tasks. Conveniently, Dask is intentionally easy to integrate with scikit-learn and has strong API similarities in the dask-ml library. In this example, we'll show you how to create a machine learning pipeline that has all the convenience of scikit-learn but adds the speed and performance of Dask. For more information about dask-ml, visit the [official docs.](https://ml.dask.org/)
+Many data scientists use scikit-learn as the framework for running machine learning tasks. Conveniently, Dask is intentionally easy to integrate with scikit-learn and has strong API similarities in the `dask-ml` library. In this example, we'll show you how to create a machine learning pipeline that has all the convenience of scikit-learn but adds the speed and performance of Dask. For more information about dask-ml, visit the [official docs.](https://ml.dask.org/)
 
 We'll train a linear model to predict sale price of houses. We define a Pipeline to encompass both feature scaling and model training. This will be useful in cases like performing a grid search.
 
