@@ -130,7 +130,7 @@ Now that you've created an account in Prefect Cloud and set up an agent in Satur
     - `Type`: Environment Variable
     - `Name`: Choose a Unique identifier for this. Name should be only lowercase letters, numbers, and dashes, such as `prefect-user-token`.
     - `Variable Name`: The name of the environment variable to store this credential’s value in.
-    - `Value`: the User API Key you created during [setup](<docs/getting_help.md#setup>).
+    - `Value`: the User API Key you created during [setup](<docs/quickstart.md#setup>).
 1. Navigate to the "Resources" page and create a new Jupyter Server with the following specs.
     * `Name`: Name of the resource.
     * `Image:` Choose image as per your requirements in workflow.
