@@ -9,9 +9,9 @@ To deploy a dashboard powered by [Streamlit](https://streamlit.io/), you'll need
   2. In the **Environment Variables** options, add the environment variables below, which let Streamlit know how to use the correct ports with Saturn Cloud and be open to requests from other machines.
 
 ```
-STREAMLIT SERVERPORT=8000 
-STREAMLIT_HEADLESS=True 
-STREAMLIT SERVERADDRESS=0.0.0.0
+STREAMLIT_SERVER_PORT=8000
+STREAMLIT_HEADLESS=True
+STREAMLIT_SERVER_ADDRESS=0.0.0.0
 ```
 
 With that, when you start the deployment and go to the URL you should see your dashboard.
