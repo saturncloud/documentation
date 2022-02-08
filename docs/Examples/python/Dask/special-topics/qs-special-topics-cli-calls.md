@@ -28,7 +28,7 @@ import dask
 @dask.delayed
 def lazy_exponent(args):
     x, y = args
-    result_string = f'"{x}**{y}={x ** y}"'
+    result_string = f'"{x}**{y}={x**y}"'
     subprocess.run(["echo", result_string], check=True)
 ```
 

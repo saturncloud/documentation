@@ -33,4 +33,6 @@ conn = snowflake.connector.connect(**conn_info)
 
 If you changed the *variable name* of any of your credentials, simply change them here for them to populate properly.
 
+> **Note**: A running warehouse is required to actually access any data.
+
 Now you can simply query the database as you would on a local machine.

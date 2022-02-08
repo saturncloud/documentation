@@ -37,7 +37,7 @@ from distributed.worker import logger
 @dask.delayed
 def lazy_exponent(args):
     x, y = args
-    result = x ** y
+    result = x**y
     # the logging call to keep tabs on the computation
     logger.info(f"Computed exponent {x}^{y} = {result}")
     return result

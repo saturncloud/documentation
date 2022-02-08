@@ -35,7 +35,7 @@ import dask
 @dask.delayed
 def lazy_exponent(args):
     x, y = args
-    return x ** y
+    return x**y
 
 
 inputs = [[1, 2], [3, 4], [5, 6], [9, 10], [11, 12]]

@@ -14,7 +14,7 @@ If you want to place a flat file in your Saturn Cloud Jupyter server, there's a 
 Simply select the file(s) you want to access and they will be uploaded!
 
 ### Upload Files via SSH
-If you prefer to upload your local files programatically, Saturn Cloud makes it easy to copy files from your local machine via SSH.
+If you prefer to upload your local files programmatically, Saturn Cloud makes it easy to copy files from your local machine via SSH.
 #### Set up SSH Keys
 You will need to set up SSH to make the connection between Saturn Cloud and your local machine. The first step is to create a SSH key pair. 
 
