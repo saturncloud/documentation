@@ -1,4 +1,4 @@
-# Train a PyTorch model with a GPU in R
+# Train a Torch model with a GPU in R
 
 As an equivalent to PyTorch for Python, R users can train GPU models using the
 torch package from RStudio. Saturn Cloud provides the `saturn-rstudio-torch`
