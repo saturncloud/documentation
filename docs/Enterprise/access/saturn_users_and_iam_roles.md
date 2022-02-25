@@ -1,4 +1,4 @@
-# Granting Access to IAM roles to Saturn Users
+# IAM Roles for Users and Groups
 
 Saturn Cloud allows administrators to grant access to IAM roles to Saturn users. When a user has an IAM, their resources will be run as that IAM role, granting their resources the permission to connect to other AWS components that the role has permissions for. This can be very useful in limiting who can access items like S3 buckets.
 
@@ -45,4 +45,11 @@ If you want to construct the trust relationship manually, the policy should matc
   ]
 }
 ```
+
 The value for "Federated" should be the ARN of your OIDC provider, and the `StringEquals` key should be the name of the identity provider.
+
+## Attaching roles
+
+After the role is created, you can attach the role to a particular user or group within Saturn Cloud. Go to the **Users & Groups** page, click the edit button for the the user or group you want to edit and choose an option for **IAM Role**.
+
+<img src="/images/docs/iam-user.png" alt-text="User IAM role input" class="doc-image">

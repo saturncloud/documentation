@@ -1,4 +1,4 @@
-# Uninstalling Saturn Cloud Enterprise
+# Uninstalling
 
 If you decide you no longer want to use Saturn, please [send us an email](mailto:support@saturncloud.io), and we'll tear down the deployment for you.  **Please do not delete the CloudFormation stack which provisioned the customer-admin IAM role, the IAM role itself.**  We need this role in order to tear down resources for you.
 

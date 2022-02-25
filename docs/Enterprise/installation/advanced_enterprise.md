@@ -1,4 +1,4 @@
-# Advanced Enterprise Deployment Options
+# Advanced Deployment Options
 
 Enterprise users may need some customizations when you install Saturn Cloud, and we're happy to help you get set up. See below for a few of the most common requests we get - if you need something we haven't covered,
 [please let us know and we'll help](<docs/getting_help.md>).
@@ -58,4 +58,4 @@ Saturn can be installed in an AWS account with no access to the internet. In ord
   - `s3` (Gateway)
 - Either egress to `docker.io`, `k8s.gcr.io`, and `quay.io`, or an image mirror set up with access to those hosts. Currently, the only image mirror Saturn supports is [Artifactory](https://jfrog.com/artifactory/). If you require support for a different image mirror solution, [please get in touch](https://deploy-preview-345--saturn-cloud.netlify.app/docs/reporting-problems/)
 
-With these fulfilled, follow the [manual Saturn Cloud installation steps](/docs).
+With these fulfilled, follow the [manual Saturn Cloud installation steps](<docs/Enterprise/installation/installation.md>).

@@ -1,4 +1,4 @@
-# Embed Workspaces
+# Embed Workspaces Outside of Saturn Cloud
 
 
 In certain situations you may want to grant access to a Saturn Cloud Jupyter Server or RStudio Server without having the full Saturn Cloud user interface. Instead, you may want to be able to create a resource, start and stop it, and open the IDE from some other website. This guide is to set up such an environment. It falls into two steps: creating a resource programmatically for a users, then settings up the start, stop, open IDE buttons so the user can use the resource.

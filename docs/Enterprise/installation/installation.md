@@ -1,4 +1,4 @@
-# Enterprise Installation
+# Installation
 
 The Saturn Cloud Enterprise plan lets you run Saturn Cloud within an organization's AWS account, allowing you more control over access to the tool and how it runs. This page describes how to install Saturn Cloud into your AWS account, providing three methods:
 
@@ -39,7 +39,7 @@ The Manager will direct you to the AWS Marketplace, where you can subscribe to S
 
 ### 2. Grant Saturn Cloud access to an IAM user or role
 <span id="create-role"></span>
-Our installer needs an IAM Role in order to provision resources into your AWS account, and provide customer support and product updates. The installer can create this role for you with credentials, or, if you'd like, you can [create the role yourself.](<docs/Enterprise/advanced_enterprise.md>)
+Our installer needs an IAM Role in order to provision resources into your AWS account, and provide customer support and product updates. The installer can create this role for you with credentials, or, if you'd like, you can [create the role yourself.](<docs/Enterprise/installation/advanced_enterprise.md>)
 
 Sign in to the AWS Management Console. In the navigation bar on the upper right, choose your account name or number and then choose **My Security Credentials**. In general, it's better to use IAM users, but If you are signed in as the AWS root user,  expand the Access keys (access key ID and secret access key) section and click **Create New Access Key**.
 
@@ -174,7 +174,7 @@ you'll want the application to use when it's running.
 
 #### 2a. Creating the role for installing Saturn Cloud
 
-You can create the role for the Saturn installation [via a CloudFormation stack](<docs/Enterprise/advanced_enterprise.md>#create-role). Our standard cloud formation template grants access to our AWS account to perform the installation. If you are doing the install yourself, you will want to use this template instead: `https://s3.us-east-2.amazonaws.com/saturn-cf-templates/iam-role-self-managed.cft`
+You can create the role for the Saturn installation [via a CloudFormation stack](<docs/Enterprise/installation/advanced_enterprise.md>#create-role). Our standard cloud formation template grants access to our AWS account to perform the installation. If you are doing the install yourself, you will want to use this template instead: `https://s3.us-east-2.amazonaws.com/saturn-cf-templates/iam-role-self-managed.cft`
 
 #### 2b. Creating the roles for running Saturn Cloud
 
