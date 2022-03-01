@@ -1,4 +1,4 @@
-# Single GPU tensorflow
+# Train a TensorFlow Model (GPU)
 
 
 ## Overview

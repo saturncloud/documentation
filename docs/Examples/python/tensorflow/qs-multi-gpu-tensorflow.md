@@ -1,4 +1,4 @@
-# Multi GPU tensorflow
+# Train a TensorFlow Model (Multi-GPU)
 
 
 ## Overview
