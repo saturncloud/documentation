@@ -1,0 +1,3 @@
+Getting started with neural networks in R
+
+Deep learning sounds complicated and difficult, but it’s really not! Thanks to packages like Keras and Torch, you can get started with only a few lines of R code (even on a GPU!). Once you understand the basic concepts, you will be able to use deep learning to make AI-generated humorous content! In this hands-on workshop I'll give an introduction to deep learning by walking through how to make a recurrent neural network model that generates weird pet names like: Shurper, Tunkin Pike, and Jack Odins. By the end of this workshop you'll have your very own neural network to take home. If you understand how to make a linear regression in R, you can understand how to create fun deep learning projects.
