@@ -1,4 +1,4 @@
-# Streamlit
+# Streamlit (Python)
 
 To deploy a dashboard powered by [Streamlit](https://streamlit.io/), you'll need to do the following.
 

@@ -1,4 +1,6 @@
-# PyTorch
+# PyTorch (Python)
+
+Directions for setting up PyTorch with Python depend on if you're using a CPU or GPU
 
 ## PyTorch using GPUs
 

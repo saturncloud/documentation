@@ -1,4 +1,4 @@
-# TensorFlow
+# TensorFlow (Python)
 
 ## TensorFlow using GPUs
 
@@ -23,7 +23,7 @@ dependencies:
   - tensorflow=2.2.0=gpu_py37h1a511ff_0
 ```
 
-## PyTorch using CPUs
+## TensorFlow using CPUs
 
 If you want to use TensorFlow but on a CPU resource (which may be cheaper depending on which Saturn Cloud plan you are using), you can manually set up TensorFlow yourself by creating a resource with the following settings:
 

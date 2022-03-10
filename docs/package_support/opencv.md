@@ -1,4 +1,4 @@
-# OpenCV
+# OpenCV (Python)
 
 The process below will allow you to use the computer vision library [OpenCV](https://opencv.org/) on Saturn Cloud
 
