@@ -53,7 +53,7 @@ RStudio servers must have R, RStudio, and Python all installed.
 4. A user named `jovyan` with `uid=1000` and their home directory created.
 5. R installed to either `/usr/lib/R` or `/usr/local/lib/R`. The `jovyan` user must have recursive ownership and read/write access to the folder.
 6. RStudio Server Open Source installed, with configuration files configured to the minimums matching those in [saturncloud/saturnbase-rstudio](https://github.com/saturncloud/images/tree/main/saturnbase-rstudio).
-7. The Renviron file located at either `/usr/lib/R/etc/Renviron` or `/usr/local/lib/R/etc/Renviron` must be modified to the line. This ensures R will correctly read the installed packages when using RStudio. 
+7. The Renviron file located at either `/usr/lib/R/etc/Renviron` or `/usr/local/lib/R/etc/Renviron` must be modified to include the line below. This ensures R will correctly read the installed packages when using RStudio. 
 
 ```
 R_LIBS=/usr/local/lib/R:/usr/local/lib/R/site-library:/usr/lib/R/site-library:/usr/lib/R/library
