@@ -2,7 +2,7 @@
 
 Before you get started creating your own custom image, it's important to understand how images are built in Saturn Cloud.
 
-When you create a custom image using the Saturn Cloud UI, you build it upon a base image. 
+When you create a custom image using the Saturn Cloud UI, you build it upon a base image.
 
 Base images consist of the operating system and the minimum required code to achieve the full functionality of Saturn Cloud (for either CPU or GPU instances). They also contain packages to run the various workspaces (e.g., JupyterLab, RStudio) as well as the CUDA drivers necessary to interact with GPUs. They are designed to be as slim as possible so that they can load more quickly. You can see all of the base image definitions [here](<docs/Using Saturn Cloud/manage-images/saturn-default-images/base-images/saturnbase-gpu-11.2.md>).
 
@@ -11,7 +11,9 @@ After selecting the base image, you add packages and start scripts that define t
 ![Flowchart showing the process of creating an image in Saturn Cloud](/images/docs/image-creation-flowchart.png "doc-image")
 
 ## Create an Image Within Saturn Cloud
-To build your own image, select the **Images** tab in Saturn Cloud. From here, you'll see the blue **New Image** button at the top right of the screen. Click this, and you'll be taken to a form. 
+> **Note**: In general we do not recommend storing confidential or proprietary information in Docker images. The Saturn Cloud pattern centers around layering Git repositories on top of docker images at run time. On Saturn Cloud Hosted, guarantees on the privacy of docker images are much weaker than they are on Saturn Cloud Enterprise.
+
+To build your own image, select the **Images** tab in Saturn Cloud. From here, you'll see the blue **New Image** button at the top right of the screen. Click this, and you'll be taken to a form.
 
 There, select **Create an image using Saturn Cloud**, and you will be presented with the following form:
 
@@ -43,6 +45,6 @@ Starting with the base image, the image builder will install the following in th
 3. Pip packages
 4. postBuild commands
 
-> **Note**: Building your image may take some time, as all your packages and dependencies need to be downloaded and built to ensure the image will work! 
+> **Note**: Building your image may take some time, as all your packages and dependencies need to be downloaded and built to ensure the image will work!
 
 After the image build is complete, your image is ready to use when creating a new resource.
