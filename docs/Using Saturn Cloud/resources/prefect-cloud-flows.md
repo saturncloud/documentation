@@ -1,42 +1,35 @@
 # Prefect Cloud Flows
 
-This page provies an outline on what Prefect Cloud is, and how to create Prefect Cloud flow resources in Saturn Cloud.
-
-## What is Prefect Cloud?
-
 Prefect Cloud is a hosted, high-availability, fault-tolerant service that handles all the orchestration responsibilities for running data pipelines.
 It gives you complete oversight of your workflows and makes it easy to manage them. It provides cloud convenience with on-prem security.
 It follows [hybrid model](https://medium.com/the-prefect-blog/the-prefect-hybrid-model-1b70c7fd296): users will design, test and build workflow in form of code that is orchestrated on the cloud but executed on their private infrastructure. In this case the "private infrastructure" are the resources running on Saturn Cloud. Once the workflow is registered with Prefect Cloud, codeless version of workflow is sent to cloud, which provides fully-managed orchestration service to your workflow on Saturn Cloud. 
 
+Saturn Cloud connects to Prefect Cloud via a special **Prefect Cloud Flow** resource type. This resource is started and stopped via Prefect Cloud--unlike other resource types you do not directly interact with it. Instead you manage a Prefect Cloud account which then makes the appropriate Saturn Cloud calls. This allows you to use Prefect Cloud as your centralized data science pipeline management location.
+
+> Note that Prefect Cloud is distinct from _Prefect Core_, which is the open-source Python library that can be run to manage data pipelines. Prefect Core can be run within a single Jupyter Server resource like any other Python library, whereas Prefect Cloud allows you to orchestrate across multiple resources in a cloud hosted pipeline. Generally if you have a complex pipeline that you want to manage it's better to use the Prefect Cloud service than to try and manage a system within a single Saturn Cloud resource.
+
 ## Prefect Cloud Components
 
-Below are some of the key components of Prefect Cloud--this will be helpful in understanding of integration between Saturn Cloud and Prefect Cloud. For more details on Prefect Cloud, check <a href="https://docs.prefect.io/orchestration/" target="_blank" rel="noopener">the Prefect "Orchestration" docs</a>.
+Below are the different components of Prefect Cloud and how they connect to Saturn Cloud.
 
-### Prefect Core Server
+### Flows
 
-A service that keeps track of all your flows and knows how to run them. This server also has responsibility for keeping track of schedules. If you set up a flow to run once an hour, Prefect Core Server will make sure, that happens.
-
-### Flow Versions
-
-A [flow](https://docs.prefect.io/core/concepts/flows.html) is a container for multiple tasks which understands the relationship between those tasks.
+A [flow](https://docs.prefect.io/core/concepts/flows.html) in Prefect Cloud is a container for multiple tasks which understands the relationship between those tasks.
 When a flow changes, a new "flow version" is created. Example changes include:
 
 * some tasks have been added or removed
 * the dependencies between tasks have changed
 * the flow is using a different execution mechanism (like a Dask cluster instead of a local Python process)
 
-Prefect Core Server keeps track of all these versions, and knows to link all versions of the same flow into one "flow group".
+The Prefect Cloud UI keeps track of all these versions, and knows to link all versions of the same flow into one "flow group".
 
-### Prefect Agents
+_Each time a flow is executed, a Prefect Cloud Flow resource in Saturn Cloud is spun up to do the computations. When it is complete the resource is shut down._
 
-A Prefect Agent is a small service responsible for running flows and reporting their logs and statuses back to Prefect Core Server. Prefect Agents are always "pull-based"--they are configured to point at an instance of Prefect Core Server, and every few milliseconds they ask Prefect Core Server *hey is there anything you want me to do? hey is there anything you want me to do?*.
+### Agents
 
-When Prefect Core Server responds and says "yes, please run this flow", the agent is responsible for inspecting following details of the flow and then kicking off a flow run.
+A Prefect Agent is a small always-on service responsible for running flows and reporting their logs and statuses back to Prefect Cloud. Prefect Agents are always "pull-based"--they are configured to periodically make requests to Prefect Cloud to determine if new work is scheduled to run. When the agent receives a request from Prefect Cloud, the agent is responsible for inspecting following details of the flow and then kicking off a flow run.
 
-- **storage**: where can the flow code be retrieved from?
-    - In most cases, "the flow" means a binary file which can be turned into a Python object (`prefect.Flow`) using `cloudpickle`
-- **run config**: what infrastructure needs to be set up to run the flow?
-- **executor**: what engine will be used to run all the Python code in the flow?
+_When using Saturn Cloud, the Prefect Agents will be always running in the Saturn Cloud account. These can be adjusted in the Prefect Agents tab of the Saturn Cloud app._
 
 ## Saturn Cloud + Prefect Cloud Architecture
 
@@ -53,8 +46,7 @@ Using Saturn Cloud and Prefect Cloud together looks like this:
     - labels: `saturn-cloud, webhook-flow-storage, <YOUR_CLUSTER_DOMAIN>`
 1. When Prefect Cloud tells your Prefect Agent in Saturn to run the flow, Saturn Cloud creates a kubernetes job to run the flow.
 
-
-In using this integration, you'll write code with the **`prefect` library** which talks to **Saturn Cloud** and **Prefect Cloud**. Their responsibilities are as follows:
+Using this integration, you'll write code with the **`prefect` library** which talks to **Saturn Cloud** and **Prefect Cloud**. Their responsibilities are as follows:
 
 - **`prefect` library**
     - describe the work to be done in a flow

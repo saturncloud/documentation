@@ -41,7 +41,7 @@ Each user can have multiple resources, and resources can be cloned (including by
 When you log into Saturn Cloud you'll first see the **Resources** page. On the Resources page you can see
 your existing resources, or create a new one in either of the following ways:
 
-- [Set up your own custom resource](<docs/Reference/resources_wont_start.md>) with your specifications by pressing one of the **New** buttons at the top.
+- [Set up your own custom resource](<docs/Using Saturn Cloud/cloning-resources.md>) with your specifications by pressing one of the **New** buttons at the top.
 - Select one of the pre-created template resources. These are set up to have the appropriate settings and code for a particular task.
 
 ![Screenshot of the resource page](/images/docs/create-resource-buttons.png "doc-image")
@@ -68,7 +68,6 @@ Creating and using resources is central to using on Saturn Cloud. There are many
 
 * **[Install software and packages](<docs/Using Saturn Cloud/install-packages.md>).** If your code requires specific libraries or software to be installed on the resource then there are multiple methods of adding the dependencies.
 * **[Create a Dask cluster for the resource](<docs/Using Saturn Cloud/create_dask_cluster.md>).** One powerful feature of Saturn Cloud is the ability to leverage Dask clusters for distributed computing.
-* **[Have the resource use a GPU](<docs/Reference/intro_to_gpu.md>).** Saturn Cloud resources can use GPUs as easily as CPUs for faster machine learning.
 * **[Connect a git repo](<docs/Using Saturn Cloud/gitrepo.md>).** Connect a Saturn Cloud resource to your git repositories to run your code.
 * **[Add credentials to your resouces](<docs/Using Saturn Cloud/credentials.md>).** You may need to have secret credentials in your working environment to access tools or data. The **Credentials** section of the tools menu is where this information can be safely stored.
 * **[Use other IDEs (e.g., PyCharm, VSCode)](<docs/Using Saturn Cloud/ide_ssh.md>).** Connect to a resource from your local IDE, using an SSH connection.

@@ -1,4 +1,4 @@
-# Troubleshooting Dask GroupBy Aggregation Performance
+# Troubleshooting Dask GroupBy
 
 Dask DataFrames are amazing for interactively exploring large datasets.  However, using them on big datasets can be a little tricky.  You've probably already hit a `KilledWorker` exception trying to do a GroupBy.  If you haven't, you will soon!
 
