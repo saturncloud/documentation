@@ -4,7 +4,7 @@ Before you get started creating your own custom image, it's important to underst
 
 When you create a custom image using the Saturn Cloud UI, you build it upon a base image.
 
-Base images consist of the operating system and the minimum required code to achieve the full functionality of Saturn Cloud (for either CPU or GPU instances). They also contain packages to run the various workspaces (e.g., JupyterLab, RStudio) as well as the CUDA drivers necessary to interact with GPUs. They are designed to be as slim as possible so that they can load more quickly. You can see all of the base image definitions [here](<docs/Using Saturn Cloud/manage-images/saturn-default-images/base-images/saturnbase-gpu-11.2.md>).
+Base images consist of the operating system and the minimum required code to achieve the full functionality of Saturn Cloud (for either CPU or GPU instances). They also contain packages to run the various workspaces (e.g., JupyterLab, RStudio) as well as the CUDA drivers necessary to interact with GPUs. They are designed to be as slim as possible so that they can load more quickly. You can see all of the base image definitions [here](<docs/Using Saturn Cloud/manage-images/saturn-default-images/base-images/saturnbase.md>).
 
 After selecting the base image, you add packages and start scripts that define the rest of the custom image.
 

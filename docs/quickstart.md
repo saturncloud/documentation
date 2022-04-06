@@ -41,7 +41,7 @@ Each user can have multiple resources, and resources can be cloned (including by
 When you log into Saturn Cloud you'll first see the **Resources** page. On the Resources page you can see
 your existing resources, or create a new one in either of the following ways:
 
-- [Set up your own custom resource](<docs/Using Saturn Cloud/cloning-resources.md>) with your specifications by pressing one of the **New** buttons at the top.
+- [Set up your own custom resource](<docs/troubleshooting/resources-wont-start.md>) with your specifications by pressing one of the **New** buttons at the top.
 - Select one of the pre-created template resources. These are set up to have the appropriate settings and code for a particular task.
 
 ![Screenshot of the resource page](/images/docs/create-resource-buttons.png "doc-image")
