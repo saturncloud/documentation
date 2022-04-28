@@ -6,7 +6,7 @@ A **Saturn Cloud image** is a Docker image that describes the libraries and pack
 
 ## Getting Started with Saturn Cloud Images
 
-When starting out with Saturn Cloud, most people [use one of our default images](<docs/Using Saturn Cloud/manage-images/saturn-default-images/jupyter-images/saturn-tensorflow.md>), which provide most data science packages that you will need. It is also possible to [create or upload your own image](<docs/Using Saturn Cloud/manage-images/build-images/import-images.md>).
+When starting out with Saturn Cloud, most people [use one of our default images](<docs/Using Saturn Cloud/manage-images/saturn-default-images/jupyter-images/saturn-rapids.md>), which provide most data science packages that you will need. It is also possible to [create or upload your own image](<docs/Using Saturn Cloud/manage-images/build-images/create-images.md>).
 
 ### Choosing the Right Image for the Job
 Saturn Cloud offers standard CPU images in addition to GPU images, each with different sets of libraries.
@@ -20,12 +20,12 @@ For instance, if you use Python and want to do geospatial analysis on a CPU, you
 
 However, if you prefer to use RStudio and want to use GPU-accelerated TensorFlow, then you'll want to try the image called [saturn-rstudio-tensorflow](https://github.com/saturncloud/images/tree/main/saturn-rstudio-tensorflow).
 
-* **Are you a Python user?** Check out all the [Jupyter images](<docs/Using Saturn Cloud/manage-images/saturn-default-images/jupyter-images/saturn-tensorflow.md>)
-* **Are you an R user?** Check out all the [RStudio images](<docs/Using Saturn Cloud/manage-images/saturn-default-images/rstudio-images/saturn-rstudio-tensorflow.md>)
+* **Are you a Python user?** Check out all the [Jupyter images](<docs/Using Saturn Cloud/manage-images/saturn-default-images/jupyter-images/saturn-rapids.md>)
+* **Are you an R user?** Check out all the [RStudio images](<docs/Using Saturn Cloud/manage-images/saturn-default-images/rstudio-images/saturn-rstudio.md>)
 
 ### Attaching a Saturn Cloud Image to a Resource
 
-When you [create a resource in Saturn Cloud](<docs/troubleshooting/resources-wont-start.md>), you will choose a specific image from a dropdown menu.
+When you [create a resource in Saturn Cloud](<docs/Using Saturn Cloud/cloning-resources.md>), you will choose a specific image from a dropdown menu.
 
 Saturn Cloud's standard images start with `saturncloud/`.
 
@@ -38,4 +38,4 @@ If you need packages that are not included among Saturn Cloud's standard images,
 > **Note**: If there is a Dask cluster associated with the resource, the Dask scheduler and workers will all use the same image as the Jupyter server.
 
 ### Using Custom Images
-Once you have established which packages you want to use your environment, you can [create a custom image](<docs/Using Saturn Cloud/manage-images/build-images/import-images.md>) that packages them all together. Using a custom image can significantly decrease start-up time because packages won't need to be reinstalled every time the resource starts. 
+Once you have established which packages you want to use your environment, you can [create a custom image](<docs/Using Saturn Cloud/manage-images/build-images/create-images.md>) that packages them all together. Using a custom image can significantly decrease start-up time because packages won't need to be reinstalled every time the resource starts. 
