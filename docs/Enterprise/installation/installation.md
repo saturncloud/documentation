@@ -83,7 +83,7 @@ To begin the signup process, visit <a href="https://manager.aws.saturnenterprise
 
 ### 2. Create your installation configuration
 
-Contact support@saturncloud.io. We will help you generate your installation configuration. It will look something like this:
+<a href="/docs">Contact Saturn Cloud support</a>. We will help you generate your installation configuration. It will look something like this:
 
 ```
 org_name: ...
@@ -101,7 +101,7 @@ Store this in an empty directory, with the filename `config.yaml`
 
 ### 3. Create the installation role
 
-You can create the role for the Saturn installation via a CloudFormation stack. If you are installing Saturn yourself - this probably means you will want to modify the cloud formation template to adjust the trust relationship. Please contact us if you need assistance doing so.
+You can create the role for the Saturn installation via a CloudFormation stack. If you are installing Saturn yourself - this probably means you will want to modify the cloud formation template to adjust the trust relationship. Please <a href="/docs">contact us</a> if you need assistance doing so.
 
 ### 4. Set up the environment
 
@@ -140,7 +140,7 @@ We will provide you with the `INSTALLER_TAG`, which will point to the latest ver
 docker run -e AWS_DEFAULT_REGION=$AWS_DEFAULT_REGION --rm -it -v ${DATA_DIR}:/sdata ${AWS_AUTH_VARS} saturncloud/saturn-aws:${INSTALLER_TAG} python saturn_aws/scripts/main.py install
 ```
 
-This will take some time - typically 15-45 minutes. If you encounter errors, [contact us](/docs/reporting-problems/) and we will help debug. When installation completes successfully, you will receive an email instructing you to reset your password for the `admin` account on your new Saturn deployment.
+This will take some time - typically 15-45 minutes. If you encounter errors, <a href="/docs">contact us</a> and we will help debug. When installation completes successfully, you will receive an email instructing you to reset your password for the `admin` account on your new Saturn deployment.
 
 ### 6. Backup the configuration files to S3
 
@@ -266,7 +266,7 @@ At this point, you can run the installation Docker container on the EC2 instance
 docker run -e AWS_DEFAULT_REGION=$AWS_DEFAULT_REGION --rm -it -v ${DATA_DIR}:/sdata saturncloud/saturn-aws:${INSTALLER_TAG} python saturn_aws/scripts/main.py install --skip-k8s
 ```
 
-This will take some time - typically 15-45 minutes. If you encounter errors, [contact us](/docs/reporting-problems/) and we will help debug. The last step - associating the OIDC provider can take up to 30 minutes.
+This will take some time - typically 15-45 minutes. If you encounter errors, <a href="/docs">contact us</a> and we will help debug. The last step - associating the OIDC provider can take up to 30 minutes.
 
 ### 6. Modify the assume-role policy for the saturn UI IAM role
 

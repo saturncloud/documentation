@@ -4,7 +4,7 @@
 
 If you are finding that your services that need to connect with Saturn Cloud have limits on what IP addresses may access them, you'll need to add Saturn Cloud IP addresses to the "allow list". There is no way to identify the machines that will be spun up in Saturn, because they are created programmatically. However, all of the traffic from a Saturn deployment comes from an Internet Gateway that lives inside the Amazon Virtual Private Cloud holding the EC2 instances you create. 
 
-_If you're a Hosted user struggling with this issue, please contact us and we can discuss how to help._
+<em>If you're a Hosted user struggling with this issue, please <a href="/docs">contact us</a> and we can discuss how to help.</em>
 
 You can find your IP address for Saturn Cloud in your AWS console, as shown below.
 

@@ -67,4 +67,4 @@ AWS generally takes 24 hours to respond to limit increases.
 
 ### Availability zone doesn't support specific instance types
 
-In rare cases, the availability zone your Saturn Cloud is installed on may not support some of the instances types we use. Our enterprise installer checks for this so most installations will not have this problem. If you are running into this issue, please contact us at support@saturncloud.io.
+In rare cases, the availability zone your Saturn Cloud is installed on may not support some of the instances types we use. Our enterprise installer checks for this so most installations will not have this problem. If you are running into this issue, please <a href="/docs">contact us</a>.

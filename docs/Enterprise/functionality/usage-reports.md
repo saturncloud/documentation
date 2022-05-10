@@ -11,4 +11,4 @@ Each month has two different downloads:
 
 ![Example usage report](/images/docs/usage-report.png "doc-image")
 
-In some situations rather than downloading the data itself, you may want to have your Saturn Cloud usage data stored in a database that you can directly query. Saturn Cloud data is also accessible directly from a Snowflake database upon request. If you are interested in having this set up for your own organization, please contact Saturn Cloud Support at [support@saturncloud.io](mailto:support@saturncloud.io).
+In some situations rather than downloading the data itself, you may want to have your Saturn Cloud usage data stored in a database that you can directly query. Saturn Cloud data is also accessible directly from a Snowflake database upon request. If you are interested in having this set up for your own organization, please <a href="/docs">contact Saturn Cloud Support</a>.
