@@ -2,7 +2,7 @@
 This example shows how to do feature engineering and train models using the HPC-like platform Bodo using a notebook on a single node.
 New York taxi data is used to predict how much a tip each driver will get. Both the feature engineering
 and model training are parallelized across multiple cores using Bodo. This can be a straightforward way to
-make Python code run faster that it would otherwise without requiring much change to the code.
+make Python code run faster than it would otherwise without requiring much change to the code.
 
 The Bodo framework knows when to parallelize code based on the `%%px` at the start of cells and `@bodo.jit` function decorators. Removing those and restarting the kernel will run the code without Bodo.
 
@@ -117,11 +117,12 @@ def prep_df(taxi_df):
         .fillna(-1)
     )
     print("Data preparation time: ", time.time() - start)
-    print(df.head())
     return df
 
 
 taxi_feat = prep_df(taxi)
+if bodo.get_rank() == 0:
+    display(taxi_feat.head())
 ```
 
 The data is then split into X and y sets as well as training and testing using the scikit-learn functions. Again bodo is used to increase the speed at which it runs.
@@ -166,11 +167,11 @@ We'll train the models to predict the `tip_fraction` variable and evaluate these
 def lr_model(X_train, y_train, X_test, y_test):
     start = time.time()
     lr = LinearRegression()
-    lr_fitted = lr.fit(X_train, y_train)
+    lr_fitted = lr.fit(X_train.values, y_train)
     print("Linear Regression fitting time: ", time.time() - start)
 
     start = time.time()
-    lr_preds = lr_fitted.predict(X_test)
+    lr_preds = lr_fitted.predict(X_test.values)
     print("Linear Regression prediction time: ", time.time() - start)
     print(mean_squared_error(y_test, lr_preds, squared=False))
 
@@ -187,11 +188,11 @@ lr_model(X_train, y_train, X_test, y_test)
 def rr_model(X_train, y_train, X_test, y_test):
     start = time.time()
     rr = Ridge()
-    rr_fitted = rr.fit(X_train, y_train)
+    rr_fitted = rr.fit(X_train.values, y_train)
     print("Ridge fitting time: ", time.time() - start)
 
     start = time.time()
-    rr_preds = rr_fitted.predict(X_test)
+    rr_preds = rr_fitted.predict(X_test.values)
     print("Ridge prediction time: ", time.time() - start)
     print(mean_squared_error(y_test, rr_preds, squared=False))
 
@@ -208,11 +209,11 @@ rr_model(X_train, y_train, X_test, y_test)
 def lsr_model(X_train, y_train, X_test, y_test):
     start = time.time()
     lsr = Lasso()
-    lsr_fitted = lsr.fit(X_train, y_train)
+    lsr_fitted = lsr.fit(X_train.values, y_train)
     print("Lasso fitting time: ", time.time() - start)
 
     start = time.time()
-    lsr_preds = lsr_fitted.predict(X_test)
+    lsr_preds = lsr_fitted.predict(X_test.values)
     print("Lasso prediction time: ", time.time() - start)
     print(mean_squared_error(y_test, lsr_preds, squared=False))
 
