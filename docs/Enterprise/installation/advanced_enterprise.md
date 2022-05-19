@@ -9,13 +9,13 @@ Saturn Cloud Enterprise can be configured to use LDAP, Google Workspace credenti
 
 ## Custom VPC and Networking Requirements
 
-Our default installation provisions a VPC with a public and private subnet in 2 availability zones.  Saturn itself is served through an external load balancer.
+Our default installation provisions a VPC with a public and private subnet in two availability zones. Saturn itself is served through an external load balancer.
 
-Saturn can be configured to run only on internal load balancers, internal subnets with custom CIDR blocks, and custom routing tables.  If you need any of these, [reach out to us with your requirements](/docs).
+Saturn can be configured to run only on internal load balancers, internal subnets with custom CIDR blocks, and custom routing tables. If you need any of these, [reach out to us with your requirements](/docs).
 
 <span id="create-role"></span>
-## Manually creating the Saturn Cloud Enterprise installation IAM role
 
+## Manually creating the Saturn Cloud Enterprise installation IAM role
 
 The role created by our cloud formation stack will create a trust relationship to our account. If you are running the installer yourself or if you have security concerns then you can modify the trust relationship to point to your account.
 
@@ -47,15 +47,15 @@ Once stack creation is complete, you need to provide the ARN for the created rol
 
 Saturn can be installed in an AWS account with no access to the internet. In order to do this - you'll need a VPC that meets a few requirements, or a Docker image mirror.
 
-- You need to ensure that your VPC allows egress to `https://manager.aws.saturnenterprise.io/` (`3.134.99.59`)
-- A security group with an inbound rule that allows HTTPS traffic from the VPC’s CIDR
-- [Private VPC endpoints](https://docs.aws.amazon.com/vpc/latest/privatelink/vpc-endpoints.html) for the following AWS services, with the security group (from the previous step) attached:
-  - `ecr.dkr` (Interface)
-  - `ecr.api` (Interface)
-  - `ec2` (Interface)
-  - `autoscaling` (Interface)
-  - `sts` (Interface)
-  - `s3` (Gateway)
-- Either egress to `docker.io`, `k8s.gcr.io`, and `quay.io`, or an image mirror set up with access to those hosts. Currently, the only image mirror Saturn supports is [Artifactory](https://jfrog.com/artifactory/). If you require support for a different image mirror solution, [please get in touch](https://deploy-preview-345--saturn-cloud.netlify.app/docs/reporting-problems/)
+-   You need to ensure that your VPC allows egress to `https://manager.aws.saturnenterprise.io/` (`3.134.99.59`)
+-   A security group with an inbound rule that allows HTTPS traffic from the VPC’s CIDR
+-   [Private VPC endpoints](https://docs.aws.amazon.com/vpc/latest/privatelink/vpc-endpoints.html) for the following AWS services, with the security group (from the previous step) attached:
+    -   `ecr.dkr` (Interface)
+    -   `ecr.api` (Interface)
+    -   `ec2` (Interface)
+    -   `autoscaling` (Interface)
+    -   `sts` (Interface)
+    -   `s3` (Gateway)
+-   Either egress to `docker.io`, `k8s.gcr.io`, and `quay.io`, or an image mirror set up with access to those hosts. Currently, the only image mirror Saturn supports is [Artifactory](https://jfrog.com/artifactory/). If you require support for a different image mirror solution, [please get in touch](https://deploy-preview-345--saturn-cloud.netlify.app/docs/reporting-problems/)
 
 With these fulfilled, follow the [manual Saturn Cloud installation steps](<docs/Enterprise/installation/installation.md>).

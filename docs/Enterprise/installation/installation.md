@@ -29,7 +29,7 @@ These steps install Saturn Cloud through the AWS Marketplace, automating most of
 
 ### 1. Sign up for Saturn Cloud
 
-To begin the signup process, visit <a href="https://manager.aws.saturnenterprise.io/register" target='_blank' rel='noopener'>the Saturn Cloud Installation Manager</a>.
+To begin the sign-up process, visit <a href="https://manager.aws.saturnenterprise.io/register" target='_blank' rel='noopener'>the Saturn Cloud Installation Manager</a>.
 
 > Once installed, Your Saturn Cloud installation will be hosted at "app.{orgname}.saturnenterprise.io", so the company name will be converted into a valid DNS name.
 
@@ -38,10 +38,11 @@ The Manager will direct you to the AWS Marketplace, where you can subscribe to S
 <img src="/images/docs/aws-marketplace.png" alt="Screenshot of signup in AWS Marketplace for Saturn Cloud" class="doc-image"/>
 
 ### 2. Grant Saturn Cloud access to an IAM user or role
+
 <span id="create-role"></span>
 Our installer needs an IAM Role in order to provision resources into your AWS account, and provide customer support and product updates. The installer can create this role for you with credentials, or, if you'd like, you can [create the role yourself.](<docs/Enterprise/installation/advanced_enterprise.md>)
 
-Sign in to the AWS Management Console. In the navigation bar on the upper right, choose your account name or number and then choose **My Security Credentials**. In general, it's better to use IAM users, but If you are signed in as the AWS root user,  expand the Access keys (access key ID and secret access key) section and click **Create New Access Key**.
+Sign in to the AWS Management Console. In the navigation bar on the upper right, choose your account name or number and then choose **My Security Credentials**. In general, it's better to use IAM users, but If you are signed in as the AWS root user, expand the Access keys (access key ID and secret access key) section and click **Create New Access Key**.
 
 <img src="/images/docs/root-access-key.png" alt="Screenshot of AWS management console Access Keys page" class="doc-image"/>
 
@@ -55,7 +56,7 @@ Go back to the <a href="https://manager.aws.saturnenterprise.io/role/creator/sat
 
 <img src="/images/docs/give-us-keys.png" alt="Screenshot of Saturn Cloud installer page asking for IAM credentials" class="doc-image"/>
 
-Paste your **Access Key ID** and **Secret Access Key** into the form and click **Next**. We will use the keys to create a role.  For security reasons, we will **not** save the keys.
+Paste your **Access Key ID** and **Secret Access Key** into the form and click **Next**. We will use the keys to create a role. For security reasons, we will **not** save the keys.
 
 ### 3. Deploy Saturn Cloud
 
@@ -77,7 +78,7 @@ In order to follow these instructions, you will need the following:
 
 ### 1. Sign up for Saturn Cloud
 
-To begin the signup process, visit <a href="https://manager.aws.saturnenterprise.io/register" target='_blank' rel='noopener'>the Saturn Cloud Installation Manager</a>. The Manager will direct you to the AWS Marketplace, where you will need to subscribe to Saturn Cloud.
+To begin the sign-up process, visit <a href="https://manager.aws.saturnenterprise.io/register" target='_blank' rel='noopener'>the Saturn Cloud Installation Manager</a>. The Manager will direct you to the AWS Marketplace, where you will need to subscribe to Saturn Cloud.
 
 <img src="/images/docs/aws-marketplace.png" alt="Screenshot of signup in AWS Marketplace for Saturn Cloud" class="doc-image"/>
 
@@ -107,7 +108,6 @@ You can create the role for the Saturn installation via a CloudFormation stack. 
 
 Set up a few environment variables in your bash shell.
 
-
 ```sh
 export INSTALLER_TAG=...
 export DATA_DIR=....
@@ -119,17 +119,17 @@ We will provide you with the `INSTALLER_TAG`, which will point to the latest ver
 
 **AWS_AUTH_VARS**
 
-- If you've signed in via `aws configure` and have an `~/.aws/config` file that contains credentials:
+-   If you've signed in via `aws configure` and have an `~/.aws/config` file that contains credentials:
 
     ```sh
     export AWS_AUTH_VARS="-v ${HOME}/.aws:/root/.aws"
     ```
 
-- If you have `AWS_ACCESS_KEY_ID`, `AWS_SECRET_ACCESS_KEY`, and `AWS_DEFAULT_REGION` set:
+-   If you have `AWS_ACCESS_KEY_ID`, `AWS_SECRET_ACCESS_KEY`, and `AWS_DEFAULT_REGION` set:
     ```sh
     export AWS_AUTH_VARS="-e AWS_ACCESS_KEY_ID -e AWS_SECRET_ACCESS_KEY -e AWS_DEFAULT_REGION"
     ```
--  If running from an EC2 instance with an assigned IAM role, then `AWS_AUTH_VARS` isn't necessary. Set it to an empty string.
+-   If running from an EC2 instance with an assigned IAM role, then `AWS_AUTH_VARS` isn't necessary. Set it to an empty string.
     ```sh
     export AWS_AUTH_VARS=""
     ```
@@ -161,7 +161,7 @@ The Saturn Cloud Enterprise plan lets you run Saturn Cloud within an organizatio
 
 ### 1. Sign up for Saturn Cloud
 
-To begin the signup process, visit <a href="https://manager.aws.saturnenterprise.io/register" target='_blank' rel='noopener'>the Saturn Cloud Installation Manager</a>. The Manager will direct you to the AWS Marketplace, where you will need to subscribe to Saturn Cloud.
+To begin the sign-up process, visit <a href="https://manager.aws.saturnenterprise.io/register" target='_blank' rel='noopener'>the Saturn Cloud Installation Manager</a>. The Manager will direct you to the AWS Marketplace, where you will need to subscribe to Saturn Cloud.
 
 <img src="/images/docs/aws-marketplace.png" alt="Screenshot of signup in AWS Marketplace for Saturn Cloud" class="doc-image"/>
 
@@ -180,14 +180,14 @@ You can create the role for the Saturn installation [via a CloudFormation stack]
 
 Saturn Cloud requires IAM resources to operate. This includes:
 
-- an IAM role and IAM policies for the EKS cluster
-- an IAM role, an instance profile and IAM policies for the EKS worker nodes
-- an IAM role for the saturn application
+-   an IAM role and IAM policies for the EKS cluster
+-   an IAM role, an instance profile and IAM policies for the EKS worker nodes
+-   an IAM role for the saturn application
 
 Most customers that are on this path have very specific requirements for provisioning IAM resources. We've provided [a sample terraform](/static/enterprise-installation-no-iam-terraform.tf) to use as a starting
 point to customize. _You can also create equivalent IAM resources in the console, or however else you manage your AWS resources._
 
-The sample terraform creates an IAM role for the Saturn Cloud application. The assume-role policy for that role has some placeholder values, which we will alter once the OIDC provider has been created. If you do use this terraform, you must replace `{orgname}` in the following with your `orgname`. 
+The sample terraform creates an IAM role for the Saturn Cloud application. The assume-role policy for that role has some placeholder values, which we will alter once the OIDC provider has been created. If you do use this terraform, you must replace `{orgname}` in the following with your `orgname`.
 
 {{% alert title="Where to run the Terraform command" %}}
 
@@ -219,6 +219,7 @@ Save this file as `config.yaml`--we'll use it in the next step.
 These steps will set up an EC2 instance to run the Saturn Cloud installation.
 
 #### 4a. Install Docker
+
 We recommend performing the installation from an EC2 instance. Spin up the EC2 instance with the Ubuntu 20.04 AMI. Attach the IAM role you created in the previous step to this instance. Once the instance is created, you'll need to install Docker using the following commands:
 
 ```shell
@@ -310,7 +311,6 @@ docker run -e AWS_DEFAULT_REGION=$AWS_DEFAULT_REGION --rm -it -v ${DATA_DIR}:/sd
 You may stop your installation EC2 instance, but do not terminate it. You can use this instance in the future for updates. You'll receive an email shortly with instructions for how to log in to Saturn. Please backup a copy of the `config.yaml`.
 
 <h5 class="text-primary"><b>At this point the installation is complete.</b></h5>
-
 
 </div>
 </div>

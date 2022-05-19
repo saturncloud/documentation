@@ -2,9 +2,9 @@
 
 There are many situations where you may want to store information about the configuration of a Saturn Cloud resource, such as:
 
-* Storing how an analysis was run so that you can rerun it later
-* Sharing details of a resource with a colleague so they can clone it
-* Saving a configuration so you can programmatically create a new resource with that configuration via an API
+-   Storing how an analysis was run so that you can rerun it later
+-   Sharing details of a resource with a colleague so they can clone it
+-   Saving a configuration so you can programmatically create a new resource with that configuration via an API
 
 The way you store information about a resource is through a **Saturn Cloud resource recipe**. A resource recipe is a JSON file that
 stores all the details about a resource, such as the extra libraries installed, the number of workers of a
@@ -12,26 +12,28 @@ connected Dask cluster, the git repos used, and more. Here is a simple example o
 
 ```json
 {
-  "name": "example-dask",
-  "image_uri": "public.ecr.aws/saturncloud/saturn:2022.01.06",
-  "description": "Use distributed computing with Dask",
-  "extra_packages": {
-    "pip": "lightgbm"
-  },
-  "working_directory": "/home/jovyan/examples/examples/dask",
-  "git_repositories": [{
-      "url": "https://github.com/saturncloud/examples"
-    }],
-  "jupyter_server": {
-    "disk_space": "10Gi",
-    "instance_type": "large"
-  },
-  "dask_cluster": {
-    "num_workers": 3,
-    "worker": { "instance_type": "large" },
-    "scheduler": { "instance_type": "large" }
-  },
-  "version": "2022.01.06"
+    "name": "example-dask",
+    "image_uri": "public.ecr.aws/saturncloud/saturn:2022.01.06",
+    "description": "Use distributed computing with Dask",
+    "extra_packages": {
+        "pip": "lightgbm"
+    },
+    "working_directory": "/home/jovyan/examples/examples/dask",
+    "git_repositories": [
+        {
+            "url": "https://github.com/saturncloud/examples"
+        }
+    ],
+    "jupyter_server": {
+        "disk_space": "10Gi",
+        "instance_type": "large"
+    },
+    "dask_cluster": {
+        "num_workers": 3,
+        "worker": { "instance_type": "large" },
+        "scheduler": { "instance_type": "large" }
+    },
+    "version": "2022.01.06"
 }
 ```
 
@@ -48,7 +50,7 @@ which are not required for recreating it.
 
 You can also create a resource file from scratch by using the JSON schema found in the [saturncloud/recipes](https://github.com/saturncloud/recipes) GitHub repo.
 
-To create a new resource using a recipe, click the appropriate create new resource button on the resource list page. 
+To create a new resource using a recipe, click the appropriate create new resource button on the resource list page.
 At the top you'll see a **Use a Recipe** button. This will let you paste in a recipe for a resource. You will also be able to choose
 the owner and name of the new recipe to make.
 

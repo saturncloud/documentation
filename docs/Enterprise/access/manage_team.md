@@ -1,6 +1,5 @@
 # Add and Remove Users
 
-
 ## Inviting new users
 
 Anyone who can log into Saturn Cloud Enterprise can invite other members of their organization to use the tool as well, however only admins can approve these requests.
@@ -17,4 +16,4 @@ Click **Create** and the invitation will be sent to an admin to approve the requ
 
 ## Removing access for users (admin only)
 
-If you would no longer want someone to have access to Saturn Cloud, on the **Users & Groups** page an admin can edit a user to set their status to **Locked**. This will prevent them from logging into Saturn Cloud or having access to any Saturn Cloud items such as resource, images, or credentials.
+If you would no longer want someone to have access to Saturn Cloud, on the **Users & Groups** page an admin can edit a user to set their status to **Locked**. This will prevent them from logging into Saturn Cloud or having access to any Saturn Cloud items such as resources, images, or secrets.
