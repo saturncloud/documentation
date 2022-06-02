@@ -6,7 +6,7 @@ A **Saturn Cloud image** is a Docker image that describes the libraries and pack
 
 ## Getting Started with Saturn Cloud Images
 
-When starting out with Saturn Cloud, most people [use one of our default images](<docs/Using Saturn Cloud/manage-images/saturn-default-images/jupyter-images/saturn-pytorch.md>), which provide most data science packages that you will need. It is also possible to [create or upload your own image](<docs/Using Saturn Cloud/manage-images/build-images/import-images.md>).
+When starting out with Saturn Cloud, most people [use one of our default images](<docs/using-saturn-cloud/manage-images/saturn-default-images/jupyter-images/saturn-pytorch.md>), which provide most data science packages that you will need. It is also possible to [create or upload your own image](<docs/using-saturn-cloud/manage-images/build-images/import-images.md>).
 
 ### Choosing the Right Image for the Job
 
@@ -22,12 +22,12 @@ For instance, if you use Python and want to do analysis on a CPU, you'll want to
 
 However, if you prefer to use RStudio and want to use GPU-accelerated TensorFlow, then you'll want to try the image called [saturn-rstudio-tensorflow](https://github.com/saturncloud/images/tree/main/saturn-rstudio-tensorflow).
 
--   **Are you a Python user?** Check out all the [Jupyter images](<docs/Using Saturn Cloud/manage-images/saturn-default-images/jupyter-images/saturn-pytorch.md>)
--   **Are you an R user?** Check out all the [RStudio images](<docs/Using Saturn Cloud/manage-images/saturn-default-images/rstudio-images/saturn-rstudio.md>)
+-   **Are you a Python user?** Check out all the [Jupyter images](<docs/using-saturn-cloud/manage-images/saturn-default-images/jupyter-images/saturn-pytorch.md>)
+-   **Are you an R user?** Check out all the [RStudio images](<docs/using-saturn-cloud/manage-images/saturn-default-images/rstudio-images/saturn-rstudio.md>)
 
 ### Attaching a Saturn Cloud Image to a Resource
 
-When you [create a resource in Saturn Cloud](<docs/troubleshooting/resources-wont-start.md>), you will choose a specific image from a dropdown menu.
+When you [create a resource in Saturn Cloud](<docs/admin/active-resources.md>), you will choose a specific image from a dropdown menu.
 
 Saturn Cloud's standard images start with `saturncloud/`.
 
@@ -35,10 +35,10 @@ Saturn Cloud's standard images start with `saturncloud/`.
 
 When selecting an image from the dropdown menu, you will only be presented with images that correspond to the hardware type associated with the resource. That is, GPU resources can only use GPU images, and CPU resources can only use CPU images.
 
-If you need packages that are not included among Saturn Cloud's standard images, you can install them at start-up using various package managers (e.g., apt, conda, pip, CRAN). When you add packages in this way, they will be reinstalled every time the resource starts. See the article on [installing software and packages](<docs/Using Saturn Cloud/install-packages.md>) for more detail.
+If you need packages that are not included among Saturn Cloud's standard images, you can install them at start-up using various package managers (e.g., apt, conda, pip, CRAN). When you add packages in this way, they will be reinstalled every time the resource starts. See the article on [installing software and packages](<docs/using-saturn-cloud/install-packages.md>) for more detail.
 
 > **Note**: If there is a Dask cluster associated with the resource, the Dask scheduler and workers will all use the same image as the Jupyter server.
 
 ### Using Custom Images
 
-Once you have established which packages you want to use your environment, you can [create a custom image](<docs/Using Saturn Cloud/manage-images/build-images/import-images.md>) that packages them all together. Using a custom image can significantly decrease start-up time because packages won't need to be reinstalled every time the resource starts.
+Once you have established which packages you want to use your environment, you can [create a custom image](<docs/using-saturn-cloud/manage-images/build-images/import-images.md>) that packages them all together. Using a custom image can significantly decrease start-up time because packages won't need to be reinstalled every time the resource starts.

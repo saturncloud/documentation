@@ -28,11 +28,11 @@ A resource is a complete environment for running code. Each resource is independ
 
 A resource is one of the following:
 
--   **[Jupyter Server](<docs/Using Saturn Cloud/resources/jupyter-servers.md>)**: This resource type allows you to interactively run code via JupyterLab or by [connecting via SSH from an IDE like PyCharm or VSCode](<docs/Using Saturn Cloud/ide_ssh.md>).
--   **[RStudio Server](<docs/Using Saturn Cloud/resources/rstudio-servers.md>)**: If you are primarily doing R development, you can use an RStudio server to use the RStudio IDE.
--   **[Job](<docs/Using Saturn Cloud/resources/jobs.md>)**: A task that runs on command or on a schedule. _(Hosted Pro and Enterprise accounts only)_
--   **[Deployment](<docs/Using Saturn Cloud/resources/deployments.md>)**: A continuously running activity like a hosted dashboard or API. _(Hosted Pro and Enterprise accounts only)_
--   **[Prefect Cloud Flow](<docs/Using Saturn Cloud/resources/prefect-cloud-flows.md>)**: A special type of resource specific for running Prefect jobs which are created differently than the other types of resources. _(Enterprise accounts only)_
+-   **[Jupyter Server](<docs/using-saturn-cloud/resources/jupyter-servers.md>)**: This resource type allows you to interactively run code via JupyterLab or by [connecting via SSH from an IDE like PyCharm or VSCode](<docs/using-saturn-cloud/ide_ssh.md>).
+-   **[RStudio Server](<docs/using-saturn-cloud/resources/rstudio-servers.md>)**: If you are primarily doing R development, you can use an RStudio server to use the RStudio IDE.
+-   **[Job](<docs/using-saturn-cloud/resources/jobs.md>)**: A task that runs on command or on a schedule. _(Hosted Pro and Enterprise accounts only)_
+-   **[Deployment](<docs/using-saturn-cloud/resources/deployments.md>)**: A continuously running activity like a hosted dashboard or API. _(Hosted Pro and Enterprise accounts only)_
+-   **[Prefect Cloud Flow](<docs/using-saturn-cloud/resources/prefect-cloud-flows.md>)**: A special type of resource specific for running Prefect jobs which are created differently than the other types of resources. _(Enterprise accounts only)_
 
 Each user can have multiple resources, and resources can be cloned (including by other users with sufficient permissions). Each resource may optionally have a Dask cluster associated with it, allowing the resource to run computations across multiple machines.
 
@@ -41,14 +41,14 @@ Each user can have multiple resources, and resources can be cloned (including by
 When you log into Saturn Cloud you'll first see the **Resources** page. On the Resources page you can see
 your existing resources, or create a new one in either of the following ways:
 
--   [Set up your own custom resource](<docs/troubleshooting/resources-wont-start.md>) with your specifications by pressing one of the **New** buttons at the top.
+-   [Set up your own custom resource](<docs/admin/active-resources.md>) with your specifications by pressing one of the **New** buttons at the top.
 -   Select one of the pre-created template resources. These are set up to have the appropriate settings and code for a particular task.
 
 ![Screenshot of the resource page](/images/docs/create-resource-buttons.png "doc-image")
 
 ## Start a resource
 
-Once a resource is created, you'll need to turn it on. Press the blue **Start** button on the resource's page to start the server. If you have a [Dask cluster](<docs/Using Saturn Cloud/create_dask_cluster.md>) attached to the resource, you’ll need to start that separately.
+Once a resource is created, you'll need to turn it on. Press the blue **Start** button on the resource's page to start the server. If you have a [Dask cluster](<docs/using-saturn-cloud/create_dask_cluster.md>) attached to the resource, you’ll need to start that separately.
 
 ![Screenshot of card in resource for Jupyter server with a rectangle around the start button](/images/docs/start_resource_button_rectangles.jpeg "doc-image")
 
@@ -56,7 +56,7 @@ As your machine starts up, the card will display _pending_, and you will see a p
 
 In the case of Jupyter server and RStudio servers, when the machine is ready the card will show _running_. You'll see and the JupyterLab or RStudio button available so that you can use those IDES on the resource. For other resource types (jobs, deployments, or Prefect Cloud flows) the action that happens when the resource starts will be different.
 
-Once you're in the IDE, you can write, run, and save code. You can also connect your resource to [git repositories](<docs/Using Saturn Cloud/gitrepo.md>) to version control your code.
+Once you're in the IDE, you can write, run, and save code. You can also connect your resource to [git repositories](<docs/using-saturn-cloud/gitrepo.md>) to version control your code.
 
 ## Stop the resource
 
@@ -66,10 +66,10 @@ When you're done using the resource, shut it down by clicking the red **Stop** b
 
 Creating and using resources is central to using on Saturn Cloud. There are many ways you can expand on them beyond using them as an interactive workspace for your code:
 
--   **[Install software and packages](<docs/Using Saturn Cloud/install-packages.md>).** If your code requires specific libraries or software to be installed on the resource then there are multiple methods of adding the dependencies.
--   **[Create a Dask cluster for the resource](<docs/Using Saturn Cloud/create_dask_cluster.md>).** One powerful feature of Saturn Cloud is the ability to leverage Dask clusters for distributed computing.
--   **[Connect a git repo](<docs/Using Saturn Cloud/gitrepo.md>).** Connect a Saturn Cloud resource to your git repositories to run your code.
--   **[Add secrets to your resources](<docs/Using Saturn Cloud/secrets.md>).** You may need to have secret credentials in your working environment to access tools or data. The **Secrets** section of the tools menu is where this information can be safely stored.
--   **[Use other IDEs (e.g., PyCharm, VSCode)](<docs/Using Saturn Cloud/ide_ssh.md>).** Connect to a resource from your local IDE, using an SSH connection.
--   **[Create a custom image](<docs/Using Saturn Cloud/manage-images/build-images/create-images.md>).** Resources are built upon images with base software and packages. Many people use our standard images, which provide access to many data science packages. However, if, for example, your company has a designed Docker image, you can use that instead.
--   **[Schedule jobs](<docs/Using Saturn Cloud/resources/jobs.md>) and [run deployments](<docs/Using Saturn Cloud/resources/deployments.md>).** Jobs and deployments are two other resource types. They let you schedule scripts to run or set up continuously running resources (e.g., APIs, dashboards). _(Hosted Pro and Enterprise accounts only)_
+-   **[Install software and packages](<docs/using-saturn-cloud/install-packages.md>).** If your code requires specific libraries or software to be installed on the resource then there are multiple methods of adding the dependencies.
+-   **[Create a Dask cluster for the resource](<docs/using-saturn-cloud/create_dask_cluster.md>).** One powerful feature of Saturn Cloud is the ability to leverage Dask clusters for distributed computing.
+-   **[Connect a git repo](<docs/using-saturn-cloud/gitrepo.md>).** Connect a Saturn Cloud resource to your git repositories to run your code.
+-   **[Add secrets to your resources](<docs/using-saturn-cloud/secrets.md>).** You may need to have secret credentials in your working environment to access tools or data. The **Secrets** section of the tools menu is where this information can be safely stored.
+-   **[Use other IDEs (e.g., PyCharm, VSCode)](<docs/using-saturn-cloud/ide_ssh.md>).** Connect to a resource from your local IDE, using an SSH connection.
+-   **[Create a custom image](<docs/using-saturn-cloud/manage-images/build-images/create-images.md>).** Resources are built upon images with base software and packages. Many people use our standard images, which provide access to many data science packages. However, if, for example, your company has a designed Docker image, you can use that instead.
+-   **[Schedule jobs](<docs/using-saturn-cloud/resources/jobs.md>) and [run deployments](<docs/using-saturn-cloud/resources/deployments.md>).** Jobs and deployments are two other resource types. They let you schedule scripts to run or set up continuously running resources (e.g., APIs, dashboards). _(Hosted Pro and Enterprise accounts only)_

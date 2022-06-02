@@ -36,7 +36,7 @@ This function will restart each of the worker processes, clearing out anything t
 
 ## Dask Cluster Settings
 
-Tweaking cluster settings can have a big impact on the runtime of your workloads. Many times this means using larger workers or more workers, but there are also other settings related to how Dask distributes work. See ["Create a Dask Cluster in the UI"](<docs/Using Saturn Cloud/create_dask_cluster.md>)) for how to create a Dask cluster and edit these settings.
+Tweaking cluster settings can have a big impact on the runtime of your workloads. Many times this means using larger workers or more workers, but there are also other settings related to how Dask distributes work. See ["Create a Dask Cluster in the UI"](<docs/using-saturn-cloud/create_dask_cluster.md>)) for how to create a Dask cluster and edit these settings.
 
 If you encounter any of the following, you may need to optimize your cluster settings:
 * Memory-related errors

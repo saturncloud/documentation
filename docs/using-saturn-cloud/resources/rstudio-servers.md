@@ -8,7 +8,7 @@ To create a RStudio Server resource, click the **Create RStudio Server** button 
 
 In the above form, you'll supply the following details:
 
-* **Name**: Identify the resource with a name of your choosing, and if you like, provide a description. If you  want to [use SSH to access this resource](<docs/Using Saturn Cloud/ide_ssh.md>), check that box. 
+* **Name**: Identify the resource with a name of your choosing, and if you like, provide a description. If you  want to [use SSH to access this resource](<docs/using-saturn-cloud/ide_ssh.md>), check that box. 
 * **Disk Space**: The default of 10GB is a good place to start, but if you plan to store very big data files, you may want to increase this.
 * **Hardware**: Whether the resource uses only a CPU or also a GPU.
 * **Size**: How powerful the machine will be. This adjusts the CPU and memory, and in the case of GPU hardware the size and number of GPUs.

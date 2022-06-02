@@ -4,7 +4,7 @@
 
 Saturn Cloud has a built in GPU image for TensorFlow that has all the required libraries to get started using TensorFlow on a GPU. When creating a new resource, select the `saturn-tensorflow` image. Once the resource starts, you TensorFlow code should be ready to run.
 
-If you want to [create your own image](<docs/Using Saturn Cloud/manage-images/build-images/create-images.md>), you will need to install the GPU version of Tensorflow. In `pip`, the library is call `tensorflow-gpu`. In conda, look through the list to find a GPU build.
+If you want to [create your own image](<docs/using-saturn-cloud/manage-images/build-images/create-images.md>), you will need to install the GPU version of Tensorflow. In `pip`, the library is call `tensorflow-gpu`. In conda, look through the list to find a GPU build.
 
 ```bash
 $ conda search tensorflow

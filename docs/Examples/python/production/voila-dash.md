@@ -23,7 +23,7 @@ https://j-aaron-dashboard.community.saturnenterprise.io/user/aaron/dashboard/voi
 
 ## Deployment
 
-After you're happy with your dashboard, you can enable a production deployment. If you aren't familiar with Deployments in Saturn Cloud, check out the [docs on setting up a Deployment](<docs/Using Saturn Cloud/resources/deployments.md>).
+After you're happy with your dashboard, you can enable a production deployment. If you aren't familiar with Deployments in Saturn Cloud, check out the [docs on setting up a Deployment](<docs/using-saturn-cloud/resources/deployments.md>).
 
 To enable Voila on all notebooks, run:
 

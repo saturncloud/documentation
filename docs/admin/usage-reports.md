@@ -1,5 +1,9 @@
 # Usage Reports
 
+{{% alert title="Enterprise Only Feature" %}}
+This functionality is only available to users on Enterprise plans. Support for Hosted Organizations is coming soon.
+{{% /alert %}}
+
 Saturn Cloud Enterprise provides admin users with reports on how Saturn Cloud is being utilized. This includes details on how Saturn Cloud has been used by user, resource type, and other splits. The data is updated hourly. As an admin user, you can see the usage reports within the **Settings** tab of the Saturn Cloud application. Within it is a **Usage Reports** section, that has a report for each month Saturn Cloud has been running within your enterprise account. 
 
 ![Usage reports list](/images/docs/usage-reports-list.jpg "doc-image")

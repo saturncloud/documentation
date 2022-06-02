@@ -1,21 +1,4 @@
-# Connect to Dask from Outside Saturn Cloud
-
-What if you'd like to just connect directly from your laptop to a Dask cluster, instead of using a Jupyter server at all? Saturn Cloud lets you do this too!
-
-## Create the Environment
-
-In order to use this feature, you'll need several Dask and Saturn Cloud related Python packages running the same versions as the Dask cluster in Saturn Cloud.
-To keep the versioning simple, we recommend you create a conda environment with the right specifications, as shown below. (Run this set of commands in your terminal.)
-
-```bash
-conda create -n dask-saturn dask=2.30.0 distributed=2.30.1 python=3.7
-conda activate dask-saturn
-pip install dask-saturn==0.3.0
-```
-
-Now you have the environment all set to go!
-
-> Sometimes we find that people's local environments also have old versions of `pandas`, and this can be an issue. Check that your version of pandas is the one you want.
+# Connect to Dask from SageMaker
 
 ## Creating a Saturn Cloud resource
 
@@ -27,7 +10,7 @@ Given the resource a name (ex: "external-connect-demo"), but you can leave all o
 
 ![New Jupyter server options](/images/docs/new-jupyter-server-options.jpg "doc-image")
 
-After the resource is created you'll be brought the page for it. Next, we need to add a Dask cluster to this resource. Press the **New Dask Cluster** button, which will pop up a dialog for setting the Dask cluster. Choose the size each worker, the number of workers, and other options for the Dask cluster (see [Create a Dask Cluster](<docs/Using Saturn Cloud/create_dask_cluster.md>) for details on those), then click **Create**.
+After the resource is created you'll be brought the page for it. Next, we need to add a Dask cluster to this resource. Press the **New Dask Cluster** button, which will pop up a dialog for setting the Dask cluster. Choose the size each worker, the number of workers, and other options for the Dask cluster (see [Create a Dask Cluster](<docs/using-saturn-cloud/create_dask_cluster.md>) for details on those), then click **Create**.
 
 ![New Dask cluster options](/images/docs/new-dask-cluster-options.jpg "doc-image")
 
@@ -62,8 +45,10 @@ This tells you that your cluster is starting up! Eventually you'll see something
 #> INFO:dask-saturn:{'tcp://10.0.23.16:43141': {'status': 'OK'}}
 ```
 
-Which is informing you that your cluster is up and ready to use. Now you can interact with it just the same way you would from a Saturn Cloud Jupyter server.
+Which is informing you that your cluster is up and ready to use. Now you can interact with it just the same way you would from a Saturn Cloud Jupyter server. If you need help with that, please check out some of our tutorials, such as [Training a Model with Scikit-learn and Dask](<docs/Examples/python/Dask/machine-learning/qs-machine-learning-model-training.md>), or the <a href="https://github.com/saturncloud/dask-saturn" target='_blank' rel='noopener'>dask-saturn API</a>. 
 
-## Places to connect to Saturn Cloud
+## Analysis!
 
-Not only can you connect to Saturn Cloud from your laptop or local machine, but you can connect from other cloud-based notebooks. Check out instructions for connecting from [Google Colab](<docs/Using Saturn Cloud/External Connect/colab_external_connect.md>), [SageMaker](<docs/Using Saturn Cloud/External Connect/sagemaker_external_connect.md>), and [Azure](<docs/Using Saturn Cloud/External Connect/azure_external_connect.md>).
+At this point, you are able to do load data and complete whatever analysis you want. You can monitor the performance of your cluster at the link described earlier, or you can log in to Saturn Cloud and see the Dask dashboard, logs for the cluster workers, and other useful information.
+
+You can also connect to Dask from [Google Colab](<docs/using-saturn-cloud/External Connect/colab_external_connect.md>), [Azure](<docs/using-saturn-cloud/External Connect/azure_external_connect.md>), or [anywhere else outside of Saturn Cloud](<docs/using-saturn-cloud/External Connect/external_connect.md>).
