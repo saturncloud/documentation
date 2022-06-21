@@ -6,7 +6,7 @@ A **Saturn Cloud image** is a Docker image that describes the libraries and pack
 
 ## Getting Started with Saturn Cloud Images
 
-When starting out with Saturn Cloud, most people [use one of our default images](<docs/using-saturn-cloud/manage-images/saturn-default-images/jupyter-images/saturn-pytorch.md>), which provide most data science packages that you will need. It is also possible to [create or upload your own image](<docs/using-saturn-cloud/manage-images/build-images/import-images.md>).
+When starting out with Saturn Cloud, most people [use one of our default images](<docs/using-saturn-cloud/manage-images/saturn-default-images/rstudio-images/saturn-rstudio.md>), which provide most data science packages that you will need. It is also possible to [create or upload your own image](<docs/using-saturn-cloud/manage-images/build-images/import-images.md>).
 
 ### Choosing the Right Image for the Job
 
@@ -22,7 +22,7 @@ For instance, if you use Python and want to do analysis on a CPU, you'll want to
 
 However, if you prefer to use RStudio and want to use GPU-accelerated TensorFlow, then you'll want to try the image called [saturn-rstudio-tensorflow](https://github.com/saturncloud/images/tree/main/saturn-rstudio-tensorflow).
 
--   **Are you a Python user?** Check out all the [Jupyter images](<docs/using-saturn-cloud/manage-images/saturn-default-images/jupyter-images/saturn-pytorch.md>)
+-   **Are you a Python user?** Check out all the [Jupyter images](<docs/using-saturn-cloud/manage-images/saturn-default-images/jupyter-images/saturn-rapids.md>)
 -   **Are you an R user?** Check out all the [RStudio images](<docs/using-saturn-cloud/manage-images/saturn-default-images/rstudio-images/saturn-rstudio.md>)
 
 ### Attaching a Saturn Cloud Image to a Resource
