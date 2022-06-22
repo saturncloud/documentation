@@ -1,4 +1,4 @@
-# Connect via SSH
+# SSH Connections
 
 ## Connect to an external IDE
 

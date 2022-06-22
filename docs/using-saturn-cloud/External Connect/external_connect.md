@@ -37,7 +37,7 @@ Once the Dask cluster is created you'll see it has a **Connect Externally** butt
 
 First, ensure that the client connecting to the Dask cluster has the appropriate libraries, in particular the version of `dask-saturn` shown by the UI. You'll also want to include `dask` and `distributed`, ideally with the same version as that in the cluster.
 
-Next, set the `SATURN_BASE_URL` and `SATURN_TOKEN` environmental variables in the client machine to the values show in the dialog. Those let saturn know which particular Dask cluster to connect to.
+Next, set the `SATURN_BASE_URL` and `SATURN_TOKEN` environmental variables in the client machine to the values show in the dialog which let the system know which particular Saturn Cloud Dask cluster to connect to. For guidance on how to set environment variables, see our [environment variable documentation](<docs/using-saturn-cloud/environment-variables.md>.
 
 Finally, from within the client machine you can then connect to the Dask cluster from Python:
 

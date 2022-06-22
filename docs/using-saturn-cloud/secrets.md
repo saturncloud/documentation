@@ -1,4 +1,4 @@
-# Add Secrets
+# Secrets
 
 {{% alert title="Credentials are now secrets" %}}
 Whereas the previous version of Saturn Cloud featured a _credentials_ component, the latest 2022.04.01 version now has a new _secrets_ component.
@@ -38,20 +38,14 @@ First, navigate to your resource page and select **Secrets** from the top horizo
 
 ![Resource page opened up on the secrets tab](/images/docs/resource_secret_page.png "doc-image")
 
-You can either attach a secret as an environment variable or as a file.
-
-To add a secret as an environment variable, select **Attach Secret Environment Variable**. In the form, select the secret you wish to attach, the environment variable name to set the value to, and a short description.
-
-![Form to attach a secret environment variable](/images/docs/attach_secret_env_variable.png "doc-image-medium")
-
-Once you click **Create**, your secret will show under the attached secrets list on the resource and be attached to your workspace as an environment variable.
-
-{{% alert %}}
-You will need to restart your resource for the secret to be accessible in your workspace.
-{{% /alert %}}
+You can either attach a secret as an environment variable or as a file. You can also modify the name that the environment variable will be on the resource, or the file path for the file with the secret.
+You can also remove the secret on the page by pressing the appropriate button in the **Actions** column.
 
 ![Secret list with environment variable attached](/images/docs/attached_secret.png "doc-image")
 
-To remove the secret from the resource or to edit the environment variable name or description, click on the icons under Actions.
+{{% alert %}}
+Note: If the resource is already running when you attached a new secret, you will need to restart it before the secret is on it.
+{{% /alert %}}
 
-To attach a secret as a file, click on **Attach Secret File** and follow the above steps substituting your preferred file path for the environment variable name.
+Once the secret has been attached (and the resource restarted if needed), the secrets stored as files will show up in your file browser. For secrets that are environment variables, see our
+[environment variables documentation](<docs/using-saturn-cloud/environment-variables.md>) for how to access them.
