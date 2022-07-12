@@ -6,7 +6,7 @@ A **Saturn Cloud image** is a Docker image that describes the libraries and pack
 
 ## Getting Started with Saturn Cloud Images
 
-When starting out with Saturn Cloud, most people [use one of our default images](<docs/using-saturn-cloud/manage-images/saturn-default-images/rstudio-images/saturn-rstudio.md>), which provide most data science packages that you will need. It is also possible to [create or upload your own image](<docs/using-saturn-cloud/manage-images/build-images/import-images.md>).
+When starting out with Saturn Cloud, most people [use one of our default images](<docs/images/default-images/saturn-python-rapids.md>), which provide most data science packages that you will need. It is also possible to [create or upload your own image](<docs/using-saturn-cloud/manage-images/build-images/create-images.md>).
 
 ### Choosing the Right Image for the Job
 
@@ -18,12 +18,9 @@ The image you choose to use on a resource depends on the following criteria:
 -   Whether you want to do your work on CPU only or with GPU acceleration
 -   Which machine learning frameworks you want to use (e.g., RAPIDS, PyTorch, TensorFlow)
 
-For instance, if you use Python and want to do analysis on a CPU, you'll want to try the image called [saturn](https://github.com/saturncloud/images/tree/main/saturn).
+For instance, if you use Python and want to do analysis on a CPU, you'll want to try the image called `saturncloud/saturn-python`.
 
-However, if you prefer to use RStudio and want to use GPU-accelerated TensorFlow, then you'll want to try the image called [saturn-rstudio-tensorflow](https://github.com/saturncloud/images/tree/main/saturn-rstudio-tensorflow).
-
--   **Are you a Python user?** Check out all the [Jupyter images](<docs/using-saturn-cloud/manage-images/saturn-default-images/jupyter-images/saturn-rapids.md>)
--   **Are you an R user?** Check out all the [RStudio images](<docs/using-saturn-cloud/manage-images/saturn-default-images/rstudio-images/saturn-rstudio.md>)
+However, if you prefer to use RStudio and want to use GPU-accelerated TensorFlow, then you'll want to try the image called `saturncloud/saturn-rstudio-tensorflow`.
 
 ### Attaching a Saturn Cloud Image to a Resource
 
@@ -41,4 +38,4 @@ If you need packages that are not included among Saturn Cloud's standard images,
 
 ### Using Custom Images
 
-Once you have established which packages you want to use your environment, you can [create a custom image](<docs/using-saturn-cloud/manage-images/build-images/import-images.md>) that packages them all together. Using a custom image can significantly decrease start-up time because packages won't need to be reinstalled every time the resource starts.
+Once you have established which packages you want to use your environment, you can [create a custom image](<docs/using-saturn-cloud/manage-images/build-images/create-images.md>) that packages them all together. Using a custom image can significantly decrease start-up time because packages won't need to be reinstalled every time the resource starts.

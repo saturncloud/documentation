@@ -4,13 +4,14 @@ Before you get started creating your own custom image, it's important to underst
 
 When you create a custom image using the Saturn Cloud UI, you build it upon a base image.
 
-Base images consist of the operating system and the minimum required code to achieve the full functionality of Saturn Cloud (for either CPU or GPU instances). They also contain packages to run the various workspaces (e.g., JupyterLab, RStudio) as well as the CUDA drivers necessary to interact with GPUs. They are designed to be as slim as possible so that they can load more quickly. You can see all of the base image definitions [here](<docs/using-saturn-cloud/manage-images/saturn-default-images/base-images/saturnbase-gpu-11.1.md>).
+Base images consist of the operating system and the minimum required code to achieve the full functionality of Saturn Cloud (for either CPU or GPU instances). They also contain packages to run the various workspaces (e.g., JupyterLab, RStudio) as well as the CUDA drivers necessary to interact with GPUs. They are designed to be as slim as possible so that they can load more quickly. You can see all of the base image definitions [here](<docs/images/base-images/saturnbase-python-gpu-11.2.md>).
 
 After selecting the base image, you add packages and start scripts that define the rest of the custom image.
 
 ![Flowchart showing the process of creating an image in Saturn Cloud](/images/docs/image-creation-flowchart.png "doc-image")
 
 ## Create an Image Within Saturn Cloud
+
 > **Note**: In general we do not recommend storing confidential or proprietary information in Docker images. The Saturn Cloud pattern centers around layering Git repositories on top of docker images at run time. On Saturn Cloud Hosted, guarantees on the privacy of docker images are much weaker than they are on Saturn Cloud Enterprise.
 
 To build your own image, select the **Images** tab in Saturn Cloud. From here, you'll see the blue **New Image** button at the top right of the screen. Click this, and you'll be taken to a form.
