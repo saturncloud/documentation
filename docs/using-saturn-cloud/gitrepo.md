@@ -15,7 +15,7 @@ Go to the **Git Repositories** tab in Saturn Cloud, at the bottom you'll see an 
 
 ![Git SSH key generation](/images/docs/git-ssh-key-generating.jpg "doc-image")
 
-After you have a key pair, take the SSH public key and add it to your git Host to create the secure connection. Refer to your git host for how to do this (for example, [here are the directions for GitHub](https://docs.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account)).
+After you have a key pair, take the SSH public key and add it to your git Host to create the secure connection. Refer to your git host for how to do this (for example, [here are the directions for GitHub](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account)).
 
 ![Git SSH key UI](/images/docs/git-ssh-key.jpg "doc-image")
 

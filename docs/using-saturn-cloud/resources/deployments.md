@@ -47,7 +47,7 @@ To access a deployed API programmatically, you'll need to ensure the machine mak
 import requests
 import os
 
-url = "https://hellosaturn.deploy.example.com"
+url = "https://hellosaturn-deploy.community.saturnenterprise.io"
 USER_TOKEN = # your user token
 response = requests.get(
     url,
