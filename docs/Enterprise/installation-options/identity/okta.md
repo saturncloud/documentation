@@ -2,9 +2,31 @@
 
 To use Okta to authenticate Saturn Cloud Enterprise, use the following steps:
 
-1. Login to your Okta account and navigate to the Okta dashboard.
-2. Select *Applications*, then *Add Application*.
-3. Select "Web Application"
-4. Set *Login Redirect URI* to your Auth0 callback URI (which we will give you). It will be something like this: https://your-company.us.auth0.com/login/callback
-5. For *Grant type allowed*, we require openid, email, and profile
-6. Okta will provide you with a client ID and secret. Give those to us, and we will complete the Auth0 configuration.
+1. Login to your Okta account and navigate to the Okta dashboard. In the sidebar, click on "Applications"
+
+<img width=200 src="/images/docs/okta-sidebar.png" alt="Okta Side Bar" class="doc-image-no-format">
+
+2. Choose *Create App Integration*
+<img width=500 src="/images/docs/okta-create-app.png" alt="Okta Create App" class="doc-image-no-format">
+
+3. Select *OIDC* and *Web Application*
+
+<img width=500 src="/images/docs/okta-create-app-2.png" alt="Okta Create App Form" class="doc-image-no-format">
+
+4. In the resulting form, set the sign-in redirect URI (which we will provide to you separately). For Grant type allowed, we require openid, email, profile, and groups.
+
+<img width=600 src="/images/docs/okta-sign-in-uri.png" alt="Okta Set Sign In URI" class="doc-image-no-format">
+
+5. Under assignments, choose *Allow everyone in your organization to access*. or *Limit access to specific groups*. Saturn Cloud has additional controls for adding new users, so you do not have to be completely precise here. For simplicity We recommend *Allow everyone in your organization to access*.
+
+<img width=600 src="/images/docs/okta-everyone-access.png" alt="Okta Every Access" class="doc-image-no-format">
+
+6. Click *Save*. Afterwards, click on *Sign On* in order to configure *Sign On* options.
+
+<img width=600 src="/images/docs/okta-signon.png" alt="Selct Okta Sign On" class="doc-image-no-format">
+
+7. Click to edit the *Open ID Connect Token*. Modify the selector to *Matches Regex* and then use `.*` as the value. This ensures that Saturn Cloud gets all group membership information, which Saturn Cloud admins can use to control entitlements within Saturn cloud.
+
+<img width=600 src="/images/docs/okta-groups.png" alt="Okta Groups" class="doc-image-no-format">
+
+8. Please Store the client ID and Secret for this application. We will invite you to your Auth0 tenant, where you can input this information securely.
