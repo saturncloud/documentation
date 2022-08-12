@@ -33,35 +33,32 @@ aws autoscaling describe-scaling-activities
 You should see a message like this:
 
 ```
- {
-            "ActivityId": "2323-234234-234234",
-            "AutoScalingGroupName": "saturn-cluster-demo-16xlarge20202323242342342",
-            "Description": "Launching a new EC2 instance.  Status Reason: You have 
-            requested more vCPU capacity than your current vCPU limit of 32 allows 
-            for the instance bucket that the specified instance type belongs to. 
-             Please visit http://aws.amazon.com/contact-us/ec2-request to request an 
-             adjustment to this limit. Launching EC2 instance failed.",
-            "Cause": "At 2020-07-14T13:13:24Z an instance was started in response 
-            to a difference between desired and actual capacity, increasing the 
-            capacity from 0 to 1.",
-            "StartTime": "2020-07-14T13:13:25.764Z",
-            "EndTime": "2020-07-14T13:13:25Z",
-            "StatusCode": "Failed",
-            "StatusMessage": "You have requested more vCPU capacity than your 
-            current vCPU limit of 32 allows for the instance bucket that the 
-            specified instance type belongs to. Please visit 
-            http://aws.amazon.com/contact-us/ec2-request to request an adjustment 
-            to this limit. Launching EC2 instance failed.",
-            "Progress": 100,
-            "Details": "{\"Subnet ID\":\"subnet-24234234234234234\",
-            \"Availability Zone\":\"eu-west-3a\"}"
-        },
+{
+    "ActivityId": "2323-234234-234234",
+    "AutoScalingGroupName": "saturn-cluster-demo-16xlarge20202323242342342",
+    "Description": "Launching a new EC2 instance.  Status Reason: You have requested more vCPU capacity than your current vCPU limit of 32 allows for the instance bucket that the specified instance type belongs to. Please visit http://aws.amazon.com/contact-us/ec2-request to request an adjustment to this limit. Launching EC2 instance failed.",
+    "Cause": "At 2020-07-14T13:13:24Z an instance was started in response to a difference between desired and actual capacity, increasing the capacity from 0 to 1.",
+    "StartTime": "2020-07-14T13:13:25.764Z",
+    "EndTime": "2020-07-14T13:13:25Z",
+    "StatusCode": "Failed",
+    "StatusMessage": "You have requested more vCPU capacity than your current vCPU limit of 32 allows for the instance bucket that the specified instance type belongs to. Please visit http://aws.amazon.com/contact-us/ec2-request to request an adjustment to this limit. Launching EC2 instance failed.",
+    "Progress": 100,
+    "Details": "{\"Subnet ID\":\"subnet-24234234234234234\",
+    \"Availability Zone\":\"eu-west-3a\"}"
+}
 ```
 To resolve this, navigate to the <a href="https://console.aws.amazon.com/servicequotas/home" target='_blank' rel='noopener'>AWS Service Quotas Console</a>. From there select **EC2**.
 
-- For CPU instances, increase the value for **Running On-Demand Standard (A, C, D, H, I, M, R, T, Z) instances**. 
+- For CPU instances, increase the value for **Running On-Demand Standard (A, C, D, H, I, M, R, T, Z) instances**.
+- For high memory (`x1`/`x1e`) CPU instances, increase the value for **Running On-Demand X instances**
 - For T4 GPUs, it's **Running On-Demand G instances**
 - For V100 GPUs it's **Running On-Demand P instances**.
+
+You can also increase the quota limits for spot instances:
+- All Standard (A, C, D, H, I, M, R, T, Z) Spot Instance Requests
+- All X Spot Instance Requests
+- All G and VT Spot Instance Requests
+- All P Spot Instance Requests
 
 AWS generally takes 24 hours to respond to limit increases.
 
