@@ -65,5 +65,5 @@ ssh -i path/to/key <resource URL>
 
 To see examples of moving data to and from your local machine using SSH, see our loading data examples:
 
--   [Load Data: Python](<docs/Examples/python/load-data/qs-load-data-local-files.md>)
--   [Load Data: R](<docs/Examples/R/load-data/qs-r-load-data-local-files.md>)
+-   [Load Data: Python](<docs/examples/python/load-data/qs-load-data-local-files.md>)
+-   [Load Data: R](<docs/examples/r/load-data/qs-r-load-data-local-files.md>)

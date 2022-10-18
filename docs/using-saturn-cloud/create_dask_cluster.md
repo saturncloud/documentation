@@ -4,7 +4,7 @@
 
 For various reasons you may not want to use the UI to create the Dask cluster.
 For instance if you have script that runs and you want the code to spin up a different sized Dask cluster depending on the situation. You
-might also want to [connect to Dask externally](<docs/using-saturn-cloud/External Connect/external_connect.md>) and avoid the UI entirely.
+might also want to [connect to Dask externally](<docs/using-saturn-cloud/external-connect/external_connect.md>) and avoid the UI entirely.
 In these situations you can use Python code to create an appropriate Dask cluster.
 
 You should first make sure your have the `dask-saturn` and `dask.distributed` Python libraries installed where you're running the code. We include these libraries installed in all our Jupyter server environments, and if you’re [building your own images](<docs/using-saturn-cloud/manage-images/build-images/create-images.md>), we strongly recommend you include these libraries as well.
