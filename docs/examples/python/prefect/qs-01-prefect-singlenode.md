@@ -334,7 +334,7 @@ An alternative way to run the flow immediately is to open a terminal and run the
 
 ```shell
 prefect auth login --key ${PREFECT_USER_TOKEN}
-prefect run flow \
+prefect run \
     --name ${SATURN_USERNAME}-ticket-model-evaluation \
     --project ${PREFECT_CLOUD_PROJECT_NAME}
 ```

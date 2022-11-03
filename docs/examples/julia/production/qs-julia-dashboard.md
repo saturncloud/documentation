@@ -4,7 +4,7 @@
 ## Overview
 With [Dash](https://dash.plotly.com/) by Plotly, data scientists can produce low-code data apps by abstracting away much of the technologies and protocols typically required for interactive data visualization. Deploying a Dash app on Saturn Cloud provides not only a scalable backend for your app but also a url link for dissemination.
 
-In this example, we create a simple UI showing a [Uniform Manifold Approximation and Projection (UMAP)](https://umap-learn.readthedocs.io/en/latest/) model projection of the famous MNIST digits and fashion datasets. The app will read the data, train the UMAP model, and produce a 3D graph of the result using [PlotlyJS](https://juliaplots.org/PlotlyJS.jl/stable/).
+In this example, we create a simple UI showing a [Uniform Manifold Approximation and Projection (UMAP)](https://umap-learn.readthedocs.io/en/latest/) model projection of the famous MNIST digits and fashion datasets. The app will read the data, train the UMAP model, and produce a 3D graph of the result using [PlotlyJS](http://juliaplots.org/PlotlyJS.jl/stable/).
 
 ## Creating the App
 All the app code is contained in a file called "app.jl." To deploy this app on Saturn Cloud, call `julia app.jl` as the command in a Saturn Cloud deployment. See [Saturn Cloud docs](https://saturncloud.io/docs/examples/dashboards/dashboard/) for more detailed instructions on deploying this and other dashboards.

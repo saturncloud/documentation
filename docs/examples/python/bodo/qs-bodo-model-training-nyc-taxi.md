@@ -37,7 +37,7 @@ print(f"Hello World from rank {bodo.get_rank()}. Total ranks={bodo.get_size()}")
 
 These are the main packages we are going to work with:
  - Bodo to parallelize Python code automatically
- - Pandas to work with data
+ - pandas to work with data
  - scikit-learn to build and evaluate regression models
  - xgboost for xgboost regressor model
 
@@ -68,6 +68,7 @@ def get_taxi_trips():
     start = time.time()
     taxi = pd.read_parquet(
         "s3://bodo-example-data/nyc-taxi/yellow_tripdata_2019_half.pq",
+        storage_options={"anon": True}
         )
     print("Reading time: ", time.time() - start)
     print(taxi.shape)

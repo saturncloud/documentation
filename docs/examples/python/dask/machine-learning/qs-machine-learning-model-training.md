@@ -13,7 +13,7 @@ client = Client(SaturnCluster())
 
 After running the above command, it's recommended that you check on the Saturn Cloud resource page that the Dask cluster as fully online before continuing. Alternatively, you can use the command `client.wait_for_workers(3)` to halt the notebook execution until all three of the workers are ready.
 
-Now load your data into a Dask Dataframe. Here we are loading data for csv file located at s3 storage. Using read_csv from Dask takes the same form as using that function from pandas.
+Now load your data into a Dask DataFrame. Here we are loading data for csv file located at s3 storage. Using read_csv from Dask takes the same form as using that function from pandas.
 
 
 ```python

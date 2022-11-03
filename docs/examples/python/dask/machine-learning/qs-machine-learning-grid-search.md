@@ -40,10 +40,7 @@ The data is loaded into a pandas DataFrame from S3:
 
 
 ```python
-taxi = pd.read_csv(
-    "https://s3.amazonaws.com/nyc-tlc/trip+data/yellow_tripdata_2020-05.csv",
-    parse_dates=["tpep_pickup_datetime", "tpep_dropoff_datetime"],
-)
+taxi = pd.read_parquet("s3://saturn-public-data/nyc-taxi/data/yellow_tripdata_2019-01.parquet")
 ```
 
 The next chunk of code defines the features and cleans the data:
@@ -150,9 +147,8 @@ This time the data is read into a Dask DataFrame instead of a pandas one:
 ```python
 import dask.dataframe as dd
 
-taxi_dd = dd.read_csv(
-    "s3://nyc-tlc/trip data/yellow_tripdata_2020-05.csv",
-    parse_dates=["tpep_pickup_datetime", "tpep_dropoff_datetime"],
+taxi_dd = dd.read_parquet(
+    "s3://saturn-public-data/nyc-taxi/data/yellow_tripdata_2019-01.parquet",
     storage_options={"anon": True},
     assume_missing=True,
 )

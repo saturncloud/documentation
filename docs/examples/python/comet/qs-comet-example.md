@@ -29,7 +29,7 @@ from torch.autograd import Variable
 
 ### Find your Comet API key
 
-Go to your [Comet settings page](https://www.comet.ml/api/my/settings) and copy your API key.
+Go to your [Comet settings page](www.comet.ml/api/my/settings) and copy your API key.
 
 ### Link your API key and define your experiment
 

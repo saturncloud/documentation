@@ -3,7 +3,7 @@
 
 ## Overview
 
-[Genie](https://genieframework.com/) is a full-stack web framework for Julia. Genie allows you to create complex web apps, but here we are using it to make a simple API. Check out the [Genie documentation](https://genieframework.com/docs/tutorials/Overview.html) for more information.
+[Genie](https://genieframework.com/) is a full-stack web framework for Julia. Genie allows you to create complex web apps, but here we are using it to make a simple API. Check out the [Genie documentation](https://genieframework.com/docs/genie/tutorials/Overview.html) for more information.
 
 An API is a way for programs to communicate with each other. They work similarly to websites, but instead of a human typing in a url and getting an HTML page back, a program can send a similar request to a URL and get different types of data back.
 
@@ -71,7 +71,7 @@ Lastly, specify the Genie configuration and server specifications. It is importa
 
 ``` julia
 Genie.config.run_as_server = true
-Genie.startup(8000, "0.0.0.0")
+Genie.up(8000, "0.0.0.0")
 ```
 
 ### Run the API

@@ -346,8 +346,8 @@ If you have not scheduled your flow or want to run the flow immediately, navigat
 Alternative way to run the flow immediately is to open a terminal and run the code below.
 ```shell
 prefect auth login --key ${PREFECT_USER_TOKEN}
-prefect run flow \
-    --name ${SATURN_USERNAME}-test-flow1 \
+prefect run \
+    --name ${SATURN_USERNAME}-ticket-model-evaluation-dask \
     --project ${PREFECT_CLOUD_PROJECT_NAME}
 ```
 

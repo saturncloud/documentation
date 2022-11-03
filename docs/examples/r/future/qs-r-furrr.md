@@ -42,17 +42,18 @@ We need to define functions to download the dataset from s3 and select the appro
 
 ```{r download filter and split data}
 download_data <- function() {
-    if (!file.exists("births_data.rds")) {
-        download.file(
-            "https://saturn-public-data.s3.us-east-2.amazonaws.com/birth-data/births_2005.rds",
-            "births_data.rds"
-        )
-    }
-    births_raw_data <- read_rds("births_data.rds")
+  if (!file.exists("births_data.rds")) {
+    download.file(
+      "https://saturn-public-data.s3.us-east-2.amazonaws.com/birth-data/births_2005.rds",
+      "births_data.rds"
+    )
+  }
+  read_rds("births_data.rds")
 }
+
 filter_data <- function(births_raw_data) {
-    births_data <- births_raw_data %>%
-        select(weight_pounds, is_male, plurality, mother_age, gestation_weeks)
+  births_data <- births_raw_data %>%
+    select(weight_pounds, is_male, plurality, mother_age, gestation_weeks)
 }
 ```
 
@@ -62,33 +63,33 @@ Once we have the data, we can preprocess the data. Here we will simply remove NA
 
 ```{r preprocess, split, and create matrices}
 preprocess_data <- function(df) {
-    df_preprocessed <- df %>%
-        drop_na()
+  df_preprocessed <- df %>%
+    drop_na()
 }
 
 create_split <- function(data) {
-    data_split <- initial_split(data, prop = 0.8)
+  initial_split(data, prop = 0.8)
 }
 
 create_matrices <- function(data) {
-    train_test_split <- create_split(data)
+  train_test_split <- create_split(data)
 
-    train_df <- training(train_test_split)
-    test_df <- testing(train_test_split)
+  train_df <- training(train_test_split)
+  test_df <- testing(train_test_split)
 
-    train_data <- subset(train_df, select = -c(weight_pounds))
-    test_data <- subset(test_df, select = -c(weight_pounds))
+  train_data <- subset(train_df, select = -c(weight_pounds))
+  test_data <- subset(test_df, select = -c(weight_pounds))
 
-    dtrain <- xgb.DMatrix(
-        data = as.matrix(train_data),
-        label = train_df$weight_pounds
-    )
-    dtest <- xgb.DMatrix(
-        data = as.matrix(test_data),
-        label = test_df$weight_pounds
-    )
+  dtrain <- xgb.DMatrix(
+    data = as.matrix(train_data),
+    label = train_df$weight_pounds
+  )
+  dtest <- xgb.DMatrix(
+    data = as.matrix(test_data),
+    label = test_df$weight_pounds
+  )
 
-    return(list("train" = dtrain, "test" = dtest))
+  return(list("train" = dtrain, "test" = dtest))
 }
 ```
 
@@ -99,35 +100,35 @@ Our last function definitions define and train the model and determine the quali
 
 ```{r train model}
 train_model <- function(params, dtrain) {
-    model <- xgb.train(
-        params = params,
-        data = dtrain,
-        nrounds = 100,
-        nthread = 1,
-        objective = "reg:squarederror",
-    )
+  model <- xgb.train(
+    params = params,
+    data = dtrain,
+    nrounds = 100,
+    nthread = 1,
+    objective = "reg:squarederror",
+  )
 }
 
 test_results <- function(model, dtest) {
-    results <- predict(model, dtest)
+  predict(model, dtest)
 }
 
 create_model_table <- function(data, ...) {
-    dmatrices <- create_matrices(data)
+  dmatrices <- create_matrices(data)
 
-    dtrain <- dmatrices$train
-    dtest <- dmatrices$test
+  dtrain <- dmatrices$train
+  dtest <- dmatrices$test
 
-    params <- list(...)
+  params <- list(...)
 
-    model <- train_model(params, dtrain)
-    results <- test_results(model, dtest)
-    return(
-        tibble(
-            mean_absolute_error = mae(getinfo(dtest, "label"), results),
-            params = params
-        )
+  model <- train_model(params, dtrain)
+  results <- test_results(model, dtest)
+  return(
+    tibble(
+      mean_absolute_error = mae(getinfo(dtest, "label"), results),
+      params = params
     )
+  )
 }
 ```
 
@@ -142,8 +143,8 @@ births_data <- filter_data(births_raw_data)
 births_data_preprocessed <- preprocess_data(births_data)
 
 params <- expand_grid(
-    data = list(births_data_preprocessed),
-    max_depth = seq(1, 8)
+  data = list(births_data_preprocessed),
+  max_depth = seq(1, 8)
 )
 ```
 
@@ -151,22 +152,22 @@ params <- expand_grid(
 Let's first try it with purrr to iterate through the various models.
 
 Actually, let's not -- it takes over 17 minutes to run this code.  
-```{r purrr evaluation}
+```{r purrr evaluation, eval=FALSE}
+###################################################
+## Don't actually run this - it takes forever... ##
+###################################################
 
-# ###################################################
-# ## Don't actually run this - it takes forever... ##
-# ###################################################
+message("With purrr:")
 
-# message("With purrr:")
-# tic()
-# results_purrr <- pmap_dfr(params, create_model_table)
-# toc()
+tic()
+results_purrr <- pmap_dfr(params, create_model_table)
+toc()
 
-# best_result_purrr <- results_purrr %>%
-#     top_n(-1, mean_absolute_error) %>%
-#     head(1)
+best_result_purrr <- results_purrr %>%
+  top_n(-1, mean_absolute_error) %>%
+  head(1)
 
-# message(best_result_purrr)
+message(best_result_purrr)
 ```
 
 #### Run the Model with furrr
@@ -186,8 +187,8 @@ results_furrr <- future_pmap_dfr(params, create_model_table, .options = furrr_op
 toc()
 
 best_result_furrr <- results_furrr %>%
-    top_n(-1, mean_absolute_error) %>%
-    head(1)
+  top_n(-1, mean_absolute_error) %>%
+  head(1)
 
 message(best_result_furrr)
 ```

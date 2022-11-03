@@ -38,9 +38,9 @@ The first thing we want to do is load in the NYC Taxi Trip dataset. The code bel
 
 
 ```python
-taxi = cudf.read_csv(
-    "https://s3.amazonaws.com/nyc-tlc/trip+data/yellow_tripdata_2019-01.csv",
-    parse_dates=["tpep_pickup_datetime", "tpep_dropoff_datetime"],
+taxi = cudf.read_parquet(
+    "s3://saturn-public-data/nyc-taxi/data/yellow_tripdata_2019-01.parquet",
+    storage_options={"anon": True},
 )
 ```
 
@@ -153,9 +153,9 @@ We will use another month of taxi data for the test set and calculate the AUC sc
 
 
 ```python
-taxi_test = cudf.read_csv(
-    "https://s3.amazonaws.com/nyc-tlc/trip+data/yellow_tripdata_2019-02.csv",
-    parse_dates=["tpep_pickup_datetime", "tpep_dropoff_datetime"],
+taxi_test = cudf.read_parquet(
+    "s3://saturn-public-data/nyc-taxi/data/yellow_tripdata_2019-02.parquet",
+    storage_options={"anon": True},
 )
 ```
 
@@ -183,7 +183,12 @@ Finally, let's look at the ROC curve. `cuml` does not have a ROC curve function,
 
 
 ```python
-fpr, tpr, _ = roc_curve(y_test.to_array(), preds.to_array())
+y_test.to_numpy()
+```
+
+
+```python
+fpr, tpr, _ = roc_curve(y_test.to_numpy(), preds.to_numpy())
 
 plt.rcParams["font.size"] = "16"
 

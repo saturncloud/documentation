@@ -21,7 +21,7 @@ client = Client(SaturnCluster())
 
 After running the above command, it's recommended that you check on the Saturn Cloud resource page that the Dask cluster as fully online before continuing. Alternatively, you can use the command `client.wait_for_workers(3)` to halt the notebook execution until all three of the workers are ready.
 
-## Create Dask Dataframe from File
+## Create Dask DataFrame from File
 
 In code below, the data file is hosted on a public S3 bucket, so we can read the CSVs directly from there. Using `read_csv` from Dask takes the same form as using that function from pandas. You can also read other file formats like Parquet file, HDF files, JSON files etc. Note that Dask loads the data lazily--it won't read in the full dataset until it is used by later operations.
 
@@ -34,7 +34,7 @@ df = dd.read_csv(
 )
 ```
 
-## Create Dask Dataframe from a pandas DataFrame
+## Create Dask DataFrame from a pandas DataFrame
 
 You can create a Dask DataFrame from an existing pandas DataFrame using `from_pandas`. In the code below `npartitions` states how many partitions of the index we want to create. You can also use `chunksize` parameter instead which tells the number of rows per index partition to use.
 

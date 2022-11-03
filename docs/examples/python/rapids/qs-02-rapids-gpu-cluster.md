@@ -12,8 +12,8 @@ We recommend you skim the single GPU example first if you haven't read it alread
 
 Compared to the first excercise, this exercise uses a few new packages.
 
-* [`dask_saturn`](https://github.com/saturncloud/dask-saturn) and [`dask_distributed`](https://distributed.dask.org/en/stable/): Set up and run the Dask cluster in Saturn Cloud.
-* [`dask-cudf`](https://docs.rapids.ai/api/cudf/stable/basics/dask-cudf.html): Create distributed `cudf` dataframes using Dask.
+* [`dask_saturn`](https://github.com/saturncloud/dask-saturn) and [`dask_distributed`](http://distributed.dask.org/en/stable/): Set up and run the Dask cluster in Saturn Cloud.
+* [`dask-cudf`](https://docs.rapids.ai/api/cudf/stable/user_guide/dask-cudf.html): Create distributed `cudf` dataframes using Dask.
 
 
 ```python
@@ -64,12 +64,15 @@ The code below loads the data into a `dask-cudf` dataframe. You can interact wit
 
 
 ```python
-taxi = dask_cudf.read_csv(
-    "s3://nyc-tlc/trip data/yellow_tripdata_2019-01.csv",
-    parse_dates=["tpep_pickup_datetime", "tpep_dropoff_datetime"],
-    storage_options={"anon": True},
-    assume_missing=True,
-).persist()
+taxi = (
+    dask_cudf.read_parquet(
+        "s3://saturn-public-data/nyc-taxi/data/yellow_tripdata_2019-01.parquet",
+        storage_options={"anon": True},
+        assume_missing=True,
+    )
+    .repartition(10)
+    .persist()
+)
 
 wait(taxi)
 ```
@@ -179,9 +182,8 @@ We will use another month of taxi data for the test set and calculate the AUC sc
 
 
 ```python
-taxi_test = dask_cudf.read_csv(
-    "s3://nyc-tlc/trip data/yellow_tripdata_2019-02.csv",
-    parse_dates=["tpep_pickup_datetime", "tpep_dropoff_datetime"],
+taxi_test = dask_cudf.read_parquet(
+    "s3://saturn-public-data/nyc-taxi/data/yellow_tripdata_2019-02.parquet",
     storage_options={"anon": True},
     assume_missing=True,
 ).persist()
@@ -216,7 +218,7 @@ roc_auc_score(y_test, preds)
 
 
 ```python
-fpr, tpr, _ = roc_curve(y_test.to_array(), preds.to_array())
+fpr, tpr, _ = roc_curve(y_test.to_numpy(), preds.to_numpy())
 
 plt.rcParams["font.size"] = "16"
 
@@ -237,6 +239,6 @@ plt.show()
 
 By only changing a few lines of code, we went from training on a single GPU to a training on a GPU cluster! Wow! 
 
-Feel free to play around with parameters and the volume of data. You could, for instance, read in and train on all of 2019's taxi data (`yellow_tripdata_2019-*.csv`). *Make sure you test on a different test set!*
+Feel free to play around with parameters and the volume of data. You could, for instance, read in and train on all of 2019's taxi data (`yellow_tripdata_2019-*.parquet`). *Make sure you test on a different test set!*
 
 Take a look at our other [examples](https://saturncloud.io/docs/examples/) for more resources on running models on single and multiple GPUs!

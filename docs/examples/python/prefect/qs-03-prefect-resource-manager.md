@@ -102,10 +102,7 @@ Prefect refers to a workload as a "flow", which comprises multiple individual th
 ```python
 @task
 def read():
-    taxi = dd.read_csv(
-        "https://s3.amazonaws.com/nyc-tlc/trip+data/yellow_tripdata_2019-01.csv",
-        parse_dates=["tpep_pickup_datetime", "tpep_dropoff_datetime"],
-    )
+    taxi = dd.read_parquet("s3://saturn-public-data/nyc-taxi/data/yellow_tripdata_2019-01.parquet")
     df2 = taxi[taxi.passenger_count > 1]
     df3 = df2.groupby("VendorID").passenger_count.std()
     return df3
@@ -121,7 +118,7 @@ Inside our flow we have used Resource Manager `_DaskCluster`. Since task `read` 
 
 
 ```python
-with Flow("prefect-resource-manager") as flow:
+with Flow(f"{SATURN_USERNAME}-prefect-resource-manager") as flow:
     with _DaskCluster(n_workers=3) as client:  # noqa: F841
         a = read()
 ```
@@ -152,10 +149,11 @@ If you have scheduled your flow, it will be run once every 24 hours. You can con
 
 If you have not scheduled your flow or want to run the flow immediately, navigate to the flow in the Prefect Cloud UI and click "Quick Run".
 
+Alternative way to run the flow immediately is to open a terminal and run the code below.
 ```shell
 prefect auth login --key ${PREFECT_USER_TOKEN}
-prefect run flow \
-    --name ${SATURN_USERNAME}-ticket-model-evaluation \
+prefect run \
+    --name prefect-resource-manager \
     --project ${PREFECT_CLOUD_PROJECT_NAME}
 ```
 

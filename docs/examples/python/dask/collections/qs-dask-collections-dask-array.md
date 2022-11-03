@@ -56,7 +56,7 @@ x = df1.to_dask_array()
 x.compute()
 ```
 
-## Example: Concatinating the array, slicing the array and finding mean of that sliced portion
+## Example: Concatenating the array, slicing the array and finding mean of that sliced portion
 
 In code below we take two of the arrays created above and concatenate them. The result is sliced and the mean is computed for that portion. Due to Dask's lazy evaluation, these arrays will not be computed until we explicitly ask Dask to perform the computation. Hence in the end of all the functions we add `compute()`.
 

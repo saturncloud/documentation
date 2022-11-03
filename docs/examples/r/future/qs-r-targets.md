@@ -2,7 +2,7 @@
 
 
 ## Overview
-[Targets](https://cran.r-project.org/web/packages/targets/index.html) is a pipeline toolkit for R. It allows for reproducible workflows without unnecessarily repeating calculations. It also can use parallel backends ([future](https://cran.r-project.org/web/packages/future/index.html) or [clustermq](https://github.com/mschubert/clustermq)). 
+[Targets](https://cran.r-project.org/web/packages/targets/index.html) is a pipeline toolkit for R. It allows for reproducible workflows without unnecessarily repeating calculations. It also can use parallel backends ([future]((https://cran.r-project.org/web/packages/future/index.html)) or [clustermq](https://github.com/mschubert/clustermq)). 
 
 To illustrate this package, we use the same data, model, and functions that were used in the [furrr](<docs/examples/r/future/qs-r-furrr.md>) example. See that example for a thorough explanation. All these functions are contained in the "functions.R" file in this repository.
 
@@ -40,10 +40,10 @@ Below is an example target node. Take a look at the "_targets.R" file for more i
 
 ```{r tar target, eval = FALSE}
 tar_target(
-    preprocessed_data,
-    preprocess_data(data),
-    format = "qs",
-    deployment = "main"
+  preprocessed_data,
+  preprocess_data(data),
+  format = "qs",
+  deployment = "main"
 )
 ```
 
