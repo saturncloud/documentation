@@ -8,7 +8,7 @@ A Saturn Cloud job is a computing environment set up to run recurring tasks. You
 3. via an API 
 
 ## Example code
-Saturn Cloud jobs and deployments need to load the code to run, and the easiest way to do so is with a git repository. So create a git repository on a service like [GitHub](github.com) and put the files your job will need into the repository.
+Saturn Cloud jobs and deployments need to load the code to run, and the easiest way to do so is with a git repository. So create a git repository on a service like [GitHub](https://github.com) and put the files your job will need into the repository.
 This is an example script which we will be running as a job. You can create one of your own as well (if you want to run a notebook instead of a job, see [this blog post](/docs)).
 
 ```python

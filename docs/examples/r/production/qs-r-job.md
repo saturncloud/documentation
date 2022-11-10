@@ -10,7 +10,7 @@ Setting up a job in Saturn Cloud is easy- Go to the **Resources** tab of Saturn 
 
 ## Example code
 
-Saturn Cloud jobs and deployments need to load the code to run, and the easiest way to do so is with a git repository. Create a git repository on a service like [GitHub](github.com)--we'll then tell the Saturn Cloud job to pull the latest version of the code each time the job starts.
+Saturn Cloud jobs and deployments need to load the code to run, and the easiest way to do so is with a git repository. Create a git repository on a service like [GitHub](https://github.com)--we'll then tell the Saturn Cloud job to pull the latest version of the code each time the job starts.
 This is an example R script which we will be running as a job. In this script, we are printing a message in logs. You'll want create one of your own more interesting script for your job. If you want to run a python script instead, see [the Saturn Cloud docs](https://saturncloud.io/docs/examples/python/production/jobs/#example-code.
 
 Below is the `example.R` script that the job will be running. It is saved in the GitHub repo that our job will be pulling from:

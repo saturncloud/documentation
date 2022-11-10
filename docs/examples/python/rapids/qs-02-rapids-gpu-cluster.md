@@ -12,7 +12,7 @@ We recommend you skim the single GPU example first if you haven't read it alread
 
 Compared to the first excercise, this exercise uses a few new packages.
 
-* [`dask_saturn`](https://github.com/saturncloud/dask-saturn) and [`dask_distributed`](http://distributed.dask.org/en/stable/): Set up and run the Dask cluster in Saturn Cloud.
+* [`dask_saturn`](https://github.com/saturncloud/dask-saturn) and [`dask_distributed`](https://distributed.dask.org/en/stable/): Set up and run the Dask cluster in Saturn Cloud.
 * [`dask-cudf`](https://docs.rapids.ai/api/cudf/stable/user_guide/dask-cudf.html): Create distributed `cudf` dataframes using Dask.
 
 

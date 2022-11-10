@@ -69,7 +69,7 @@ plumber::pr_run(plumber::plumb("endpoints.R"), port=8000, host="0.0.0.0")
 
 ## Deployment
 
-Save both these files (`setup.R`, `endpoints.R`, `run-api.R`) in a GitHub repo, in our case we'll use [saturncloud/examples](github.com/saturncloud/examples). Now click **New Deployment**. It can be found on top right side of the resource page.
+Save both these files (`setup.R`, `endpoints.R`, `run-api.R`) in a GitHub repo, in our case we'll use [saturncloud/examples](https://github.com/saturncloud/examples). Now click **New Deployment**. It can be found on top right side of the resource page.
 
 ![deploy](https://saturn-public-assets.s3.us-east-2.amazonaws.com/example-resources/plumber_deployment.png "doc-image")
 
