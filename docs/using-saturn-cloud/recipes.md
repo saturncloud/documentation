@@ -7,8 +7,7 @@ There are many situations where you may want to store information about the conf
 -   Saving a configuration so you can programmatically create a new resource with that configuration via an API
 
 The way you store information about a resource is through a **Saturn Cloud resource recipe**. A resource recipe is a JSON file that
-stores all the details about a resource, such as the extra libraries installed, the number of workers of a
-connected Dask cluster, the git repos used, and more. Here is a simple example of what a recipe might look like:
+stores all the details about a resource, such as the extra libraries installed, the number of workers of a connected Dask cluster, the git repos used, and more. Here is a simple example of what a recipe might look like:
 
 ```json
 {
@@ -37,24 +36,19 @@ connected Dask cluster, the git repos used, and more. Here is a simple example o
 }
 ```
 
-You can see that this resource has the Python package `lightgbm` installed via git, it uses the `saturncloud/examples` GitHub repository,
-and more. Importantly, at the bottom of the object is the field `version` which indicates which schema is being used for the recipe. The
-resource recipe schema is constantly evolving as Saturn Cloud gains new features, so it is important to keep track of what schema is being used
-at the time. **The full JSON schema can be found in the [saturncloud/recipes](https://github.com/saturncloud/recipes) GitHub repo.**
+You can see that this resource has the Python package `lightgbm` installed via git, it uses the `saturncloud/examples` GitHub repository, and more. Importantly, at the bottom of the object is the field `version` which indicates which schema is being used for the recipe. The resource recipe schema is constantly evolving as Saturn Cloud gains new features, so it is important to keep track of what schema is being used at the time. **The full JSON schema can be found in the [saturncloud/recipes](https://github.com/saturncloud/recipes) GitHub repo.**
 
-You can download the recipe for an existing resource by going to the resource details page and clicking the **Download Recipe** button. This
-will let you save the JSON file with all the details of the resource. Note that the file will include optional fields, such as the owner of the resource,
-which are not required for recreating it.
+You can download the recipe for an existing resource by going to the resource page and navigating to the **Manage** tab, and then clicking the **Download Recipe** button. This will let you save the JSON file with all the details of the resource. Note that the file will include optional fields, such as the owner of the resource, which are not required for recreating it.
 
-![Recipe download button](/images/docs/recipe-download-button.png "doc-image")
+![Recipe download button](/images/docs/recipe-download-button-new.png "doc-image")
 
 You can also create a resource file from scratch by using the JSON schema found in the [saturncloud/recipes](https://github.com/saturncloud/recipes) GitHub repo.
 
 To create a new resource using a recipe, click the appropriate create new resource button on the resource list page.
 At the top you'll see a **Use a Recipe** button. This will let you paste in a recipe for a resource. You will also be able to choose
-the owner and name of the new recipe to make.
+the owner and name of the new recipe.
 
-![Recipe create button](/images/docs/recipe-create-button.png "doc-image")
+![Arrow pointing at recipe create button](/images/docs/recipe-create-button-arrow.png "doc-image")
 
 ## Embedding create from recipe buttons
 
