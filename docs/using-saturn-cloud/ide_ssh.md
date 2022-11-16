@@ -49,7 +49,7 @@ To open a terminal to run commands, navigate to **Tools > Start SSH Session…**
 
 ### Terminal
 
-Using the terminal application of your choice, the server can be accessed via:
+For Mac and Linux users, you can access the server directly using the terminal application of your choice via:
 
 ```bash
 ssh <resource URL>
@@ -60,6 +60,16 @@ If your key is not added to your SSH agent (or no SSH agent is running), the key
 ```bash
 ssh -i path/to/key <resource URL>
 ```
+
+For Windows users, you can access the server by using an SSH client such as OpenSSH or PuTTY, or by using Windows Subsystem for Linux (WSL).
+
+> If you need help using SSH on Windows, check out the following links:
+>
+> -   <a href="https://learn.microsoft.com/en-us/windows-server/administration/openssh/openssh_install_firstuse" target='_blank' rel='noopener'>https://learn.microsoft.com/en-us/windows-server/administration/openssh/openssh_install_firstuse</a> 
+> -   <a href="https://www.ssh.com/academy/ssh/putty/windows" target='_blank' rel='noopener'>https://www.ssh.com/academy/ssh/putty/windows</a> 
+> -   <a href="https://learn.microsoft.com/en-us/windows/wsl/install" target='_blank' rel='noopener'>https://learn.microsoft.com/en-us/windows/wsl/install</a> 
+> -   <a href="https://ubuntu.com/tutorials/install-ubuntu-on-wsl2-on-windows-10#1-overview" target='_blank' rel='noopener'>https://ubuntu.com/tutorials/install-ubuntu-on-wsl2-on-windows-10#1-overview</a>
+
 
 ## Move files to and from your local machine
 
