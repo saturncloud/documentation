@@ -8,16 +8,23 @@ This article discusses the Saturn Cloud built-in git functionality. If you so ch
 
 ## Set up git SSH Keys
 
-Saturn Cloud supports using SSH keys as a protocol to connect to git repositories, which requires a public key and private key pair shared with Saturn Cloud and your git host.
-So the first step is sharing the right keys. Thankfully, Saturn Cloud will automatically generate a public/private key pair for you by default, but you can change it as needed.
+Saturn Cloud supports using SSH keys as a protocol to connect to git repositories, which requires a public key and private key pair shared with Saturn Cloud and your git host. So the first step is setting up the right keys. Thankfully, Saturn Cloud will automatically generate a public/private key pair for you by default, but you can change it as needed.
 
-Go to the **Git Repositories** tab in Saturn Cloud, at the bottom you'll see an **SSH Keys** area, which will first request you create a key with a new Saturn Cloud account. You can generate a public/private key pair within Saturn Cloud or upload your own:
+From the dropdown **User** menu at the top left, select **Manage [username]**. _This is a secure storage location, and it will not be available to the public or other users without your consent._
 
-![Git SSH key generation](/images/docs/git-ssh-key-generating.jpg "doc-image")
+<img src="/images/docs/manage-user-settings-arrow.png" style="width:200px;" alt="Saturn Cloud left menu with arrow pointing to manage user tab" class="doc-image">
 
-After you have a key pair, take the SSH public key and add it to your git Host to create the secure connection. Refer to your git host for how to do this (for example, [here are the directions for GitHub](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account)).
+Under **Access Keys**, find the section called **Git SSH Key.** Click on **Create an SSH Key**, and you will be taken to the SSH key creation form.
 
-![Git SSH key UI](/images/docs/git-ssh-key.jpg "doc-image")
+![Arrow pointing to Create an SSH key button](/images/docs/create-git-ssh-key-arrow.png "doc-image")
+
+Here, you can generate a public/private key pair within Saturn Cloud or upload your own:
+
+![Git SSH key generation](/images/docs/add-git-ssh-key.png "doc-image")
+
+After you have a key pair, copy the SSH public key and add it to your git Host to create the secure connection. Refer to your git host for how to do this (for example, [here are the directions for GitHub](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account)).
+
+<img src="/images/docs/git-ssh-key-new.png" style="width:400px;" alt="Git SSH key UI" class="doc-image">
 
 There are several adjustments you can make for the SSH key:
 
@@ -27,14 +34,25 @@ Set the private keys on a per-repo basis by sliding the **Allow Multiple Keys** 
 
 ## Add a Git Repository to Saturn Cloud
 
-Once you've set up your SSH keys you can add git repositories to your resources. On the resource page, school to the **git repositories** section and either add a new repository or choose an existing one. Once the repository is added, you can adjust several properties of it.
+Once you've set up your SSH keys, you can add git repositories to your resources. From the left-hand menu, select the **Git Repositories** tab.
 
-![Resource git repositories](/images/docs/git-ui.png "doc-image")
+<img src="/images/docs/left-menu-git-repositories-arrow.png" style="width:200px;" alt="Saturn Cloud left menu with arrow pointing to git repos tab" class="doc-image">
 
-* **Remote URL:** The URL for the repository in the git host (this is the link you'd use when running `git clone` at terminal)
-* **Location:** the folder that will store the git repository. This will be a sub folder of `/home/jovyan/git-repos/`
-* **Restart behavior:** When a resource restarts, what should happen to the repository? Either have it stay in its current state (good for tasks like exploratory analysis), or have it reset to the default reference (good for systems like deployments where you want to use the latest version). For job and deployment resources this must be recloned on restart.
+From the git repositories page, select the **New** button at the top right corner. Here, you can add a repository via remote URL (this is the link you'd use when running `git clone` in the terminal).
+
+![Screenshot of the page for adding a new git repository](/images/docs/add-git-repository.png "doc-image")
+
+To access your git repository from a particular resource, navigate to the **Git Repos** tab in that resource's page and add your repository from the **Add a git repository** dropdown menu. Note that you can also add a repository directly from this page by clicking **New Git Repository**.
+
+![Screenshot of resource git repository tab](/images/docs/add-git-repo-to-resource.png "doc-image")
+
+Once the repository is added, you can adjust several properties from the edit menu under **Actions**.
+
+<img src="/images/docs/edit-repository-attachment.png" style="width:400px;" alt="Screenshot of edit repository attachment menu" class="doc-image">
+
+* **Path:** the folder that will store the git repository. This will be a sub folder of `/home/jovyan/git-repos/`
 * **Reference:** What branch, commit, or tag to clone when the repository is recloned.
+* **Restart behavior:** When a resource restarts, what should happen to the repository? Either have it stay in its current state (good for tasks like exploratory analysis), or have it reset to the default reference (good for systems like deployments where you want to use the latest version). For job and deployment resources this must be recloned on restart.
 
 Now, when you log in to your Jupyter server, at the top level of your file system  the folder `git-repos` will contain all the repositories attached to this resource.
 
