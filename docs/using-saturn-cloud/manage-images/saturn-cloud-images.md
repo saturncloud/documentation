@@ -6,7 +6,7 @@ A **Saturn Cloud image** is a Docker image that describes the libraries and pack
 
 ## Getting Started with Saturn Cloud Images
 
-When starting out with Saturn Cloud, most people [use one of our default images](<docs/images/default-images/saturn-python.md>), which provide most data science packages that you will need. It is also possible to [create or upload your own image](<docs/using-saturn-cloud/manage-images/build-images/create-images.md>).
+When starting out with Saturn Cloud, most people [use one of our default images](<docs/images/default-images/saturn-r.md>), which provide most data science packages that you will need. It is also possible to [create or upload your own image](<docs/using-saturn-cloud/manage-images/build-images/create-images.md>).
 
 ### Choosing the Right Image for the Job
 
@@ -24,7 +24,7 @@ However, if you prefer to use RStudio and want to use GPU-accelerated TensorFlow
 
 ### Attaching a Saturn Cloud Image to a Resource
 
-When you [create a resource in Saturn Cloud](<docs/troubleshooting/resources-wont-start.md>), you will choose a specific image from a dropdown menu.
+When you [create a resource in Saturn Cloud](<docs/admin/active-resources.md>), you will choose a specific image from a dropdown menu.
 
 Saturn Cloud's standard images start with `saturncloud/`.
 
