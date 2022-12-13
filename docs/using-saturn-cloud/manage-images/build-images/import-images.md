@@ -65,13 +65,21 @@ External images can be added to Saturn Cloud using two methods: the UI or the AP
 
 ### Adding an image using the UI
 
-Select **Images** in the Saturn Cloud toolbar. From here, you'll see the blue **Add External Image** button at the top right of the screen. Click this, and you'll be taken to a form.
+Select **Images** from the left-hand menu in Saturn Cloud. From here, you'll see the blue **New** button at the top right of the screen. Click this, and you'll be taken to a form.
 
-There, select whether the image is a new image or a new version of an existing image, and fill in the correct **Image URI** that leads to your image.
+![Arrow pointing at button to create new image](/images/docs/create-image-arrow.png "doc-image")
 
-![New external image form](/images/docs/import-external-image.png "doc-image")
+There, you will be presented with the following form. For descriptions of image options, see our [page on creating a new image](http://localhost:1313/docs/using-saturn-cloud/manage-images/build-images/create-images/#create-an-image-within-saturn-cloud).
 
-Then select the correct **Owner** of the image, whether it is intended for CPU or GPU instances, and which features the image supports (i.e., JupyterLab, RStudio, Dask).
+![New image options](/images/docs/new-image-form-2.png "doc-image")
+
+Click **Add** to create the new image. To finish importing your image, you will next need to create a valid version. From the image’s page, select **Add External** from the dropdown menu next to **New Version** in the top right.
+
+<img src="/images/docs/add-external-image.png" style="width:200px;" alt="New Version dropdown showing Add External image option" class="doc-image">
+
+There, fill in the name, optional description, and correct **Image URI** that leads to your image. Then, click **Add** to finish importing your image.
+
+![New external image form](/images/docs/import-external-image2.png "doc-image")
 
 ### Adding an image using the API
 
