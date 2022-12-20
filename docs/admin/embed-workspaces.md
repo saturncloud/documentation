@@ -1,7 +1,7 @@
 # Embed Workspaces Outside of Saturn Cloud
 
 
-In certain situations you may want to grant access to a Saturn Cloud Jupyter Server or RStudio Server without having the full Saturn Cloud user interface. Instead, you may want to be able to create a resource, start and stop it, and open the IDE from some other website. This guide is to set up such an environment. It falls into two steps: creating a resource programmatically for a users, then settings up the start, stop, open IDE buttons so the user can use the resource.
+In certain situations you may want to grant access to a Saturn Cloud Jupyter Server or R Server without having the full Saturn Cloud user interface. Instead, you may want to be able to create a resource, start and stop it, and open the IDE from some other website. This guide is to set up such an environment. It falls into two steps: creating a resource programmatically for a users, then settings up the start, stop, open IDE buttons so the user can use the resource.
 
 Before following the steps below you'll need the following:
 
@@ -53,7 +53,7 @@ This should be stored and is necessary for the second half of this walkthrough.
 
 ## Using a workspace resource programmatically
 
-Once a user has a workspace resource, as in a Jupyter Server or RStudio Server resource with an IDE, you can then create controls for it outside of the Saturn Cloud UI. To use a Saturn Cloud workspace resource without a UI, there are for actions you'll want to allow users to do:
+Once a user has a workspace resource, as in a Jupyter Server or R Server resource with an IDE, you can then create controls for it outside of the Saturn Cloud UI. To use a Saturn Cloud workspace resource without a UI, there are for actions you'll want to allow users to do:
 
 1. Start a resource
 2. Stop a resource

@@ -20,7 +20,7 @@ The image you choose to use on a resource depends on the following criteria:
 
 For instance, if you use Python and want to do analysis on a CPU, you'll want to try the image called `saturncloud/saturn-python`.
 
-However, if you prefer to use RStudio and want to use GPU-accelerated TensorFlow, then you'll want to try the image called `saturncloud/saturn-rstudio-tensorflow`.
+However, if you prefer to use R and want to use GPU-accelerated TensorFlow, then you'll want to try the image called `saturncloud/saturn-r-tensorflow`.
 
 ### Attaching a Saturn Cloud Image to a Resource
 

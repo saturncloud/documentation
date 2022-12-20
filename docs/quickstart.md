@@ -26,16 +26,16 @@ A resource is a complete environment for running code. Each resource is independ
 A resource is one of the following:
 
 -   **[Jupyter Server](<docs/using-saturn-cloud/resources/jupyter-servers.md>)**: This resource type allows you to interactively run code via JupyterLab or by [connecting via SSH from command line, or an IDE like PyCharm or VSCode](<docs/using-saturn-cloud/ide_ssh.md>).
--   **[RStudio Server](<docs/using-saturn-cloud/resources/rstudio-servers.md>)**: If you are primarily doing R development, you can use an RStudio server to interactively use the RStudio IDE or by [connecting via SSH](<docs/using-saturn-cloud/ide_ssh.md>).
+-   **[R Server](<docs/using-saturn-cloud/resources/rstudio-servers.md>)**: If you are primarily doing R development, you can use an R server to interactively use the R IDE or by [connecting via SSH](<docs/using-saturn-cloud/ide_ssh.md>).
 -   **[Job](<docs/using-saturn-cloud/resources/jobs.md>)**: A task that runs on command or on a schedule. _(Hosted Pro and Enterprise accounts only)_
 -   **[Deployment](<docs/using-saturn-cloud/resources/deployments.md>)**: A continuously running activity like a hosted dashboard or API. _(Hosted Pro and Enterprise accounts only)_
 -   **[Prefect Cloud Flow](<docs/using-saturn-cloud/resources/prefect-cloud-flows.md>)**: A special type of resource specific for running Prefect jobs which are created differently than the other types of resources. _(Enterprise accounts only)_
 
-Each user can have multiple resources, and resources can be cloned (including by other users with sufficient permissions). With the exception of RStudio servers, each resource may optionally have a Dask cluster associated with it, allowing the resource to run computations across multiple machines.
+Each user can have multiple resources, and resources can be cloned (including by other users with sufficient permissions). With the exception of R servers, each resource may optionally have a Dask cluster associated with it, allowing the resource to run computations across multiple machines.
 
 ## Creating a resource
 
-When you log into Saturn Cloud you'll first see the **Welcome to Saturn Cloud** message. If you are creating a Jupyter server or RStudio server, select **Run Code in an IDE**. If you are creating a job or deployment, select **Deploy Code for Production**. _(Hosted Pro and Enterprise accounts only)_
+When you log into Saturn Cloud you'll first see the **Welcome to Saturn Cloud** message. If you are creating a Jupyter server or R server, select **Run Code in an IDE**. If you are creating a job or deployment, select **Deploy Code for Production**. _(Hosted Pro and Enterprise accounts only)_
 
 ![Screenshot of the welcome message](/images/docs/welcome-message-popup.png "doc-image")
 
@@ -54,7 +54,7 @@ Once a resource is created, you'll need to turn it on. Press the blue **Start** 
 
 As your machine starts up, the card will display _pending_, and you will see a progress bar showing the steps and overall progress toward starting the server.
 
-In the case of Jupyter server and RStudio servers, when the machine is ready the card will show _running_. You'll see the JupyterLab or RStudio button available so that you can use those IDES on the resource. For other resource types (jobs, deployments, or Prefect Cloud flows) the action that happens when the resource starts will be different.
+In the case of Jupyter server and R servers, when the machine is ready the card will show _running_. You'll see the JupyterLab or R server button available so that you can use those IDES on the resource. For other resource types (jobs, deployments, or Prefect Cloud flows) the action that happens when the resource starts will be different.
 
 Once you're in the IDE, you can write, run, and save code.
 

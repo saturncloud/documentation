@@ -3,7 +3,7 @@
 This article describes how use existing git repositories with your Saturn Cloud resources. Saturn Cloud resources have the ability to connect to git repositories which can load the code at resource startup. This document first covers setting up SSH credentials then goes into adding git repositories to Saturn Cloud and finally adding those to resources. When the document refers to _git hosts_ it means services like GitHub, Bitbucket, and GitLab which host git repositories for you.
 
 {{% alert title="Manually configuring git" %}}
-This article discusses the Saturn Cloud built-in git functionality. If you so choose you could alternatively set up git yourself by having a [resource startup script](<docs/using-saturn-cloud/install-packages.md>) clone a git repo, or by manually using the terminal within an Jupyter or RStudio server to do so. The Saturn Cloud built-in functionality has a number of conveniences and no drawbacks compared to manually setting up git yourself, so we recommend you try it.
+This article discusses the Saturn Cloud built-in git functionality. If you so choose you could alternatively set up git yourself by having a [resource startup script](<docs/using-saturn-cloud/install-packages.md>) clone a git repo, or by manually using the terminal within an Jupyter or R server to do so. The Saturn Cloud built-in functionality has a number of conveniences and no drawbacks compared to manually setting up git yourself, so we recommend you try it.
 {{% /alert %}}
 
 ## Set up git SSH Keys
@@ -56,7 +56,7 @@ Once the repository is added, you can adjust several properties from the edit me
 
 Now, when you log in to your Jupyter server, at the top level of your file system  the folder `git-repos` will contain all the repositories attached to this resource.
 
-_If a git repository is removed from a resource via the UI then you will need to manually delete the folder within a Jupyter or RStudio server._
+_If a git repository is removed from a resource via the UI then you will need to manually delete the folder within a Jupyter or R server._
 
 ## Using git in within your Jupyter Server
 
@@ -74,9 +74,9 @@ Alternatively, you can also use the git functionality built into JupyterLab with
 
 ![Git plugin button](/images/docs/git-plugin.png "doc-image")
 
-## Using git within RStudio server
+## Using git within R server
 
-When using RStudio you can use the RStudio built in git functionality, which defaults to a tab in the upper
+When using R you can use the R IDEs built in git functionality, which defaults to a tab in the upper
 right hand corner of the IDE. You can also use the terminal to directly run git commands, using the terminal tab in the lower left hand corder of the screen.
 
-![RStudio git](/images/docs/rstudio-git.png "doc-image")
+![R server git](/images/docs/rstudio-git.png "doc-image")

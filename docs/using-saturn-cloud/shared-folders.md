@@ -15,7 +15,7 @@ Any user or group in Saturn Cloud can own a shared folder:
 Notes about the current implementation of shared folders:
 
 1. Currently, all shared folders are automatically attached to all resources. In a future release of Saturn Cloud users will have the option to attach the shared folder only to specific resources.
-2. Shared folders are only usable by workspace resources (Jupyter server and RStudio server resources), and their associated Dask clusters. The ability for jobs, deployments, and prefect cloud flows to use shared folders will be added in an upcoming release.
+2. Shared folders are only usable by workspace resources (Jupyter server and R server resources), and their associated Dask clusters. The ability for jobs, deployments, and prefect cloud flows to use shared folders will be added in an upcoming release.
 3. Shared folders are mounted in fixed paths across all resources. In a future release you'll be able to specify exactly where the shared folder is stored.
 
 ## Creating shared folders
@@ -34,8 +34,8 @@ To create a new shared folder, choose from the following options:
 
 ## Using shared folders
 
-If a Jupyter server or RStudio server resource has access to a shared folder it will show up in the **Shared Folders** section of the resource. This section will display the connected shared folders and the path they take within the file system of the resource. Currently, each shared folder is mounted in the location `/home/jovyan/shared/{owner}/{folder-name}`.
+If a Jupyter server or R server resource has access to a shared folder it will show up in the **Shared Folders** section of the resource. This section will display the connected shared folders and the path they take within the file system of the resource. Currently, each shared folder is mounted in the location `/home/jovyan/shared/{owner}/{folder-name}`.
 
 ![Shared folders on a resource](/images/docs/using-shared-folders.png "doc-image")
 
-Once you start the resource, you'll see the folder in your JupyterLab or RStudio IDE. Any file you save into that folder will be stored in the cloud and other resources will be able to use it.
+Once you start the resource, you'll see the folder in your JupyterLab or R IDE. Any file you save into that folder will be stored in the cloud and other resources will be able to use it.

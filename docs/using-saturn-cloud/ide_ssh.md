@@ -65,9 +65,9 @@ For Windows users, you can access the server by using an SSH client such as Open
 
 > If you need help using SSH on Windows, check out the following links:
 >
-> -   <a href="https://learn.microsoft.com/en-us/windows-server/administration/openssh/openssh_install_firstuse" target='_blank' rel='noopener'>https://learn.microsoft.com/en-us/windows-server/administration/openssh/openssh_install_firstuse</a> 
-> -   <a href="https://www.ssh.com/academy/ssh/putty/windows" target='_blank' rel='noopener'>https://www.ssh.com/academy/ssh/putty/windows</a> 
-> -   <a href="https://learn.microsoft.com/en-us/windows/wsl/install" target='_blank' rel='noopener'>https://learn.microsoft.com/en-us/windows/wsl/install</a> 
+> -   <a href="https://learn.microsoft.com/en-us/windows-server/administration/openssh/openssh_install_firstuse" target='_blank' rel='noopener'>https://learn.microsoft.com/en-us/windows-server/administration/openssh/openssh_install_firstuse</a>
+> -   <a href="https://www.ssh.com/academy/ssh/putty/windows" target='_blank' rel='noopener'>https://www.ssh.com/academy/ssh/putty/windows</a>
+> -   <a href="https://learn.microsoft.com/en-us/windows/wsl/install" target='_blank' rel='noopener'>https://learn.microsoft.com/en-us/windows/wsl/install</a>
 > -   <a href="https://ubuntu.com/tutorials/install-ubuntu-on-wsl2-on-windows-10#1-overview" target='_blank' rel='noopener'>https://ubuntu.com/tutorials/install-ubuntu-on-wsl2-on-windows-10#1-overview</a>
 
 

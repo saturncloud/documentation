@@ -36,9 +36,9 @@ These steps are not required but will make the user experience better:
 
 8. Make sure Python environments are owned by the jovyan user.
 
-### Docker Image Requirements - RStudio Servers
+### Docker Image Requirements - R Servers
 
-RStudio servers must have R, RStudio, and Python all installed.
+R servers must have R, RStudio, and Python all installed.
 
 1. Conda installed in `/opt/conda` with Python ≥ 3.7.
 2. `sshd` installed on the system.
@@ -53,7 +53,7 @@ R_LIBS=/usr/local/lib/R:/usr/local/lib/R/site-library:/usr/lib/R/site-library:/u
 
 ### Docker Image Requirements - Jobs and Deployments
 
-The requirements for job and deployment resources are simpler than the other types of resources since no IDE is required. _All images that are used for Jupyter server and RStudio server resources will also work for jobs and deployments._
+The requirements for job and deployment resources are simpler than the other types of resources since no IDE is required. _All images that are used for Jupyter server and R server resources will also work for jobs and deployments._
 
 1. Conda installed in `/opt/conda` with Python ≥ 3.7.
 2. `sshd` installed on the system.
@@ -87,7 +87,7 @@ Use [Saturn Cloud recipes](https://saturncloud.io/docs/using-saturn-cloud/recipe
 
 > **Note** - these instructions will only work for Saturn Cloud versions that are greater than or equal to 2022.04.01. Please contact support for instructions that will work on prior Saturn Cloud versions.
 
-First, define the image recipe in json format. Below you can see an example of the images recipe. This particular example adds two images: one titled "saturn" with a version called "2021.11.10" and another titled "saturn-rstudio" with versions "2021.11.10" and "2021.12.1". You can add a single version of an image or multiple versions in a similar manner. See [the full example and schema](https://github.com/saturncloud/recipes/tree/main/images) for complete image recipe specifications.
+First, define the image recipe in json format. Below you can see an example of the images recipe. This particular example adds two images: one titled "saturn" with a version called "2021.11.10" and another titled "saturn-r" with versions "2022.06.01" and "2022.09.01". You can add a single version of an image or multiple versions in a similar manner. See [the full example and schema](https://github.com/saturncloud/recipes/tree/main/images) for complete image recipe specifications.
 
 ```json
 {
@@ -104,17 +104,17 @@ First, define the image recipe in json format. Below you can see an example of t
             "schema_version": "2022.04.01"
         },
         {
-            "name": "saturn-rstudio",
+            "name": "saturn-r",
             "supports": ["dask", "rstudio-opensource"],
             "hardware_type": "cpu",
             "versions": [
                 {
                     "name": "2021.11.10",
-                    "image_uri": "public.ecr.aws/saturncloud/saturn-rstudio:2021.11.10"
+                    "image_uri": "public.ecr.aws/saturncloud/saturn-r:2022.06.01"
                 },
                 {
                     "name": "2021.12.01",
-                    "image_uri": "public.ecr.aws/saturncloud/saturn-rstudio:2021.12.01"
+                    "image_uri": "public.ecr.aws/saturncloud/saturn-r:2022.09.01"
                 }
             ],
             "schema_version": "2022.04.01"
