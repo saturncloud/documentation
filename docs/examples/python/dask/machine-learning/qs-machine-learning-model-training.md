@@ -1,5 +1,5 @@
 # Model Training
-Dask integrates very nicely with existing machine learning libraries like LightGBM, XGBoost, and scikit-learn. Distributing tasks across multiple cores and multiple machines helps in scaling training. In this example we'll show how to use Dask when training models from those three libraries.
+[Dask](https://saturncloud.io/dask/about/) integrates very nicely with existing machine learning libraries like LightGBM, XGBoost, and scikit-learn. Distributing tasks across multiple cores and multiple machines helps in scaling training. In this example, we'll show how to use Dask when training models from those three libraries.
 
 First, start the Dask cluster associated with your Saturn Cloud resource.
 
