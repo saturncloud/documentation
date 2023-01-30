@@ -5,16 +5,16 @@ If you already have a Docker image in your personal or business repository, you 
 ## Docker Image Requirements
 
 Docker images must have certain software installed, depending on what type of resource they are being used for.
-For examples of Docker image installation processes, see the Saturn Cloud [images GitHub repo](https://github.com/saturncloud/images).
+For examples of Docker image installation processes, see the Saturn Cloud [images GitHub repo](https://github.com/saturncloud/images). Currently Saturn Cloud scopes IAM permissions to restrict access to ECR images named `saturn*`. If you want to use images with Saturn Cloud, please name them accordingly.
 
 ### Docker Image Requirements - Jupyter Servers
 
 Jupyter servers must have Python and JupyterLab installed in a particular way using the steps below.
 
-1. Conda installed in `/opt/conda` with Python ≥ 3.7.
+1. Conda installed in `/opt/saturncloud` with Python ≥ 3.7.
 2. (optional) `sshd` installed on the system.
-3. Your custom environment installed in `/opt/conda/envs/saturn` -- This can contain anything you wants to use, but it should contain at least `ipykernel`.
-4. `/opt/conda/envs/saturn` registered with Jupyter -- Do this with the following code:
+3. Your custom environment installed in `/opt/saturncloud/envs/saturn` -- This can contain anything you wants to use, but it should contain at least `ipykernel`.
+4. `/opt/saturncloud/envs/saturn` registered with Jupyter -- Do this with the following code:
 
 ```bash
         ${CONDA_DIR}/envs/saturn/bin/python -m ipykernel install \
@@ -23,7 +23,7 @@ Jupyter servers must have Python and JupyterLab installed in a particular way us
                 --prefix=${CONDA_DIR}
 ```
 
-5. A user named `jovyan` with `uid=1000` and their home directory created.
+5. A user named `jovyan` with `uid=1000` with home set to `/home/jovyan`. For workspaces, EBS volumes are mounted on top of `/home/jovyan`, so you should not persist configuration files there.
 
 These steps are not required but will make the user experience better:
 
@@ -31,7 +31,7 @@ These steps are not required but will make the user experience better:
 7. Set the PATH with the following code:
 
 ```bash
-        PATH= /opt/conda/envs/saturn/bin:/opt/conda/bin:${PATH}
+        PATH= /opt/saturncloud/envs/saturn/bin:/opt/saturncloud/bin:${PATH}
 ```
 
 8. Make sure Python environments are owned by the jovyan user.
@@ -40,9 +40,9 @@ These steps are not required but will make the user experience better:
 
 R servers must have R, RStudio, and Python all installed.
 
-1. Conda installed in `/opt/conda` with Python ≥ 3.7.
+1. Conda installed in `/opt/saturncloud` with Python ≥ 3.7.
 2. `sshd` installed on the system.
-3. A user named `jovyan` with `uid=1000` and their home directory created.
+3. A user named `jovyan` with `uid=1000` with home set to `/home/jovyan`. For workspaces, EBS volumes are mounted on top of `/home/jovyan`, so you should not persist configuration files there.
 4. R installed to either `/usr/lib/R` or `/usr/local/lib/R`. The `jovyan` user must have recursive ownership and read/write access to the folder.
 5. RStudio Server Open Source installed, with configuration files configured to the minimums matching those in [saturncloud/saturnbase-r](https://github.com/saturncloud/images/tree/main/saturnbase-r).
 6. The Renviron file located at either `/usr/lib/R/etc/Renviron` or `/usr/local/lib/R/etc/Renviron` must be modified to include the line below. This ensures R will correctly read the installed packages when using RStudio.
@@ -55,7 +55,7 @@ R_LIBS=/usr/local/lib/R:/usr/local/lib/R/site-library:/usr/lib/R/site-library:/u
 
 The requirements for job and deployment resources are simpler than the other types of resources since no IDE is required. _All images that are used for Jupyter server and R server resources will also work for jobs and deployments._
 
-1. Conda installed in `/opt/conda` with Python ≥ 3.7.
+1. Conda installed in `/opt/saturncloud` with Python ≥ 3.7.
 2. `sshd` installed on the system.
 3. A user named `jovyan` with `uid=1000` and their home directory created.
 
