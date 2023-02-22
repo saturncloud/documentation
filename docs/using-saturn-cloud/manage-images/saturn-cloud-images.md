@@ -6,7 +6,7 @@ A **Saturn Cloud image** is a Docker image that describes the libraries and pack
 
 ## Getting Started with Saturn Cloud Images
 
-When starting out with Saturn Cloud, most people [use one of our default images](<docs/images/default-images/saturn-r.md>), which provide most data science packages that you will need. It is also possible to [create or upload your own image](<docs/using-saturn-cloud/manage-images/build-images/poetry.md>).
+When starting out with Saturn Cloud, most people [use one of our default images](<docs/images/default-images/saturn-python-pytorch.md>), which provide most data science packages that you will need. It is also possible to [create or upload your own image](<docs/using-saturn-cloud/manage-images/build-images/create-images.md>).
 
 ### Choosing the Right Image for the Job
 
@@ -24,7 +24,7 @@ However, if you prefer to use R and want to use GPU-accelerated TensorFlow, then
 
 ### Attaching a Saturn Cloud Image to a Resource
 
-When you [create a resource in Saturn Cloud](<docs/troubleshooting/resources-wont-start.md>), you will choose a specific image from a dropdown menu.
+When you [create a resource in Saturn Cloud](<docs/admin/active-resources.md>), you will choose a specific image from a dropdown menu.
 
 Saturn Cloud's standard images start with `saturncloud/`.
 
@@ -38,4 +38,4 @@ If you need packages that are not included among Saturn Cloud's standard images,
 
 ### Using Custom Images
 
-Once you have established which packages you want to use your environment, you can [create a custom image](<docs/using-saturn-cloud/manage-images/build-images/poetry.md>) that packages them all together. Using a custom image can significantly decrease start-up time because packages won't need to be reinstalled every time the resource starts.
+Once you have established which packages you want to use your environment, you can [create a custom image](<docs/using-saturn-cloud/manage-images/build-images/create-images.md>) that packages them all together. Using a custom image can significantly decrease start-up time because packages won't need to be reinstalled every time the resource starts.

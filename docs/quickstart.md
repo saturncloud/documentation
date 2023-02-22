@@ -41,7 +41,7 @@ When you log into Saturn Cloud you'll first see the **Welcome to Saturn Cloud** 
 
 You can also close the message to continue to the **Resources** page. On the Resources page you can see your existing resources, or create a new one in either of the following ways:
 
--   [Set up your own custom resource](<docs/troubleshooting/resources-wont-start.md>) with your specifications by pressing one of the **New** buttons at the top.
+-   [Set up your own custom resource](<docs/admin/active-resources.md>) with your specifications by pressing one of the **New** buttons at the top.
 -   Select one of the pre-created template resources. These templates are set up to have the appropriate settings and code for a particular task.
 
 ![Screenshot of the resource page](/images/docs/create-resource-buttons-new.png "doc-image")
@@ -69,7 +69,7 @@ Creating and using resources is central to using Saturn Cloud. There are many wa
 -   **[Install software and packages](<docs/using-saturn-cloud/install-packages.md>).** If your code requires specific libraries or software to be installed on the resource then there are multiple methods of adding the dependencies.
 -   **[Create a Dask cluster for the resource](<docs/using-saturn-cloud/create_dask_cluster.md>).** One powerful feature of Saturn Cloud is the ability to leverage Dask clusters for distributed computing.
 -   **[Connect a git repo](<docs/using-saturn-cloud/gitrepo.md>).** Connect a Saturn Cloud resource to your git repositories to version control your code.
--   **[Add secrets to your resources](<docs/using-saturn-cloud/secrets.md>).** You may need to have secret credentials in your working environment to access tools or data. The **Secrets** section of the tools menu is where this information can be safely stored.
+-   **[Add secrets to your resources](<docs/enterprise/installation-options/encrypting-kubernetes-secrets.md>).** You may need to have secret credentials in your working environment to access tools or data. The **Secrets** section of the tools menu is where this information can be safely stored.
 -   **[Use other IDEs (e.g., PyCharm, VSCode)](<docs/using-saturn-cloud/ide_ssh.md>).** Connect to a resource from your local IDE, using an SSH connection.
 -   **[Create a custom image](<docs/using-saturn-cloud/manage-images/build-images/create-images.md>).** Resources are built upon images with base software and packages. Many people use our standard images, which provide access to many data science packages. However, if, for example, your company has a designed Docker image, you can use that instead.
 -   **[Schedule jobs](<docs/using-saturn-cloud/resources/jobs.md>) and [run deployments](<docs/using-saturn-cloud/resources/deployments.md>).** Jobs and deployments are two other resource types. They let you schedule scripts to run or set up continuously running resources (e.g., APIs, dashboards). _(Hosted Pro and Enterprise accounts only)_
