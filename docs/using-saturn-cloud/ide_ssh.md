@@ -65,7 +65,7 @@ ssh -i path/to/key <resource URL>
 
 Using SSH on a Windows computer is slightly more complicated, but definitely doable. Although there are several different strategies, here we'll focus on setting up and using OpenSSH (if you're interested in other SSH clients, check out [PuTTY](https://www.putty.org/)).
 
-OpenSSH is the open-source version of the SSH tools used by Linux administrators, and has been included in Windows installations since 2018. To use it, you will need at least Windows Server 2019 or Windows 10 (build 1809), PowerShell 5.1 or later, and an account with administrator priveleges. 
+OpenSSH is the open-source version of the SSH tools used by Linux administrators, and has been included in Windows installations since 2018. To use it, you will need at least Windows Server 2019 or Windows 10 (build 1809), PowerShell 5.1 or later, and an account with administrator priveleges.
 
 Once you have verified that you meet these requirements, you can check to see if OpenSSH is already installed. To do so, navigate to **Settings > Apps > Optional Features**. If you see **OpenSSH Client** and **OpenSSH Server** in this list, you're good to go. Otherwise, click **Add a feature** at the top of the page. Find and install both **OpenSSH Client** and **OpenSSH Server**. Once setup is complete, return to the **Optional Features** list and verify that both client and server now show up.
 
