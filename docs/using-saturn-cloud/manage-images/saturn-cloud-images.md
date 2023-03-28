@@ -24,7 +24,7 @@ However, if you prefer to use R and want to use GPU-accelerated TensorFlow, then
 
 ### Attaching a Saturn Cloud Image to a Resource
 
-When you [create a resource in Saturn Cloud](<docs/using-saturn-cloud/resources/rstudio-servers.md>), you will choose a specific image from a dropdown menu.
+When you [create a resource in Saturn Cloud](/docs), you will choose a specific image from a dropdown menu.
 
 Saturn Cloud's standard images start with `saturncloud/`.
 
