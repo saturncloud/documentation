@@ -1,10 +1,10 @@
-# ML ops
+# MLOps
 
 ![Ml ops cycle](/images/docs/mlops-cycle.png "doc-image")
 
-## The MLops lifecycle
+## The MLOps lifecycle
 
-The MLops lifecycle consists of a few stages.
+The MLOps lifecycle consists of a few stages.
 
 1. Exploratory Data Analysis (EDA) involves exploring and visualizing the data to gain a better understanding of its structure, distribution, and relationships between variables. During the EDA stage, data scientists and analysts use a variety of techniques to identify patterns and trends in the data, as well as to detect and correct any errors or anomalies. This might involve plotting histograms, scatterplots, or other types of visualizations, as well as performing statistical analyses and hypothesis testing. The insights gained during the EDA stage are crucial for making informed decisions about how to preprocess and transform the data prior to model training. For example, EDA might reveal the need for data cleaning, feature selection, or normalization, which can greatly impact the performance of the machine learning model.
 
@@ -27,12 +27,12 @@ The MLops lifecycle consists of a few stages.
 
 2. Saturn cloud jobs: Saturn cloud jobs have the exact same specifications and configuration as Saturn Cloud workspaces, and can also connect to an associated Dask cluster. These jobs can be triggered via an API, or on a schedule. These are often used for **Model (Re-)Training**
 
-3. Saturn cloud deployments: Saturn cloud deployments can deploy any user code that serves HTTP traffic on port 8000. This is commonly used for **Model Deployment**, however you can also leverage [other ML ops providers](#integrations) for tighter integration with a Model registry.
+3. Saturn cloud deployments: Saturn cloud deployments can deploy any user code that serves HTTP traffic on port 8000. This is commonly used for **Model Deployment**, however you can also leverage [other MLOps providers](#integrations) for tighter integration with a Model registry.
 
 
 ## Integrations
 
-Saturn Cloud integrates with a variety of ML ops providers for model deployment, model registry, experiment tracking, and model monitoring.
+Saturn Cloud integrates with a variety of MLOps providers for model deployment, model registry, experiment tracking, and model monitoring.
 
 These include, but are not limited to:
 
