@@ -1,4 +1,4 @@
-# Libraires, dependencies and Docker images in Saturn Cloud
+# Libraries, dependencies and Docker images in Saturn Cloud
 
 Working with your existing workflows is a central tenet of the design of Saturn Cloud. Your existing code will run in Saturn Cloud with minimal effort. Most people will start using the built in Saturn Cloud images, and augment them by manually installing packages within the workspace, or by using the extra pacakges functionality to add packages to the image at startup.
 
