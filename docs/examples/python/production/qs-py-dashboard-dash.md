@@ -9,7 +9,7 @@ In this example, we create a simple UI showing a [Uniform Manifold Approximation
 ## Creating the App
 All the app code is contained in a file called "app.py." To deploy this app on Saturn Cloud, call `python app.py` as the command in a Saturn Cloud deployment. See [Saturn Cloud docs](https://saturncloud.io/docs/examples/dashboards/dashboard/) for more detailed instructions on deploying this and other dashboards.
 
-The "app.py" file contains several sections to create the Dash app. 
+The "app.py" file contains several sections to create the Dash app.
 
 ### Import the Libraries
 
@@ -24,7 +24,7 @@ from umap import UMAP
 ```
 ### Define the App and Layout
 
-Next, define the app, then specify the layout. Some of this code might seem familiar if you work with HTML. Dash uses functions like `html.div` to define html components. 
+Next, define the app, then specify the layout. Some of this code might seem familiar if you work with HTML. Dash uses functions like `html.div` to define html components.
 
 You can use Dash Core Components (`dcc`) such as `Dropdown` and `Graph` to define user input and output components.
 
@@ -138,6 +138,6 @@ if __name__ == "__main__":
     app.run_server(host="0.0.0.0", port="8000")
 ```
 
-Then load the app code and data to git, and link the code appropriately to a Saturn Cloud deployment. 
+Then load the app code and data to git, and link the code appropriately to a Saturn Cloud deployment.
 
 Check out our other [dashboard resources](https://saturncloud.io/docs/examples/python/production/) for examples using other frameworks.

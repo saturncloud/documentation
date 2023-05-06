@@ -6,7 +6,7 @@
 You can create dashboards or run machine learning models through interactive applications without any prior knowledge of web development tools, using the R Shiny package. Saturn Cloud deployment resources allow you to deploy any code, including R shiny apps. A Shiny app is built with three components
 
 **User Interface:** Responsible for creating the layout of your web app, like panels, textbox, dropdown etc. This is basically what users sees at their end.
-**Server:** Constitutes logic which will display content in the webapp as per the inputs given by user from UI. 
+**Server:** Constitutes logic which will display content in the webapp as per the inputs given by user from UI.
 **ShinyApp function:*: This function call launches the shiny app as per UI/server pair.
 
 ## Objective
@@ -20,11 +20,11 @@ User will select a number as single input from slider This number represents num
 Now we will read house price data in variable data. We then create a regression model where sale price of house is target variable.
 
 In UI function we will create appearance of our dashboard. In slider input we are setting number of bedrooms ranging from 0 to 8.
-Since we want our output to show a ggplot2 plot, we will use function plotOutput inside mainPanel. 
-plotOutput displays outputs returned from render functions (renderPlot in our case). 
+Since we want our output to show a ggplot2 plot, we will use function plotOutput inside mainPanel.
+plotOutput displays outputs returned from render functions (renderPlot in our case).
 
 In server function we have logic to create the bar chart as per selected number of bedrooms from slider.
-In our case renderPlot fetches ggplot object and stores it in variable `price_by_year`. Then the housed prices per year are generated (based on number of selected bedrooms) using the `ggplot` function. 
+In our case renderPlot fetches ggplot object and stores it in variable `price_by_year`. Then the housed prices per year are generated (based on number of selected bedrooms) using the `ggplot` function.
 
 In the last line we are call shinyApp and pass in UI and server variables.
 
@@ -46,13 +46,13 @@ ui <- fluidPage(
         )
     )
 )
-    
+
 server <- function(input, output) {
     output$price_by_year <- renderPlot({
       data <- data.frame(YearBuilt = 1970:2015)
       data$BedroomAbvGr <- input$bedrooms
       data$prediction <- predict(model, newdata = data)
-      
+
       ggplot(data, aes(x = YearBuilt, y = prediction))+
         geom_col(fill = "#FF6721") +
                    theme_minimal() +

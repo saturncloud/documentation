@@ -5,10 +5,10 @@
 
 [Flask](https://flask.palletsprojects.com/en/2.0.x/) is a microframework for creating APIs in Python. An API is a way for programs to communicate with each other. They work similarly to websites, but instead of a human typing in a url and getting an HTML page back, a program can send a similar request to a URL and get different types of data back.
 
-This API example runs a linear regression on historical house prices and outputs the predicted house price based on this model when you hit a specific endpoint. 
+This API example runs a linear regression on historical house prices and outputs the predicted house price based on this model when you hit a specific endpoint.
 
 ## Creating the API
-All the API code is contained in a file called "app.py." There is also a basic HTML front end for the API in the "templates" folder. 
+All the API code is contained in a file called "app.py." There is also a basic HTML front end for the API in the "templates" folder.
 
 To deploy this dashboard on Saturn Cloud, call **`flask run --host=0.0.0.0 --port=8000 `** as the command in a Saturn Cloud deployment. For users to access the server, the host value must be `"0.0.0.0"` and the port number `"8000"`. `8000` is the only port exposed on Saturn Cloud deployments.
 
@@ -90,6 +90,6 @@ The form is a basic HTML form that calls the API when the **Submit** button is p
 
 ### Run the API
 
-You then need to only load the app code to git and link the code appropriately to a Saturn Cloud deployment. 
+You then need to only load the app code to git and link the code appropriately to a Saturn Cloud deployment.
 
 For more examples of creating APIs and dashboards with Python check out the other [Saturn Cloud examples](https://saturncloud.io/docs/examples/python/production/).

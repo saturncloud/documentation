@@ -7,7 +7,7 @@
 
 An API is a way for programs to communicate with each other. They work similarly to websites, but instead of a human typing in a url and getting an HTML page back, a program can send a similar request to a URL and get different types of data back.
 
-This API runs a linear regression on historical house prices and outputs the predicted house price based on this model when you hit a specific endpoint. 
+This API runs a linear regression on historical house prices and outputs the predicted house price based on this model when you hit a specific endpoint.
 
 ## Creating the API
 All the API code is contained in a file called "app.py." To deploy this dashboard on Saturn Cloud, call **`julia app.jl`** as the command in a Saturn Cloud deployment. See [Saturn Cloud docs](https://saturncloud.io/docs/examples/dashboards/dashboard/) for more detailed instructions on deploying this and other dashboards.
@@ -42,7 +42,7 @@ linear_regressor = lm(formula, df)
 
 After creating the model, define the endpoints of the API. Here we are defining two endpoints: `/predict`  and `/`. The `/` endpoint function runs when you hit the base url of the API. This endpoint simple provides instructions for how to access the model.
 
-The `/predict` endpoint runs the model prediction function. It takes two arguments: the number of bedrooms of the house and the year the house was built. To call this function, construct a url in the form `/predict?bedrooms=2&yearBuilt=1900`, for example. This will pass the value "2" as the number of bedrooms and "1900" as the year built. The API will then respond with a string showing the predicted sales price. 
+The `/predict` endpoint runs the model prediction function. It takes two arguments: the number of bedrooms of the house and the year the house was built. To call this function, construct a url in the form `/predict?bedrooms=2&yearBuilt=1900`, for example. This will pass the value "2" as the number of bedrooms and "1900" as the year built. The API will then respond with a string showing the predicted sales price.
 
 Genie handles errors and other endpoints automatically, so if you encounter either, you will be presented with a helpful webpage explaining the error or lack of endpoint.
 
@@ -76,6 +76,6 @@ Genie.up(8000, "0.0.0.0")
 
 ### Run the API
 
-You then need to only load the app code to git and link the code appropriately to a Saturn Cloud deployment. 
+You then need to only load the app code to git and link the code appropriately to a Saturn Cloud deployment.
 
 Check out our other [Julia resources](https://saturncloud.io/docs/examples/julia/) for other examples using Julia.

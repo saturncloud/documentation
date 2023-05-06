@@ -9,7 +9,7 @@ In this example, we create a simple UI showing a [Uniform Manifold Approximation
 ## Creating the App
 All the app code is contained in a file called "app.jl." To deploy this app on Saturn Cloud, call `julia app.jl` as the command in a Saturn Cloud deployment. See [Saturn Cloud docs](https://saturncloud.io/docs/examples/dashboards/dashboard/) for more detailed instructions on deploying this and other dashboards.
 
-The "app.jl" file contains several sections to create the Dash app. 
+The "app.jl" file contains several sections to create the Dash app.
 
 ### Import the Libraries
 
@@ -26,7 +26,7 @@ using UMAP
 ```
 ### Define the App and Layout
 
-Next, define the app, then specify the layout. Some of this code might seem familiar if you work with HTML. Dash uses functions like `html_div` to define html components. 
+Next, define the app, then specify the layout. Some of this code might seem familiar if you work with HTML. Dash uses functions like `html_div` to define html components.
 
 You can use Dash Core Components (`dcc`) such as `Dropdown` and `Graph` to define user input and output components.
 
@@ -136,6 +136,6 @@ Finally, define the code to run the app. The important points here are the host 
 run_server(app, "0.0.0.0", 8000)
 ```
 
-Then load the app code and data to git, and link the code appropriately to a Saturn Cloud deployment. 
+Then load the app code and data to git, and link the code appropriately to a Saturn Cloud deployment.
 
 Check out our other [Julia examples](https://saturncloud.io/docs/examples/julia/) for more guides on how to use Julia on Saturn Cloud.

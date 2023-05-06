@@ -104,6 +104,6 @@ with col2:
 
 ### Run the App
 
-You then need to only load the app code to git and link the code appropriately to a Saturn Cloud deployment. 
+You then need to only load the app code to git and link the code appropriately to a Saturn Cloud deployment.
 
 Check out our other [dashboard resources](https://saturncloud.io/docs/examples/python/production/) for examples using other frameworks.
