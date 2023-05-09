@@ -17,3 +17,7 @@ Please [login to Stripe](https://billing.stripe.com/p/login/8wM6s23lS8vk0sU3cc) 
 ## Can I pre-pay for credits?
 
 If you'd like to buy more than $2000 in credits, we can send you an invoice to help you purchase credits up front. We will still need a credit card on file in case you exceed your pre-purchased amount. If you exceed your pre-purchased credits, your credit card will be charged again.
+
+## What happens if I miss a payment?
+
+If you miss a payment, since we've already paid AWS for the resources you've consumed, your account will be automatically downgraded to the free tier. <b>This also means that your data will be deleted after approximately 30 days of inactivity</b>. You can upgrade again at any point in the future. If you have an outstanding balance, your credit card will be charged at that time.
