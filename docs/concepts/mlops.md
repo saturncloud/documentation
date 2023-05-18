@@ -4,7 +4,7 @@
 
 ## The MLOps lifecycle
 
-The MLOps lifecycle consists of a few stages.
+The [MLOps](https://saturncloud.io/glossary/mlops) lifecycle consists of a few stages.
 
 1. Exploratory Data Analysis (EDA) involves exploring and visualizing the data to gain a better understanding of its structure, distribution, and relationships between variables. During the EDA stage, data scientists and analysts use a variety of techniques to identify patterns and trends in the data, as well as to detect and correct any errors or anomalies. This might involve plotting histograms, scatterplots, or other types of visualizations, as well as performing statistical analyses and hypothesis testing. The insights gained during the EDA stage are crucial for making informed decisions about how to preprocess and transform the data prior to model training. For example, EDA might reveal the need for data cleaning, feature selection, or normalization, which can greatly impact the performance of the machine learning model.
 
