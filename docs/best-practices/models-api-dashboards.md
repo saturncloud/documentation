@@ -10,11 +10,11 @@ Part of this means you should run your code in the exact same environment you ar
 
 For a Python or R studio resource, click on expose app port, in order to make sure that port 8000 is exposed.
 
-<img src="/images/docs/expose-app-port.png" alt="Exposing the app port on a resource" class="doc-image">
+<img src="/images/docs/expose-app-port.webp" alt="Exposing the app port on a resource" class="doc-image">
 
 Afterwards, run your deployment in the terminal. Make sure it’s serving traffic on port 8000. You should be able to view your deployment at the listed app url:
 
-<img src="/images/docs/app-url.png" alt="App url" class="doc-image">
+<img src="/images/docs/app-url.webp" alt="App url" class="doc-image">
 
 ### Keep track of software dependencies
 
@@ -36,7 +36,7 @@ Don’t change into another directory when you run your command. The deployment 
 
 After you are happy with your dashboard, model or API running in the terminal, it should be easy to deploy that. Click on the Mange tab, and click “Clone as a Deployment".
 
-<img src="/images/docs/clone-as-job.png" alt="clone as a job" class="doc-image">
+<img src="/images/docs/clone-as-job.webp" alt="clone as a job" class="doc-image">
 
 Saturn Cloud will ask you for the command you use to run your deployment. That command should be exactly what you ran inside your interactive environment.
 
@@ -65,4 +65,4 @@ If you are installing packages at startup, either using extra packages, or by cu
 
 If the source code for your deployment or job is being actively developed, it is a good idea to deploy from a tag. This will ensure that as you or your team continue to work on the code base, no changes will impact your application that accidentally change it’s behavior. To change to a tag - click on the "Git Repositories" tag. Edit the reprository, and type in the tag that you want to use.
 
-<img src="/images/docs/git-tag.png" alt="Use git tags" class="doc-image">
+<img src="/images/docs/git-tag.webp" alt="Use git tags" class="doc-image">

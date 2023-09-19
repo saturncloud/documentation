@@ -4,7 +4,7 @@ An R resource is a resource that provides access to the R IDE for interactive de
 
 To create a R Server resource, click the **Create R Server** button at the top right of the **Resources** page. You will be presented with the following form:
 
-<img src="/images/docs/create-resource.png" alt="Create resource page" class="doc-image">
+<img src="/images/docs/create-resource.webp" alt="Create resource page" class="doc-image">
 
 In the above form, you'll supply the following details:
 

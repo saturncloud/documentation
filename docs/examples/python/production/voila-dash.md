@@ -19,7 +19,7 @@ Voila would be available at:
 https://j-aaron-dashboard.community.saturnenterprise.io/user/aaron/dashboard/voila
 ```
 
-<img src="/images/docs/voila-list.png" alt="Voila file list" class="doc-image">
+<img src="/images/docs/voila-list.webp" alt="Voila file list" class="doc-image">
 
 ## Deployment
 

@@ -20,7 +20,7 @@ two methods.
 
 To install software from within a running resource, in JupyterLab open up a terminal window (or if you are SSHing into the resource open up a terminal that way). From there you can directly use command line installation methods like `pip`, `conda`, and `apt-get`.
 
-![Open terminal](/images/docs/open-terminal.png "doc-image")
+![Open terminal](/images/docs/open-terminal.webp "doc-image")
 
 <a resource-startup></a>
 
@@ -30,11 +30,11 @@ Once you know exactly what packages and software you want to install, you can se
 
 To install at startup time, go to the settings page of your resource. In the **Extra Resources** section you'll see choices for installing via conda, pip, or apt. If what you need to install can be installed via one of those three methods, you can list the packages there. 
 
-![Extra packages](/images/docs/extra-packages.png "doc-image")
+![Extra packages](/images/docs/extra-packages.webp "doc-image")
 
 To install anything else, under **Advanced Settings** you'll see **Start Script (Bash)**. In this window you can put any Linux commands you want to run during startup:
 
-![Advanced settings](/images/docs/advanced-settings.jpg "doc-image")
+![Advanced settings](/images/docs/advanced-settings.webp "doc-image")
 
 In the event that your software fails to install, for instance if you try to install a Python package that doesn't exist, your resource will have an error when it starts. You can view the resource logs by clicking the **Logs** link on the resource.
 
@@ -42,7 +42,7 @@ In the event that your software fails to install, for instance if you try to ins
 
 If you are finding that having the packages and libraries installed at resource startup is taking too long, you can instead have your resource use an image with the software already built in. Click the **Images** button on the sidebar for the tools to do this:
 
-![Images sidebar](/images/docs/images-sidebar.png "doc-image")
+![Images sidebar](/images/docs/images-sidebar.webp "doc-image")
 
 The [images creation docs page](<docs/using-saturn-cloud/manage-images/build-images/create-images.md>) has detailed instructions on creating and using an image. This can dramatically speed up the start time of a resource since it won't have to install the packages each time. The downside is that images often take half an hour or more to build, and if you need to debug the image build process, this can take hours to complete. So, try this method only after you've used the first two methods of software installation to determine exactly what you want to install.
 

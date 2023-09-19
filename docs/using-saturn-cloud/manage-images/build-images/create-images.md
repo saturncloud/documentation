@@ -8,7 +8,7 @@ Base images consist of the operating system and the minimum required code to ach
 
 After selecting the base image, you add packages and start scripts that define the rest of the custom image.
 
-![Flowchart showing the process of creating an image in Saturn Cloud](/images/docs/image-creation-flowchart.png "doc-image")
+![Flowchart showing the process of creating an image in Saturn Cloud](/images/docs/image-creation-flowchart.webp "doc-image")
 
 ## Create an Image Within Saturn Cloud
 
@@ -16,11 +16,11 @@ After selecting the base image, you add packages and start scripts that define t
 
 To build your own image, select the **Images** tab from the left-hand menu in Saturn Cloud. From here, you'll see the blue **New** button at the top right of the screen. Click this, and you'll be taken to a form.
 
-![Arrow pointing at button to create new image](/images/docs/create-image-arrow.png "doc-image")
+![Arrow pointing at button to create new image](/images/docs/create-image-arrow.webp "doc-image")
 
 There, select **Create an image using Saturn Cloud**, and you will be presented with the following form:
 
-![New image options](/images/docs/new-image-form-2.png "doc-image")
+![New image options](/images/docs/new-image-form-2.webp "doc-image")
 
 Options when creating an image within Saturn Cloud:
 
@@ -33,11 +33,11 @@ Options when creating an image within Saturn Cloud:
 
 Click **Add** to create the new image. To finish customizing your image, you will next need to create a valid version. From the image's page, click **New Version** in the top right.
 
-![Arrow pointing at button to create new image version](/images/docs/create-image-version-arrow.png "doc-image")
+![Arrow pointing at button to create new image version](/images/docs/create-image-version-arrow.webp "doc-image")
 
 From this page, you will be able to copy existing image configurations or create your own from scratch.
 
-![New image version options](/images/docs/new-image-version-form.png "doc-image")
+![New image version options](/images/docs/new-image-version-form.webp "doc-image")
 
 Options when creating an image version in Saturn Cloud:
 
@@ -55,7 +55,7 @@ Options when creating an image version in Saturn Cloud:
 
 If you are instead importing an external environment from a host service such as Docker Hub or Amazon ECR, select **Add External** from the **New Version** dropdown menu. You will then be prompted to enter the image URI, version, and optional description.
 
-<img src="/images/docs/add-external-image.png" style="width:200px;" alt="New Version dropdown showing Add External image option" class="doc-image">
+<img src="/images/docs/add-external-image.webp" style="width:200px;" alt="New Version dropdown showing Add External image option" class="doc-image">
 
 ## Build the Image
 

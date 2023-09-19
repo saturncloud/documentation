@@ -28,7 +28,7 @@ When you [create a resource in Saturn Cloud](/docs), you will choose a specific 
 
 Saturn Cloud's standard images start with `saturncloud/`.
 
-![Image selector for new resource](/images/docs/new-resource-image-selector.jpg "doc-image")
+![Image selector for new resource](/images/docs/new-resource-image-selector.webp "doc-image")
 
 When selecting an image from the dropdown menu, you will only be presented with images that correspond to the hardware type associated with the resource. That is, GPU resources can only use GPU images, and CPU resources can only use CPU images.
 

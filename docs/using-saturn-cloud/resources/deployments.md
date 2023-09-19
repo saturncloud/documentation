@@ -6,11 +6,11 @@ Deployments are custom-defined applications that you can run in your Saturn Clou
 
 To create a deployment, go to the **Resources** tab of Saturn Cloud and press **New Deployment**
 
-![New deployment button](/images/docs/new-deployment-button.jpg "doc-image")
+![New deployment button](/images/docs/new-deployment-button.webp "doc-image")
 
 This pops open a screen to choose the particular options for the deployment.
 
-![New deployment options](/images/docs/new-deployment-options.jpg "doc-image")
+![New deployment options](/images/docs/new-deployment-options.webp "doc-image")
 
 The options to set up the deployment are as follows:
 
@@ -25,7 +25,7 @@ The options to set up the deployment are as follows:
 
 After choosing these options and pressing the create deployment button, you go be sent to the resource page for that deployment. Pressing the green arrow next to the deployment name will cause the deployment to begin running.
 
-![Start deployment button](/images/docs/start-deployment.jpg "doc-image")
+![Start deployment button](/images/docs/start-deployment.webp "doc-image")
 
 {{% alert title="Note:" %}}
 Be aware that Deployments are constantly running.  This means that they are always available, as well as always using resources and incurring expenses.
@@ -59,7 +59,7 @@ response = requests.get(
 
 For general troubleshooting, the logs for a deployment can be viewed by clicking the **Status** button in the resource details.
 
-![Job status link](/images/docs/job-status.jpg "doc-image")
+![Job status link](/images/docs/job-status.webp "doc-image")
 
 ### The Deployment Never Gets to "Ready" Status
 

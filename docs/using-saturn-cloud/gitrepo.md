@@ -12,19 +12,19 @@ Saturn Cloud supports using SSH keys as a protocol to connect to git repositorie
 
 From the dropdown **User** menu at the top left, select **Manage [username]**. _This is a secure storage location, and it will not be available to the public or other users without your consent._
 
-<img src="/images/docs/manage-user-settings-arrow.png" style="width:200px;" alt="Saturn Cloud left menu with arrow pointing to manage user tab" class="doc-image">
+<img src="/images/docs/manage-user-settings-arrow.webp" style="width:200px;" alt="Saturn Cloud left menu with arrow pointing to manage user tab" class="doc-image">
 
 Under **Access Keys**, find the section called **Git SSH Key.** Click on **Create an SSH Key**, and you will be taken to the SSH key creation form.
 
-![Arrow pointing to Create an SSH key button](/images/docs/create-git-ssh-key-arrow.png "doc-image")
+![Arrow pointing to Create an SSH key button](/images/docs/create-git-ssh-key-arrow.webp "doc-image")
 
 Here, you can generate a public/private key pair within Saturn Cloud or upload your own:
 
-![Git SSH key generation](/images/docs/add-git-ssh-key.png "doc-image")
+![Git SSH key generation](/images/docs/add-git-ssh-key.webp "doc-image")
 
 After you have a key pair, copy the SSH public key and add it to your git Host to create the secure connection. Refer to your git host for how to do this (for example, [here are the directions for GitHub](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account)).
 
-<img src="/images/docs/git-ssh-key-new.png" style="width:400px;" alt="Git SSH key UI" class="doc-image">
+<img src="/images/docs/git-ssh-key-new.webp" style="width:400px;" alt="Git SSH key UI" class="doc-image">
 
 There are several adjustments you can make for the SSH key:
 
@@ -36,19 +36,19 @@ Set the private keys on a per-repo basis by sliding the **Allow Multiple Keys** 
 
 Once you've set up your SSH keys, you can add git repositories to your resources. From the left-hand menu, select the **Git Repositories** tab.
 
-<img src="/images/docs/left-menu-git-repositories-arrow.png" style="width:200px;" alt="Saturn Cloud left menu with arrow pointing to git repos tab" class="doc-image">
+<img src="/images/docs/left-menu-git-repositories-arrow.webp" style="width:200px;" alt="Saturn Cloud left menu with arrow pointing to git repos tab" class="doc-image">
 
 From the git repositories page, select the **New** button at the top right corner. Here, you can add a repository via remote URL (this is the link you'd use when running `git clone` in the terminal).
 
-![Screenshot of the page for adding a new git repository](/images/docs/add-git-repository.png "doc-image")
+![Screenshot of the page for adding a new git repository](/images/docs/add-git-repository.webp "doc-image")
 
 To access your git repository from a particular resource, navigate to the **Git Repos** tab in that resource's page and add your repository from the **Add a git repository** dropdown menu. Note that you can also add a repository directly from this page by clicking **New Git Repository**.
 
-![Screenshot of resource git repository tab](/images/docs/add-git-repo-to-resource.png "doc-image")
+![Screenshot of resource git repository tab](/images/docs/add-git-repo-to-resource.webp "doc-image")
 
 Once the repository is added, you can adjust several properties from the edit menu under **Actions**.
 
-<img src="/images/docs/edit-repository-attachment.png" style="width:400px;" alt="Screenshot of edit repository attachment menu" class="doc-image">
+<img src="/images/docs/edit-repository-attachment.webp" style="width:400px;" alt="Screenshot of edit repository attachment menu" class="doc-image">
 
 * **Path:** the folder that will store the git repository. This will be a sub folder of `/home/jovyan/git-repos/`
 * **Reference:** What branch, commit, or tag to clone when the repository is recloned.
@@ -64,19 +64,19 @@ To do git commands within Jupyter Server like pushing, pulling, and committing, 
 
 You can open a terminal window from within the Jupyter server and use git from the command line. First open the launcher by pressing the "+" button:
 
-![JupyterLab launcher button](/images/docs/terminal-01.png "doc-image")
+![JupyterLab launcher button](/images/docs/terminal-01.webp "doc-image")
 
 Then select "terminal" to go to the command line of the resource:
 
-![New terminal button](/images/docs/terminal-02.png "doc-image")
+![New terminal button](/images/docs/terminal-02.webp "doc-image")
 
 Alternatively, you can also use the git functionality built into JupyterLab with a GUI, using the plugin on the left of the screen:
 
-![Git plugin button](/images/docs/git-plugin.png "doc-image")
+![Git plugin button](/images/docs/git-plugin.webp "doc-image")
 
 ## Using git within R server
 
 When using R you can use the R IDEs built in git functionality, which defaults to a tab in the upper
 right hand corner of the IDE. You can also use the terminal to directly run git commands, using the terminal tab in the lower left hand corder of the screen.
 
-![R server git](/images/docs/rstudio-git.png "doc-image")
+![R server git](/images/docs/rstudio-git.webp "doc-image")

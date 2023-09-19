@@ -22,7 +22,7 @@ Notes about the current implementation of shared folders:
 
 To create a shared folder, go to the **Shared Folders** tab on the Saturn Cloud application. This will list all the active shared folders you have, and give you the option to edit or delete them. You can also create a new shared folder.
 
-![Shared folders list](/images/docs/shared-folders-list.png "doc-image")
+![Shared folders list](/images/docs/shared-folders-list.webp "doc-image")
 
 To create a new shared folder, choose from the following options:
 
@@ -30,12 +30,12 @@ To create a new shared folder, choose from the following options:
 * **Disk space** - The size of the disk to use. While Saturn Cloud does not charge you for shared folders, a larger disk will cause more AWS resources to be consumed on your account.
 * **Visibility** - If you choose to make the shared folder visibile to the entire organization then any user or group will be able to view and edit the data. This is useful for data shared across an entire company.
 
-![New shared folder](/images/docs/new-shared-folder.png "doc-image")
+![New shared folder](/images/docs/new-shared-folder.webp "doc-image")
 
 ## Using shared folders
 
 If a Jupyter server or R server resource has access to a shared folder it will show up in the **Shared Folders** section of the resource. This section will display the connected shared folders and the path they take within the file system of the resource. Currently, each shared folder is mounted in the location `/home/jovyan/shared/{owner}/{folder-name}`.
 
-![Shared folders on a resource](/images/docs/using-shared-folders.png "doc-image")
+![Shared folders on a resource](/images/docs/using-shared-folders.webp "doc-image")
 
 Once you start the resource, you'll see the folder in your JupyterLab or R IDE. Any file you save into that folder will be stored in the cloud and other resources will be able to use it.

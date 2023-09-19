@@ -10,11 +10,11 @@ A job is a set of code that can be set to run in one of three ways:
 
 To create a job, go to the **Resources** tab of Saturn Cloud and press **New Job**
 
-![New job button](/images/docs/new-job-button.jpg "doc-image")
+![New job button](/images/docs/new-job-button.webp "doc-image")
 
 This will allow you to edit the job in detail.
 
-![New job options](/images/docs/new-job-options.jpg "doc-image")
+![New job options](/images/docs/new-job-options.webp "doc-image")
 
 The options to set up the job are as follows:
 
@@ -60,4 +60,4 @@ r = requests.post(url, headers=headers)
 
 For general troubleshooting, the logs for a  job can be viewed by clicking the **Status** button in the resource details.
 
-![Job status link](/images/docs/job-status.jpg "doc-image")
+![Job status link](/images/docs/job-status.webp "doc-image")

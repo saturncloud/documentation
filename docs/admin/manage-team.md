@@ -4,11 +4,11 @@
 
 To invite a person an admin can go to the **Admin Settings** page in Saturn Cloud. There you'll see a button **Invite a New User**.
 
-<img src="/images/docs/users2.png" alt="Screenshot of Saturn Cloud Users page, showing Invite New User at top right" class="doc-image">
+<img src="/images/docs/users2.webp" alt="Screenshot of Saturn Cloud Users page, showing Invite New User at top right" class="doc-image">
 
 From here, you fill in the name and email of the new team member, as well as your own name (so the new team member knows who sent the invitation).
 
-<img src="/images/docs/invite-user.png" alt="Screenshot of Saturn Cloud Create Invitation form" class="doc-image">
+<img src="/images/docs/invite-user.webp" alt="Screenshot of Saturn Cloud Create Invitation form" class="doc-image">
 
 Click **Create** and the invitation will be sent to an admin to approve the request. Upon admin approval, the invitation will be emailed to the new user. If an admin requests the invitation it does not need approval.
 

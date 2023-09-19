@@ -40,7 +40,7 @@ You can see that this resource has the Python package `lightgbm` installed via g
 
 You can download the recipe for an existing resource by going to the resource page and navigating to the **Manage** tab, and then clicking the **Download Recipe** button. This will let you save the JSON file with all the details of the resource. Note that the file will include optional fields, such as the owner of the resource, which are not required for recreating it.
 
-![Recipe download button](/images/docs/recipe-download-button-new.png "doc-image")
+![Recipe download button](/images/docs/recipe-download-button-new.webp "doc-image")
 
 You can also create a resource file from scratch by using the JSON schema found in the [saturncloud/recipes](https://github.com/saturncloud/recipes) GitHub repo.
 
@@ -48,7 +48,7 @@ To create a new resource using a recipe, click the appropriate create new resour
 At the top you'll see a **Use a Recipe** button. This will let you paste in a recipe for a resource. You will also be able to choose
 the owner and name of the new recipe.
 
-![Arrow pointing at recipe create button](/images/docs/recipe-create-button-arrow.png "doc-image")
+![Arrow pointing at recipe create button](/images/docs/recipe-create-button-arrow.webp "doc-image")
 
 ## Embedding create from recipe buttons
 

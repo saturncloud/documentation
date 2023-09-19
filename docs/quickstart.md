@@ -17,7 +17,7 @@ allowfullscreen class="embed-responsive-item"></iframe>
 
 Sign up by visiting [saturncloud.io](https://www.saturncloud.io/s/) and clicking on **Start for Free**. Follow the prompts and you'll soon be logged in to your new account. If you are an Enterprise customer, you will need to use the custom url provided to you.
 
-![Saturn Cloud homepage with arrows pointing to "Start for Free"](/images/docs/homepage_signup_arrows_new.png "doc-image")
+![Saturn Cloud homepage with arrows pointing to "Start for Free"](/images/docs/homepage_signup_arrows_new.webp "doc-image")
 
 ## Saturn Cloud resources
 
@@ -37,20 +37,20 @@ Each user can have multiple resources, and resources can be cloned (including by
 
 When you log into Saturn Cloud you'll first see the **Welcome to Saturn Cloud** message. If you are creating a Jupyter server or R server, select **Run Code in an IDE**. If you are creating a job or deployment, select **Deploy Code for Production**. _(Hosted Pro and Enterprise accounts only)_
 
-![Screenshot of the welcome message](/images/docs/welcome-message-popup.png "doc-image")
+![Screenshot of the welcome message](/images/docs/welcome-message-popup.webp "doc-image")
 
 You can also close the message to continue to the **Resources** page. On the Resources page you can see your existing resources, or create a new one in either of the following ways:
 
 -   [Set up your own custom resource](/docs) with your specifications by pressing one of the **New** buttons at the top.
 -   Select one of the pre-created template resources. These templates are set up to have the appropriate settings and code for a particular task.
 
-![Screenshot of the resource page](/images/docs/create-resource-buttons-new.png "doc-image")
+![Screenshot of the resource page](/images/docs/create-resource-buttons-new.webp "doc-image")
 
 ## Start a resource
 
 Once a resource is created, you'll need to turn it on. Press the blue **Start** button on the resource's page to start the server. If you have a [Dask cluster](<docs/using-saturn-cloud/create_dask_cluster.md>) attached to the resource, you’ll need to start that separately from this page.
 
-![Screenshot of card in resource for Jupyter server with a rectangle around the start button](/images/docs/start_resource_button_rectangles_new.png "doc-image")
+![Screenshot of card in resource for Jupyter server with a rectangle around the start button](/images/docs/start_resource_button_rectangles_new.webp "doc-image")
 
 As your machine starts up, the card will display _pending_, and you will see a progress bar showing the steps and overall progress toward starting the server.
 

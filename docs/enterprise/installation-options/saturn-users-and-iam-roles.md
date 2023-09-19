@@ -16,11 +16,11 @@ Roles need to have the appropriate trust relationship in order to be used with S
 
 First, navigate to the [IAM role page in the AWS console](https://console.aws.amazon.com/iamv2/home?#/roles). Click on "Create Role"
 
-<img width=300 src="/images/docs/create-role.png" alt-text="Create Role" class="doc-image-no-format"/>
+<img width=300 src="/images/docs/create-role.webp" alt-text="Create Role" class="doc-image-no-format"/>
 
 Next, select "Web Identity", and choose the OIDC provider for your EKS cluster. Choose `sts.amazonaws.com` as the audience.
 
-<img src="/images/docs/web-identity.png" alt-text="Create Role" class="doc-image"/>
+<img src="/images/docs/web-identity.webp" alt-text="Create Role" class="doc-image"/>
 
 At this point you can continue with role creation and permissions configuration as you would with any other IAM role.
 
@@ -52,4 +52,4 @@ The value for "Federated" should be the ARN of your OIDC provider, and the `Stri
 
 After the role is created, you can attach the role to a particular user or group within Saturn Cloud. Go to the **Users & Groups** page, click the edit button for the the user or group you want to edit and choose an option for **IAM Role**.
 
-<img src="/images/docs/iam-user.png" alt-text="User IAM role input" class="doc-image">
+<img src="/images/docs/iam-user.webp" alt-text="User IAM role input" class="doc-image">

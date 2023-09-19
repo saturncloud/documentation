@@ -4,7 +4,7 @@ A Jupyter server resource is a resource that provides access to the JupyterLab I
 
 To create a Jupyter Server resource, click the **Create Jupyter Server** button at the top right of the **Resources** page. You will be presented with the following form:
 
-<img src="/images/docs/create-resource.png" alt="Create resource page" class="doc-image">
+<img src="/images/docs/create-resource.webp" alt="Create resource page" class="doc-image">
 
 <hr>
 
@@ -24,4 +24,4 @@ In the above form, you'll supply the following details:
 
 Click **Create** to have your new resource built. After this, you'll be taken to the resource page that shows the parameters you've requested. To attach a [Dask cluster](<docs/using-saturn-cloud/create_dask_cluster.md>), click **New Dask Cluster**.
 
-<img src="/images/docs/quickstart3b.png" alt="Screenshot of a resource page after creation, called 'pytorch'" class="doc-image">
+<img src="/images/docs/quickstart3b.webp" alt="Screenshot of a resource page after creation, called 'pytorch'" class="doc-image">

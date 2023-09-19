@@ -65,7 +65,7 @@ If training is hitting memory issues (see ["Increase the Worker Size"](<docs/qui
 
 The Dask scheduler is in charge of making sure tasks get distributed to the workers, but sometimes the scheduler may be bottlenecked as well. To monitor the state of the scheduler, click the "System" tab from the Dask dashboard:
 
-<img src="/images/docs/scheduler.jpg" alt="Dask Dashboard Scheduler" class="doc-image">
+<img src="/images/docs/scheduler.webp" alt="Dask Dashboard Scheduler" class="doc-image">
 
 If the CPU is running high, you may have a lot of small tasks that are causing strain on the scheduler. Some Dask operations require sending data through the scheduler to the workers, so if that data is large the scheduler may also eat up a lot of memory. You typically want at least a "Large" instance for a scheduler, but if you have a heavy-duty workload you may require using the same size machine as your workers.
 

@@ -4,7 +4,7 @@ Follow this guide for tips on what to do when any of your resources won't start 
 
 There are several steps involved in starting a resource, as can be seen on the Resource page. Understanding each step helps for troubleshooting or speeding up launch time.
 
-<img src="/images/docs/resource-starting.png" alt="Steps for launching resources" class="doc-image">
+<img src="/images/docs/resource-starting.webp" alt="Steps for launching resources" class="doc-image">
 
 ### Hardware provisioning
 

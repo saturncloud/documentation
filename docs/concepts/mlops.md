@@ -1,6 +1,6 @@
 # MLOps
 
-![Ml ops cycle](/images/docs/mlops-cycle.png "doc-image")
+![Ml ops cycle](/images/docs/mlops-cycle.webp "doc-image")
 
 ## The MLOps lifecycle
 

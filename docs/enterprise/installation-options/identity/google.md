@@ -4,7 +4,7 @@ To use Google Authentication to authenticate Saturn Cloud Enterprise, use the fo
 
 1. Navigate to [Google Credentials API](https://console.cloud.google.com/apis/credentials) and click "Create Credentials"
 
-<img src="/images/docs/google-create-creds.png" alt="create creds in google cloud" class="doc-image"/>
+<img src="/images/docs/google-create-creds.webp" alt="create creds in google cloud" class="doc-image"/>
 
 2. Select *Create OAuth Client ID*
 
