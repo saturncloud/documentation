@@ -7,4 +7,4 @@ Auto-shutoff is a setting that sets a period of time of inactivity after which a
 
 <img src="/images/docs/autoshutoff.webp" alt="Select auto-shutoff" class="doc-image">
 
-The auto-shutoff behavior for a Dask cluster connected to a resource follows the resource itself--if a Jupyter server shuts down the associated Dask cluster will shut down as well. In rare situations you may choose to turn on a Dask cluster without turning on the corresponding JupyterLab resource, for example if you're [connecting to the Dask cluster directly](<docs/using-saturn-cloud/external-connect/colab_external_connect.md>). In these situations the Dask cluster won't ever automatically shut down.
+The auto-shutoff behavior for a Dask cluster connected to a resource follows the resource itself--if a Jupyter server shuts down the associated Dask cluster will shut down as well. In rare situations you may choose to turn on a Dask cluster without turning on the corresponding JupyterLab resource, for example if you're [connecting to the Dask cluster directly](<docs/using-saturn-cloud/external-connect/external_connect.md>). In these situations the Dask cluster won't ever automatically shut down.
