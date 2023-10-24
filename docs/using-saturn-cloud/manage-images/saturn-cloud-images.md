@@ -6,7 +6,7 @@ A **Saturn Cloud image** is a Docker image that describes the libraries and pack
 
 ## Getting Started with Saturn Cloud Images
 
-When starting out with Saturn Cloud, most people [use one of our default images](<docs/images/default-images/saturn-julia.md>), which provide most data science packages that you will need. It is also possible to [create or upload your own image](<docs/using-saturn-cloud/manage-images/build-images/import-images.md>).
+When starting out with Saturn Cloud, most people [use one of our default images](<docs/images/default-images/saturn-julia.md>), which provide most data science packages that you will need. It is also possible to [create or upload your own image](<docs/using-saturn-cloud/manage-images/build-images/create-images.md>).
 
 ### Choosing the Right Image for the Job
 
@@ -38,4 +38,4 @@ If you need packages that are not included among Saturn Cloud's standard images,
 
 ### Using Custom Images
 
-Once you have established which packages you want to use your environment, you can [create a custom image](<docs/using-saturn-cloud/manage-images/build-images/import-images.md>) that packages them all together. Using a custom image can significantly decrease start-up time because packages won't need to be reinstalled every time the resource starts.
+Once you have established which packages you want to use your environment, you can [create a custom image](<docs/using-saturn-cloud/manage-images/build-images/create-images.md>) that packages them all together. Using a custom image can significantly decrease start-up time because packages won't need to be reinstalled every time the resource starts.
