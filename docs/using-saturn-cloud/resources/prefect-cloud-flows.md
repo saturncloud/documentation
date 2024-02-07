@@ -135,7 +135,7 @@ Now that you've created an account in Prefect Cloud and set up an agent in Satur
 4. Once the resource is created, start it by clicking the play button.
 5. Once that server is ready, click "JupyterLab" to launch JupyterLab.
 6. In JupyterLab, open a new notebook and start working or access your code in git repo folder, if you have [added repository to a resource](https://saturncloud.io/docs/using-saturn-cloud/gitrepo/#add-a-git-repository-to-saturn-cloud).
-7. You can see some sample workflows and information on how to register this flow in the [Saturn Cloud examples](<docs/examples/python/prefect/qs-01-prefect-singlenode.md>).
+7. You can see some sample workflows and information on how to register this flow in the [Saturn Cloud examples](<docs/examples/python/prefect/qs-03-prefect-resource-manager.md>).
 
 Once you've registered a flow, it will create a new Saturn Cloud resource specifically for running the flow. If you go to the Resources page of Saturn Cloud you should see a new resource created.
 
@@ -182,6 +182,6 @@ If you have scheduled your flow to run in set of intervals, and want to clean it
 
 To learn more about `prefect-saturn`, see <a href="https://github.com/saturncloud/prefect-saturn" target="_blank" rel="noopener">https://github.com/saturncloud/prefect-saturn</a>.
 
-To see examples of creating a workflow and running on Prefect Cloud check out the <a href="<docs/examples/python/prefect/qs-01-prefect-singlenode.md>" target="_blank" rel="noopener">Saturn Cloud Examples</a>.
+To see examples of creating a workflow and running on Prefect Cloud check out the <a href="<docs/examples/python/prefect/qs-03-prefect-resource-manager.md>" target="_blank" rel="noopener">Saturn Cloud Examples</a>.
 
 Prefect Cloud feature is available for Enterprise users only. If you have any questions about [Saturn Enterprise](https://saturncloud.io/plans/enterprise/) or in general, send us an email at support@saturncloud.io.
