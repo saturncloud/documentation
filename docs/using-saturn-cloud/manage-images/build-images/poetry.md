@@ -124,3 +124,5 @@ cd /tmp/poetry && poetry install
 /opt/saturncloud/envs/saturn/bin/python -m ipykernel install --name python3 --prefix=/opt/saturncloud
 ```
 Here we configure poetry so that it does not create a virtual env (since we want to use the existing conda env). The `poetry install` command should install python packages into the activated conda environment.
+
+{{% images_docs_view %}}

@@ -61,3 +61,4 @@ If you are installing packages at startup, either using extra packages, or by cu
 If the source code for your deployment or job is being actively developed, it is a good idea to deploy from a tag. This will ensure that as you or your team continue to work on the code base, no changes will impact your application that accidentally change it’s behavior. To change to a tag - click on the "Git Repositories" tag. Edit the reprository, and type in the tag that you want to use.
 
 <img src="/images/docs/git-tag.webp" alt="Use git tags" class="doc-image">
+{{% jobs_docs_view %}}

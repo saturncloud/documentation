@@ -53,3 +53,4 @@ The value for "Federated" should be the ARN of your OIDC provider, and the `Stri
 After the role is created, you can attach the role to a particular user or group within Saturn Cloud. Go to the **Users & Groups** page, click the edit button for the the user or group you want to edit and choose an option for **IAM Role**.
 
 <img src="/images/docs/iam-user.webp" alt-text="User IAM role input" class="doc-image">
+{{% enterprise_docs_view %}}

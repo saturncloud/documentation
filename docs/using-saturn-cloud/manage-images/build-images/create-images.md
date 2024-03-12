@@ -71,3 +71,5 @@ Starting with the base image, the image builder will install the following in th
 > **Note**: Building your image may take some time, as all your packages and dependencies need to be downloaded and built to ensure the image will work!
 
 After the image build is complete, your image is ready to use when creating a new resource.
+
+{{% images_docs_view %}}

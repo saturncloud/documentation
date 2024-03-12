@@ -7,3 +7,4 @@ To use Azure AD to authenticate Saturn Cloud Enterprise, use the following steps
 3. Record the Client ID
 4. [Generate the secret](https://docs.microsoft.com/en-us/azure/active-directory/develop/quickstart-register-app#add-credentials).
 5. Provide you with a client ID and secret. Give those to us, and we will complete the Auth0 configuration.
+{{% enterprise_docs_view %}}

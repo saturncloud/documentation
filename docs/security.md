@@ -28,3 +28,5 @@ Many data science platforms use a single IAM role for the entire installation, a
 Not all data sources can be accessed using IAM roles. Some databases for example will require usernames and passwords for access. It is important to prevent passwords and API tokens from being compromised by accidentally being built into docker images, written down in notebooks, or checked into git.
 
 Saturn Cloud can manage [secrets, database passwords, and api tokens](/docs) for your users. These secrets can be mapped to arbitrary files, or environment variables on your system. This means data scientists should can just load secrets using `os.environ` rather than writing them down in locations where they can be compromised.
+
+{{% security_docs_view %}}

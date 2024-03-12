@@ -136,3 +136,5 @@ For example: `https://app.community.saturnenterprise.io/api/recipes/apply`
 The image will then be available to use in your Saturn Cloud resources under your default organization.
 
 > **Note** - If you want to get a list of the images currently available in your Saturn Cloud organization, run a GET command to `<Your Saturn Cloud Base URL>/api/recipes` using your authorization header.
+
+{{% images_docs_view %}}

@@ -15,3 +15,4 @@ To use Google Authentication to authenticate Saturn Cloud Enterprise, use the fo
 5. Under *Authorized redirect URIs*, enter your Auth0 callback URI (which we will give you). It will be something like this: https://your-company.us.auth0.com/login/callback
 
 6. Google will provide you with a client ID and secret. Give those to us, and we will complete the Auth0 configuration.
+{{% enterprise_docs_view %}}

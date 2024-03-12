@@ -70,3 +70,5 @@ If the containers are crashing, errors should be shown in the deployment's logs.
 ### The Deployment's status is "Ready", but accessing the resource gives a status 502
 
 The most likely cause of this is that nothing is bound to port 8000 within the deployment's containers. 8000 is the only forwarded HTTP port - applications need to bind to it to be accessible. Another possibility is that the server is bound to 127.0.0.1 and not 0.0.0.0  - it needs to listen on all addresses to be accessible from outside of the container.
+
+{{% deployments_docs_view %}}

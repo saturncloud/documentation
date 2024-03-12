@@ -7,3 +7,4 @@ Installing into an existing VPC also allows you to keep Saturn Cloud off of the 
 If your organization requires - this VPC can have restricted egress to the internet. The below diagram outlines such a configuration. All Saturn Cloud resources are deployed to private subnets. A transit gateway is used to connect that VPC with on-premise resources. Any external internet is routed through on-premise networks so that corporate firewalls can properly restrict egress traffic.
 
 <img src="/images/docs/saturn-architecture-onpremise.webp" class="doc-image"/>
+{{% enterprise_docs_view %}}

@@ -31,7 +31,7 @@ The options to set up the job are as follows:
 * __Start Script (Bash)__ (Advanced setting) - the script to run at startup of the image before the job is executed.
 * __Working Directory__ (Advanced setting) - where within the file directory the job command should be executed.
 
-Pressing **Create** will add the job to the resource list and you will be taken to the resource page for the new job. 
+Pressing **Create** will add the job to the resource list and you will be taken to the resource page for the new job.
 
 ## Running Saturn Cloud jobs
 
@@ -61,3 +61,4 @@ r = requests.post(url, headers=headers)
 For general troubleshooting, the logs for a  job can be viewed by clicking the **Status** button in the resource details.
 
 ![Job status link](/images/docs/job-status.webp "doc-image")
+{{% jobs_docs_view %}}

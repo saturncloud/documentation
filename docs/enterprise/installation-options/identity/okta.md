@@ -30,3 +30,4 @@ To use Okta to authenticate Saturn Cloud Enterprise, use the following steps:
 <img width=600 src="/images/docs/okta-groups.webp" alt="Okta Groups" class="doc-image-no-format">
 
 8. Please Store the client ID and Secret for this application. We will invite you to your Auth0 tenant, where you can input this information securely.
+{{% enterprise_docs_view %}}

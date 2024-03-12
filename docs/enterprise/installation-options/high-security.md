@@ -195,3 +195,5 @@ SSO is used for authentication, but you can also use it for authorization (deter
 
 
 As mentioned in our article on [security recommendations](/docs#iam-roles), We recommend using IAM roles over IAM users. At Saturn Cloud, we leverage [IAM roles for service accounts](https://docs.aws.amazon.com/eks/latest/userguide/iam-roles-for-service-accounts.html). This enables us to map IAM roles to [Saturn Cloud users, groups and containers](/docs).
+{{% enterprise_docs_view %}}
+{{% security_docs_view %}}

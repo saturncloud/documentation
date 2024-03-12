@@ -23,3 +23,4 @@ Saturn cloud also enables IAM roles on a per-resource basis. That means that dat
 Saturn Cloud leverages Auth0 to connect to your existing IDP. Regardless of what IDP you use, Saturn Cloud can integrate with it. If you'd like to setup SSO, Please reach out support@saturncloud.io and we can discuss your specific configuration.
 
 SSO can be setup either to authorize all users in your organiation, Or you can elect to use SSO solely for authentication, and rely on explicit user invitations within the Saturn Cloud application to manage acces to Saturn Cloud.
+{{% security_docs_view %}}
