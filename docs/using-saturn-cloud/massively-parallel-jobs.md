@@ -79,6 +79,7 @@ The above command modified my original recipe and:
 Here is the updated command section of the recipe
 
 ```yaml
+spec:
   command:
   - sc batch /home/jovyan/commands3/0.json
   - sc batch /home/jovyan/commands3/1.json
@@ -97,6 +98,24 @@ Here is the updated command section of the recipe
 ```
 
 `sc batch` is a command that will take the above batch file as written, execute it on the machine and ensure that no more than 4 runs (`nprocs`) is running at any given time, and ensure that stdout, stderr, and any results are saved to the `remote_output_path` for the run.
+
+## Hardware Selections
+
+This section of the recipe determines the hardware used for runs:
+
+```yaml
+spec:
+  instance_type: r6axlarge
+  scale: 2
+```
+
+This means that we will consume at most 2 r6axlarge until all workloads are complete.
+
+```
+$ sc options
+```
+
+will list all available instance sizes.
 
 ## Run output
 
