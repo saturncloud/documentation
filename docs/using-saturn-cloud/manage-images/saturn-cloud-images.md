@@ -6,7 +6,7 @@ A **Saturn Cloud image** is a Docker image that describes the libraries and pack
 
 ## Getting Started with Saturn Cloud Images
 
-When starting out with Saturn Cloud, most people [use one of our default images](<docs/images/default-images/saturn-julia-gpu.md>), which provide most data science packages that you will need. It is also possible to [create or upload your own image](<docs/using-saturn-cloud/manage-images/build-images/poetry.md>).
+When starting out with Saturn Cloud, most people [use one of our default images](<docs/images/default-images/saturn-r-tensorflow.md>), which provide most data science packages that you will need. It is also possible to [create or upload your own image](<docs/using-saturn-cloud/manage-images/build-images/poetry.md>).
 
 ### Choosing the Right Image for the Job
 
