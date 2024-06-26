@@ -14,7 +14,7 @@ will be able to see the value of the variable, including if you clone it. You ca
 
 ### Set a secret shared by multiple resources
 
-You may have environment variables for things like passwords that you want to ensure stay secure, and often you want to share across multiple resources. To set these, use the [**Secrets**](<docs/using-saturn-cloud/secrets.md>) tab of Saturn Cloud.
+You may have environment variables for things like passwords that you want to ensure stay secure, and often you want to share across multiple resources. To set these, use the [**Secrets**](<docs/enterprise/installation-options/encrypting-kubernetes-secrets.md>) tab of Saturn Cloud.
 
 ## Using environment values
 
