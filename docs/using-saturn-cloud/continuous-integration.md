@@ -5,3 +5,7 @@ Continuous Integration and Continuous Deployment (CI/CD) are essential practices
 Common use cases for CI/CD with Saturn Cloud are
 - automating the building of images for use within Saturn Cloud
 - automating the updates of deployments/jobs in Saturn Cloud
+
+## Registering images in Saturn Cloud in CI/CD pipelines
+
+This section assumes that you already have a CI/CD pipeline setup for buidling docker images.
