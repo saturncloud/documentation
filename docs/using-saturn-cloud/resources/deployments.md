@@ -72,3 +72,26 @@ If the containers are crashing, errors should be shown in the deployment's logs.
 The most likely cause of this is that nothing is bound to port 8000 within the deployment's containers. 8000 is the only forwarded HTTP port - applications need to bind to it to be accessible. Another possibility is that the server is bound to 127.0.0.1 and not 0.0.0.0  - it needs to listen on all addresses to be accessible from outside of the container.
 
 {{% deployments_docs_view %}}
+
+## Who can access a deployment?
+
+- By default, deployments are accesible to all members of your organization.
+- You can also disable all authentication for a deployment, useful if you want to host an API publicly on the internet.
+- You can also restrict who can view a deployment to specific users and groups.
+
+### Deployment visibility mode
+
+Each port you expose is mapped to a separate subdomain which can be set to be visible to
+
+- Just the owner
+- The entire organization
+- The entire internet (only if public deployments are enabled for your Saturn Cloud installation).
+
+
+![port-visibility](/images/docs/deployment-port.webp "doc-image")
+
+### Specific Viewers
+
+In addition, you can assign specific users or groups who can also view specific ports.
+
+![deployment-viewers](/images/docs/viewers.webp "doc-image")
