@@ -1,5 +1,4 @@
-# Billing for Saturn Cloud Hosted
-
+# Billing for Saturn Cloud Pro
 For the Saturn Cloud Hosted, your resources run in our AWS account. This is free for Hosted Free users, and paid for Hosted Pro and Hosted Organizations users. Under the paid plan, there is no free tier. You simply pay the [hourly rate for compute and storage](/docs). By default we will charge your account whenever you accumulate over $10 in charges, or after 30 days, whichever comes first. This can generate an excessive amount of invoices for some users. Please reach out to support@saturncloud.io to increase the billing interval - we are happy to do so.
 
 ## I'm getting charged but nothing is running
