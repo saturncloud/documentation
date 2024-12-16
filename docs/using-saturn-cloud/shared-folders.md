@@ -12,12 +12,6 @@ Any user or group in Saturn Cloud can own a shared folder:
 * In the case of a group owned shared folder, not only will resources owned by the group have access to the folder, any resource owned by any member of the group will also have access to the shared folder.
 * Each shared folder has the option to change the **visibility** setting. If the visibility is set to organization then anyone in the organization can access the folder, even if they are not the owner.
 
-Notes about the current implementation of shared folders:
-
-1. Currently, all shared folders are automatically attached to all resources. In a future release of Saturn Cloud users will have the option to attach the shared folder only to specific resources.
-2. Shared folders are only usable by workspace resources (Jupyter server and R server resources), and their associated Dask clusters. The ability for jobs, deployments, and prefect cloud flows to use shared folders will be added in an upcoming release.
-3. Shared folders are mounted in fixed paths across all resources. In a future release you'll be able to specify exactly where the shared folder is stored.
-
 ## Creating shared folders
 
 To create a shared folder, go to the **Shared Folders** tab on the Saturn Cloud application. This will list all the active shared folders you have, and give you the option to edit or delete them. You can also create a new shared folder.
