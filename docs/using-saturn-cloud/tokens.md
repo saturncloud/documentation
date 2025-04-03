@@ -6,6 +6,9 @@ Saturn Cloud relies on API tokens to grant programmatic access to Saturn Cloud.
 
 Saturn Cloud tokens can be scoped or un-scoped. Scoped tokens grant access to specific resources. Unscoped tokens can perform any action as the user or group that generated them.
 
+{{% alert %}}
+If you were using Saturn Cloud API tokens with Saturn Cloud versions 2024.05.01 and earlier, and you want the current Saturn Cloud tokens to behave the same way, simply choose unscoped tokens.
+{{% /alert %}}
 ## User Tokens vs Resource Tokens
 
 Saturn Cloud has 2 types of tokens. User tokens are generaly intended to be used when you are connecting to Saturn Cloud from an external source. Resource tokens are automatically embedded into Saturn Cloud resources under the environment variable "SATURN_TOKEN". To create user tokens
