@@ -8,7 +8,7 @@ Since you are running inside a Docker container, you cannot simply start the `do
 
 ![docker in docker](/images/docs/dind.webp "doc-image")
 
-Unfortunately Docker in Docker support is only available with Saturn Cloud On-Premise (This includes participants of the NVIDIA Academic Grants Prgram). If you are using Saturn Cloud On-Premise and you do not see this option, please contact support@saturncloud.io to enable it.
+Unfortunately Docker in Docker support is only available with Saturn Cloud On-Premise. If you are using Saturn Cloud On-Premise and you do not see this option, please contact support@saturncloud.io to enable it.
 
 ## Make sure you can read/write to the docker socket
 
