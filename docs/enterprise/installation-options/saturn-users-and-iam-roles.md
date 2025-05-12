@@ -6,10 +6,6 @@ Saturn Cloud allows administrators to grant access to IAM roles to Saturn users.
 
 The Saturn Cloud infrastructure is built on top of AWS EKS. Associating IAM roles with Saturn users leverages EKS mechanisms for mapping [IAM roles to pods via service accounts](https://docs.aws.amazon.com/eks/latest/userguide/iam-roles-for-service-accounts.html). In order to do this, you must contact support@saturncloud.io in order to enable IRSA for your EKS cluster.
 
-## Limitations
-
-Currently a user or group can only have access to a single IAM role. That IAM role will be mapped to all of their resources. In the near term, administrators will be able grant saturn users access to multiple roles, which can be attached to resources.
-
 ## Creating Roles
 
 Roles need to have the appropriate trust relationship in order to be used with Saturn Cloud. These are straightforward to create in the AWS console.
@@ -53,4 +49,7 @@ The value for "Federated" should be the ARN of your OIDC provider, and the `Stri
 After the role is created, you can attach the role to a particular user or group within Saturn Cloud. Go to the **Users & Groups** page, click the edit button for the the user or group you want to edit and choose an option for **IAM Role**.
 
 <img src="/images/docs/iam-user.webp" alt-text="User IAM role input" class="doc-image">
+
+You can grant users/groups entitlements to mulitple IAM roles. If a user or group only has access to one IAM role, it will be automatically attached to their resources. Otherwise, they can elect which role to attach to each resource.
+
 {{% enterprise_docs_view %}}
