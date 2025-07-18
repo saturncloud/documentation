@@ -1,6 +1,6 @@
 # MLOps
 
-![Ml ops cycle](/images/docs/mlops-cycle.webp "doc-image")
+![MLOps cycle](/images/docs/mlops-cycle.webp "doc-image")
 
 ## The MLOps lifecycle
 
@@ -23,11 +23,11 @@ The [MLOps](https://saturncloud.io/glossary/mlops) lifecycle consists of a few s
 
 ## Saturn Cloud
 
-1.  Saturn cloud workspaces: Saturn cloud workspaces are scalable development environments that can connect to an associated dask cluster. This gives the data scientist access to tremendous amount of computing power, RAM, and GPUs. This workspace is commonly used for **EDA**, **Data Preparation** as well as **Model Development**
+1.  Saturn Cloud workspaces: Saturn Cloud workspaces are scalable development environments that can connect to an associated Dask cluster. This gives the data scientist access to tremendous amount of computing power, RAM, and GPUs. This workspace is commonly used for **EDA**, **Data Preparation** as well as **Model Development**
 
-2. Saturn cloud jobs: Saturn cloud jobs have the exact same specifications and configuration as Saturn Cloud workspaces, and can also connect to an associated Dask cluster. These jobs can be triggered via an API, or on a schedule. These are often used for **Model (Re-)Training**
+2. Saturn Cloud jobs: Saturn Cloud jobs have the exact same specifications and configuration as Saturn Cloud workspaces, and can also connect to an associated Dask cluster. These jobs can be triggered via an API, or on a schedule. These are often used for **Model (Re-)Training**
 
-3. Saturn cloud deployments: Saturn cloud deployments can deploy any user code that serves HTTP traffic on port 8000. This is commonly used for **Model Deployment**, however you can also leverage [other MLOps providers](#integrations) for tighter integration with a Model registry.
+3. Saturn Cloud deployments: Saturn Cloud deployments can deploy any user code that serves HTTP traffic on port 8000. This is commonly used for **Model Deployment**, however you can also leverage [other MLOps providers](#integrations) for tighter integration with a Model registry.
 
 
 ## Integrations

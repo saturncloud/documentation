@@ -10,6 +10,6 @@ vLLM is a high-performance system designed to accelerate the serving of large la
 
 Click "start" to deploy your LLM. Please see the [section on deployments](/docs) to understand how to authenticate with this deployment, as well as restrict access to it.
 
-## VLLm serve options
+## vLLM serve options
 
 As long as your [model architecture is supported](https://docs.vllm.ai/en/latest/models/supported_models.html) you should be able to serve your model with vLLM. The parameters `--dtype half --quantization bitsandbytes --load-format bitsandbytes` are recommended in order to reduce the GPU memory foot print of some of the larger models.

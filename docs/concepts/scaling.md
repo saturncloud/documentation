@@ -25,7 +25,7 @@ Again - single node scaling is much easier than multi-node scaling. You should a
 
 #### Dask
 
-Dask is a Python framework for executing graphs of function calls over a Cluster. Saturn Cloud has built in support for multi-node Dask clusters that can be attached to Saturn Cloud workspaces, deployments, and jobs. Saturn Cloud dask clusters inherit the exact same software environment that they are attached to. This includes
+Dask is a Python framework for executing graphs of function calls over a Cluster. Saturn Cloud has built in support for multi-node Dask clusters that can be attached to Saturn Cloud workspaces, deployments, and jobs. Saturn Cloud Dask clusters inherit the exact same software environment that they are attached to. This includes
 
 - The same docker image
 - The same secrets
@@ -45,7 +45,7 @@ As mentioned before, Dask is a framework for executing graphs of function calls.
 
 ##### Dask Delayed
 
-Whenever possible, we encourage users to leverage the dask function call directly using `dask.delayed`. `dask.delayed` is a decorator that can be used to turn Python function calls into functions that can be executed in Parallel over a dask cluster. Dask is particularly good for this because the Dask dashboard makes it easy to understand what is happening on your cluster, and Dask propagates remote errors back to the client which makes it much easier to troubleshoot parallel jobs.
+Whenever possible, we encourage users to leverage the Dask function call directly using `dask.delayed`. `dask.delayed` is a decorator that can be used to turn Python function calls into functions that can be executed in Parallel over a Dask cluster. Dask is particularly good for this because the Dask dashboard makes it easy to understand what is happening on your cluster, and Dask propagates remote errors back to the client which makes it much easier to troubleshoot parallel jobs.
 
 #### Saturn Run
 
