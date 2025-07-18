@@ -14,7 +14,7 @@ completed    0              sfs://internal/hugo/intercom-backfill-2024-03-24/202
 The output for every run is stored in the `remote_output_path` specifically
 
 - **stdout**: the standard output of your command
-- **stderr**: the standardd error of your command
+- **stderr**: the standard error of your command
 - **status_code**: the unix status code of your command. 0 means it completed successfully
 - **results**: Optional - any result files your job has written (more on this later)
 

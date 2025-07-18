@@ -12,7 +12,7 @@ Unfortunately Docker in Docker support is only available with Saturn Cloud On-Pr
 
 ## Make sure you can read/write to the docker socket
 
-Due to technical limitations, the docker socket is mounted in your container owned by root. To ensure that you can access it, please use `sudo` to change it's ownership
+Due to technical limitations, the docker socket is mounted in your container owned by root. To ensure that you can access it, please use `sudo` to change its ownership
 
 ```
 $ sudo chown jovyan:jovyan /var/run/docker.sock

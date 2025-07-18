@@ -2,7 +2,7 @@
 
 ## The API
 
-Everything that can be done in the UI can be done via Saturn Cloud API calls. The [API](https:///api.saturncloud.io) is what our UI uses to orchestrate resources on the backend - as a result it is pretty low level. For most purposes, Saturn Cloud recipes are more appropriate
+Everything that can be done in the UI can be done via Saturn Cloud API calls. The [API](https://api.saturncloud.io) is what our UI uses to orchestrate resources on the backend - as a result it is pretty low level. For most purposes, Saturn Cloud recipes are more appropriate
 
 ## Recipes
 
@@ -10,7 +10,7 @@ Saturn Cloud recipes are JSON representation of objects in Saturn Cloud. Every r
 
 ### Infrastructure as code
 
-Saturn Cloud recipes can also be used for infrastructure as code patterns. Recipes, which are a declarative representation of Saturn Clodu resources can be applied to Saturn Cloud, which will create a resource if it does not exist. If the resource has already been created, this will update it to the new settings.
+Saturn Cloud recipes can also be used for infrastructure as code patterns. Recipes, which are a declarative representation of Saturn Cloud resources can be applied to Saturn Cloud, which will create a resource if it does not exist. If the resource has already been created, this will update it to the new settings.
 
 ## Integration with CI/CD
 

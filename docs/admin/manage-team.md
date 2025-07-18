@@ -12,6 +12,6 @@ From here, you fill in the name and email of the new team member, as well as you
 
 Click **Create** and the invitation will be sent to an admin to approve the request. Upon admin approval, the invitation will be emailed to the new user. If an admin requests the invitation it does not need approval.
 
-## Removing access for user
+## Removing access for a user
 
 If you would no longer want someone to have access to Saturn Cloud, on the **Admin Settings** page an admin can edit a user to set their status to **Locked**. This will prevent them from logging into Saturn Cloud or having access to any Saturn Cloud items such as resources, images, or secrets.

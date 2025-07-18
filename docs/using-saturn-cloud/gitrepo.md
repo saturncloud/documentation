@@ -76,7 +76,7 @@ Alternatively, you can also use the git functionality built into JupyterLab with
 
 ## Using git within R server
 
-When using R you can use the R IDEs built in git functionality, which defaults to a tab in the upper
+When using R you can use the R IDE's built in git functionality, which defaults to a tab in the upper
 right hand corner of the IDE. You can also use the terminal to directly run git commands, using the terminal tab in the lower left hand corder of the screen.
 
 ![R server git](/images/docs/rstudio-git.webp "doc-image")

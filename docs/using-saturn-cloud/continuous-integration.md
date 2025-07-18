@@ -8,4 +8,4 @@ Common use cases for CI/CD with Saturn Cloud are
 
 ## Registering images in Saturn Cloud in CI/CD pipelines
 
-This section assumes that you already have a CI/CD pipeline setup for buidling docker images.
+This section assumes that you already have a CI/CD pipeline setup for building docker images.

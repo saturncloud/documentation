@@ -81,7 +81,7 @@ Or with the following Python code:
 ```
 from ruamel.yaml import YAML
 conn = SaturnConnection()
-for path in ['recipe1.yaml, 'recipe2.yaml', 'recipe3.yaml']:
+for path in ['recipe1.yaml', 'recipe2.yaml', 'recipe3.yaml']:
     with open(path) as f:
         recipe = YAML().load(f)
         result = conn.apply(recipe)

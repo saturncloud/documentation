@@ -20,7 +20,7 @@ Saturn Cloud has 2 types of tokens. User tokens are generaly intended to be used
 
 ### Resource Tokens
 
-Resource tokens are automaticaly generated and embedded under the `SATURN_TOKEN` environment variable in your workspace. If you click on the "Manage" tab of your workspace, you can modify your token and change the scope, for example.
+Resource tokens are automatically generated and embedded under the `SATURN_TOKEN` environment variable in your workspace. If you click on the "Manage" tab of your workspace, you can modify your token and change the scope, for example.
 
 ## Using tokens
 

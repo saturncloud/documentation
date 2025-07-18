@@ -7,7 +7,7 @@ The resource is the fundamental unit of work for Saturn Cloud. There are 4 types
 - [Deployment](/docs). This is a non-interactive server, typically used to server models, APIs and dashboards. It is designed to run 24/7
 - [Job](/docs). This is a non-interactive server, typically used to write data pipelines. It is designed to run once and then complete - often on a schedule.
 
-[Dask clusters](/docs can be attached to any resource.
+[Dask clusters](/docs) can be attached to any resource.
 
 Saturn Cloud resources are very simple, they are made up of
 
@@ -30,7 +30,7 @@ The Git integration is setup to automatically ensure your repositories are clone
 
 ### Deployments and Jobs
 
-Deployments are typically used to deploy models, APIs and dashboards. Jobs are typically used for data pipelines, or model re-trainings. Deployments and Jobs have almost all of the same configuraition options as workspaces. This is intentional so that anything you develop within a workspace can be run as a deployment or a Job.
+Deployments are typically used to deploy models, APIs and dashboards. Jobs are typically used for data pipelines, or model re-trainings. Deployments and Jobs have almost all of the same configuration options as workspaces. This is intentional so that anything you develop within a workspace can be run as a deployment or a Job.
 
 Deployments are extremely generic. The user has to specify what command line invocation will start their deployment, and the deployment is expected to serve HTTP traffic on port 8000. Your choice of framework (Bokeh, Plotly Dash, Panel, Streamlit, Shiny) is not important. If you write code that does this, Saturn Cloud can host it, and our authentication proxy (the same thing that protects your Python and R workspace) will allow only authorized users access to your deployment.
 

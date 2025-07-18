@@ -5,7 +5,7 @@
 Now you can set up the connection to your preferred IDE. You'll need to provide the IDE with the following:
 
 -   **Host**: Also called "Hostname" or "Server Hostname". This is the part to the right of the `@` in the URL above.
--   **User**: This is the part to the left size of the `@` in the URL above.
+-   **User**: This is the part to the left side of the `@` in the URL above.
 -   **Private key filepath**: This is the location on your computer where the SSH private key is stored. This is the complement to the SSH public key you saved in Saturn Cloud.
 
 ### VSCode
@@ -65,7 +65,7 @@ ssh -i path/to/key <resource URL>
 
 Using SSH on a Windows computer is slightly more complicated, but definitely doable. Although there are several different strategies, here we'll focus on setting up and using OpenSSH (if you're interested in other SSH clients, check out [PuTTY](https://www.putty.org/)).
 
-OpenSSH is the open-source version of the SSH tools used by Linux administrators, and has been included in Windows installations since 2018. To use it, you will need at least Windows Server 2019 or Windows 10 (build 1809), PowerShell 5.1 or later, and an account with administrator priveleges.
+OpenSSH is the open-source version of the SSH tools used by Linux administrators, and has been included in Windows installations since 2018. To use it, you will need at least Windows Server 2019 or Windows 10 (build 1809), PowerShell 5.1 or later, and an account with administrator privileges.
 
 Once you have verified that you meet these requirements, you can check to see if OpenSSH is already installed. To do so, navigate to **Settings > Apps > Optional Features**. If you see **OpenSSH Client** and **OpenSSH Server** in this list, you're good to go. Otherwise, click **Add a feature** at the top of the page. Find and install both **OpenSSH Client** and **OpenSSH Server**. Once setup is complete, return to the **Optional Features** list and verify that both client and server now show up.
 

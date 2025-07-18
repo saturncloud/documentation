@@ -4,7 +4,7 @@ Saturn Cloud makes it easy to scale your computations, either on a single machin
 
 ### Single Machine Scaling
 
-CPU instances can scale up to 4TB of RAM. GPU instances can scale up to 8 T4, A10, or V100 GPUs. Enterprise customers can also request different additional types. Though scaling on a single machine is certainly less exciting, it is smpler and easier to do for most users.
+CPU instances can scale up to 4TB of RAM. GPU instances can scale up to 8 T4, A10, or V100 GPUs. Enterprise customers can also request different additional types. Though scaling on a single machine is certainly less exciting, it is simpler and easier to do for most users.
 
 Saturn Cloud users on single machines typically scale workloads with
 
@@ -21,7 +21,7 @@ Multi-node scaling is useful for several reasons
 - it allows you to consume more GPUs than is available on a single machine
 - it allows you to scale up and down as your computational needs change.
 
-Again - single node scaling is much easier than multi-node scaling. You should always test/debug your code with single node scaling before proceding to multi-node scaling.
+Again - single node scaling is much easier than multi-node scaling. You should always test/debug your code with single node scaling before proceeding to multi-node scaling.
 
 #### Dask
 
@@ -29,7 +29,7 @@ Dask is a Python framework for executing graphs of function calls over a Cluster
 
 - The same docker image
 - The same secrets
-- The same additional pacakges and start up scripts
+- The same additional packages and start up scripts
 
 Dask is often used by data scientists both to scale up to large datasets, as well as to run experiments
 

@@ -11,7 +11,7 @@ Saturn Cloud is actually a cloud product that runs within your existing infrastr
 
 Platform engineers usually start by provisioning these resources for AI/ML engineers manually, and then over time build out their own automation or platforms around them.
 
-**As a platform engineer you have the technical capabilities to build and mange this infrastructure. The real question is whether you want to spend the time building, supporting, maintaining, and being on call for this layer of infrastructure, or if you have better things to work on with your time.**
+**As a platform engineer you have the technical capabilities to build and manage this infrastructure. The real question is whether you want to spend the time building, supporting, maintaining, and being on call for this layer of infrastructure, or if you have better things to work on with your time.**
 
 ## Do I need to run everything in Saturn Cloud?
 

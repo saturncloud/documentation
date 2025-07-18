@@ -8,7 +8,7 @@ Environment variables can be set in two different ways in Saturn Cloud, dependin
 ### Set a non-secure environment variable for a single resource
 
 The **Environment Settings** section of the resource settings has an area where you can add environment variables. These variables will be accessible by that resource only, and anyone who has access to the resource
-will be able to see the value of the variable, including if you clone it. You can add the environment variables as `VARIABLE=value`, where `VARIABLE` is the name of the variable and `VALUE` is the value of the variable.
+will be able to see the value of the variable, including if you clone it. You can add the environment variables as `VARIABLE=value`, where `VARIABLE` is the name of the variable and `value` is the value of the variable.
 
 ![Environment variables UI](/images/docs/environment.webp "doc-image")
 
