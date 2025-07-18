@@ -11,7 +11,7 @@ This example has the tasks run on a single machine, but allows the tasks to be a
 
 
 ### Model Details
-For this example we will be using famous NYC taxi dataset. This dataset contains information about taxi trips in New York City. For the purposes of this example, we will be looking at the yellow taxi data from January 2019. We are distributing a single task amongst dask clusters. The task includes reading the datafrom nyc taxi dataset, filtering out the rows where price is missing and then calculating amount of variation in passenger count.  
+For this example we will be using famous NYC taxi dataset. This dataset contains information about taxi trips in New York City. For the purposes of this example, we will be looking at the yellow taxi data from January 2019. We are distributing a single task amongst Dask clusters. The task includes reading the datafrom nyc taxi dataset, filtering out the rows where price is missing and then calculating amount of variation in passenger count.  
 
 ## Modelling Process
 
@@ -163,7 +163,7 @@ prefect run \
 
 In this example, you learned how to create a prefect flow and distribute a task across Dask clusters. Register this flow with Prefect Cloud.
 
-Try changing the code above and re-running the flow eg you can train a model across multiple dask clusters
+Try changing the code above and re-running the flow eg you can train a model across multiple Dask clusters
 
 If you have existing prefect flows, try running one of them on Saturn using this notebook as a template.
 

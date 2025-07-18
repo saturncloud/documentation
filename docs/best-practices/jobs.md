@@ -8,7 +8,7 @@ The iteration cycle for deploying code is slow. Every time you start one of thes
 
 Part of this means you should run your code in the exact same environment you are going to deploy it in. The fact that it runs fine on your laptop, does not mean it will run fine when you deploy it, because you have different files and libraries on your laptop compared to what you will be running in the cloud.
 
-We recommend running jobs in a jupyter or r studio server, either via the web terminal or through SSH. If you are planning on deploying a notebook, [Papermill](https://papermill.readthedocs.io/en/latest/) can be run in the terminal as well.
+We recommend running jobs in a Jupyter or RStudio server, either via the web terminal or through SSH. If you are planning on deploying a notebook, [Papermill](https://papermill.readthedocs.io/en/latest/) can be run in the terminal as well.
 
 
 ### Keep track of software dependencies

@@ -25,7 +25,7 @@ To use Okta to authenticate Saturn Cloud Enterprise, use the following steps:
 
 <img width=600 src="/images/docs/okta-signon.webp" alt="Selct Okta Sign On" class="doc-image-no-format">
 
-7. Click to edit the *Open ID Connect Token*. Modify the selector to *Matches Regex* and then use `.*` as the value. This ensures that Saturn Cloud gets all group membership information, which Saturn Cloud admins can use to control entitlements within Saturn cloud.
+7. Click to edit the *Open ID Connect Token*. Modify the selector to *Matches Regex* and then use `.*` as the value. This ensures that Saturn Cloud gets all group membership information, which Saturn Cloud admins can use to control entitlements within Saturn Cloud.
 
 <img width=600 src="/images/docs/okta-groups.webp" alt="Okta Groups" class="doc-image-no-format">
 

@@ -14,9 +14,9 @@ In addition to limiting egress, you can also limit egress for your data science 
 
 ## IAM security
 
-Saturn cloud uses IAM roles to manage your instance. We can work with you to scope those access permissions to the bare minimum. You can also modify the trust relationship so we only have access during authorized updates and support requests. For customers that require it - you can completely cut off access to your Saturn Cloud access, and we can support installation and upgrades via Zoom, Google meet, or Microsoft teams.
+Saturn Cloud uses IAM roles to manage your instance. We can work with you to scope those access permissions to the bare minimum. You can also modify the trust relationship so we only have access during authorized updates and support requests. For customers that require it - you can completely cut off access to your Saturn Cloud access, and we can support installation and upgrades via Zoom, Google meet, or Microsoft teams.
 
-Saturn cloud also enables IAM roles on a per-resource basis. That means that data access can be completely managed by IAM roles, and users can attach those roles on a per-resource basis. Authorization for specific IAM roles is granted on a per-user or per-group basis, and can only be done by those that you desginate as Saturn cloud admins, providing very fine grained security.
+Saturn Cloud also enables IAM roles on a per-resource basis. That means that data access can be completely managed by IAM roles, and users can attach those roles on a per-resource basis. Authorization for specific IAM roles is granted on a per-user or per-group basis, and can only be done by those that you desginate as Saturn Cloud admins, providing very fine grained security.
 
 ## SSO
 

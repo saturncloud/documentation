@@ -1,6 +1,6 @@
 # Using Docker CLI
 
-In Saturn Cloud you are always running within a container. However sometimes it can be useful to dispatch containerized workloads using the Docker cli. This article describes the steps necessary to do so.
+In Saturn Cloud you are always running within a container. However sometimes it can be useful to dispatch containerized workloads using the Docker CLI. This article describes the steps necessary to do so.
 
 ## Enable Docker in Docker support
 

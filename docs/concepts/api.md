@@ -18,7 +18,7 @@ Saturn Cloud resources are transparent. As a result, it is easy to orchestrate S
 
 ### Building Images
 
-One common use case is to store image definitions (Dockerfile and environment.yaml) in Git, and then have CI/CD pipelines build those images and register them with Saturn Cloud for use by your data science team.
+One common use case is to store image definitions (Dockerfile and environment.YAML) in Git, and then have CI/CD pipelines build those images and register them with Saturn Cloud for use by your data science team.
 
 ### Git Ops
 

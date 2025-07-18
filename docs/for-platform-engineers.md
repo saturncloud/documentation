@@ -5,7 +5,7 @@
 Saturn Cloud is actually a cloud product that runs within your existing infrastructure. AI/ML engineers typically need access to
 
 - Development machines with GPU access
-- The ability to deploy LLMs, ML models and dashboards (like streamlit)
+- The ability to deploy LLMs, ML models and dashboards (like Streamlit)
 - The ability to schedule jobs
 - The ability to run parallel training and run large experiments.
 
@@ -47,7 +47,7 @@ While Saturn Cloud does have a nice easy to use point-and-click UI, every action
 
 ### The Saturn Cloud API and Saturn Client
 
-We have [an HTTP API](https://api.saturncloud.io/). There is also a pip installable python library, `saturn-client` that can be imported into Python, and also has a full featured cli
+We have [an HTTP API](https://api.saturncloud.io/). There is also a pip installable python library, `saturn-client` that can be imported into Python, and also has a full featured CLI
 
 ### Saturn Cloud recipes
 

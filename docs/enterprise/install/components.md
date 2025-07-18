@@ -20,6 +20,6 @@ Saturn Cloud runs within an EKS cluster in your VPC. In our standard configurati
 
 ## Networking
 
-Saturn Cloud can install into an existing VPC. Saturn Cloud uses 2 load balancers, one for SSH traffic, and a second for https and dask traffic. All load balanacers can be scoped internally to private subnets. You can optionally restrict egress to the internet. In this configuration, we would modify Saturn Cloud to install pypi, conda, and R packages from your on-premise mirrors. All docker images would be consumed from ECR.
+Saturn Cloud can install into an existing VPC. Saturn Cloud uses 2 load balancers, one for SSH traffic, and a second for https and Dask traffic. All load balanacers can be scoped internally to private subnets. You can optionally restrict egress to the internet. In this configuration, we would modify Saturn Cloud to install PyPI, Conda, and R packages from your on-premise mirrors. All docker images would be consumed from ECR.
 
 {{% enterprise_docs_view %}}

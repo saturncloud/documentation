@@ -14,4 +14,4 @@ mv ~/.rstudio-database ${BACKUP}
 mv ~/.local ${BACKUP}
 ```
 
-Long term, you may want to [disable automatic workspace loading in R studio.](https://community.rstudio.com/t/defaults-of-saving-and-restoring-workspace/939)
+Long term, you may want to [disable automatic workspace loading in RStudio.](https://community.rstudio.com/t/defaults-of-saving-and-restoring-workspace/939)

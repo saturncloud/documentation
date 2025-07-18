@@ -12,9 +12,9 @@ For a Python or R studio resource, click on expose app port, in order to make su
 
 <img src="/images/docs/expose-app-port.webp" alt="Exposing the app port on a resource" class="doc-image">
 
-Afterwards, run your deployment in the terminal. Make sure it’s serving traffic on port 8000. You should be able to view your deployment at the listed app url:
+Afterwards, run your deployment in the terminal. Make sure it’s serving traffic on port 8000. You should be able to view your deployment at the listed app URL:
 
-<img src="/images/docs/app-url.webp" alt="App url" class="doc-image">
+<img src="/images/docs/app-url.webp" alt="App URL" class="doc-image">
 
 ### Keep track of software dependencies
 

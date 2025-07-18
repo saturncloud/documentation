@@ -4,7 +4,7 @@
 ## Overview
 [Prefect Cloud](https://www.prefect.io/cloud/) is a hosted, high-availability, fault-tolerant service that handles all the orchestration responsibilities for running data pipelines. It gives you complete oversight of your workflows and makes it easy to manage them.
 
-This example shows how to create a set of tasks for a project and execute these tasks on `dask`. We will then register this flow with Prefect Cloud so that service can be used for orchestrating when the flow runs.
+This example shows how to create a set of tasks for a project and execute these tasks on `Dask`. We will then register this flow with Prefect Cloud so that service can be used for orchestrating when the flow runs.
 
 By using a Dask cluster, tasks can be executed parallel to each other across multiple machines which can dramatically
 speed up overall run time. If you only want to use a single machine for the entire run, see
@@ -309,7 +309,7 @@ The code below also customizes the Dask cluster used when executing the flow.
     - **NOTE**: you can find the full list of sizes with `prefect_saturn.describe_sizes()`
 * `worker_is_spot = False`: don't use spot instances for workers
 
-**NOTE:** dask clusters associated with prefect cloud flows will be autoclosed when the flow run completes.
+**NOTE:** Dask clusters associated with prefect cloud flows will be autoclosed when the flow run completes.
 
 
 ```python

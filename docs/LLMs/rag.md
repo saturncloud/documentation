@@ -284,7 +284,7 @@ output:
   'sources': '10.1016/j.acmx.2015.12.002, 10.14797/mdcj-15-1-9, 10.1016/j.numecd.2011.04.010, 10.1016/0002-9149(88)90002-1'}}
 ```
 
-### Deploy the mlflow pipelines
+### Deploy the MLflow pipelines
 
 #### Copy the serialized model to network storage
 To deploy the MLFlow pipeline, we first need to save the serialized model to a network location. To do so, you can copy the model to any network location. An [S3 bucket](/docs) or a [shared folder(managed NFS)](/docs). If you don't have access to either of these, you can use a layer Saturn Cloud provides on top of object storage called SaturnFS.

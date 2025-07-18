@@ -4,7 +4,7 @@
 
 One of the most common use cases for Saturn Cloud is to make it easy for data scientists to create resources with the "right" settings for the company or team that they work for. This usually means ensuring that they load code from the appropriate Git repositories, start with images that have all the necessary dependencies installed, and have data access credentials pre-loaded.
 
-Saturn cloud recipes encapsulate all properties of a Saturn Cloud resource as a JSON file. A Resource template just stores a copy of this JSON, and uses it to bootstrap team resources to have the right settings by default. This speeds up new employee onboarding.
+Saturn Cloud recipes encapsulate all properties of a Saturn Cloud resource as a JSON file. A Resource template just stores a copy of this JSON, and uses it to bootstrap team resources to have the right settings by default. This speeds up new employee onboarding.
 
 ### Sharing assets
 

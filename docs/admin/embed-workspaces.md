@@ -60,7 +60,7 @@ Once a user has a workspace resource, as in a Jupyter Server or R Server resourc
 3. Get the state of a resource to know if it's online
 4. Open the IDE of a running resource
 
-In addition to the base url and admin token, to do these actions you'll need the _resource_id_ (which was returned when creating the resource).
+In addition to the base URL and admin token, to do these actions you'll need the _resource_id_ (which was returned when creating the resource).
 
 ### Starting a resource
 

@@ -3,7 +3,7 @@
 The resource is the fundamental unit of work for Saturn Cloud. There are 4 types
 
 - Workspace: [Python Server](/docs). This is a development environment for Python code. This machine runs a Jupyter Lab server, however with the SSH integration you can connect PyCharm, VS code, or any other IDE.
-- Workspace: [R Server](/docs). This is a development environment for R code. This machine runs an R studio server, however with the SSH integration you can connect PyCharm, VS code or any other IDE.
+- Workspace: [R Server](/docs). This is a development environment for R code. This machine runs an RStudio server, however with the SSH integration you can connect PyCharm, VS code or any other IDE.
 - [Deployment](/docs). This is a non-interactive server, typically used to server models, APIs and dashboards. It is designed to run 24/7
 - [Job](/docs). This is a non-interactive server, typically used to write data pipelines. It is designed to run once and then complete - often on a schedule.
 
@@ -21,7 +21,7 @@ The simplicity is intentional - resources are meant to be pretty transparent. An
 
 ### Workspaces
 
-Python and R workspace host Jupyter and R studio respectively. In addition, you can add SSH access, which allows you to use virtually any IDE, including PyCharm and VS Code. These workspaces are running in docker images. Every workspace gets a persistent EBS volume attached, so that anything users write to the home directory is preserved across restarts. We have invested significantly in making these docker images feel like desktops.
+Python and R workspace host Jupyter and RStudio respectively. In addition, you can add SSH access, which allows you to use virtually any IDE, including PyCharm and VS Code. These workspaces are running in docker images. Every workspace gets a persistent EBS volume attached, so that anything users write to the home directory is preserved across restarts. We have invested significantly in making these docker images feel like desktops.
 
 Docker is supported, even though you are running in a docker container, we can mount the docker socket inside the container so that your code can call out to the Docker API. There is also an option to expose port 8000, so that if you are developing a dashboard, you can access it from your browser.
 

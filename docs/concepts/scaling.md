@@ -49,7 +49,7 @@ Whenever possible, we encourage users to leverage the Dask function call directl
 
 #### Saturn Run
 
-[Saturn Run](https://github.com/saturncloud/saturn-run) is a library developed on top of other parallel computation frameworks (Dask included) which lets you leverage clusters for scheduling command line jobs. Jobs are configured via 2 yaml files. The first specifies the execution environment:
+[Saturn Run](https://github.com/saturncloud/saturn-run) is a library developed on top of other parallel computation frameworks (Dask included) which lets you leverage clusters for scheduling command line jobs. Jobs are configured via 2 YAML files. The first specifies the execution environment:
 
 ```
 executor:

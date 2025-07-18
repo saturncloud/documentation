@@ -169,7 +169,7 @@ Installation and updates happen about once per quarter. To reduce access to that
 
 ## Restrict access to management and support roles based on time.
 
-Saturn cloud support uses AWS IAM trust relationships in order to assume the necessary roles to maintain Saturn Cloud. Those trust relationships can be disabled when updates or support are not in progress.
+Saturn Cloud support uses AWS IAM trust relationships in order to assume the necessary roles to maintain Saturn Cloud. Those trust relationships can be disabled when updates or support are not in progress.
 
 ## Use a sandboxed AWS account.
 

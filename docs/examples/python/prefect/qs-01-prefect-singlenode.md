@@ -29,8 +29,8 @@ Details on these prerequisites can be found in [Using Prefect Cloud with Saturn 
 
 Prefect Cloud data pipeline execution can be done 3 ways in Saturn Cloud :
 1. On a Single Machine : You can run your code on a single node using local executor, which is default option in Saturn Cloud for running Prefect workflows. This is how we will be executing our pipeline in this example.
-2. Distributing tasks across dasak clusters. Refer [prefect-daskclusters example](<docs/examples/python/prefect/qs-02-prefect-daskclusters.md>) for this.
-3. Parallelizng a task over dask clusters. Refer [prefect-resource-manager example](<docs/examples/python/prefect/qs-03-prefect-resource-manager.md>).
+2. Distributing tasks across Dask clusters. Refer [prefect-daskclusters example](<docs/examples/python/prefect/qs-02-prefect-daskclusters.md>) for this.
+3. Parallelizng a task over Dask clusters. Refer [prefect-resource-manager example](<docs/examples/python/prefect/qs-03-prefect-resource-manager.md>).
 
 ![Prefect Execution](https://saturn-public-assets.s3.us-east-2.amazonaws.com/example-resources/prefect_execute.png "doc-image")
 
