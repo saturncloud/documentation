@@ -10,7 +10,7 @@ If you are having trouble finding your Snowflake account id, it is the first par
 With this complete, your Snowflake credentials will be accessible by Saturn Cloud resources! You will need to restart any RStudio Server for the credentials to populate to those resources.
 
 ### Setting Up Your Resource
-`odbc` is not installed by default in Saturn images, so you will need to install it onto your resource. This is already done in this example recipe, but if you are using a custom resource you will need to `install.packages("odbc")`. Check out our page on [installing packages](https://saturncloud.io/docs/user-guide/using-saturn-cloud/install-packages/) to see the various methods for achieving this!
+`odbc` is not installed by default in Saturn images, so you will need to install it onto your resource. This is already done in this example recipe, but if you are using a custom resource you will need to `install.packages("odbc")`. Check out our page on [installing packages](https://saturncloud.io/docs/user-guide/how-to/install-packages/) to see the various methods for achieving this!
 
 Additionally, Saturn Cloud images come with Linux Snowflake ODBC drivers pre-installed. If you are using this code outside of Saturn Cloud, you will need to install the appropriate drivers.
 

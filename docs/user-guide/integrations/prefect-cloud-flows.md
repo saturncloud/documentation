@@ -134,7 +134,7 @@ Now that you've created an account in Prefect Cloud and set up an agent in Satur
         ```
 4. Once the resource is created, start it by clicking the play button.
 5. Once that server is ready, click "JupyterLab" to launch JupyterLab.
-6. In JupyterLab, open a new notebook and start working or access your code in git repo folder, if you have [added repository to a resource](https://saturncloud.io/docs/user-guide/using-saturn-cloud/gitrepo/#add-a-git-repository-to-saturn-cloud).
+6. In JupyterLab, open a new notebook and start working or access your code in git repo folder, if you have [added repository to a resource](https://saturncloud.io/docs/user-guide/gitrepo/#add-a-git-repository-to-saturn-cloud).
 7. You can see some sample workflows and information on how to register this flow in the [Saturn Cloud examples](/docs).
 
 Once you've registered a flow, it will create a new Saturn Cloud resource specifically for running the flow. If you go to the Resources page of Saturn Cloud you should see a new resource created.

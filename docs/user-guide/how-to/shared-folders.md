@@ -4,7 +4,7 @@
 This functionality is only available to users on the Hosted Organizations and Enterprise plans.
 {{% /alert %}}
 
-In many data science situations there are datasets that need to be shared within a data science team: such as data to train models, results from analysis, and output graphs. While Saturn Cloud can easily [connect to data](<docs/user-guide/using-saturn-cloud/connect_data.md>) outside of Saturn Cloud, the platform also provides a way to create **shared folders** which stay within Saturn Cloud and can persist between different resources. Shared folders allow you to pass data between resources (including those owned by different users) as easily as saving a file within a resource. This can make it easier for data scientists to work using the same data without having to set up connections to different tools.
+In many data science situations there are datasets that need to be shared within a data science team: such as data to train models, results from analysis, and output graphs. While Saturn Cloud can easily [connect to data](<docs/user-guide/getting-started/connect_data.md>) outside of Saturn Cloud, the platform also provides a way to create **shared folders** which stay within Saturn Cloud and can persist between different resources. Shared folders allow you to pass data between resources (including those owned by different users) as easily as saving a file within a resource. This can make it easier for data scientists to work using the same data without having to set up connections to different tools.
 
 Any user or group in Saturn Cloud can own a shared folder:
 

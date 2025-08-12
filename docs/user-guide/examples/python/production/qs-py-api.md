@@ -71,7 +71,7 @@ To run, add following to command field. `Uvicorn` refers to the server that will
 python3 -m uvicorn houseprice:app --reload --host 0.0.0.0 --port 8000
 ```
 
-Add path to file in working directory field as shown below. In the screenshot below, my file houseprice.py is inside repository Dashboard. If you aren't familiar with how to set up SSH credentials and add git repositories to Saturn Cloud check [here](https://saturncloud.io/docs/user-guide/using-saturn-cloud/gitrepo/).
+Add path to file in working directory field as shown below. In the screenshot below, my file houseprice.py is inside repository Dashboard. If you aren't familiar with how to set up SSH credentials and add git repositories to Saturn Cloud check [here](https://saturncloud.io/docs/user-guide/gitrepo/).
 Go to `pip install` and add `uvicorn` and `fastapi`. Now you are ready to deploy your API by pressing the green start button on the resource page of the deployment.
 
 ![deploy command](https://saturn-public-assets.s3.us-east-2.amazonaws.com/example-resources/api-deploy-command.webp "doc-image")

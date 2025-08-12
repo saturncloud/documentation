@@ -16,7 +16,7 @@ Simply select the file(s) you want to access and they will be uploaded!
 ### Upload Files via SSH
 If you prefer to upload your local files programmatically, Saturn Cloud makes it easy to copy files from your local machine via SSH.
 
-First, you need to set up SSH connections to your resources. See [our documentation](https://saturncloud.io/docs/user-guide/using-saturn-cloud/ide_ssh/) about how to do this. Take note of the SSH URL in the last step - you will need it to transfer files.
+First, you need to set up SSH connections to your resources. See [our documentation](https://saturncloud.io/docs/user-guide/how-to/ide_ssh/) about how to do this. Take note of the SSH URL in the last step - you will need it to transfer files.
 
 #### Transfer Files via SCP
 

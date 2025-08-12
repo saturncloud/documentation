@@ -3,7 +3,7 @@
 This article describes how use existing git repositories with your Saturn Cloud resources. Saturn Cloud resources have the ability to connect to git repositories which can load the code at resource startup. This document first covers setting up SSH credentials then goes into adding git repositories to Saturn Cloud and finally adding those to resources. When the document refers to _git hosts_ it means services like GitHub, Bitbucket, and GitLab which host git repositories for you.
 
 {{% alert title="Manually configuring git" %}}
-This article discusses the Saturn Cloud built-in git functionality. If you so choose you could alternatively set up git yourself by having a [resource startup script](<docs/user-guide/using-saturn-cloud/install-packages.md>) clone a git repo, or by manually using the terminal within an Jupyter or R server to do so. The Saturn Cloud built-in functionality has a number of conveniences and no drawbacks compared to manually setting up git yourself, so we recommend you try it.
+This article discusses the Saturn Cloud built-in git functionality. If you so choose you could alternatively set up git yourself by having a [resource startup script](<docs/user-guide/how-to/install-packages.md>) clone a git repo, or by manually using the terminal within an Jupyter or R server to do so. The Saturn Cloud built-in functionality has a number of conveniences and no drawbacks compared to manually setting up git yourself, so we recommend you try it.
 {{% /alert %}}
 
 ## Set up git SSH Keys

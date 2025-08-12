@@ -65,7 +65,7 @@ shinyApp(ui = ui, server = server)
 
 ## Deployment
 
-Save the `app.R` in inside a GitHub repo. You'll need to connect [git on Saturn Cloud](https://saturncloud.io/docs/docs/user-guide/using-saturn-cloud/gitrepo/) to your git repo host. Now click **New Deployment**. It can be found on top right side of the resource page.
+Save the `app.R` in inside a GitHub repo. You'll need to connect [git on Saturn Cloud](https://saturncloud.io/docs/docs/user-guide/gitrepo/) to your git repo host. Now click **New Deployment**. It can be found on top right side of the resource page.
 
 ![deploy](https://saturn-public-assets.s3.us-east-2.amazonaws.com/example-resources/plumber_deployment.png "doc-image")
 

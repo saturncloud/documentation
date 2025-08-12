@@ -79,7 +79,7 @@ To run, add following to command field.
 Rscript run-api.R
 ```
 
-Add path to file in working directory field as shown below. In the screenshot below, my file `run-api.R` is inside repository Dashboard. If you aren't familiar with how to set up SSH credentials and add git repositories to Saturn Cloud check [here](https://saturncloud.io/docs/user-guide/using-saturn-cloud/gitrepo/).
+Add path to file in working directory field as shown below. In the screenshot below, my file `run-api.R` is inside repository Dashboard. If you aren't familiar with how to set up SSH credentials and add git repositories to Saturn Cloud check [here](https://saturncloud.io/docs/user-guide/gitrepo/).
 
 ![deploy](https://saturn-public-assets.s3.us-east-2.amazonaws.com/example-resources/working-directory.png "doc-image")
 

@@ -37,7 +37,7 @@ The core class of Comet is an Experiment. An Experiment allows you to log your m
 
 You can specify the API key in several ways:
 1. Within your notebook by setting an environment variable called "COMET_API_KEY".
-2. Within the Saturn Cloud [secrets manager](https://saturncloud.io/docs/user-guide/using-saturn-cloud/credentials/) by adding an environment variable named "COMET_API_KEY". 
+2. Within the Saturn Cloud [secrets manager](https://saturncloud.io/docs/user-guide/credentials/) by adding an environment variable named "COMET_API_KEY". 
     > This method is more secure and allows you to use your key over multiple Saturn Cloud resources.
 3. By following the [Comet instructions](https://www.comet.ml/docs/python-sdk/advanced/#non-interactive-setup) to create a `.comet.config` file for use in this resource.
 

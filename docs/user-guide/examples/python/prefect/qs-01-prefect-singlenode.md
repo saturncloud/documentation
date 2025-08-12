@@ -23,7 +23,7 @@ We wil then evaluate the performance of above model, that predicts time-to-close
 * set up the appropriate credentials in Saturn
 * set up a Prefect Cloud agent in Saturn Cloud
 
-Details on these prerequisites can be found in [Using Prefect Cloud with Saturn Cloud](https://saturncloud.io/docs/user-guide/using-saturn-cloud/prefect_cloud/).
+Details on these prerequisites can be found in [Using Prefect Cloud with Saturn Cloud](https://saturncloud.io/docs/user-guide/prefect_cloud/).
 
 ### Environment Setup
 

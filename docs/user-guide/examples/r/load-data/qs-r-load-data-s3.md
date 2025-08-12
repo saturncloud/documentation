@@ -10,7 +10,7 @@ With this complete, your S3 credentials will be accessible by Saturn Cloud resou
 <a id='connect-via-aws-s3'></a>
 
 ### Setting Up Your Resource
-`aws.s3` is not installed by default in Saturn images, so you will need to install it onto your resource. This is already done in this example recipe, but if you are using a custom resource you will need to `install.packages("aws.s3")`. Check out our page on [installing packages](https://saturncloud.io/docs/user-guide/using-saturn-cloud/install-packages/) to see the various methods for achieving this!
+`aws.s3` is not installed by default in Saturn images, so you will need to install it onto your resource. This is already done in this example recipe, but if you are using a custom resource you will need to `install.packages("aws.s3")`. Check out our page on [installing packages](https://saturncloud.io/docs/user-guide/how-to/install-packages/) to see the various methods for achieving this!
 
 ### Connect to Data Via `aws.s3`
 #### Set Up the Connection

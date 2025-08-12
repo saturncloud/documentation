@@ -1,6 +1,6 @@
 # Starting with Dask
 Dask is an open-source framework that enables parallelization of Python code, on one machine or clusters of many machines. You can use Dask with pandas, NumPy, scikit-learn, and other Python libraries.
-In this article, we’re going to show you the essentials of spinning up and using Dask clusters on Saturn Cloud. If you need more information about creating and attaching a Dask cluster to a Saturn Cloud resource see the [Saturn Cloud docs](https://saturncloud.io/docs/user-guide/using-saturn-cloud/create_dask_cluster/).
+In this article, we’re going to show you the essentials of spinning up and using Dask clusters on Saturn Cloud. If you need more information about creating and attaching a Dask cluster to a Saturn Cloud resource see the [Saturn Cloud docs](https://saturncloud.io/docs/user-guide/create_dask_cluster/).
 
 
 ## Connect to a Dask Cluster

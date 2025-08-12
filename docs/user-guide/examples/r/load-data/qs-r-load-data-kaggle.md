@@ -7,7 +7,7 @@ Copy the values from your "kaggle.json" file into the *Value* section of the cre
 With this complete, your Kaggle credentials will be accessible by Saturn Cloud resources! You will need to restart any Jupyter Server or Dask Clusters for the credentials to populate to those resources.
 
 ### Setting Up Your Resource
-Kaggle is not installed by default in Saturn images, so you will need to install it onto your resource. This is already done in this example recipe, but if you are using a custom resource you will need to `pip install kaggle`. Check out our page on [installing packages](https://saturncloud.io/docs/user-guide/using-saturn-cloud/install-packages/) to see the various methods for achieving this!
+Kaggle is not installed by default in Saturn images, so you will need to install it onto your resource. This is already done in this example recipe, but if you are using a custom resource you will need to `pip install kaggle`. Check out our page on [installing packages](https://saturncloud.io/docs/user-guide/how-to/install-packages/) to see the various methods for achieving this!
 
 ### Download a Dataset
 Now that you have set up the credentials for Kaggle and installed kaggle, downloading Kaggle data is really straightforward! 
