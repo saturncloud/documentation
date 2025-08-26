@@ -118,7 +118,7 @@ Now that you've created an account in Prefect Cloud and set up an agent in Satur
 1. Return to the Saturn UI.
 2. Navigate to the "Secrets" page and add a Prefect Cloud User API Key.
     - `Name`: Choose a Unique identifier for this. Name should be only lowercase letters, numbers, and dashes, such as `prefect-user-token`.
-    - `Value`: the User API Key you created during [setup](<docs/api-guide/for-platform-engineers.md#setup>).
+    - `Value`: the User API Key you created during [setup](<docs/api-guide/api.md#setup>).
 3. Navigate to the "Resources" page and create a new Jupyter Server with the following specs.
     - `Name`: Name of the resource.
     - `Image:` Choose image as per your requirements in workflow.
