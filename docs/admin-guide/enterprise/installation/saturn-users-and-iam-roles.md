@@ -1,7 +1,7 @@
 # Saturn Users and IAM Roles
 
 {{% alert title="Cloud scope" %}}
-This article describes AWS-specific configuration using AWS IAM and EKS IRSA. If you are installing Saturn Cloud on other clouds (GCP, Azure, OCI, Nebius), see [On‑Premise (Nebius)](/docs) or contact us at <a href="mailto:support@saturncloud.io">support@saturncloud.io</a> for equivalent guidance.
+This article describes AWS-specific configuration using AWS IAM and EKS IRSA. If you are installing Saturn Cloud on other cloud providers, see the [Getting Started guide](/docs) or contact us at <a href="mailto:support@saturncloud.io">support@saturncloud.io</a> for equivalent guidance.
 {{% /alert %}}
 
 Saturn Cloud allows administrators to grant access to IAM roles to Saturn users. When a user has an IAM, their resources will be run as that IAM role, granting their resources the permission to connect to other AWS components that the role has permissions for. This can be very useful in limiting who can access items like S3 buckets.
