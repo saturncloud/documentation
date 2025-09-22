@@ -12,15 +12,33 @@ For security concious customers, we always recommend that Saturn Cloud be deploy
 
 In addition to limiting egress, you can also limit egress for your data science team using transparent proxies, or by disabling egress to the internet (you will want to have on-premise mirrors of conda, pypi, and CRAN repositories in that case.
 
+See also:
+
+- [Deploy Saturn Cloud into your own VPC](/docs/admin-guide/enterprise/installation/custom-vpcs/)
+- [Fully private, no‑egress deployments](/docs/admin-guide/enterprise/installation/no-internet/)
+- [Hardening guidance and patterns](/docs/admin-guide/enterprise/installation/high-security/)
+
 ## IAM security
 
 Saturn Cloud uses IAM roles to manage your instance. We can work with you to scope those access permissions to the bare minimum. You can also modify the trust relationship so we only have access during authorized updates and support requests. For customers that require it - you can completely cut off access to your Saturn Cloud access, and we can support installation and upgrades via Zoom, Google meet, or Microsoft teams.
+
+See also:
+
+- [User/role mapping and permissions](/docs/admin-guide/enterprise/installation/saturn-users-and-iam-roles/)
+- [Access models and controls](/docs/admin-guide/enterprise/access/)
 
 Saturn Cloud also enables IAM roles on a per-resource basis. That means that data access can be completely managed by IAM roles, and users can attach those roles on a per-resource basis. Authorization for specific IAM roles is granted on a per-user or per-group basis, and can only be done by those that you desginate as Saturn Cloud admins, providing very fine grained security.
 
 ## SSO
 
 Saturn Cloud leverages Auth0 to connect to your existing IDP. Regardless of what IDP you use, Saturn Cloud can integrate with it. If you'd like to setup SSO, Please reach out support@saturncloud.io and we can discuss your specific configuration.
+
+See also:
+
+- [Identity setup overview](/docs/admin-guide/enterprise/installation/identity/)
+- [Azure Entra ID configuration](/docs/admin-guide/enterprise/installation/identity/azure/)
+- [Google Workspace configuration](/docs/admin-guide/enterprise/installation/identity/google/)
+- [Okta configuration](/docs/admin-guide/enterprise/installation/identity/okta/)
 
 SSO can be setup either to authorize all users in your organization, Or you can elect to use SSO solely for authentication, and rely on explicit user invitations within the Saturn Cloud application to manage access to Saturn Cloud.
 {{% security_docs_view %}}
