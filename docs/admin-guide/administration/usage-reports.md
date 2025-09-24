@@ -1,18 +1,29 @@
 # Usage Reports
 
 {{% alert title="Enterprise Only Feature" %}}
-This functionality is only available to users on Enterprise plans. Support for Hosted Organizations is coming soon.
+This functionality is available only to users on Enterprise plans. Hosted Organizations support is planned but not yet implemented.
 {{% /alert %}}
 
-Saturn Cloud Enterprise provides admin users with reports on how Saturn Cloud is being utilized. This includes details on how Saturn Cloud has been used by user, resource type, and other splits. The data is updated hourly. As an admin user, you can see the usage reports within the **Settings** tab of the Saturn Cloud application. Within it is a **Usage Reports** section, that has a report for each month Saturn Cloud has been running within your enterprise account. 
+Saturn Cloud Enterprise provides admin users with detailed reports about **Saturn Cloud usage within your organization**. These reports show how your Saturn Cloud resources are used by users, resource types, and time periods. They do **not** include billing or usage data from your underlying cloud provider (such as AWS, Azure, or OCI); they only reflect Saturn Cloud platform usage.
+
+You can access usage reports in the **Settings** tab of the Saturn Cloud application under **Usage Reports**. A report is generated for each month that Saturn Cloud has been running in your enterprise account. The data is updated hourly.
 
 ![Usage reports list](/images/docs/usage-reports-list.webp "doc-image")
 
-Each month has two different downloads:
+### Download Formats
 
-* **HTML** - an HTML file report containing charts and tables of the usage data split in different ways.
-* **CSV** - a csv file containing a row for each resource in each hour that resource has run. You can use this to make your own analysis.
+Each month has two download options:
+
+- **HTML** – A full HTML report with charts and tables of usage data broken down by users, resource type, and time period.  
+- **CSV** – A CSV file with one row per resource per hour it was active. This format is ideal for custom analysis or integration with your BI tools.
 
 ![Example usage report](/images/docs/usage-report.webp "doc-image")
 
-In some situations rather than downloading the data itself, you may want to have your Saturn Cloud usage data stored in a database that you can directly query. Saturn Cloud data is also accessible directly from a Snowflake database upon request. If you are interested in having this set up for your own organization, please <a href="/docs">contact Saturn Cloud Support</a>.
+### Direct Database Access
+
+If you prefer direct access to your Saturn Cloud usage data, Saturn Cloud can provide read access to a Snowflake database containing your organization’s usage information. This enables you to run your own queries or integrate usage data into your internal dashboards. Contact <a href="/docs">Saturn Cloud Support</a> to request database access or discuss additional options.
+
+### Scope and Hosted Organizations
+
+- **Scope** – Usage Reports show only Saturn Cloud platform activity (compute resources, notebooks, jobs, dashboards, etc.) inside your organization’s Saturn Cloud instance.  
+- **Hosted Organizations** – Support for Hosted Organizations is planned and will appear in a future release. Until then, Usage Reports only cover your primary Saturn Cloud Enterprise environment.
