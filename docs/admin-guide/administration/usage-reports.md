@@ -21,9 +21,9 @@ Each month has two download options:
 
 ### Direct Database Access
 
-If you prefer direct access to your Saturn Cloud usage data, Saturn Cloud can provide read access to a Snowflake database containing your organization’s usage information. This enables you to run your own queries or integrate usage data into your internal dashboards. Contact <a href="/docs">Saturn Cloud Support</a> to request database access or discuss additional options.
+If you prefer direct access to your Saturn Cloud usage data, Saturn Cloud can provide read access to a Snowflake database containing your organization's usage information. This enables you to run your own queries or integrate usage data into your internal dashboards. Contact <a href="/docs">Saturn Cloud Support</a> to request database access or discuss additional options.
 
 ### Scope and Hosted Organizations
 
-- **Scope** – Usage Reports show only Saturn Cloud platform activity (compute resources, notebooks, jobs, dashboards, etc.) inside your organization’s Saturn Cloud instance.  
+- **Scope** – Usage Reports show only Saturn Cloud platform activity (compute resources, notebooks, jobs, dashboards, etc.) inside your organization's Saturn Cloud instance.  
 - **Hosted Organizations** – Support for Hosted Organizations is planned and will appear in a future release. Until then, Usage Reports only cover your primary Saturn Cloud Enterprise environment.

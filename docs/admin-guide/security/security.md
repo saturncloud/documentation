@@ -12,11 +12,7 @@ For security-conscious customers, we recommend deploying Saturn Cloud within pri
 
 In addition to limiting ingress, you can also limit egress for your data science team using transparent proxies or by disabling internet access entirely. In that case, you will need on-premise mirrors of `conda`, `pypi`, and `CRAN` repositories.
 
-See also:
-
-- [Deploy Saturn Cloud into your own VPC](/docs/enterprise/installation/custom-vpcs/)
-- [Fully private, no-egress deployments](/docs/enterprise/installation/no-internet/)
-- [Hardening guidance and patterns](/docs/enterprise/installation/high-security/)
+For additional Enterprise security topics: [No‑egress deployments](/docs/enterprise/installation/no-internet/), [Hardening guidance](/docs/enterprise/installation/high-security/).
 
 ## IAM security
 

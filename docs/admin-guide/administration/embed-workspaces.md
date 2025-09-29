@@ -9,7 +9,7 @@ Before following the steps below you'll need the following:
 without a trailing slash.
 * A **Saturn Cloud admin user token**. This can be found by logging into Saturn Cloud as an admin and going to the settings page. This user token will be used to perform most of the actions.
 
-_Finally, note that the Saturn Cloud API is constantly improving, and some of these steps may become obsolete as we streamline this process. If any step doesn't work, please reach out to us at [support@saturncloud.io](mailto:support@saturncloud.io)._
+_Finally, note that the Saturn Cloud API is constantly improving, and some of these steps may become obsolete as we streamline this process. If any step doesn't work, please reach out to us at [support@saturncloud.io](mailto:support@saturncloud.io)._ 
 
 ## Creating a resource programmatically
 
