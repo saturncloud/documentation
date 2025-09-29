@@ -107,3 +107,7 @@ with col2:
 You then need to only load the app code to git and link the code appropriately to a Saturn Cloud deployment.
 
 Check out our other [dashboard resources](https://saturncloud.io/docs/user-guide/examples/python/production/) for examples using other frameworks.
+
+## Connect your dashboard to data sources
+
+Once you've deployed your Streamlit dashboard, you'll likely need to connect it to data. Learn how to [load data from various sources](/docs) like S3, or [connect to external services via integrations](/docs).

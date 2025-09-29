@@ -6,11 +6,15 @@ Saturn Cloud allows nearly all libraries and packages to be installed, provided 
 * Linux libraries and programs like `libssl-dev`
 * Entirely distinct data science programming languages like [Julia](https://julialang.org/)
 
-Saturn Cloud has three methods for installing packages into a resource, each with different tradeoffs depending on what you want to do:
+## Which Method Should You Use?
 
-1. Install packages from within a running resource (only lasts until the resource is shut down).
-2. Use the resource settings to install software at resource startup (slows the resource start time)
-3. Creating a new image with the required software (the most work)
+Saturn Cloud has three methods for installing packages into a resource, each with different tradeoffs:
+
+1. **Install packages from within a running resource** (only lasts until the resource is shut down) - Good for testing packages
+2. **Use the resource settings to install software at resource startup** (slows the resource start time) - Good for packages you always need
+3. **Creating a new image with the required software** (the most work) - Good for complex setups or when startup time matters
+
+**Recommendation**: Start with method 1 to test packages, then move to method 2 for packages you always need.
 
 ## 1. Install software from within a running resource
 
@@ -44,7 +48,7 @@ If you are finding that having the packages and libraries installed at resource 
 
 ![Images sidebar](/images/docs/images-sidebar.webp "doc-image")
 
-The [images creation docs page](<docs/user-guide/how-to/create-images.md>) has detailed instructions on creating and using an image. This can dramatically speed up the start time of a resource since it won't have to install the packages each time. The downside is that images often take half an hour or more to build, and if you need to debug the image build process, this can take hours to complete. So, try this method only after you've used the first two methods of software installation to determine exactly what you want to install.
+The [images creation docs page](/docs) has detailed instructions on creating and using an image. This can dramatically speed up the start time of a resource since it won't have to install the packages each time. The downside is that images often take half an hour or more to build, and if you need to debug the image build process, this can take hours to complete. So, try this method only after you've used the first two methods of software installation to determine exactly what you want to install.
 
 ## Additional notes when installing packages and software
 
@@ -57,3 +61,13 @@ conda activate saturn
 ```
 
 If you are installing a new programming language and want to use it with JupyterLab, you'll need to register the kernel with Jupyter. The [method for doing so](https://github.com/jupyter/jupyter/wiki/Jupyter-kernels) depends on the programming language you are using.
+
+## What's next?
+
+Now that you have your packages installed, you're ready to start working with your data and code:
+
+**Working with data**: [Load data from various sources](/docs) like Kaggle, S3, or local files to get started with your analysis.
+
+**Code management**: [Connect your git repositories](/docs) to version control your work and collaborate with others.
+
+**Having installation issues?** Check our [troubleshooting guide](/docs) for solutions to common package installation problems.

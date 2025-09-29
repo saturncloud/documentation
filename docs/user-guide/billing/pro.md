@@ -20,3 +20,7 @@ If you'd like to buy more than $2000 in credits, we can send you an invoice to h
 ## What happens if I miss a payment?
 
 If you miss a payment, since we've already paid AWS for the resources you've consumed, your account will be automatically downgraded to the free tier. <b>This also means that your data will be deleted after approximately 30 days of inactivity</b>. You can upgrade again at any point in the future. If you have an outstanding balance, your credit card will be charged at that time.
+
+## Getting the most out of Saturn Cloud Pro
+
+With Saturn Cloud Pro, you have access to advanced features like [scheduled jobs](/docs) and [continuous deployments](/docs) for production workflows.

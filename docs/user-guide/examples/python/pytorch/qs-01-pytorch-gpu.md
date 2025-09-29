@@ -11,7 +11,7 @@ This is an example of a natural language processing neural network which is trai
 
 ### Imports
 
-This code mainly relies on PyTorch for most of the work, however there are a number of other packages needed for manipulating data and other tasks.
+This code mainly relies on PyTorch for most of the work, however there are a number of other packages needed for manipulating data and other tasks. If you need to install additional packages, see our guide on [installing software and packages](/docs).
 
 
 ```python
@@ -237,3 +237,7 @@ After running the code above you should see a list of names like:
 ## Conclusion
 
 We have now trained a neural network using PyTorch on a GPU, and used it for inference! If we wanted to experiment with trying many different hyperparameters for the model we could [concurrently train models](<docs/user-guide/examples/python/pytorch/qs-02-pytorch-gpu-dask-multiple-models.md>) with different hyperparameters using distributed computing. We could also train a [single neural network over many GPUs at once](<docs/user-guide/examples/python/pytorch/qs-03-pytorch-gpu-dask-single-model.md>) with distributed computing via Dask.
+
+## Deploy your trained models
+
+Ready to serve your PyTorch models to users? You can [deploy models as FastAPI services](/docs) for prediction endpoints, or [create interactive Streamlit dashboards](/docs) that let users interact with your trained models.

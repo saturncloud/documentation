@@ -1,6 +1,35 @@
 # Deploying Jobs
 
-Saturn Cloud jobs are commonly used to schedule training pipelines and ETL jobs. Our user guide covers a lot of the [basics for working with Jobs](/docs). This article covers some of the patterns that will help you work faster with these resources. This approach is similar to [developing dashboards, models and apis](/docs).
+A Saturn Cloud job is a resource that runs automated tasks on a schedule or can be triggered manually. Jobs are commonly used to schedule training pipelines and ETL jobs.
+
+## When to Use Jobs
+
+Jobs are best used for:
+
+- Training pipelines that run overnight or on a schedule
+- ETL jobs that process data regularly  
+- Model retraining workflows
+- Data processing tasks that don't need interactive development
+- Cron jobs for regular maintenance tasks
+
+## When to Use Interactive Resources Instead
+
+Use [Jupyter Servers](/docs) or [R Servers](/docs) for:
+
+- Exploratory data analysis
+- Interactive development and prototyping
+- Real-time collaboration
+- Debugging and troubleshooting
+
+## Getting Started with Jobs
+
+The recommended approach is to develop your code interactively first, then convert it to a job once it works reliably:
+
+1. **Develop interactively**: Use a [Jupyter Server](/docs) or [R Server](/docs) to develop and test your code
+2. **Convert to a job**: Once your code works reliably, clone it as a job (see "Convert the interactive environment into a job" below)
+3. **Set up scheduling**: Configure when and how often your job should run using [Dispatching Jobs](<docs/user-guide/how-to/scale/dispatching-jobs.md>)
+
+This article covers the patterns that will help you work faster with these resources. This approach is similar to [developing dashboards, models and apis](/docs).
 
 ## Develop Interactively
 

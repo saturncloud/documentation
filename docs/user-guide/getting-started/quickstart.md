@@ -1,6 +1,6 @@
 # Saturn Cloud Quickstart
 
-Saturn Cloud is a data science platform that helps people quickly do work using whatever technology they need, including high-memory computing, GPU processors, and Dask clusters. You can use Saturn Cloud with Python, R, or nearly any other programming language.
+Saturn Cloud is a data science platform that helps people quickly do work using whatever technology they need, including high-memory computing, [GPU processors](/docs), and [Dask clusters](/docs). You can use Saturn Cloud with Python, R, or nearly any other programming language.
 
 Using this guide in just a few steps you will be able to run your data science code in the cloud and customize the environment however you need it.
 
@@ -17,7 +17,7 @@ allowfullscreen class="embed-responsive-item"></iframe>
 
 Sign up by visiting [saturncloud.io](https://www.saturncloud.io/s/) and clicking on **Start for Free**. Follow the prompts and you'll soon be logged in to your new account. If you are an Enterprise customer, you will need to use the custom url provided to you.
 
-![Saturn Cloud homepage with arrows pointing to "Start for Free"](/images/docs/homepage_signup_arrows_new.webp "doc-image")
+![Saturn Cloud homepage with arrows pointing to "Start for Free"](/images/homepage.png "doc-image")
 
 ## Saturn Cloud resources
 
@@ -31,7 +31,7 @@ A resource is one of the following:
 -   **[Deployment](/docs)**: A continuously running activity like a hosted dashboard or API. _(Hosted Pro and Enterprise accounts only)_
 -   **[Prefect Cloud Flow](/docs)**: A special type of resource specific for running Prefect jobs which are created differently than the other types of resources. _(Enterprise accounts only)_
 
-Each user can have multiple resources, and resources can be cloned (including by other users with sufficient permissions). With the exception of R servers, each resource may optionally have a Dask cluster associated with it, allowing the resource to run computations across multiple machines.
+Each user can have multiple resources, and resources can be cloned (including by other users with sufficient permissions). With the exception of R servers, each resource may optionally have a [Dask cluster](/docs) associated with it, allowing the resource to run computations across multiple machines.
 
 ## Creating a resource
 
@@ -62,14 +62,21 @@ Once you're in the IDE, you can write, run, and save code.
 
 When you're done using the resource, shut it down by clicking the red **Stop** button on the card. By default, the resource will [automatically shut off](/docs) after the browser window has been inactive for an hour (this only applies to some resource types). You can also **Restart** your resource from the card using the red dropdown button.
 
-## Next steps: Customize your resource
+## Choose your path
 
-Creating and using resources is central to using Saturn Cloud. There are many ways you can expand on them beyond using them as an interactive workspace for your code:
+Now that you have a resource running, here are the most common next steps based on what you want to accomplish:
 
--   **[Install software and packages](/docs).** If your code requires specific libraries or software to be installed on the resource then there are multiple methods of adding the dependencies.
--   **[Create a Dask cluster for the resource](/docs).** One powerful feature of Saturn Cloud is the ability to leverage Dask clusters for distributed computing.
--   **[Connect a git repo](/docs).** Connect a Saturn Cloud resource to your git repositories to version control your code.
--   **[Add secrets to your resources](/docs).** You may need to have secret credentials in your working environment to access tools or data. The **Secrets** section of the tools menu is where this information can be safely stored.
--   **[Use other IDEs (e.g., PyCharm, VSCode)](/docs).** Connect to a resource from your local IDE, using an SSH connection.
--   **[Create a custom image](/docs).** Resources are built upon images with base software and packages. Many people use our standard images, which provide access to many data science packages. However, if, for example, your company has a designed Docker image, you can use that instead.
--   **[Schedule jobs](/docs) and [run deployments](/docs).** Jobs and deployments are two other resource types. They let you schedule scripts to run or set up continuously running resources (e.g., APIs, dashboards). _(Hosted Pro and Enterprise accounts only)_
+**Data Analysis & Exploration**: [Load and analyze data](/docs) from various sources, then [scale your analysis with Dask](/docs) for larger datasets.
+
+**Model Development**: [Train models with GPUs](/docs) for machine learning, then [deploy your trained models as APIs](/docs) for production use.
+
+## Customize your resource
+
+Most users need to customize their environment and connect their existing work. Here are the essential setup tasks:
+
+-   **[Install software and packages](/docs).** Add the specific libraries and software your code requires.
+-   **[Connect a git repo](/docs).** Version control your code and collaborate with others.
+-   **[Add secrets to your resources](/docs).** Store API keys and credentials safely for accessing data and services.
+-   **[Use other IDEs (e.g., PyCharm, VSCode)](/docs).** Connect from your preferred development environment via SSH.
+-   **[Create a Dask cluster](/docs).** Enable distributed computing for larger workloads.
+-   **[Create a custom image](/docs).** Build environments with pre-installed software for faster startups.

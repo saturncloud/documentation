@@ -16,7 +16,7 @@ Roles need to have the appropriate trust relationship in order to be used with S
 
 First, navigate to the [IAM role page in the AWS console](https://console.aws.amazon.com/iamv2/home?#/roles). Click on "Create Role"
 
-<img width=300 src="/images/docs/create-role.webp" alt-text="Create Role" class="doc-image-no-format"/>
+<img width=300 src="/images/docs/create-role.webp" alt-text="Create Role" class="doc-image"/>
 
 Next, select "Web Identity", and choose the OIDC provider for your EKS cluster. Choose `sts.amazonaws.com` as the audience.
 

@@ -14,9 +14,13 @@ Hardware provisiong involves requesting instances from AWS. With Saturn Cloud Ho
 
 The "Pulling Image" step depends on how large the image is. The number of packages and artifacts in the image contributes to the disk size of the image, and larger images will take longer to load. If this step is taking too long, try using another image with fewer packages or artifacts.
 
+**Solution**: Consider [creating a custom image](/docs) with only the packages you need, or use [startup scripts](/docs) to install packages dynamically rather than baking them into the image.
+
 ### Start script fails
 
 If you have a start script set up for your resource, this gets executed each time a resource starts. If this fails, you will see an "error" status for the resource. Click the "error" link to view the logs to see what went wrong.
+
+**Solution**: Review our [package installation guide](/docs) for proper syntax and common installation patterns. Consider testing your installation commands manually in a running resource first.
 
 ## Enterprise-specific troubleshooting
 
@@ -65,3 +69,13 @@ AWS generally takes 24 hours to respond to limit increases.
 ### Availability zone doesn't support specific instance types
 
 In rare cases, the availability zone your Saturn Cloud is installed on may not support some of the instances types we use. Our enterprise installer checks for this so most installations will not have this problem. If you are running into this issue, please <a href="/docs">contact us</a>.
+
+## Resource started successfully? What's next
+
+Once your resource is running properly, you can:
+
+**Start working with data**: [Load data from various sources](/docs) to begin your analysis.
+
+**Set up your environment**: [Install additional packages](/docs) and [connect your git repositories](/docs) for a complete development setup.
+
+**Scale your work**: [Create Dask clusters](/docs) for distributed computing when your workload grows.

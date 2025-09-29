@@ -1,6 +1,6 @@
 # Starting with Dask
 Dask is an open-source framework that enables parallelization of Python code, on one machine or clusters of many machines. You can use Dask with pandas, NumPy, scikit-learn, and other Python libraries.
-In this article, we’re going to show you the essentials of spinning up and using Dask clusters on Saturn Cloud. If you need more information about creating and attaching a Dask cluster to a Saturn Cloud resource see the [Saturn Cloud docs](https://saturncloud.io/docs/user-guide/create_dask_cluster/).
+In this article, we're going to show you the essentials of spinning up and using Dask clusters on Saturn Cloud. If you need more information about creating and attaching a Dask cluster to a Saturn Cloud resource see the [Saturn Cloud docs](https://saturncloud.io/docs/user-guide/create_dask_cluster/).
 
 
 ## Connect to a Dask Cluster
@@ -46,7 +46,7 @@ results = [x.result() for x in futures]
 results
 ```
 
-Once you are done using Dask, you can shut down the cluster using the following command: `client.cluster.close()`.
+Once you are done using Dask, you can shut down the cluster using the following command: `client.cluster.close()`. If you encounter issues with your Dask cluster, check our [troubleshooting guide](/docs).
 
 For more on the different capabilities of Dask you can use on Saturn Cloud, check out our other examples:
 
@@ -64,4 +64,8 @@ For more on the different capabilities of Dask you can use on Saturn Cloud, chec
   * [CLI calls](<docs/user-guide/examples/python/dask/special-topics/qs-special-topics-cli-calls.md>)
   * [Logging](<docs/user-guide/examples/python/dask/special-topics/qs-special-topics-logging.md>)
   * [Computing rolling averages](<docs/user-guide/examples/python/dask/special-topics/qs-special-topics-rolling-average.md>)
+
+## Deploy your Dask applications
+
+Ready to put your Dask work into production? You can [create distributed data processing jobs](/docs) that run on schedules, or [build real-time dashboards](/docs) that use your Dask clusters to process data on demand.
 

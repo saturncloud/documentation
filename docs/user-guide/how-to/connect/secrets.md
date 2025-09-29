@@ -48,4 +48,4 @@ Note: If the resource is already running when you attached a new secret, you wil
 {{% /alert %}}
 
 Once the secret has been attached (and the resource restarted if needed), the secrets stored as files will show up in your file browser. For secrets that are environment variables, see our
-[environment variables documentation](<docs/user-guide/how-to/environment-variables.md>) for how to access them.
+[environment variables documentation](<docs/user-guide/how-to/connect/environment-variables.md>) for how to access them.

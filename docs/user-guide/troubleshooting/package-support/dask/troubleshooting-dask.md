@@ -36,7 +36,7 @@ This function will restart each of the worker processes, clearing out anything t
 
 ## Dask Cluster Settings
 
-Tweaking cluster settings can have a big impact on the runtime of your workloads. Many times this means using larger workers or more workers, but there are also other settings related to how Dask distributes work. See ["Create a Dask Cluster in the UI"](<docs/user-guide/how-to/create_dask_cluster.md>)) for how to create a Dask cluster and edit these settings.
+Tweaking cluster settings can have a big impact on the runtime of your workloads. Many times this means using larger workers or more workers, but there are also other settings related to how Dask distributes work. See ["Create a Dask Cluster in the UI"](<docs/user-guide/how-to/scale/create_dask_cluster.md>)) for how to create a Dask cluster and edit these settings.
 
 If you encounter any of the following, you may need to optimize your cluster settings:
 * Memory-related errors
@@ -75,3 +75,7 @@ If the CPU is running high, you may have a lot of small tasks that are causing s
 By default, Dask clusters in Saturn Cloud set `nthreads` to be the same as the number of logical CPUs on each worker machine. This is usually the right choice for ensuring that all CPUs in a cluster are being utilized to perform Dask work. If you notice that work is running slow on your cluster, you may want to double-check that `nthreads` is indeed set to the number of CPUs of each worker.
 
 There are some scenarios where it may be useful to also set `nprocs`. For more information about choosing between processes and threads, check out this <a href="https://docs.dask.org/en/latest/scheduling.html" target="_blank" rel="noopener">Dask documentation page</a>. Note that the page is discussing a single-machine scheduler (we're using `dask.distributed` with Saturn Cloud), but the information about which workloads benefit from threads or processes is useful.
+
+## Environment and image issues
+
+If you're experiencing persistent Dask issues that aren't resolved by cluster settings adjustments, the problem might be related to your environment. Consider [creating a custom image](/docs) with the specific Dask and Python versions that work for your use case.

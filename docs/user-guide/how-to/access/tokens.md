@@ -15,7 +15,10 @@ Saturn Cloud has 2 types of tokens. User tokens are generaly intended to be used
 
 ### User Tokens
 
-1. Access the settings page by clicking on the dropdown by your username in the sidebar. Under the section "API Tokens" click on "New Token"
+1. Access the settings page by clicking on your username in the sidebar, then select "User Profile". Under the section "Access Keys" click on "New Token"
+
+<img src="/images/api-tokens-user-guide.png" alt="User Profile page showing Access Keys section with New Token button" class="doc-image">
+
 2. Make sure you copy the token value. Once the token is generated, you cannot retrieve this value.
 
 ### Resource Tokens
