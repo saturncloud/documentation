@@ -83,7 +83,7 @@ There, fill in the name, optional description, and correct **Image URI** that le
 
 ### Adding an image using the API
 
-Use [Saturn Cloud recipes](https://saturncloud.io/docs/docs/user-guide/recipes/) to add images via the API.
+Use [Saturn Cloud recipes](https://saturncloud.io/docs/user-guide/how-to/recipes) to add images via the API.
 
 > **Note** - these instructions will only work for Saturn Cloud versions that are greater than or equal to 2022.04.01. Please contact support for instructions that will work on prior Saturn Cloud versions.
 

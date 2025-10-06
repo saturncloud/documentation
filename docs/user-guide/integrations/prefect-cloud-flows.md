@@ -184,4 +184,4 @@ To learn more about `prefect-saturn`, see <a href="https://github.com/saturnclou
 
 To see examples of creating a workflow and running on Prefect Cloud check out the <a href="/docs" target="_blank" rel="noopener">Saturn Cloud Examples</a>.
 
-Prefect Cloud feature is available for Enterprise users only. If you have any questions about [Saturn Enterprise](https://saturncloud.io/docs/user-guide/plans/enterprise/) or in general, send us an email at support@saturncloud.io.
+Prefect Cloud feature is available for Enterprise users only. If you have any questions about [Saturn Enterprise](https://saturncloud.io/docs/enterprise/) or in general, send us an email at support@saturncloud.io.
