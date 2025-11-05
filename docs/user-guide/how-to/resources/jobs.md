@@ -14,7 +14,7 @@ Jobs are best used for:
 
 ## When to Use Interactive Resources Instead
 
-Use [Jupyter Servers](/docs) or [R Servers](/docs) for:
+Use [Jupyter Servers](<docs/user-guide/how-to/resources/jupyter-servers.md>) or [R Servers](<docs/user-guide/how-to/resources/rstudio-servers.md>) for:
 
 - Exploratory data analysis
 - Interactive development and prototyping
@@ -25,11 +25,16 @@ Use [Jupyter Servers](/docs) or [R Servers](/docs) for:
 
 The recommended approach is to develop your code interactively first, then convert it to a job once it works reliably:
 
-1. **Develop interactively**: Use a [Jupyter Server](/docs) or [R Server](/docs) to develop and test your code
+1. **Develop interactively**: Use a [Jupyter Server](<docs/user-guide/how-to/resources/jupyter-servers.md>) or [R Server](<docs/user-guide/how-to/resources/rstudio-servers.md>) to develop and test your code
 2. **Convert to a job**: Once your code works reliably, clone it as a job (see "Convert the interactive environment into a job" below)
-3. **Set up scheduling**: Configure when and how often your job should run using [Dispatching Jobs](<docs/user-guide/how-to/scale/dispatching-jobs.md>)
+3. **Set up scheduling**: Configure when and how often your job should run using [Dispatching Jobs for Research Workflows](/docs)
 
 This article covers the patterns that will help you work faster with these resources. This approach is similar to [developing dashboards, models and apis](/docs).
+
+## Related Articles
+
+- **[Dispatching Jobs for Research Workflows](/docs)**: Learn how to schedule jobs and dispatch them programmatically for research workflows
+- **[Massively Parallel Jobs for Research Workflows](/docs)**: Scale your jobs to run across hundreds or thousands of resources for parallel execution
 
 ## Develop Interactively
 
@@ -54,11 +59,11 @@ If you are working with data files, you can usually work with them without downl
 
 ### Working directory
 
-Don’t change into another directory when you run your command. The job will be run out of the same directory you are in. If you do want to run the command out of a different directory, set that path as the "working directory" of your resource.
+Don't change into another directory when you run your command. The job will be run out of the same directory you are in. If you do want to run the command out of a different directory, set that path as the "working directory" of your resource.
 
 ## Convert the interactive environment into a job
 
-After you are happy with your dashboard, model or API running in the terminal, it should be easy to deploy that. Click on the Manage tab, and click “Clone as a Job".
+After you are happy with your dashboard, model or API running in the terminal, it should be easy to deploy that. Click on the Manage tab, and click "Clone as a Job".
 
 <img src="/images/docs/clone-as-job.webp" alt="clone as a job" class="doc-image">
 
@@ -74,7 +79,7 @@ The way to transfer ownership to the group, is to clone the resource. When you c
 
 ### Ensure that the group has all the necessary secrets
 
-If you created a job as your Saturn Cloud user, it probably has your secrets attached. Group owned resources can only access secrets that are accessible to the group. You will have to click on the “secrets” tab, and make sure equivalent secrets are available for the group.
+If you created a job as your Saturn Cloud user, it probably has your secrets attached. Group owned resources can only access secrets that are accessible to the group. You will have to click on the "secrets" tab, and make sure equivalent secrets are available for the group.
 
 ### Ensure that the group has all the git access
 
@@ -87,7 +92,8 @@ If you are installing packages at startup, either using extra packages, or by cu
 
 ### Use git tags
 
-If the source code for your deployment or job is being actively developed, it is a good idea to deploy from a tag. This will ensure that as you or your team continue to work on the code base, no changes will impact your application that accidentally change it’s behavior. To change to a tag - click on the "Git Repositories" tag. Edit the repository, and type in the tag that you want to use.
+If the source code for your deployment or job is being actively developed, it is a good idea to deploy from a tag. This will ensure that as you or your team continue to work on the code base, no changes will impact your application that accidentally change it's behavior. To change to a tag - click on the "Git Repositories" tag. Edit the repository, and type in the tag that you want to use.
 
 <img src="/images/docs/git-tag.webp" alt="Use git tags" class="doc-image">
 {{% jobs_docs_view %}}
+

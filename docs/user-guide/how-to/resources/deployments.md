@@ -2,6 +2,8 @@
 
 Deployments are custom-defined applications that you can run in your Saturn Cloud account. A deployment can be a model deployed as an API, a dashboard, or another application that runs continuously.
 
+For best practices on deploying models, dashboards, and APIs, see [Deploying Models, Dashboards, and APIs](/docs).
+
 ### Create a deployment
 
 To create a deployment, go to the **Resources** tab of Saturn Cloud and press **New Deployment**
@@ -23,7 +25,7 @@ The options to set up the deployment are as follows:
 * __Start Script (Bash)__ (Advanced setting) - the script to run at startup of the image before the deployment code runs.
 * __Working Directory__ (Advanced setting) - where within the file system the deployment command should be executed.
 
-After choosing these options and pressing the create deployment button, you go be sent to the resource page for that deployment. Pressing the green arrow next to the deployment name will cause the deployment to begin running.
+After choosing these options and pressing the create deployment button, you will be sent to the resource page for that deployment. Pressing the green arrow next to the deployment name will cause the deployment to begin running.
 
 ![Start deployment button](/images/docs/start-deployment.webp "doc-image")
 
@@ -75,7 +77,7 @@ The most likely cause of this is that nothing is bound to port 8000 within the d
 
 ## Who can access a deployment?
 
-- By default, deployments are accesible to all members of your organization.
+- By default, deployments are accessible to all members of your organization.
 - You can also disable all authentication for a deployment, useful if you want to host an API publicly on the internet.
 - You can also restrict who can view a deployment to specific users and groups.
 
