@@ -32,5 +32,4 @@ A user creates a Deployment resource with a start command that runs their API se
 
 ## Further Reading
 
-- [Saturn Cloud architecture reference](/docs): how the platform's 14 components fit together
 - [Infrastructure engineering](/docs): how Saturn Cloud fits into your existing cloud environment
