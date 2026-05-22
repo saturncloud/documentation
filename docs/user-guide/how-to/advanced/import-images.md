@@ -1,63 +1,15 @@
-# Import Existing Docker Images
+# Import Existing Docker Images |
+| `SATURN_SYSTEM_PYTHON` | The `python` executable that has JupyterLab installed. Used to launch the IDE. |
+| `SATURN_USER_PYTHON` | The `python` executable for your user environment, with the libraries you work in. |
 
-If you already have a Docker image in your personal or business repository, you can easily add it to Saturn Cloud.
-
-## Docker Image Requirements
-
-Docker images must have certain software installed, depending on what type of resource they are being used for.
-For examples of Docker image installation processes, see the Saturn Cloud [images GitHub repo](https://github.com/saturncloud/images). Currently Saturn Cloud scopes IAM permissions to restrict access to ECR images named `saturn*`. If you want to use images with Saturn Cloud, please name them accordingly.
-
-### Docker Image Requirements - Jupyter Servers
-
-Jupyter servers must have Python and JupyterLab installed in a particular way using the steps below.
-
-1. Conda installed in `/opt/saturncloud` with Python ≥ 3.7.
-2. (optional) `sshd` installed on the system.
-3. Your custom environment installed in `/opt/saturncloud/envs/saturn` -- This can contain anything you wants to use, but it should contain at least `ipykernel`.
-4. `/opt/saturncloud/envs/saturn` registered with Jupyter -- Do this with the following code:
+Set each to the absolute path of a `python` executable. If your image has a single Python that holds both JupyterLab and your libraries, point both variables at it:
 
 ```bash
-        ${CONDA_DIR}/envs/saturn/bin/python -m ipykernel install \
-                --name python3 \
-                --display-name 'saturn (Python 3)' \
-                --prefix=${CONDA_DIR}
+SATURN_USER_PYTHON=/usr/bin/python
+SATURN_SYSTEM_PYTHON=/usr/bin/python
 ```
 
-5. A user named `jovyan` with `uid=1000` with home set to `/home/jovyan`. For workspaces, EBS volumes are mounted on top of `/home/jovyan`, so you should not persist configuration files there.
-
-These steps are not required but will make the user experience better:
-
-6. Add the `jovyan` user to sudo-ers.
-7. Set the PATH with the following code:
-
-```bash
-        PATH= /opt/saturncloud/envs/saturn/bin:/opt/saturncloud/bin:${PATH}
-```
-
-8. Make sure Python environments are owned by the jovyan user.
-
-### Docker Image Requirements - R Servers
-
-R servers must have R, RStudio, and Python all installed.
-
-1. Conda installed in `/opt/saturncloud` with Python ≥ 3.7.
-2. `sshd` installed on the system.
-3. A user named `jovyan` with `uid=1000` with home set to `/home/jovyan`. For workspaces, EBS volumes are mounted on top of `/home/jovyan`, so you should not persist configuration files there.
-4. R installed to either `/usr/lib/R` or `/usr/local/lib/R`. The `jovyan` user must have recursive ownership and read/write access to the folder.
-5. RStudio Server Open Source installed, with configuration files configured to the minimums matching those in [saturncloud/saturnbase-r](https://github.com/saturncloud/images/tree/main/saturnbase-r).
-6. The Renviron file located at either `/usr/lib/R/etc/Renviron` or `/usr/local/lib/R/etc/Renviron` must be modified to include the line below. This ensures R will correctly read the installed packages when using RStudio.
-
-```
-R_LIBS=/usr/local/lib/R:/usr/local/lib/R/site-library:/usr/lib/R/site-library:/usr/lib/R/library
-```
-
-### Docker Image Requirements - Jobs and Deployments
-
-The requirements for job and deployment resources are simpler than the other types of resources since no IDE is required. _All images that are used for Jupyter server and R server resources will also work for jobs and deployments._
-
-1. Conda installed in `/opt/saturncloud` with Python ≥ 3.7.
-2. `sshd` installed on the system.
-3. A user named `jovyan` with `uid=1000` and their home directory created.
+This is also how you run images that were never built for Saturn Cloud at all. For example, a service image that doesn't ship JupyterLab or a conda environment will still run as a job or deployment once these variables tell Saturn Cloud where its Python lives.
 
 ## Adding the Image to Saturn Cloud
 
