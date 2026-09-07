@@ -4,7 +4,7 @@ The process below will allow you to use the computer vision library [OpenCV](htt
 
 Create a new Jupyter server resource and when doing so set the following options: 
 
-* Set it to use a **GPU**. For the image, in theory any should work but this has been validated with **saturn-pytorch** so we recommend that.
+* Set it to use a **[GPU](https://saturncloud.io/glossary/gpu)**. For the image, in theory any should work but this has been validated with **saturn-pytorch** so we recommend that.
 * Add the commands below to the startup script. This will install OpenCV when starting your resource:
 
 ```console

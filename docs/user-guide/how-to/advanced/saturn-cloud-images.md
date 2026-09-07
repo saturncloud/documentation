@@ -10,13 +10,13 @@ When starting out with Saturn Cloud, most people [use one of our default images]
 
 ### Choosing the Right Image for the Job
 
-Saturn Cloud offers standard CPU images in addition to GPU images, each with different sets of libraries.
+Saturn Cloud offers standard CPU images in addition to [GPU](https://saturncloud.io/glossary/gpu) images, each with different sets of libraries.
 
 The image you choose to use on a resource depends on the following criteria:
 
 -   Which program language you primarily use (e.g., Python, R)
 -   Whether you want to do your work on CPU only or with GPU acceleration
--   Which machine learning frameworks you want to use (e.g., RAPIDS, PyTorch, TensorFlow)
+-   Which machine learning frameworks you want to use (e.g., [RAPIDS](https://saturncloud.io/glossary/nvidia-rapids), PyTorch, TensorFlow)
 
 For instance, if you use Python and want to do analysis on a CPU, you'll want to try the image called `saturncloud/saturn-python`.
 

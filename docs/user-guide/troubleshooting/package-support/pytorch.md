@@ -1,6 +1,6 @@
 # PyTorch
 
-Directions for setting up PyTorch with Python depend on if you're using a CPU or GPU
+Directions for setting up PyTorch with Python depend on if you're using a CPU or [GPU](https://saturncloud.io/glossary/gpu)
 
 ## PyTorch using GPUs
 

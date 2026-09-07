@@ -25,7 +25,7 @@ If you have a specific requirement not listed here, raise it during the sales or
 
 ## Authentication
 
-The platform ships with built-in authentication. Most operators use this because their customers are coming to them without an existing enterprise SSO stack -- that's often part of why they chose a neocloud over a hyperscaler.
+The platform ships with built-in authentication. Most operators use this because their customers are coming to them without an existing enterprise SSO stack -- that's often part of why they chose a [neocloud](https://saturncloud.io/glossary/neocloud) over a hyperscaler.
 
 If a specific tenant needs SSO integration (SAML, OIDC), contact [support@saturncloud.io](mailto:support@saturncloud.io) to discuss options.
 

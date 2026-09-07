@@ -10,7 +10,7 @@ dataset. The format you choose should match the base model you intend to fine-tu
 
 ## Creating a dataset
 
-There are two ways to get data into Token Factory. Both end in the same place: a sealed dataset,
+There are two ways to get data into [Token Factory](https://saturncloud.io/glossary/token-factory). Both end in the same place: a sealed dataset,
 visible to your organization, that jobs can read.
 
 ### Assemble mode

@@ -1,5 +1,5 @@
 # Creating a RAG pipeline with LangChain
-Retrieval-augmented generation (RAG) enables large language models (LLMs) to access extensive knowledge bases, querying them to retrieve relevant information and generate more accurate, well-informed responses.
+Retrieval-augmented generation (RAG) enables [large language models](https://saturncloud.io/glossary/large-language-models) (LLMs) to access extensive knowledge bases, querying them to retrieve relevant information and generate more accurate, well-informed responses.
 
 RAG enables LLMs to access up-to-date information in real-time, even if the models weren't initially trained on the specific subject, allowing them to provide more insightful answers. However, this added flexibility brings increased complexity in designing effective RAG pipelines. To simplify these challenges, Langchain provides an efficient and streamlined solution for setting up prompting pipelines.
 
@@ -15,7 +15,7 @@ In this article, we'll show you how to:
 
 ## Create a development machine
 
-Please click on "Python Server", select a GPU instance type, and select the `saturn-python-llm` image, version `2024.08.01`. This image will have all the dependencies required to run this code. Once the workspace has been created, please click on the "Manage" tab. "Edit" the API token, and un-check the "scope" toggle button. Saturn Cloud API tokens default to operating only on the current resource. Because we will want to interact with other resources (like the RAG pipeline we are about to deploy) we remove the token scope which gives the token complete access to act on your behalf. You can [learn more about API tokens here](/docs).
+Please click on "Python Server", select a [GPU](https://saturncloud.io/glossary/gpu) instance type, and select the `saturn-python-llm` image, version `2024.08.01`. This image will have all the dependencies required to run this code. Once the workspace has been created, please click on the "Manage" tab. "Edit" the API token, and un-check the "scope" toggle button. Saturn Cloud API tokens default to operating only on the current resource. Because we will want to interact with other resources (like the RAG pipeline we are about to deploy) we remove the token scope which gives the token complete access to act on your behalf. You can [learn more about API tokens here](/docs).
 
 ### API Keys for external services.
 Before we begin, please sign up for pinecone and obtain a `PINECONE_API_KEY`. If you plan on deploying RAG with one of OpenAIs models, make sure you have an `OPENAI_API_KEY`. If you plan on hosting your own LLM, you may need to obtain and configure a `HF_TOKEN` depending on whether or not your model is private.

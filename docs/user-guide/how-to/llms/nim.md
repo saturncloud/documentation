@@ -1,6 +1,6 @@
 # Deploying LLMs with NVIDIA NIM
 
-NVIDIA NIM (NVIDIA Inference Microservices) is a platform designed to simplify and accelerate the deployment of AI models, particularly for generative AI applications like large language models (LLMs), chatbots, and digital humans. It provides developers with pre-built, optimized inference microservices that can be deployed across various infrastructures, including cloud platforms, data centers, and workstations.
+NVIDIA NIM (NVIDIA Inference Microservices) is a platform designed to simplify and accelerate the deployment of AI models, particularly for [generative AI](https://saturncloud.io/glossary/generative-ai) applications like [large language models](https://saturncloud.io/glossary/large-language-models) (LLMs), chatbots, and digital humans. It provides developers with pre-built, optimized inference microservices that can be deployed across various infrastructures, including cloud platforms, data centers, and workstations.
 
 NIM's core functionality revolves around allowing developers to deploy and manage AI models with minimal complexity. It integrates seamlessly with industry-standard APIs and popular AI frameworks like PyTorch, TensorRT, and NVIDIA NeMo, making it easy to fine-tune or customize models for specific use cases. With these microservices, developers can leverage pre-trained models or deploy their own customized models at scale, ensuring high performance and low latency.
 

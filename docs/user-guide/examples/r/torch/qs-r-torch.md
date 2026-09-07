@@ -1,6 +1,6 @@
 # Train a Torch model with a GPU in R
 
-As an equivalent to PyTorch for Python, R users can train GPU models using the
+As an equivalent to PyTorch for Python, R users can train [GPU](https://saturncloud.io/glossary/gpu) models using the
 torch package from RStudio. Saturn Cloud provides the `saturn-rstudio-torch`
 docker image that has the required libraries to use a GPU and torch. This image
 is based on the `rocker/ml` R image from the Rocker team. 

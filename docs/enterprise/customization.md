@@ -6,7 +6,7 @@ Saturn Cloud Enterprise is designed to integrate with your existing infrastructu
 
 Saturn Cloud runs your Docker containers with code from your Git repositories. You have two options:
 
-**Use Saturn Cloud images**: Pre-built images with NVIDIA libraries (CUDA, cuDNN, NCCL, NeMo, RAPIDS). Updated regularly with security patches and new library versions.
+**Use Saturn Cloud images**: Pre-built images with NVIDIA libraries (CUDA, cuDNN, NCCL, NeMo, [RAPIDS](https://saturncloud.io/glossary/nvidia-rapids)). Updated regularly with security patches and new library versions.
 
 **Build your own images**: Use any Docker image. Common patterns:
 - Start from Saturn Cloud base images and add your dependencies
@@ -17,7 +17,7 @@ See the [Creating Images documentation](/docs) for details.
 
 ## Node Pool Customization
 
-The reference Terraform includes standard node pool configurations (CPU and GPU sizes). You can customize:
+The reference Terraform includes standard node pool configurations (CPU and [GPU](https://saturncloud.io/glossary/gpu) sizes). You can customize:
 
 - Node pool sizes (different vCPU/memory combinations)
 - GPU types (add additional GPU models beyond the reference configuration)

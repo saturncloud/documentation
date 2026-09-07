@@ -1,6 +1,6 @@
 # Serverless GPU Jobs
 
-A serverless GPU job is a unit of work that runs on a GPU when triggered and costs nothing when idle. Saturn Cloud handles this with the Job resource: you define the job once, trigger it via HTTP, and Saturn Cloud allocates a GPU machine, runs your code, and tears the machine down when it finishes.
+A serverless [GPU](https://saturncloud.io/glossary/gpu) job is a unit of work that runs on a GPU when triggered and costs nothing when idle. Saturn Cloud handles this with the Job resource: you define the job once, trigger it via HTTP, and Saturn Cloud allocates a GPU machine, runs your code, and tears the machine down when it finishes.
 
 This page covers how to set up and operate jobs in this mode.
 
@@ -129,7 +129,7 @@ If your workload is small enough that startup dominates, consider whether a [Dep
 
 ## Concurrency
 
-Concurrent POSTs produce concurrent pods. There is no built-in queue or rate limit at the job level; scheduling is bounded by the GPU capacity available in your cluster. If you need coordinated multi-node runs (for example, distributed training with torchrun or DeepSpeed), use `scale` to request multiple machines for a single invocation. Saturn Cloud injects the environment variables needed for the processes to discover each other.
+Concurrent POSTs produce concurrent pods. There is no built-in queue or rate limit at the job level; scheduling is bounded by the GPU capacity available in your cluster. If you need coordinated multi-node runs (for example, [distributed training](https://saturncloud.io/glossary/distributed-training) with torchrun or DeepSpeed), use `scale` to request multiple machines for a single invocation. Saturn Cloud injects the environment variables needed for the processes to discover each other.
 
 ## Cost model
 

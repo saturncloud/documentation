@@ -1,5 +1,5 @@
 # Fine Tuning LLMs
-Unsloth is a tool designed to make fine-tuning large language models (LLMs) like Llama-3 and Mistral much faster and more resource-efficient. It allows fine-tuning up to 2.2 times faster and uses significantly less VRAM, often reducing memory requirements by up to 80%. It also supports continual pretraining, which is useful for adapting models to new languages or domain-specific tasks like law or medicine.
+Unsloth is a tool designed to make [fine-tuning](https://saturncloud.io/glossary/fine-tuning-in-machine-learning-and-deep-learning) [large language models](https://saturncloud.io/glossary/large-language-models) (LLMs) like Llama-3 and Mistral much faster and more resource-efficient. It allows fine-tuning up to 2.2 times faster and uses significantly less VRAM, often reducing memory requirements by up to 80%. It also supports continual pretraining, which is useful for adapting models to new languages or domain-specific tasks like law or medicine.
 
 ## Getting Started
 
@@ -22,7 +22,7 @@ model, tokenizer = FastLanguageModel.from_pretrained(
 )
 ```
 
-Next, we'll get the PEFT model of the model we defined above. get_peft_model() transforms the original model by applying LoRA (Low-Rank Adaptation) or other parameter-efficient fine-tuning techniques. This PEFT version of the model is more memory-efficient, optimized for larger batch sizes, and supports features like gradient checkpointing.
+Next, we'll get the PEFT model of the model we defined above. get_peft_model() transforms the original model by applying [LoRA](https://saturncloud.io/glossary/lora) (Low-Rank Adaptation) or other parameter-efficient fine-tuning techniques. This PEFT version of the model is more memory-efficient, optimized for larger batch sizes, and supports features like gradient checkpointing.
 
 After this cell, the model variable will now point to the modified model, which is ready for efficient fine-tuning.
 
@@ -36,7 +36,7 @@ Here's a breakdown of the arguments:
 - use_gradient_checkpointing = "unsloth": This feature saves memory by checkpointing activations, allowing for larger batch sizes and longer context lengths during training. "unsloth" is a new feature that boasts less VRAM usage and larger batch sizes.
 - random_state = 3407: Sets a seed for randomization to ensure reproducibility of results.
 - use_rslora = False: Rank-stabilized LoRA (rsLoRA) is an advanced technique that can stabilize training at higher ranks, but it's disabled here.
-- loftq_config = None: This option enables LoftQ (Low-Rank Quantization), another advanced fine-tuning technique, but it’s not used here.
+- loftq_config = None: This option enables LoftQ (Low-Rank [Quantization](https://saturncloud.io/glossary/quantization)), another advanced fine-tuning technique, but it’s not used here.
 
 ```
 model = FastLanguageModel.get_peft_model(

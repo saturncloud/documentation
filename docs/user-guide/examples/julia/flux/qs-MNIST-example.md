@@ -19,7 +19,7 @@ using Base.Iterators: repeated
 using Images
 ```
 
-We can then check to see if CUDA is enabled. This will allow the model to run on the GPU instead of the CPU. This is potentially faster to train, but the speedup depends on a lot of factors.
+We can then check to see if CUDA is enabled. This will allow the model to run on the [GPU](https://saturncloud.io/glossary/gpu) instead of the CPU. This is potentially faster to train, but the speedup depends on a lot of factors.
 
 
 ```julia

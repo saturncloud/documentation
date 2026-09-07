@@ -7,7 +7,7 @@
 
 Combined with the bundled skill, this means you can ask Claude things like:
 
-- *"Create a Jupyter workspace with a GPU and the latest PyTorch image."*
+- *"Create a Jupyter workspace with a [GPU](https://saturncloud.io/glossary/gpu) and the latest PyTorch image."*
 - *"Schedule my `nightly-etl` job to run every day at 2am UTC."*
 - *"Stop every workspace I'm not using right now."*
 - *"Show me the last 100 log lines from my failing deployment."*

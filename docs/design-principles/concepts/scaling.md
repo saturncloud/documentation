@@ -4,7 +4,7 @@ Saturn Cloud makes it easy to scale your computations, either on a single machin
 
 ### Single Machine Scaling
 
-CPU instances can scale up to 4TB of RAM. GPU instances can scale up to 8 T4, A10, or V100 GPUs. Enterprise customers can also request different additional types. Though scaling on a single machine is certainly less exciting, it is simpler and easier to do for most users.
+CPU instances can scale up to 4TB of RAM. [GPU](https://saturncloud.io/glossary/gpu) instances can scale up to 8 T4, A10, or V100 GPUs. Enterprise customers can also request different additional types. Though scaling on a single machine is certainly less exciting, it is simpler and easier to do for most users.
 
 Saturn Cloud users on single machines typically scale workloads with
 

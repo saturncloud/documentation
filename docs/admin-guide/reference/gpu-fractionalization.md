@@ -2,7 +2,7 @@
 
 ## Introduction
 
-GPU fractionalization is a powerful technique that allows multiple workloads to share a single GPU, maximizing hardware utilization and reducing costs. In many scenarios, a single workload may not fully utilize a GPU's compute capacity, leading to expensive idle resources. By fractionalizing GPUs, organizations can run multiple smaller workloads on the same physical GPU, improving efficiency and enabling more developers and data scientists to access GPU resources simultaneously. This is particularly valuable for inference workloads, development environments, and training smaller models that don't require an entire GPU's resources.
+[GPU](https://saturncloud.io/glossary/gpu) fractionalization is a powerful technique that allows multiple workloads to share a single GPU, maximizing hardware utilization and reducing costs. In many scenarios, a single workload may not fully utilize a GPU's compute capacity, leading to expensive idle resources. By fractionalizing GPUs, organizations can run multiple smaller workloads on the same physical GPU, improving efficiency and enabling more developers and data scientists to access GPU resources simultaneously. This is particularly valuable for inference workloads, development environments, and training smaller models that don't require an entire GPU's resources.
 
 ## How Saturn Cloud Manages GPU Fractionalization
 

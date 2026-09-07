@@ -7,7 +7,7 @@ The Saturn Cloud control plane is a single self-service portal shared across all
 Tenants share the same portal but are fully isolated from each other:
 
 - Each tenant sees only their own resources, users, and usage
-- Dedicated compute resources (tenants do not share GPU servers unless you configure shared pools)
+- Dedicated compute resources (tenants do not share [GPU](https://saturncloud.io/glossary/gpu) servers unless you configure shared pools)
 - Isolated network segments so tenants cannot reach each other's workloads
 - Separate usage and billing records
 
@@ -25,7 +25,7 @@ Once onboarded, tenants are self-service. They can:
 
 - Provision Kubernetes clusters, Slurm clusters, VMs, and bare metal from their allocated pool
 - Launch AI Studio workspaces (JupyterLab, VS Code, SSH)
-- Submit jobs and manage deployments via Token Factory
+- Submit jobs and manage deployments via [Token Factory](https://saturncloud.io/glossary/token-factory)
 - Invite and manage users within their organization
 - View their own usage and resource inventory
 

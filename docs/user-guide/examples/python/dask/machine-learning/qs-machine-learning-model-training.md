@@ -59,7 +59,7 @@ preds = dask_model.predict(X_test)
 
 XGBoost is another popular algorithm for supervised learning with tabular data. It's commonly used by data scientists in many situations, such as the work done at [Capital One](https://www.capitalone.com/tech/machine-learning/how-to-control-your-xgboost-model/).
 
-The XGBoost Python package allows for efficient single-machine training using multithreading. However, the amount of training data you can use is limited by the size of that one machine. To solve this problem, XGBoost supports distributed training using several different interfaces. Let us see how distributed training works for XGBoost using Dask.
+The XGBoost Python package allows for efficient single-machine training using multithreading. However, the amount of training data you can use is limited by the size of that one machine. To solve this problem, XGBoost supports [distributed training](https://saturncloud.io/glossary/distributed-training) using several different interfaces. Let us see how distributed training works for XGBoost using Dask.
 
 We will use the test and training set we had created before. `XGBoost` allows you to train on Dask collections like Dask DataFrames and Dask Arrays. This is really powerful because it means that you never have to have a single machine that's big enough for all of your training data. For more details on this see the [XGBoost docs](https://xgboost.readthedocs.io/en/stable/tutorials/dask.html).
 

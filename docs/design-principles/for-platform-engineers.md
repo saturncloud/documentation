@@ -4,8 +4,8 @@
 
 Saturn Cloud is actually a cloud product that runs within your existing infrastructure. AI/ML engineers typically need access to
 
-- Development machines with GPU access
-- The ability to deploy LLMs, ML models and dashboards (like Streamlit)
+- Development machines with [GPU](https://saturncloud.io/glossary/gpu) access
+- The ability to deploy [LLMs](https://saturncloud.io/glossary/large-language-models), ML models and dashboards (like Streamlit)
 - The ability to schedule jobs
 - The ability to run parallel training and run large experiments.
 

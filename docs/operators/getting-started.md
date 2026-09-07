@@ -8,7 +8,7 @@ Start at [saturncloud.io/help](/help) or email [support@saturncloud.io](mailto:s
 
 Come to that conversation with:
 
-- How many GPU servers you're starting with, and what GPU models
+- How many [GPU](https://saturncloud.io/glossary/gpu) servers you're starting with, and what GPU models
 - Whether you already have a BMaaS provider, or need one
 - Whether you have a networking provider, or need one
 - Roughly how many tenants you're planning to onboard initially

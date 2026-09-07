@@ -51,8 +51,8 @@ Which is informing you that your cluster is up and ready to use. Now you can int
 
 At this point, you are able to do load data and complete whatever analysis you want. You can monitor the performance of your cluster at the link described earlier, or you can log in to Saturn Cloud and see the Dask dashboard, logs for the cluster workers, and other useful information.
 
-You can also connect to Dask from [Google Colab](<docs/user-guide/integrations/colab_external_connect.md>), [Azure](<docs/user-guide/integrations/azure_external_connect.md>), or [anywhere else outside of Saturn Cloud](<docs/user-guide/integrations/azure_external_connect.md>).
+You can also connect to Dask from [Google Colab](<docs/user-guide/integrations/colab_external_connect.md>), [Azure](<docs/user-guide/integrations/azure_external_connect.md>), or [anywhere else outside of Saturn Cloud](<docs/user-guide/integrations/sagemaker_external_connect.md>).
 
 ## Scale your SageMaker workflows with Saturn Cloud
 
-Now that you're connected, you can leverage Saturn Cloud's Dask clusters to [process large datasets](/docs) that would be too big for a single SageMaker instance, or [train models in parallel](/docs) across multiple GPUs.
+Now that you're connected, you can leverage Saturn Cloud's Dask clusters to [process large datasets](/docs) that would be too big for a single SageMaker instance, or [train models in parallel](/docs) across multiple [GPUs](https://saturncloud.io/glossary/gpu).

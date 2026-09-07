@@ -1,6 +1,6 @@
 # Concepts
 
-Token Factory has four objects. Three are things you create directly (datasets, fine-tuning
+[Token Factory](https://saturncloud.io/glossary/token-factory) has four objects. Three are things you create directly (datasets, [fine-tuning](https://saturncloud.io/glossary/fine-tuning-in-machine-learning-and-deep-learning)
 jobs, inference endpoints); one is produced for you (checkpoints). This page describes each and
 the relationships between them.
 
@@ -21,13 +21,13 @@ models the data is appropriate for. The platform stores the format and any deriv
 
 ### Fine-tuning job
 
-A fine-tuning job is a single GPU training run. You give it a base model, a dataset, and a set
+A fine-tuning job is a single [GPU](https://saturncloud.io/glossary/gpu) training run. You give it a base model, a dataset, and a set
 of hyperparameters; the platform renders a complete training configuration, schedules the job
 on an appropriate GPU instance, and runs it to completion. A job has a status that reflects the
 underlying run (`pending`, `running`, `stopping`, `stopped`, `completed`, `error`).
 
 You do not write a training script. The hyperparameters you submit (learning rate, epochs,
-effective batch size, max sequence length, LoRA rank and alpha) are the entire interface. The
+effective batch size, max sequence length, [LoRA](https://saturncloud.io/glossary/lora) rank and alpha) are the entire interface. The
 platform translates them into the underlying trainer configuration and reports them back to you
 unchanged on the job view.
 

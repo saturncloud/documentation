@@ -50,7 +50,7 @@ As mentioned earlier - as the number of runs increases, having to deal with fail
 
 ## GPUs
 
-This batching framework will execute for example, 40 runs, 8 at a time on an 8 GPU machine. In doing so, you would want each process to be allocated to a single GPU. The `sc batch` framework will set the environment variables `SATURN_RUN_LOCAL_RANK`. Your code can use that to select the GPU, or you could just set
+This batching framework will execute for example, 40 runs, 8 at a time on an 8 [GPU](https://saturncloud.io/glossary/gpu) machine. In doing so, you would want each process to be allocated to a single GPU. The `sc batch` framework will set the environment variables `SATURN_RUN_LOCAL_RANK`. Your code can use that to select the GPU, or you could just set
 
 ```
 os.environ['CUDA_VISIBLE_DEVICES'] = os.environ['SATURN_RUN_LOCAL_RANK']

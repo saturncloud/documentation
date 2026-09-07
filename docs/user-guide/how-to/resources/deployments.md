@@ -18,7 +18,7 @@ The options to set up the deployment are as follows:
 
 * __Name__ - the name of the deployment (must be unique).
 * __Command__ - the command to execute the deployment within the resource. These can vary dramatically depending on what the deployment task is (ex: run a panel dashboard or flask API). **The command must listen to port 8000 for requests, no other ports will be open.** The server must also be bound to `0.0.0.0` and not `127.0.0.1`. Pressing the radio buttons will populate some common defaults.
-* __Hardware__ - the type of hardware to use for the deployment, either a CPU or GPU.
+* __Hardware__ - the type of hardware to use for the deployment, either a CPU or [GPU](https://saturncloud.io/glossary/gpu).
 * __Size__ - the size of the instance to use for the deployment.
 * __Image__ - the image to use for the deployment.
 * __Environment Variables__ (Advanced setting) - any specific environment variable values for the deployment.

@@ -3,7 +3,7 @@
 | GPU instance | The GPU instance to serve on. |
 | Max context | Maximum context length the endpoint will accept. |
 | Precision | Serving precision (for example `bfloat16`). |
-| Quantization | Optional serving-time quantization. |
+| [Quantization](https://saturncloud.io/glossary/quantization) | Optional serving-time quantization. |
 
 ## Using an endpoint
 
@@ -16,7 +16,7 @@ and an example request.
 
 <img src="/images/docs/token-factory/endpoint-overview.png" alt="Inference endpoint detail page showing the endpoint URL, base model, checkpoint, serving config, activity, and an example request" class="doc-image">
 
-A Metrics tab tracks request rate, latency, time to first token, token throughput, and GPU use
+A Metrics tab tracks request rate, latency, [time to first token](https://saturncloud.io/glossary/time-to-first-token), token throughput, and GPU use
 over time.
 
 <img src="/images/docs/token-factory/endpoint-metrics.png" alt="Inference endpoint metrics tab showing request rate, latency, time to first token, token throughput, error rate, and GPU charts" class="doc-image">

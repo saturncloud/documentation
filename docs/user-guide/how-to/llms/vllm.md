@@ -1,10 +1,10 @@
 # Deploying LLMs with vLLM
 
-vLLM is a high-performance system designed to accelerate the serving of large language models (LLMs), making them more efficient and scalable for real-world applications. Developed by researchers at UC Berkeley, vLLM aims to overcome the limitations that existing inference systems face, particularly when serving modern LLMs like GPT-3 and GPT-4. The core innovation in vLLM is its novel memory management system, which is tailored for optimizing the use of GPU memory during the inference process.
+[vLLM](https://saturncloud.io/glossary/vllm) is a high-performance system designed to accelerate the serving of [large language models](https://saturncloud.io/glossary/large-language-models) (LLMs), making them more efficient and scalable for real-world applications. Developed by researchers at UC Berkeley, vLLM aims to overcome the limitations that existing inference systems face, particularly when serving modern LLMs like GPT-3 and GPT-4. The core innovation in vLLM is its novel memory management system, which is tailored for optimizing the use of [GPU](https://saturncloud.io/glossary/gpu) memory during the inference process.
 
 ## Model catalog
 
-Saturn Cloud includes a model catalog of pre-configured vLLM deployments. Each entry specifies the model, instance type, quantization settings, and image so you can deploy with a single click.
+Saturn Cloud includes a model catalog of pre-configured vLLM deployments. Each entry specifies the model, instance type, [quantization](https://saturncloud.io/glossary/quantization) settings, and image so you can deploy with a single click.
 
 <img src="/images/docs/llm-model-catalog.webp" alt="LLM model catalog showing pre-configured vLLM deployments" class="doc-image">
 

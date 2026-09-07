@@ -74,7 +74,7 @@ def train_model_fit(n_epochs, base_lr, batchsize, classes):
     tf.keras.models.save_model(model, "model/keras_single/")
 ```
 
-In the code below, we set up the necessary parameters. We run only a few epochs to save time. But once you've got this model working, you'll have all the information you need to build and run bigger TensorFlow models on Saturn Cloud. A single GPU reviews all our batches every epoch. In this case, it sees 64 images per batch x 640 batches x 3 epochs. These batches are all computed serially; the calculations cannot be parallelized because only one processor is utilized. 
+In the code below, we set up the necessary parameters. We run only a few epochs to save time. But once you've got this model working, you'll have all the information you need to build and run bigger TensorFlow models on Saturn Cloud. A single [GPU](https://saturncloud.io/glossary/gpu) reviews all our batches every epoch. In this case, it sees 64 images per batch x 640 batches x 3 epochs. These batches are all computed serially; the calculations cannot be parallelized because only one processor is utilized. 
 
 
 ```python

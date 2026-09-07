@@ -23,7 +23,7 @@ The [MLOps](https://saturncloud.io/glossary/mlops) lifecycle consists of a few s
 
 ## Saturn Cloud
 
-1.  Saturn Cloud workspaces: Saturn Cloud workspaces are scalable development environments that can connect to an associated Dask cluster. This gives the data scientist access to tremendous amount of computing power, RAM, and GPUs. This workspace is commonly used for **EDA**, **Data Preparation** as well as **Model Development**
+1.  Saturn Cloud workspaces: Saturn Cloud workspaces are scalable development environments that can connect to an associated Dask cluster. This gives the data scientist access to tremendous amount of computing power, RAM, and [GPUs](https://saturncloud.io/glossary/gpu). This workspace is commonly used for **EDA**, **Data Preparation** as well as **Model Development**
 
 2. Saturn Cloud jobs: Saturn Cloud jobs have the exact same specifications and configuration as Saturn Cloud workspaces, and can also connect to an associated Dask cluster. These jobs can be triggered via an API, or on a schedule. These are often used for **Model (Re-)Training**
 

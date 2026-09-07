@@ -55,7 +55,7 @@ To resolve this, navigate to the <a href="https://console.aws.amazon.com/service
 
 - For CPU instances, increase the value for **Running On-Demand Standard (A, C, D, H, I, M, R, T, Z) instances**.
 - For high memory (`x1`/`x1e`) CPU instances, increase the value for **Running On-Demand X instances**
-- For T4 GPUs, it's **Running On-Demand G instances**
+- For T4 [GPUs](https://saturncloud.io/glossary/gpu), it's **Running On-Demand G instances**
 - For V100 GPUs it's **Running On-Demand P instances**.
 
 You can also increase the quota limits for spot instances:

@@ -10,7 +10,7 @@ Python, and then the reticulate package converts the Python objects to R. As an
 R user, that is largely abstracted away so you can primarily think in term of
 the R language you're used to.
 
-While often getting Python, R, TensorFlow, and the GPU drivers to all be the
+While often getting Python, R, TensorFlow, and the [GPU](https://saturncloud.io/glossary/gpu) drivers to all be the
 correct versions and work together, Saturn Cloud provides a convenient
 `saturn-rstudio-tensorflow` image that is preconfigured to train the models on a
 GPU. If you'd rather train a model on a CPU, you can use the `saturn-rstudio`
