@@ -46,4 +46,4 @@ Experiment tracking is optional and has no effect on whether a job succeeds.
 
 ## Next step
 
-Once a job has produced a checkpoint, serve it as an [Inference Endpoint](<docs/user-guide/how-to/token-factory/inference-endpoints.md>).
+Once a job has produced a checkpoint, serve it as an [Inference Endpoint](<docs/inference/inference-endpoints.md>).

@@ -1,9 +1,12 @@
 # Inference Endpoints|
-| Checkpoint | The checkpoint to serve. Must belong to your organization. |
-| GPU instance | The GPU instance to serve on. |
-| Max context | Maximum context length the endpoint will accept. |
-| Precision | Serving precision (for example `bfloat16`). |
-| [Quantization](https://saturncloud.io/glossary/quantization) | Optional serving-time quantization. |
+| Cluster | Where the endpoint runs, when your organization has more than one cluster. |
+| Instance size | The GPU instance each worker runs on. |
+| Tensor parallel | How many GPUs one copy of the model is split across. Above one instance's GPUs, each copy spans several nodes. |
+| Min workers / Max workers | The autoscaler keeps at least the minimum running and adds workers under load up to the maximum. Setting them equal gives a fixed size. |
+| Max GPUs | For disaggregated endpoints, the most GPUs both pools may use together. |
+| [Quantization](https://saturncloud.io/glossary/quantization) | Serve the weights at lower precision to use less GPU memory. |
+
+If the model has been profiled, the form starts from the profiled topology and warns you when the hardware you picked has fewer GPUs than profiling used.
 
 ## Using an endpoint
 
@@ -16,7 +19,7 @@ and an example request.
 
 <img src="/images/docs/token-factory/endpoint-overview.png" alt="Inference endpoint detail page showing the endpoint URL, base model, checkpoint, serving config, activity, and an example request" class="doc-image">
 
-A Metrics tab tracks request rate, latency, [time to first token](https://saturncloud.io/glossary/time-to-first-token), token throughput, and GPU use
+The **Playground** tab sends chat requests to the endpoint from the browser. A Metrics tab tracks request rate, latency, [time to first token](https://saturncloud.io/glossary/time-to-first-token), token throughput, and GPU use
 over time.
 
 <img src="/images/docs/token-factory/endpoint-metrics.png" alt="Inference endpoint metrics tab showing request rate, latency, time to first token, token throughput, error rate, and GPU charts" class="doc-image">
@@ -38,6 +41,6 @@ disrupting an endpoint that is still serving it; the cleanup waits for the endpo
 
 ## Cost
 
-An inference endpoint is a persistent GPU deployment. It consumes its GPU instance for as long
-as it runs, whether or not it is receiving traffic. Stop endpoints you are not using. For
-workloads that do not need a model resident at all times, a [fine-tuning job](<docs/user-guide/how-to/token-factory/fine-tuning.md>) or a batch [Job](/docs) may fit better.
+A dedicated endpoint consumes its GPUs for as long as it runs, whether or not it is receiving
+traffic. Stop endpoints you are not using. For
+workloads that do not need a model resident at all times, a [fine-tuning job](<docs/inference/fine-tuning.md>) or a batch [Job](/docs) may fit better.
