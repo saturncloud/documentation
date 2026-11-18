@@ -27,8 +27,9 @@ Resource tokens are automatically generated and embedded under the `SATURN_TOKEN
 
 ## Using tokens
 
-Saturn Cloud expects tokens to be passed via HTTP headers by adding a header key of `Authorization` with a value of `token {TOKEN}`. The following Python code demonstrates how to use Tokens to authenticate with Saturn Cloud
+Tokens are passed in an HTTP header.
 
+**Calling a deployment.** Send the token in the `X-Saturn-Authorization` header with a value of `token {TOKEN}`. Saturn Cloud removes this header before the request reaches the deployment, and leaves `Authorization` for the deployment's own use (see [Accessing a Deployment](/docs/user-guide/how-to/resources/deployments/#apis)). The following Python code calls a deployment:
 
 ```python
 import requests
@@ -38,6 +39,10 @@ url = "https://hellosaturn-deploy.community.saturnenterprise.io"
 TOKEN = # your token
 response = requests.get(
     url,
-    headers={"Authorization": f"token {TOKEN}"}
+    headers={"X-Saturn-Authorization": f"token {TOKEN}"}
 )
 ```
+
+`Authorization: token {TOKEN}` also still works for calling a deployment when the request has no `X-Saturn-Authorization` header and no Saturn Cloud sign-in cookie. `X-Saturn-Authorization` is available from Saturn Cloud release 2026.08.01.
+
+**Calling the Saturn Cloud API** (URLs under `/api/` on your Saturn Cloud address). Send the token in the `Authorization` header with a value of `token {TOKEN}`.

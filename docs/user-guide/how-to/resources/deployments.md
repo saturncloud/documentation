@@ -43,7 +43,7 @@ Anyone who is logged in to Saturn Cloud and given appropriate permissions can vi
 
 ### APIs
 
-To access a deployed API programmatically, you'll need to ensure the machine making the request is authorized to access it. The HTTP request must include an authorization token in the header. You can find your user token for the request by going to the **Settings** page of Saturn Cloud. Then you can make the HTTP request by adding a header key of `Authorization` with a value of `token {USER_TOKEN}` where `{USER_TOKEN}` is the value from the setting page, for example:
+To access a deployed API programmatically, you'll need to ensure the machine making the request is authorized to access it. The HTTP request must include a Saturn Cloud token in a header. You can find your user token for the request by going to the **Settings** page of Saturn Cloud. Then make the HTTP request with the header `X-Saturn-Authorization` set to `token {USER_TOKEN}`, where `{USER_TOKEN}` is the value from the settings page, for example:
 
 ```python
 import requests
@@ -53,9 +53,27 @@ url = "https://hellosaturn-deploy.community.saturnenterprise.io"
 USER_TOKEN = # your user token
 response = requests.get(
     url,
-    headers={"Authorization": f"token {USER_TOKEN}"}
+    headers={"X-Saturn-Authorization": f"token {USER_TOKEN}"}
 )
 ```
+
+Saturn Cloud checks the token and removes the `X-Saturn-Authorization` header before the request reaches your deployment, so your code never sees your token. The `Authorization` header is left for your own application: if your API has its own authentication, send it in `Authorization` alongside `X-Saturn-Authorization` and it reaches your code unchanged.
+
+```python
+response = requests.get(
+    url,
+    headers={
+        "X-Saturn-Authorization": f"token {USER_TOKEN}",
+        "Authorization": "Bearer <your app's own credential>",
+    },
+)
+```
+
+The same applies in the browser: when you are signed in to Saturn Cloud, an `Authorization` header that your application's own frontend sends is passed through to your application.
+
+{{% alert title="Older scripts" %}}
+Sending the Saturn Cloud token as `Authorization: token {USER_TOKEN}` (or `Authorization: Bearer {USER_TOKEN}`) still works when the request carries no `X-Saturn-Authorization` header and no Saturn Cloud sign-in cookie. Saturn Cloud then reads `Authorization` as your token and removes it, so your application does not receive it. `X-Saturn-Authorization` is available from Saturn Cloud release 2026.08.01; earlier releases only accept the `Authorization` form.
+{{% /alert %}}
 
 ## Troubleshooting Deployments
 

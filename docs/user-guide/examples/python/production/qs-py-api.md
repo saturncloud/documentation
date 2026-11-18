@@ -98,14 +98,14 @@ In example above, the key value pairs that we see after `?` are known as query p
 To access this URL you need to either:
 
 1. Be logged into Saturn Cloud and use your browser to go to the URL, which only works for GET requests.
-2. (recommended) add an authorization token to your HTTP request. On the Saturn Cloud settings page you'll see your user token, which lets Saturn Cloud know that your request is authorized. Add a header to the HTTP request with the key of `Authorization` and the value `token {USER_TOKEN}` where `{USER_TOKEN}` is your token from the settings page. In Python you could make the request like so
+2. (recommended) add an authorization token to your HTTP request. On the Saturn Cloud settings page you'll see your user token, which lets Saturn Cloud know that your request is authorized. Add a header to the HTTP request with the key of `X-Saturn-Authorization` and the value `token {USER_TOKEN}` where `{USER_TOKEN}` is your token from the settings page (on releases before 2026.08.01, use the key `Authorization`). In Python you could make the request like so
 
 ```python
 import requests
 
 user_token = "youusertoken" # (don't save this directly in a file!)
 url = f'https://example-api2-deploy.community.saturnenterprise.io/predict?BedroomAbvGr=8&YearBuilt=2000'
-headers={"Authorization": f"token {user_token}"}
+headers={"X-Saturn-Authorization": f"token {user_token}"}
 r = requests.get(url, headers=headers)
 ```
 
