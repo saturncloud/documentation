@@ -22,6 +22,58 @@ If the saturn-helm-operator stops reconciling:
 
 **Notification**: Saturn Cloud support receives automatic alerts when the operator stops reconciling and will reach out to help resolve.
 
+### Recovering After a Long Shutdown
+
+The operator holds a credential for the Saturn Cloud manager (`manager.saturnenterprise.io`). The credential is valid for 7 days and the operator renews it about once a day, so it never expires while the operator is running and can reach the manager.
+
+It does expire if the operator cannot renew it for about 6 to 7 days in a row. That happens when:
+
+- the cluster, or its system nodes, are stopped or scaled to zero for a week or more;
+- the operator deployment is scaled to zero for that long;
+- the cluster cannot reach the manager for that long, for example after a firewall or egress change.
+
+**What you see**: while the operator is running, it emits Kubernetes `Warning` events on the `saturn-auth-token` secret: `TokenRefreshFailed` for each failed renewal, and `RefreshTokenExpiringSoon` once less than 3 days are left. The operator also exposes the metrics `saturn_operator_refresh_token_expiry_timestamp_seconds`, `saturn_operator_token_refresh_last_success_timestamp_seconds` and `saturn_operator_token_refresh_failures_total` on its metrics port, if you want to alert on them. After the credential has expired, the next time the operator pod starts it goes into `CrashLoopBackOff`, its log says it has no usable manager credentials, and it emits a `BootstrapTokenRequired` event. Older operator versions show only the log message `stored refresh token expired at ...; needs a new bootstrap token`.
+
+```bash
+kubectl -n saturn-system get events --field-selector involvedObject.name=saturn-auth-token
+```
+
+Running workloads keep running, but the operator stops reconciling until you give it a new bootstrap token.
+
+**To recover**:
+
+1. Get a new bootstrap token. It is emailed to you, and is valid for 4 hours. (Installs on AWS use `https://manager.aws.saturnenterprise.io` instead; the operator's error message shows the right address.)
+
+   ```bash
+   curl -X POST https://manager.saturnenterprise.io/v2/resend-setup \
+       -H "Content-Type: application/json" \
+       -d '{
+         "name": "your-organization-name",
+         "email": "your-email@example.com"
+       }'
+   ```
+
+2. Pass it to the operator.
+
+   - **Helm installs**: find the release name and the installed chart version, then upgrade with the same version and only the token changed. Leaving out `--version` would also upgrade the chart.
+
+     ```bash
+     helm list -n saturn-system
+     helm upgrade <release> saturncloud/saturn-helm-operator \
+         --version <installed chart version> \
+         --namespace saturn-system \
+         --reuse-values \
+         --set bootstrapToken=NEW_BOOTSTRAP_TOKEN
+     ```
+
+     If you installed the Nebius marketplace chart, the value is `saturn-helm-operator.bootstrapToken` instead of `bootstrapToken`.
+
+   - **Terraform installs**: set `saturn_bootstrap_token` to the new token (in `terraform.tfvars`, or `TF_VAR_saturn_bootstrap_token` where the reference Terraform asks for that) and run `terraform apply`.
+
+3. The operator pod restarts, exchanges the bootstrap token for a new 7-day credential, and resumes reconciling. Check it with `kubectl -n saturn-system get pods`.
+
+If you plan to stop a cluster for more than about 6 days, expect to repeat these steps when you start it again.
+
 ## Upgrades
 
 Saturn Cloud applies platform upgrades via Terraform updates and Helm chart releases.
