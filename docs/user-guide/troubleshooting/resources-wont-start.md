@@ -8,7 +8,7 @@ There are several steps involved in starting a resource, as can be seen on the R
 
 ### Hardware provisioning
 
-Hardware provisiong involves requesting instances from AWS. With Saturn Cloud Hosted there should not be any problems with this step. For enterprise installations, scroll down to the [Enterprise-specific troubleshooting section](#enterprise-specific-troubleshooting).
+Hardware provisiong involves requesting instances from AWS. With Saturn Cloud Serverless there should not be any problems with this step. For enterprise installations, scroll down to the [Enterprise-specific troubleshooting section](#enterprise-specific-troubleshooting).
 
 ### Large images
 

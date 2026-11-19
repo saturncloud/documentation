@@ -12,7 +12,7 @@ After selecting the base image, you add packages and start scripts that define t
 
 ## Create an Image Within Saturn Cloud
 
-> **Note**: In general we do not recommend storing confidential or proprietary information in Docker images. The Saturn Cloud pattern centers around layering Git repositories on top of docker images at run time. On Saturn Cloud Hosted, guarantees on the privacy of docker images are much weaker than they are on Saturn Cloud Enterprise.
+> **Note**: In general we do not recommend storing confidential or proprietary information in Docker images. The Saturn Cloud pattern centers around layering Git repositories on top of docker images at run time. On Saturn Cloud Serverless, guarantees on the privacy of docker images are much weaker than they are on Saturn Cloud Enterprise.
 
 To build your own image, select the **Images** tab from the left-hand menu in Saturn Cloud. From here, you'll see the blue **New** button at the top right of the screen. Click this, and you'll be taken to a form.
 

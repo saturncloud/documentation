@@ -4,7 +4,7 @@ Below are some common reasons why IT Security teams choose Saturn Cloud. We also
 
 ## Isolation within your AWS account
 
-Security is the primary motivation for teams to move from Saturn Hosted (which runs in our AWS account) to Saturn Enterprise. Saturn Enterprise is installed within your AWS account, and you can customize the VPC where Saturn Cloud is deployed. This allows the use of VPC peering and Transit Gateways to connect Saturn Cloud to other parts of your infrastructure.
+Security is the primary motivation for teams to move from Saturn Cloud Serverless (which runs in our AWS account) to Saturn Enterprise. Saturn Enterprise is installed within your AWS account, and you can customize the VPC where Saturn Cloud is deployed. This allows the use of VPC peering and Transit Gateways to connect Saturn Cloud to other parts of your infrastructure.
 
 ## Network security
 
