@@ -55,6 +55,35 @@ curl https://<your-endpoint-url>/v1/chat/completions \
   }'
 ```
 
+### Video input
+
+Models that take video, such as the Qwen3-VL models in the catalog, accept a `video_url` content part in a chat completions request. The model card in the catalog lists **video** under its inputs. Video models run on dedicated endpoints only.
+
+```python
+response = client.chat.completions.create(
+    model="<your-endpoint-name>",
+    messages=[
+        {
+            "role": "user",
+            "content": [
+                {"type": "video_url", "video_url": {"url": "https://example.com/clip.mp4"}},
+                {"type": "text", "text": "What happens in this video?"},
+            ],
+        }
+    ],
+    max_tokens=300,
+)
+```
+
+The `video_url` part is an extension that vLLM defines; OpenAI's own chat API has no video type. The OpenAI Python SDK sends the part as written.
+
+- **Send an https URL.** The endpoint downloads the video itself, so the URL must use https and be reachable from the public internet without a login. Plain `http://` URLs and addresses inside the cluster or a private network are refused.
+- **Base64 only for short clips.** A `data:video/mp4;base64,...` URL also works, but the whole request body is limited to 64 MiB, and base64 adds a third to the size. A video larger than about 45 MiB does not fit.
+- **One video per request** by default. Each turn of a conversation re-sends the earlier messages, so a conversation can hold one video. To allow more, set the `limit-mm-per-prompt.video` engine option when you create the endpoint; each video adds work for the model.
+- **Billing is in tokens.** The video's frames become input tokens and are counted in `usage.prompt_tokens`. A 10-second clip can be several thousand tokens.
+
+The endpoint's **Playground** tab has a **Video URL** field for video models.
+
 Request parameters such as `temperature`, `top_p`, `max_tokens` and `stop` work as in the OpenAI API. Features that depend on the model, such as tool calling and reasoning output, follow the model's chat template, so check the model card for what the model supports.
 
 ## Monitoring
